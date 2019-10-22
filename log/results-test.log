@@ -1,0 +1,43 @@
+{"message":"Starting up bots in production at Tue, Oct 22, 2019 7:11 PM","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:12 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:13 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:14 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:15 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Starting up bots in production at Tue, Oct 22, 2019 7:15 PM","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:16 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Starting up bots in production at Tue, Oct 22, 2019 7:16 PM","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:17 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:18 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:19 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Starting up bots in production at Tue, Oct 22, 2019 7:19 PM","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:20 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Oct 22, 2019 7:21 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
