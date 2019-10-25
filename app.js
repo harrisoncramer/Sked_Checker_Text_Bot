@@ -8,6 +8,7 @@ const { launchBots, setUpPuppeteer } = require("./setup");
 
 // Import bots...
 const HFAC = require("./bots/HFAC"); 
+const HASC = require("./bots/HASC"); 
 
 // Run program...
 if(process.env.NODE_ENV === 'production'){
@@ -33,6 +34,7 @@ if(process.env.NODE_ENV === 'production'){
             logger.info(`Running program at ${today.format("llll")}`);
 
             await HFAC({ today, browser, page });
+            await HASC({ today, browser, page });
 
             await page.close();
             await browser.close();

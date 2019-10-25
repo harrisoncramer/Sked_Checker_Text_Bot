@@ -18,5 +18,23 @@ module.exports = {
             type: String,
             require: true
         }
+    }),
+    HASCSchema: mongoose.model('HASC', {
+        recordListTitle: {
+            type: String,
+            require: true
+        },
+        recordListTime: {
+            type: String,
+            require: true
+        },
+        recordListDate: {
+            type: String,
+            require: true
+        },
+        link: {
+            type: String,
+            require: true
+        }
     })
 };

@@ -1,4 +1,5 @@
 const twilio = require('twilio')
+const logger = require("../logger");
 
 module.exports = async ({ title, data }) => {
     try {
@@ -11,6 +12,8 @@ module.exports = async ({ title, data }) => {
             agg = agg.concat("\n\n");
             return agg;
         }, '');
+
+        // Deal w/ extra long messages over 1600 words....
 
         const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
         let message = await client.messages.create({
@@ -25,3 +28,4 @@ module.exports = async ({ title, data }) => {
         logger.error(err);
     }
 };
+
