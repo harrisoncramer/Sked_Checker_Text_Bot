@@ -8,7 +8,7 @@ const { asyncForEach } = require("../util");
 
 module.exports = {
     setUpPuppeteer: async () => {
-        const today = process.env.NODE_ENV === "production" ? moment() : moment("04-09-2019");
+        const today = moment();
         const headless = process.env.NODE_ENV === "production";
         const browser = await pupeteer.launch({headless, devtools: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--incognito']});
         const context = await browser.createIncognitoBrowserContext();

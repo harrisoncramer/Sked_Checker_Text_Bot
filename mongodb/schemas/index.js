@@ -35,6 +35,12 @@ module.exports = {
         link: {
             type: String,
             require: true
-        }
+        },
+    }),
+    SASCSchema: mongoose.model('SASC', {
+        link: {
+            type: String,
+            require: true
+        },
     })
 };

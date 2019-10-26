@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-module.exports = async ({pageData, dbData, comparer }) => {    
+module.exports = async ({ pageData, dbData, comparer }) => {    
     // Model.update(data);
     let dbTitles = dbData.map(x => x[comparer]);
     let existingData = [];

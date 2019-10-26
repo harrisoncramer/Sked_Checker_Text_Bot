@@ -1,63 +1,188 @@
-{"message":"Starting up bots in production at Tue, Oct 22, 2019 7:11 PM","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:12 PM","level":"info"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Checking HASC...","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:13 PM","level":"info"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:14 PM","level":"info"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
+{"level":"error","message":"Root Error in development.Execution context was destroyed, most likely because of a navigation.","stack":"Error: Execution context was destroyed, most likely because of a navigation.\n    at rewriteError (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:159:15)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SASC.js:17:33)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
+{"level":"error","message":"Root Error in development.Evaluation failed: TypeError: Cannot read property 'textContent' of undefined\n    at __puppeteer_evaluation_script__:8:47\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:4:23","stack":"Error: Evaluation failed: TypeError: Cannot read property 'textContent' of undefined\n    at __puppeteer_evaluation_script__:8:47\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:4:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SASC.js:17:33)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
+{"level":"error","message":"Root Error in development.Evaluation failed: TypeError: Cannot read property 'textContent' of undefined\n    at __puppeteer_evaluation_script__:7:47\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: TypeError: Cannot read property 'textContent' of undefined\n    at __puppeteer_evaluation_script__:7:47\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SASC.js:17:33)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Fri, Oct 25, 2019 11:04 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
+{"level":"error","message":"Root Error in development.Evaluation failed: ReferenceError: Cannot access 'tds' before initialization\n    at __puppeteer_evaluation_script__:4:25\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: ReferenceError: Cannot access 'tds' before initialization\n    at __puppeteer_evaluation_script__:4:25\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SASC.js:17:33)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Fri, Oct 25, 2019 11:06 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Checking SASC...","level":"info"}
+{"level":"error","message":"Root Error in development.Evaluation failed: ReferenceError: Cannot access 'tds' before initialization\n    at __puppeteer_evaluation_script__:4:25\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: ReferenceError: Cannot access 'tds' before initialization\n    at __puppeteer_evaluation_script__:4:25\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SASC.js:17:33)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Fri, Oct 25, 2019 11:06 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:07 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:09 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:10 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:16 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Checking HASC...","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:15 PM","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:23 PM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error","message":"Could not connect to database. failed to connect to server [localhosdfsst:27017] on first connect [MongoNetworkError: getaddrinfo ENOTFOUND localhosdfsst localhosdfsst:27017]","stack":"MongoNetworkError: failed to connect to server [localhosdfsst:27017] on first connect [MongoNetworkError: getaddrinfo ENOTFOUND localhosdfsst localhosdfsst:27017]\n    at Pool.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/mongodb/lib/core/topologies/server.js:431:11)\n    at Pool.emit (events.js:189:13)\n    at connect (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/mongodb/lib/core/connection/pool.js:580:14)\n    at makeConnection (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/mongodb/lib/core/connection/connect.js:39:11)\n    at callback (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/mongodb/lib/core/connection/connect.js:261:5)\n    at Socket.err (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/mongodb/lib/core/connection/connect.js:286:7)\n    at Object.onceWrapper (events.js:277:13)\n    at Socket.emit (events.js:189:13)\n    at emitErrorNT (internal/streams/destroy.js:82:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)\n    at process.internalTickCallback (internal/process/next_tick.js:72:19)"}
+{"message":"Checking HASC...","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Starting up bots in production at Tue, Oct 22, 2019 7:15 PM","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:16 PM","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:24 PM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"level":"error","message":"Could not navigate to page. net::ERR_NAME_NOT_RESOLVED at https://foreignsdfaffairs.house.gov/hearings","stack":"Error: net::ERR_NAME_NOT_RESOLVED at https://foreignsdfaffairs.house.gov/hearings\n    at navigate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/HFAC.js:22:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Checking HASC...","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Starting up bots in production at Tue, Oct 22, 2019 7:16 PM","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:17 PM","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:37 PM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"level":"error","message":"Root Error in development.db is not defined","stack":"ReferenceError: db is not defined\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/HFAC.js:79:5)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Fri, Oct 25, 2019 11:38 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Checking HASC...","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:18 PM","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:39 PM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Page data checked. New records: 0 || Records to change: 0","level":"info"}
+{"message":"Checking HASC...","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:19 PM","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:40 PM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"driver":true,"name":"MongoError","index":0,"code":66,"errmsg":"Performing an update on the path '_id' would modify the immutable field '_id'","level":"error"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Page data checked. New records: 0 || Records to change: 0","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC...","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Starting up bots in production at Tue, Oct 22, 2019 7:19 PM","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:20 PM","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:41 PM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Page data checked. New records: 0 || Records to change: 0","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:42 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**New records: 0 || Records to change: 0**","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:43 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:48 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"level":"error","message":"Error processing data. pageData is not defined","stack":"ReferenceError: pageData is not defined\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/HASC.js:32:61)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"level":"error","message":"Error uploading or texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/HASC.js:41:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"HASC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:49 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HASC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:50 PM","level":"info"}
+{"message":"Checking HFAC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 1 || Records to change: 0 ****","level":"info"}
+{"message":"Message sent: {\"accountSid\":\"ACa7789b43bd662f94701a92bac7eb8bbc\",\"apiVersion\":\"2010-04-01\",\"body\":\"New HFAC Meeting(s)\\n\\n10/23/19 || 10:00 AM || The Betrayal of our Syrian Kurdish Partners: How Will American Foreign Policy and Leadership Recover? || https://foreignaffairs.house.gov/hearings?ID=7CEB42E4-E0BA-46F7-95F1-4BBCD17A8C38\",\"dateCreated\":\"2019-10-26T03:50:18.000Z\",\"dateUpdated\":\"2019-10-26T03:50:18.000Z\",\"dateSent\":null,\"direction\":\"outbound-api\",\"errorCode\":null,\"errorMessage\":null,\"from\":\"+13392040928\",\"messagingServiceSid\":null,\"numMedia\":\"0\",\"numSegments\":\"2\",\"price\":null,\"priceUnit\":\"USD\",\"sid\":\"SM5e01ffa7efd347ba8d6da01b27a2563c\",\"status\":\"queued\",\"subresourceUris\":{\"media\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SM5e01ffa7efd347ba8d6da01b27a2563c/Media.json\"},\"to\":\"+16179973703\",\"uri\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SM5e01ffa7efd347ba8d6da01b27a2563c.json\"}","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
 {"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"Message sent: {\"accountSid\":\"ACa7789b43bd662f94701a92bac7eb8bbc\",\"apiVersion\":\"2010-04-01\",\"body\":\"Updated HASC Meeting(s)\\n\\n10/16/19 || Subcommittee on Intelligence and Emerging Threats and Capabilities and Subcommittee on Readiness Joint Hearing: Resiliency of Military Installations to Emerging Threats || https://armedservices.house.gov/hearings?ID=C498B4E3-200C-49C5-80EA-D9E8A0CB576C\",\"dateCreated\":\"2019-10-26T03:50:20.000Z\",\"dateUpdated\":\"2019-10-26T03:50:20.000Z\",\"dateSent\":null,\"direction\":\"outbound-api\",\"errorCode\":null,\"errorMessage\":null,\"from\":\"+13392040928\",\"messagingServiceSid\":null,\"numMedia\":\"0\",\"numSegments\":\"2\",\"price\":null,\"priceUnit\":\"USD\",\"sid\":\"SM65ba714e93f149e78b7943f0b521178f\",\"status\":\"queued\",\"subresourceUris\":{\"media\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SM65ba714e93f149e78b7943f0b521178f/Media.json\"},\"to\":\"+16179973703\",\"uri\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SM65ba714e93f149e78b7943f0b521178f.json\"}","level":"info"}
+{"message":"HASC Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Oct 22, 2019 7:21 PM","level":"info"}
+{"message":"Running program at Fri, Oct 25, 2019 11:50 PM","level":"info"}
 {"message":"Checking HFAC...","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Starting up bots in production at Thu, Oct 24, 2019 9:46 PM","level":"info"}
-{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
-{"message":"Checking HFAC...","level":"info"}
-{"level":"error","message":"Root Error in development.HASC is not defined","stack":"ReferenceError: HASC is not defined\n    at /Users/harrisoncramer/Desktop/SkedChecker/app.js:36:13"}
-{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
-{"message":"Checking HFAC...","level":"info"}
-{"message":"Checking HFAC...","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
-{"message":"Checking HFAC...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
 {"message":"Checking HASC...","level":"info"}
-{"level":"error","message":"Root Error in development.logger is not defined","stack":"ReferenceError: logger is not defined\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/texter/index.js:25:9)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
-{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
-{"message":"Checking HFAC...","level":"info"}
-{"message":"Checking HASC...","level":"info"}
-{"message":"Running program at Tue, Apr 9, 2019 12:00 AM","level":"info"}
-{"message":"Checking HFAC...","level":"info"}
-{"message":"Checking HASC...","level":"info"}
-{"status":400,"message":"The concatenated message body exceeds the 1600 character limit.","code":21617,"moreInfo":"https://www.twilio.com/docs/errors/21617","level":"error"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HASC Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
