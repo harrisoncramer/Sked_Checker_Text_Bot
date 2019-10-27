@@ -24,7 +24,7 @@ module.exports = winston.createLogger({
 
                     const message = info[Symbol.for('splat')] ? info.message + ' - ' + info[Symbol.for('splat')][0] : info.message;
 
-                    return `[${moment(info.timestamp).format("llll")}][PID=${process.pid}][${info.level}]: ${message}`;
+                    return `[${moment(info.timestamp).format("llll")}][PID=${process.pid}][${info.level}]: ${message} –– ${moment(info.timestamp).format("llll")}`;
                 })
             )
     }),

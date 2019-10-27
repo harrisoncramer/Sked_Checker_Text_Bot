@@ -1,7 +1,7 @@
 const { asyncForEach } = require("../util");
 const checkIfDatumShouldUpdate = require("./sub/checkIfDatumShouldUpdate");
 
-module.exports = async ({ existingData, model, comparer }) => {
+module.exports = async ({ existingData, model, comparer, params }) => {
     let res = [];
     await asyncForEach(existingData, async (datum) => {
         
@@ -15,7 +15,7 @@ module.exports = async ({ existingData, model, comparer }) => {
             }
         ]);
 
-        let shouldUpdate = checkIfDatumShouldUpdate({ dbDatum: item[0], pageDatum: datum, params: ['recordListTime', 'recordListDate' ]}); // Check to see if times have changed...
+        let shouldUpdate = checkIfDatumShouldUpdate({ dbDatum: item[0], pageDatum: datum, params }); // Check to see if times have changed...
         if(shouldUpdate){
             res.push({ new: datum, old: item[0] });
         };

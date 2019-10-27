@@ -36,13 +36,13 @@ if(process.env.NODE_ENV === 'production'){
 
             await HFAC({ today, browser, page });
             await HASC({ today, browser, page });
-            // await SASC({ today, browser, page });
+            await SASC({ today, browser, page });
 
             await page.close();
             await browser.close();
             logger.info(`Chrome Closed Bots.`);
         } catch (err){
-            logger.error('Root Error in development.', err);
+            logger.error('Root Error in development. ', err);
         }
     })();
 };

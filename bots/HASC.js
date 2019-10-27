@@ -10,7 +10,7 @@ const logger = require("../logger");
 
 module.exports = async ({ page, browser, today }) => {
 
-    logger.info("Checking HASC...");
+    logger.info(`Checking HASC at ${today.format("llll")}...`);
 
     try {
         var db = await mongoose.connect('mongodb://localhost:27017/resources', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -53,7 +53,7 @@ module.exports = async ({ page, browser, today }) => {
     try {
         var dbData = await getData(HASCSchema);
         var { newData, existingData } = await sortPageData({ pageData, dbData, comparer: 'recordListTitle' });
-        var dataToChange = await getChangedData({ existingData, model: HASCSchema, comparer: 'recordListTitle' });    
+        var dataToChange = await getChangedData({ existingData, model: HASCSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'] });    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch (err) {
         logger.error(`Error processing data. `, err);
@@ -63,14 +63,16 @@ module.exports = async ({ page, browser, today }) => {
     try {
         if(newData.length > 0 ){
             await uploadNewData(newData, HASCSchema);
+            logger.info(`${newData.length} records uploaded successfully.`)
             let myMessage = await sendText({ title: 'New HASC Meeting(s)', data: newData});
-            logger.info(`Message sent: ${JSON.stringify(myMessage)}`);
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
         if(dataToChange.length > 0){
             await modifyData({ dataToChange, model: HASCSchema });
+            logger.info(`${newData.length} records modified successfully.`)
             let dataToText = dataToChange.map((datum) => datum.new);
             let myMessage = await sendText({ title: 'Updated HASC Meeting(s)', data: dataToText});
-            logger.info(`Message sent: ${JSON.stringify(myMessage)}`);
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
     } catch (err) {
         logger.error(`Error uploading or texting data. `, err);

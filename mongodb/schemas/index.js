@@ -42,5 +42,17 @@ module.exports = {
             type: String,
             require: true
         },
+        date: {
+            type: String,
+            require: true
+        },
+        title: {
+            type: String,
+            require: true
+        },
+        location: {
+            type: String,
+            require: true
+        },        
     })
 };
