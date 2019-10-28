@@ -1,7 +1,8 @@
 const { asyncForEach } = require("../util");
 const checkIfDatumShouldUpdate = require("./sub/checkIfDatumShouldUpdate");
+const checkIfDatumShouldUpdateDeep = require("./sub/checkIfDatumShouldUpdateDeep");
 
-module.exports = async ({ existingData, model, comparer, params }) => {
+module.exports = async ({ existingData, model, comparer, params }, deep) => {
     let res = [];
     await asyncForEach(existingData, async (datum) => {
         
@@ -15,7 +16,11 @@ module.exports = async ({ existingData, model, comparer, params }) => {
             }
         ]);
 
-        let shouldUpdate = checkIfDatumShouldUpdate({ dbDatum: item[0], pageDatum: datum, params }); // Check to see if times have changed...
+        if(deep && item[0][deep]){ // If deep argument passed, and matching dbItem contains array...
+            var shouldUpdate = checkIfDatumShouldUpdateDeep({ dbDatum: item[0], pageDatum: datum, params, deep });
+        } else {
+            var shouldUpdate = checkIfDatumShouldUpdate({ dbDatum: item[0], pageDatum: datum, params }); // Check to see if times have changed...
+        }
         if(shouldUpdate){
             res.push({ new: datum, old: item[0] });
         };

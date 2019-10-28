@@ -367,3 +367,266 @@
 {"message":"Message sent: {\"accountSid\":\"ACa7789b43bd662f94701a92bac7eb8bbc\",\"apiVersion\":\"2010-04-01\",\"body\":\"Updated HASC Meeting(s)\\n\\nhttps://www.armed-services.senate.gov/hearings/19-05-20-schedule-for-armed-services-subcommittee-markups_of-the-national-defense-authorization-act-for-fiscal-year-2020 || OPEN/CLOSED:SCHEDULE FOR ARMED SERVICES SUBCOMMITTEE MARKUPS  OF THE NATIONAL DEFENSE AUTHORIZATION ACT FOR FISCAL YEAR 2020 || No location. || 05/20/19 04:00PM\",\"dateCreated\":\"2019-10-27T17:39:36.000Z\",\"dateUpdated\":\"2019-10-27T17:39:36.000Z\",\"dateSent\":null,\"direction\":\"outbound-api\",\"errorCode\":null,\"errorMessage\":null,\"from\":\"+13392040928\",\"messagingServiceSid\":null,\"numMedia\":\"0\",\"numSegments\":\"3\",\"price\":null,\"priceUnit\":\"USD\",\"sid\":\"SMffe82a55602543938921d5a37be42a52\",\"status\":\"queued\",\"subresourceUris\":{\"media\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SMffe82a55602543938921d5a37be42a52/Media.json\"},\"to\":\"+16179973703\",\"uri\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SMffe82a55602543938921d5a37be42a52.json\"}","level":"info"}
 {"message":"SASC Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 2:02 PM","level":"info"}
+{"message":"Checking HFAC at Sun, Oct 27, 2019 2:02 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC at Sun, Oct 27, 2019 2:02 PM...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HASC Done.","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 2:02 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 2:02 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 2:37 PM","level":"info"}
+{"message":"Checking HFAC at Sun, Oct 27, 2019 2:37 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC at Sun, Oct 27, 2019 2:37 PM...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HASC Done.","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 2:37 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 2:37 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 2 || Records to change: 0 ****","level":"info"}
+{"message":"2 records uploaded successfully.","level":"info"}
+{"message":"Message sent: {\"accountSid\":\"ACa7789b43bd662f94701a92bac7eb8bbc\",\"apiVersion\":\"2010-04-01\",\"body\":\"New SFRC Meeting(s)\\n\\nhttps://www.foreign.senate.gov/hearings/nominations-102919 || Nominations || SD-419 || October 29, 2019 @ 2:30 PM\\n\\nhttps://www.foreign.senate.gov/hearings/nominations-103119 || Nominations || SD-419 || October 31, 2019 @ 10:00 AM\",\"dateCreated\":\"2019-10-27T18:37:26.000Z\",\"dateUpdated\":\"2019-10-27T18:37:26.000Z\",\"dateSent\":null,\"direction\":\"outbound-api\",\"errorCode\":null,\"errorMessage\":null,\"from\":\"+13392040928\",\"messagingServiceSid\":null,\"numMedia\":\"0\",\"numSegments\":\"2\",\"price\":null,\"priceUnit\":\"USD\",\"sid\":\"SM5c42a519f1a548a2b7f4fb2baae0bc2b\",\"status\":\"queued\",\"subresourceUris\":{\"media\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SM5c42a519f1a548a2b7f4fb2baae0bc2b/Media.json\"},\"to\":\"+16179973703\",\"uri\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SM5c42a519f1a548a2b7f4fb2baae0bc2b.json\"}","level":"info"}
+{"message":"SFRC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 2:38 PM","level":"info"}
+{"message":"Checking HFAC at Sun, Oct 27, 2019 2:38 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC at Sun, Oct 27, 2019 2:38 PM...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HASC Done.","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 2:38 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 2:38 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"0 records modified successfully.","level":"info"}
+{"message":"Message sent: {\"accountSid\":\"ACa7789b43bd662f94701a92bac7eb8bbc\",\"apiVersion\":\"2010-04-01\",\"body\":\"Updated SFRC Meeting(s)\\n\\nhttps://www.foreign.senate.gov/hearings/nominations-103119 || Nominations || SD-419 || October 31, 2019 @ 10:00 AM\",\"dateCreated\":\"2019-10-27T18:40:31.000Z\",\"dateUpdated\":\"2019-10-27T18:40:31.000Z\",\"dateSent\":null,\"direction\":\"outbound-api\",\"errorCode\":null,\"errorMessage\":null,\"from\":\"+13392040928\",\"messagingServiceSid\":null,\"numMedia\":\"0\",\"numSegments\":\"1\",\"price\":null,\"priceUnit\":\"USD\",\"sid\":\"SMfeb9993f517f4745b83e7b95cb1b65a5\",\"status\":\"queued\",\"subresourceUris\":{\"media\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SMfeb9993f517f4745b83e7b95cb1b65a5/Media.json\"},\"to\":\"+16179973703\",\"uri\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SMfeb9993f517f4745b83e7b95cb1b65a5.json\"}","level":"info"}
+{"message":"SFRC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 3:06 PM","level":"info"}
+{"message":"Checking HFAC at Sun, Oct 27, 2019 3:06 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC at Sun, Oct 27, 2019 3:06 PM...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HASC Done.","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 3:06 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 3:06 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"level":"error","message":"Error checking SFRC nominationsEvaluation failed: TypeError: document.querySelectorAll(...).map is not a function\n    at __puppeteer_evaluation_script__:3:69","stack":"Error: Evaluation failed: TypeError: document.querySelectorAll(...).map is not a function\n    at __puppeteer_evaluation_script__:3:69\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at asyncForEach (/Users/harrisoncramer/Desktop/SkedChecker/bots/SFRC.js:57:39)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 3:08 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 3:08 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 3:13 PM","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 3:13 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 27 || Records to change: 0 ****","level":"info"}
+{"message":"27 records uploaded successfully.","level":"info"}
+{"message":"Message sent: true","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 3:13 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 3:15 PM","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 3:15 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 27 || Records to change: 0 ****","level":"info"}
+{"message":"27 records uploaded successfully.","level":"info"}
+{"message":"Message sent: true","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 3:15 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: item.querySelector(...).replace is not a function\n    at __puppeteer_evaluation_script__:7:106\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:4:28","stack":"Error: Evaluation failed: TypeError: item.querySelector(...).replace is not a function\n    at __puppeteer_evaluation_script__:7:106\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:4:28\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SFRC.js:31:35)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 3:18 PM","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 3:18 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 3:18 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: item.querySelector(...).replace is not a function\n    at __puppeteer_evaluation_script__:7:106\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:4:28","stack":"Error: Evaluation failed: TypeError: item.querySelector(...).replace is not a function\n    at __puppeteer_evaluation_script__:7:106\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:4:28\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SFRC.js:31:35)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 3:19 PM","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 3:19 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 3:19 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: item.querySelector(...).replace is not a function\n    at __puppeteer_evaluation_script__:7:106\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:4:28","stack":"Error: Evaluation failed: TypeError: item.querySelector(...).replace is not a function\n    at __puppeteer_evaluation_script__:7:106\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:4:28\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SFRC.js:31:35)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 3:19 PM","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 3:19 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 3:19 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: item.querySelector(...).replace is not a function\n    at __puppeteer_evaluation_script__:6:106\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:28","stack":"Error: Evaluation failed: TypeError: item.querySelector(...).replace is not a function\n    at __puppeteer_evaluation_script__:6:106\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:28\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Desktop/SkedChecker/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SFRC.js:31:35)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 3:20 PM","level":"info"}
+{"message":"Checking SASC at Sun, Oct 27, 2019 3:20 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 3:20 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 6:41 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 6:41 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"level":"error","message":"Error processing data. datum is not defined","stack":"ReferenceError: datum is not defined\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SFRC.js:71:130)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"level":"error","message":"Error uploading or texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Desktop/SkedChecker/bots/SFRC.js:80:20)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Sun, Oct 27, 2019 6:44 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 6:44 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 6:45 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 6:45 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 6:54 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 6:54 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 6:55 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 6:55 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 7:15 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 7:15 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 2 || Records to change: 0 ****","level":"info"}
+{"message":"2 records uploaded successfully.","level":"info"}
+{"message":"Message sent: true","level":"info"}
+{"message":"SFRC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 7:16 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 7:16 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 2 || Records to change: 0 ****","level":"info"}
+{"message":"2 records uploaded successfully.","level":"info"}
+{"message":"Message sent: true","level":"info"}
+{"message":"SFRC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 7:17 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 7:17 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 7:55 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 7:55 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SFRC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 7:59 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 7:59 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 8:02 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 8:02 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
+{"message":{"n":1,"nModified":1,"ok":1},"level":"info"}
+{"message":"0 records modified successfully.","level":"info"}
+{"message":"Message sent: true","level":"info"}
+{"message":"SFRC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Oct 27, 2019 8:03 PM","level":"info"}
+{"message":"Checking SFRC at Sun, Oct 27, 2019 8:03 PM","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}

@@ -1,5 +1,5 @@
 const getData = require("../mongodb/getData");
-const sortPageData = require("../mongodb/sortPageData");
+const { shallowSort } = require("../mongodb/sortPageData");
 const uploadNewData = require("../mongodb/uploadNewData");
 const getChangedData = require("../mongodb/getChangedData");
 const modifyData = require("../mongodb/modifyData");
@@ -52,7 +52,7 @@ module.exports = async ({ page, browser, today }) => {
 
     try {
         var dbData = await getData(HASCSchema);
-        var { newData, existingData } = await sortPageData({ pageData, dbData, comparer: 'recordListTitle' });
+        var { newData, existingData } = await shallowSort({ pageData, dbData, comparer: 'recordListTitle' });
         var dataToChange = await getChangedData({ existingData, model: HASCSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'] });    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch (err) {
@@ -78,7 +78,11 @@ module.exports = async ({ page, browser, today }) => {
         logger.error(`Error uploading or texting data. `, err);
     }
     
-    await db.disconnect();
-    logger.info("HASC Done.");
+    try {
+        await db.disconnect();
+        logger.info("HASC Done.")
+    } catch (err) {
+        logger.info("Error disconnecting: ", err);
+    }
 
 };

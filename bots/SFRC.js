@@ -4,12 +4,13 @@ const uploadNewData = require("../mongodb/uploadNewData");
 const getChangedData = require("../mongodb/getChangedData");
 const modifyData = require("../mongodb/modifyData");
 const sendText = require("../texter");
-const { SASCSchema } = require("../mongodb/schemas");
+const { SFRCSchema } = require("../mongodb/schemas");
 const mongoose = require("mongoose");
 const logger = require("../logger");
+const { asyncForEach } = require("../util");
 
 module.exports = async ({ page, browser, today }) => {
-    logger.info(`Checking SASC at ${today.format("llll")}`);
+    logger.info(`Checking SFRC at ${today.format("llll")}`);
 
     try {
         var db = await mongoose.connect('mongodb://localhost:27017/resources', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -19,7 +20,7 @@ module.exports = async ({ page, browser, today }) => {
     };
 
     try {
-        await page.goto("https://www.armed-services.senate.gov/hearings", { waitUntil: 'networkidle2' }); // Ensure no network requests are happening (in last 500ms).
+        await page.goto("https://www.foreign.senate.gov/hearings", { waitUntil: 'networkidle2' }); // Ensure no network requests are happening (in last 500ms).
         logger.info("Navigated to page.");
     } catch (err) {
         return logger.error(`Could not navigate to page. `, err);
@@ -28,28 +29,47 @@ module.exports = async ({ page, browser, today }) => {
 
     try {
         var pageData = await page.evaluate(() => {
-            let trs = Array.from(document.querySelectorAll("table tbody tr.vevent"));
-            let res = trs.reduce((agg, item, i) => {
-                const tds = Array.from(item.children);
-                let link = tds[0].children[0] ? tds[0].children[0].href : 'No Link.';
-                let title = tds[0].children[0].textContent.replace(/\s\s+/g, ' ').trim();
-                let location = tds[1].children[0] ? tds[1].children[0].textContent.trim() : 'No location.'; 
-                let date = tds[2].children[0] ? tds[2].children[0].textContent.trim() : 'No date.';
+            let divs = Array.from(document.querySelectorAll("div.table-holder > div.text-center"));
+            let res = divs.reduce((agg, item, i) => {
+                let link = item.children[0] ? item.children[0].href : 'No Link.';
+                let title = item.querySelector("h2.title").textContent;
+                let location = item.querySelector("span.location") ? item.querySelector("span.location").textContent.replace(/\s\s+/g, ' ').trim() : 'No location.';
+                let date = item.querySelector("span.date") ? item.querySelector("span.date").textContent.replace(/\s\s+/g, ' ').trim() : 'No date.';
                 agg[i] = { link, title, location, date };
                 return agg;
-            }, Array(trs.length).fill().map(_ => ({})));
+            }, Array(divs.length).fill().map(_ => ({})));
 
             return res;
         });
         logger.info("Page data defined.");  
     } catch(err){
         return logger.error(`Error parsing page data. `, err);
+    };
+
+    try {
+        await asyncForEach(pageData, async (datum) => {
+            if(datum.title !== 'Nominations'){
+                return;
+            }
+
+            await page.goto(datum.link, { waitUntil: 'networkidle2' });
+            let nominees = await page.evaluate(() => {
+                return Array.from(document.querySelectorAll("span.fn"))
+                    .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()));
+            });
+            
+            datum.nominees = nominees;
+            datum.title = datum.title.concat(`: ${datum.date}`);
+
+        });
+    } catch (err){
+        return logger.error(`Error checking SFRC nominees. `, err);
     }
 
     try {
-        var dbData = await getData(SASCSchema);
+        var dbData = await getData(SFRCSchema);
         var { newData, existingData } = await shallowSort({ pageData, dbData, comparer: 'title' });
-        var dataToChange = await getChangedData({ existingData, model: SASCSchema, comparer: 'title', params: ['location', 'date'] });    
+        var dataToChange = await getChangedData({ existingData, model: SFRCSchema, comparer: 'title', params: ['location', 'date', 'nominees']}, 'nominees');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch (err) {
         logger.error(`Error processing data. `, err);
@@ -58,16 +78,16 @@ module.exports = async ({ page, browser, today }) => {
 
     try {
         if(newData.length > 0 ){
-            await uploadNewData(newData, SASCSchema);
+            await uploadNewData(newData, SFRCSchema);
             logger.info(`${newData.length} records uploaded successfully.`)
-            const myMessage = await sendText({ title: 'New SASC Meeting(s)', data: newData});
+            const myMessage = await sendText({ title: 'New SFRC Meeting(s)', data: newData});
             logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
         if(dataToChange.length > 0){
-            await modifyData({ dataToChange, model: SASCSchema });
+            await modifyData({ dataToChange, model: SFRCSchema });
             logger.info(`${newData.length} records modified successfully.`)
             let dataToText = dataToChange.map((datum) => datum.new);
-            const myMessage = await sendText({ title: 'Updated SASC Meeting(s)', data: dataToText});
+            const myMessage = await sendText({ title: 'Updated SFRC Meeting(s)', data: dataToText});
             logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
     } catch (err) {
@@ -76,7 +96,7 @@ module.exports = async ({ page, browser, today }) => {
     
     try {
         await db.disconnect();
-        logger.info("SASC Done.")
+        logger.info("SFRC Done.")
     } catch (err) {
         logger.info("Error disconnecting: ", err);
     }
