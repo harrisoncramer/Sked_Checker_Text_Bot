@@ -17,6 +17,10 @@ module.exports = {
         link: {
             type: String,
             require: true
+        },
+        witnesses: {
+            type: Array,
+            require: false
         }
     }),
     HASCSchema: mongoose.model('HASC', {
@@ -54,6 +58,10 @@ module.exports = {
             type: String,
             require: true
         },        
+        witnesses: {
+            type: Array,
+            require: false
+        }
     }),
     SFRCSchema: mongoose.model('SFRC', {
         link: {
@@ -72,9 +80,9 @@ module.exports = {
             type: String,
             require: true
         },
-        nominees: {
+        witnesses: {
             type: Array,
             require: false
-        }        
+        }
     })
 };

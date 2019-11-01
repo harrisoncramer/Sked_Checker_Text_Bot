@@ -36,9 +36,9 @@ if(process.env.NODE_ENV === 'production'){
             logger.info(`Running program at ${today.format("llll")}`);
 
             // await HFAC({ today, browser, page });
-            // await HASC({ today, browser, page });
+             await HASC({ today, browser, page });
             // await SASC({ today, browser, page });
-            await SFRC({ today, browser, page });
+            // await SFRC({ today, browser, page });
 
             await page.close();
             await browser.close();

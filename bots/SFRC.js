@@ -48,28 +48,24 @@ module.exports = async ({ page, browser, today }) => {
 
     try {
         await asyncForEach(pageData, async (datum) => {
-            if(datum.title !== 'Nominations'){
-                return;
-            }
-
             await page.goto(datum.link, { waitUntil: 'networkidle2' });
-            let nominees = await page.evaluate(() => {
+            let witnesses = await page.evaluate(() => {
                 return Array.from(document.querySelectorAll("span.fn"))
                     .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()));
             });
             
-            datum.nominees = nominees;
+            datum.witnesses = witnesses;
             datum.title = datum.title.concat(`: ${datum.date}`);
 
         });
     } catch (err){
-        return logger.error(`Error checking SFRC nominees. `, err);
+        return logger.error(`Error checking SFRC witnesses. `, err);
     }
 
     try {
         var dbData = await getData(SFRCSchema);
         var { newData, existingData } = await shallowSort({ pageData, dbData, comparer: 'title' });
-        var dataToChange = await getChangedData({ existingData, model: SFRCSchema, comparer: 'title', params: ['location', 'date', 'nominees']}, 'nominees');    
+        var dataToChange = await getChangedData({ existingData, model: SFRCSchema, comparer: 'title', params: ['location', 'date']}, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch (err) {
         logger.error(`Error processing data. `, err);

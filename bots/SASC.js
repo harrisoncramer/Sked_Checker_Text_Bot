@@ -7,6 +7,7 @@ const sendText = require("../texter");
 const { SASCSchema } = require("../mongodb/schemas");
 const mongoose = require("mongoose");
 const logger = require("../logger");
+const { asyncForEach } = require("../util");
 
 module.exports = async ({ page, browser, today }) => {
     logger.info(`Checking SASC at ${today.format("llll")}`);
@@ -47,9 +48,24 @@ module.exports = async ({ page, browser, today }) => {
     }
 
     try {
+        await asyncForEach(pageData, async (datum) => {
+
+            await page.goto(datum.link, { waitUntil: 'networkidle2' });
+            let witnesses = await page.evaluate(() => {
+                return Array.from(document.querySelectorAll("li.vcard span.fn"))
+                    .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()));
+            });
+            
+            datum.witnesses = witnesses;
+        });
+    } catch (err){
+        return logger.error(`Error fetching SASC witnesses. `, err);
+    }
+
+    try {
         var dbData = await getData(SASCSchema);
         var { newData, existingData } = await shallowSort({ pageData, dbData, comparer: 'title' });
-        var dataToChange = await getChangedData({ existingData, model: SASCSchema, comparer: 'title', params: ['location', 'date'] });    
+        var dataToChange = await getChangedData({ existingData, model: SASCSchema, comparer: 'title', params: ['location', 'date']}, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch (err) {
         logger.error(`Error processing data. `, err);

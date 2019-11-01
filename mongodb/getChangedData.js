@@ -21,7 +21,7 @@ module.exports = async ({ existingData, model, comparer, params }, deep) => {
         } else {
             var shouldUpdate = checkIfDatumShouldUpdate({ dbDatum: item[0], pageDatum: datum, params }); // Check to see if times have changed...
         }
-        if(shouldUpdate){
+        if(shouldUpdate){ // If should update is either 1 or 2...
             res.push({ new: datum, old: item[0] });
         };
     });
