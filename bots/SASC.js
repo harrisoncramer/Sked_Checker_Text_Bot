@@ -1,13 +1,16 @@
+const { SASCSchema } = require("../mongodb/schemas");
+const { asyncForEach } = require("../util");
+
 const getData = require("../mongodb/getData");
-const { shallowSort } = require("../mongodb/sortPageData");
 const uploadNewData = require("../mongodb/uploadNewData");
 const getChangedData = require("../mongodb/getChangedData");
 const modifyData = require("../mongodb/modifyData");
+
+const sortPageData = require("./util/sortPageData");
+
 const sendText = require("../texter");
-const { SASCSchema } = require("../mongodb/schemas");
 const mongoose = require("mongoose");
 const logger = require("../logger");
-const { asyncForEach } = require("../util");
 
 module.exports = async ({ page, browser, today }) => {
     logger.info(`Checking SASC at ${today.format("llll")}`);
@@ -64,7 +67,7 @@ module.exports = async ({ page, browser, today }) => {
 
     try {
         var dbData = await getData(SASCSchema);
-        var { newData, existingData } = await shallowSort({ pageData, dbData, comparer: 'title' });
+        var { newData, existingData } = await sortPageData({ pageData, dbData, comparer: 'title' });
         var dataToChange = await getChangedData({ existingData, model: SASCSchema, comparer: 'title', params: ['location', 'date']}, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch (err) {
@@ -81,7 +84,7 @@ module.exports = async ({ page, browser, today }) => {
         };
         if(dataToChange.length > 0){
             await modifyData({ dataToChange, model: SASCSchema });
-            logger.info(`${newData.length} records modified successfully.`)
+            logger.info(`${dataToChange.length} records modified successfully.`)
             let dataToText = dataToChange.map((datum) => datum.new);
             const myMessage = await sendText({ title: 'Updated SASC Meeting(s)', data: dataToText});
             logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);

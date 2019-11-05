@@ -1,10 +1,14 @@
+const { HFACSchema } = require("../mongodb/schemas");
+const { asyncForEach } = require("../util");
+
 const getData = require("../mongodb/getData");
-const { shallowSort } = require("../mongodb/sortPageData");
 const uploadNewData = require("../mongodb/uploadNewData");
 const getChangedData = require("../mongodb/getChangedData");
 const modifyData = require("../mongodb/modifyData");
+
+const sortPageData = require("./util/sortPageData");
+
 const sendText = require("../texter");
-const { HFACSchema } = require("../mongodb/schemas");
 const mongoose = require("mongoose");
 const logger = require("../logger");
 
@@ -45,14 +49,31 @@ module.exports = async ({ page, browser, today }) => {
             return res;
         });
         logger.info("Page data defined.");
-    } catch(err){
+    } catch(err){ q
         return logger.error(`Error parsing page data. `, err);
+    };
+
+
+    try {
+        await asyncForEach(pageData, async (datum) => {
+
+            await page.goto(datum.link, { waitUntil: 'networkidle2' });
+            let witnesses = await page.evaluate(() => {
+                return Array.from(document.querySelectorAll("div.witnesses > strong"))
+                    .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()))
+                    .filter(x => x !== "");
+            });
+            
+            datum.witnesses = witnesses;
+        });
+    } catch (err){
+        return logger.error(`Error fetching SASC witnesses. `, err);
     }
     
     try {
         var dbData = await getData(HFACSchema);
-        var { newData, existingData } = await shallowSort({pageData, dbData, comparer: 'recordListTitle' });
-        var dataToChange = await getChangedData({ existingData, model: HFACSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'] });    
+        var { newData, existingData } = await sortPageData({pageData, dbData, comparer: 'recordListTitle' });
+        var dataToChange = await getChangedData({ existingData, model: HFACSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'] }, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch (err) {
         logger.error(`Error processing data. `, err);
@@ -67,7 +88,7 @@ module.exports = async ({ page, browser, today }) => {
         };
         if(dataToChange.length > 0){
             await modifyData({ dataToChange, model: HFACSchema });
-            logger.info(`${newData.length} records modified successfully.`)
+            logger.info(`${dataToChange.length} records modified successfully.`)
             let dataToText = dataToChange.map((datum) => datum.new);
             let myMessage = await sendText({ title: 'Updated HFAC Meeting(s)', data: dataToText});
             logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);

@@ -16,11 +16,11 @@ module.exports = async ({ title, data }) => {
         // Deal w/ extra long messages over 1600 words....
 
         const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
-        let message = await client.messages.create({
+        let message = process.env.NODE_ENV === 'production' ? await client.messages.create({
             body: title.concat("\n\n").concat(body),
             from: process.env.TWILIO_FROM,
             to: process.env.TWILIO_TO
-       });
+       }) : false;
 
        return message;
 
