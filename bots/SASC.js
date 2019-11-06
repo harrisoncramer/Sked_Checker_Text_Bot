@@ -29,7 +29,6 @@ module.exports = async ({ page, browser, today }) => {
         return logger.error(`Could not navigate to page. `, err);
     };
 
-
     try {
         var pageData = await page.evaluate(() => {
             let trs = Array.from(document.querySelectorAll("table tbody tr.vevent"));
@@ -61,16 +60,16 @@ module.exports = async ({ page, browser, today }) => {
             
             datum.witnesses = witnesses;
         });
-    } catch (err){
+    } catch(err){
         return logger.error(`Error fetching SASC witnesses. `, err);
     }
 
     try {
         var dbData = await getData(SASCSchema);
         var { newData, existingData } = await sortPageData({ pageData, dbData, comparer: 'title' });
-        var dataToChange = await getChangedData({ existingData, model: SASCSchema, comparer: 'title', params: ['location', 'date']}, 'witnesses');    
+        var { dataToChange, dataToText } = await getChangedData({ existingData, model: SASCSchema, comparer: 'title', params: ['location', 'date']}, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
-    } catch (err) {
+    } catch(err) {
         logger.error(`Error processing data. `, err);
     };
 
@@ -79,24 +78,33 @@ module.exports = async ({ page, browser, today }) => {
         if(newData.length > 0 ){
             await uploadNewData(newData, SASCSchema);
             logger.info(`${newData.length} records uploaded successfully.`)
-            const myMessage = await sendText({ title: 'New SASC Meeting(s)', data: newData});
-            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
         if(dataToChange.length > 0){
             await modifyData({ dataToChange, model: SASCSchema });
             logger.info(`${dataToChange.length} records modified successfully.`)
-            let dataToText = dataToChange.map((datum) => datum.new);
-            const myMessage = await sendText({ title: 'Updated SASC Meeting(s)', data: dataToText});
-            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
     } catch (err) {
-        logger.error(`Error uploading or texting data. `, err);
+        logger.error(`Error uploading data. `, err);
     }
-    
+
+    try {
+        if(newData.length > 0 ){
+            let myMessage = await sendText({ title: 'New SASC Meeting(s)', data: newData});
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent, running in development.'}`);
+        };
+        if(dataToChange.length > 0){
+            let myMessage = await sendText({ title: 'Updated SASC Meeting(s)', data: dataToText});
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent, running in development.'}`);
+        };
+    } catch(err){
+        logger.error(`Error texting data. `, err);
+    };
+        
     try {
         await db.disconnect();
-        logger.info("SASC Done.")
+        logger.info("SASC Done.");
     } catch (err) {
         logger.info("Error disconnecting: ", err);
     }
+
 };

@@ -67,6 +67,28 @@ module.exports = {
             require: true
         }
     }),
+    SVACSchema: mongoose.model('SVAC', {
+        link: {
+            type: String,
+            require: true
+        },
+        date: {
+            type: String,
+            require: true
+        },
+        title: {
+            type: String,
+            require: true
+        },
+        location: {
+            type: String,
+            require: true
+        },        
+        witnesses: {
+            type: Array,
+            require: true
+        }
+    }),
     SFRCSchema: mongoose.model('SFRC', {
         link: {
             type: String,

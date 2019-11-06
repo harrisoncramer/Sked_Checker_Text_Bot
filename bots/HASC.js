@@ -73,7 +73,7 @@ module.exports = async ({ page, browser, today }) => {
     try {
         var dbData = await getData(HASCSchema);
         var { newData, existingData } = await sortPageData({ pageData, dbData, comparer: 'recordListTitle' });
-        var dataToChange = await getChangedData({ existingData, model: HASCSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate']}, 'witnesses');    
+        var { dataToChange, dataToText } = await getChangedData({ existingData, model: HASCSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate']}, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch(err) {
         logger.error(`Error processing data. `, err);
@@ -95,12 +95,11 @@ module.exports = async ({ page, browser, today }) => {
     try {
         if(newData.length > 0 ){
             let myMessage = await sendText({ title: 'New HASC Meeting(s)', data: newData});
-            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent, running in development.'}`);
         };
         if(dataToChange.length > 0){
-            let dataToText = dataToChange.map((datum) => ({ ...datum.new, changes: datum.changes, deepChanges: datum.deepChanges }));
             let myMessage = await sendText({ title: 'Updated HASC Meeting(s)', data: dataToText});
-            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent, running in development.'}`);
         };
     } catch(err){
         logger.error(`Error texting data. `, err);

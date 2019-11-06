@@ -49,7 +49,7 @@ module.exports = async ({ page, browser, today }) => {
             return res;
         });
         logger.info("Page data defined.");
-    } catch(err){ q
+    } catch(err){
         return logger.error(`Error parsing page data. `, err);
     };
 
@@ -67,13 +67,13 @@ module.exports = async ({ page, browser, today }) => {
             datum.witnesses = witnesses;
         });
     } catch (err){
-        return logger.error(`Error fetching SASC witnesses. `, err);
+        return logger.error(`Error fetching HFAC witnesses. `, err);
     }
     
     try {
         var dbData = await getData(HFACSchema);
         var { newData, existingData } = await sortPageData({pageData, dbData, comparer: 'recordListTitle' });
-        var dataToChange = await getChangedData({ existingData, model: HFACSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'] }, 'witnesses');    
+        var { dataToChange, dataToText } = await getChangedData({ existingData, model: HFACSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'] }, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
     } catch (err) {
         logger.error(`Error processing data. `, err);
@@ -83,20 +83,28 @@ module.exports = async ({ page, browser, today }) => {
         if(newData.length > 0 ){
             await uploadNewData(newData, HFACSchema);
             logger.info(`${newData.length} records uploaded successfully.`)
-            let myMessage = await sendText({ title: 'New HFAC Meeting(s)', data: newData});
-            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
         if(dataToChange.length > 0){
             await modifyData({ dataToChange, model: HFACSchema });
             logger.info(`${dataToChange.length} records modified successfully.`)
-            let dataToText = dataToChange.map((datum) => datum.new);
-            let myMessage = await sendText({ title: 'Updated HFAC Meeting(s)', data: dataToText});
-            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
     } catch (err) {
-        logger.error(`Error uploading or texting data. `, err);
+        logger.error(`Error uploading data. `, err);
     }
-    
+
+    try {
+        if(newData.length > 0 ){
+            let myMessage = await sendText({ title: 'New HFAC Meeting(s)', data: newData});
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent, running in development.'}`);
+        };
+        if(dataToChange.length > 0){
+            let myMessage = await sendText({ title: 'Updated HFAC Meeting(s)', data: dataToText});
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent, running in development.'}`);
+        };
+    } catch(err){
+        logger.error(`Error texting data. `, err);
+    };
+        
     try {
         await db.disconnect();
         logger.info("HFAC Done.")

@@ -1,6 +1,6 @@
 const { asyncForEach } = require("../util");
 
-const checkIfDatumShouldUpdateShallow = ({ params, dbDatum, pageDatum, deep }) => {
+const checkIfDatumShouldUpdateShallow = ({ params, dbDatum, pageDatum, deep }) => { 
     let normalParams = params.filter(p => p !== deep);
     let shallowChanges = normalParams.filter(param => pageDatum[param] !== dbDatum[param])
     if(shallowChanges.length > 0){
@@ -13,14 +13,14 @@ const checkIfDatumShouldUpdateDeep = ({ dbDatum, pageDatum, deep }) => {
     let newDeepItems = pageDatum[deep].filter(x => !dbDatum[deep].includes(x)); // Return all pageData that isn't included in the dbData.
     let deletedDeepItems = dbDatum[deep].filter(x => !pageDatum[deep].includes(x)); // Return all dbData that isn't included in the pageData.
     if(newDeepItems.concat(deletedDeepItems).length > 0){ // If any changes...
-        var deepChanges = newDeepItems.reduce((agg, x) => { 
-                agg = agg.concat(`- ${x}\n`);
+        var deepChanges = newDeepItems.reduce((agg, x, i) => { 
+                !!i ? agg = agg.concat(`${x}, `) : agg.concat(`${x} || `);
                 return newDeepItems.length > 0 ? agg : '';
-            }, 'Added:\n')
-            .concat(deletedDeepItems.reduce((agg, x) => { 
-                agg = agg.concat(`- ${x}\n`);
+            }, 'Added: ')
+            .concat(deletedDeepItems.reduce((agg, x, i) => { 
+                !!i ? agg = agg.concat(`${x}, `) : agg.concat(`${x} || `);
                 return deletedDeepItems.length > 0 ? agg : '';
-            }, 'Removed:\n'));
+            }, 'Removed: '));
     };
 
     return deepChanges;
@@ -28,7 +28,7 @@ const checkIfDatumShouldUpdateDeep = ({ dbDatum, pageDatum, deep }) => {
 };
 
 module.exports = async ({ existingData, model, comparer, params }, deep) => {
-    let res = [];
+    let dataToChange = [];
     await asyncForEach(existingData, async (datum) => {
         
         // Gather all elements that match existingDatum, based on function arguments...
@@ -45,7 +45,7 @@ module.exports = async ({ existingData, model, comparer, params }, deep) => {
         let deepChanges = checkIfDatumShouldUpdateDeep({ dbDatum: item[0], pageDatum: datum, deep });
 
         if(!!changes || !!deepChanges){
-            res.push({ 
+            dataToChange.push({ 
                 changes,
                 deepChanges,
                 new: datum, 
@@ -54,5 +54,6 @@ module.exports = async ({ existingData, model, comparer, params }, deep) => {
         };
     });
 
-    return res; // An array of changed/new data with details on what changed...
+    let dataToText = dataToChange.map((datum) => ({ ...datum.new, changes: datum.changes, deepChanges: datum.deepChanges })); // An array of changed/new data with details on what changed, 
+    return { dataToChange, dataToText };
 };
