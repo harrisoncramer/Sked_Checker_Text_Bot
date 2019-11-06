@@ -26,7 +26,7 @@ module.exports = async ({ page, browser, today }) => {
     try {
         await page.goto("https://armedservices.house.gov/hearings", { waitUntil: 'networkidle2' });
         logger.info("Navigated to page.");
-    } catch (err) {
+    } catch(err) {
         return logger.error(`Could not navigate to page. `, err);
     }
 
@@ -66,39 +66,46 @@ module.exports = async ({ page, browser, today }) => {
             
             datum.witnesses = witnesses;
         });
-    } catch (err){
+    } catch(err){
         return logger.error(`Error fetching HASC witnesses. `, err);
     }
-
 
     try {
         var dbData = await getData(HASCSchema);
         var { newData, existingData } = await sortPageData({ pageData, dbData, comparer: 'recordListTitle' });
         var dataToChange = await getChangedData({ existingData, model: HASCSchema, comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate']}, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
-    } catch (err) {
+    } catch(err) {
         logger.error(`Error processing data. `, err);
     }
-    
     
     try {
         if(newData.length > 0 ){
             await uploadNewData(newData, HASCSchema);
             logger.info(`${newData.length} records uploaded successfully.`)
-            let myMessage = await sendText({ title: 'New HASC Meeting(s)', data: newData});
-            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
         if(dataToChange.length > 0){
             await modifyData({ dataToChange, model: HASCSchema });
             logger.info(`${dataToChange.length} records modified successfully.`)
-            let dataToText = dataToChange.map((datum) => datum.new);
+        };
+    } catch (err) {
+        logger.error(`Error uploading data. `, err);
+    }
+
+    try {
+        if(newData.length > 0 ){
+            let myMessage = await sendText({ title: 'New HASC Meeting(s)', data: newData});
+            logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
+        };
+        if(dataToChange.length > 0){
+            let dataToText = dataToChange.map((datum) => ({ ...datum.new, changes: datum.changes, deepChanges: datum.deepChanges }));
             let myMessage = await sendText({ title: 'Updated HASC Meeting(s)', data: dataToText});
             logger.info(`${myMessage ? 'Message sent: '.concat(JSON.stringify(myMessage)) : 'Message not sent!'}`);
         };
-    } catch (err) {
-        logger.error(`Error uploading or texting data. `, err);
-    }
-    
+    } catch(err){
+        logger.error(`Error texting data. `, err);
+    };
+        
     try {
         await db.disconnect();
         logger.info("HASC Done.")

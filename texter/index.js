@@ -7,11 +7,13 @@ module.exports = async ({ title, data }) => {
         let body = data.reduce((agg, datum, i) => {
             let vals = Object.values(datum);
             vals.forEach((x, i) => {
-                agg = i < vals.length -1 ? agg.concat(x).concat(" || ") : agg.concat(x);
+                if(x){
+                    agg = i < vals.length -1 ? agg.concat(x).concat(" || ") : agg.concat(x);
+                }
             });
             agg = agg.concat("\n\n");
             return agg;
-        }, '');
+        }, '').trim();
 
         // Deal w/ extra long messages over 1600 words....
 

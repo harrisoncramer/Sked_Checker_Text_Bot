@@ -1,22 +1,30 @@
 const { asyncForEach } = require("../util");
 
-const checkIfDatumShouldUpdate = ({ params, dbDatum, pageDatum }) => {
-    let isDifference = !params.every((param) => pageDatum[param] === dbDatum[param]); // Once a single difference is noticed, will return false (which is then flipped). Otherwise, will return true.
-    return isDifference;
+const checkIfDatumShouldUpdateShallow = ({ params, dbDatum, pageDatum, deep }) => {
+    let normalParams = params.filter(p => p !== deep);
+    let shallowChanges = normalParams.filter(param => pageDatum[param] !== dbDatum[param])
+    if(shallowChanges.length > 0){
+        var changes = shallowChanges.map(param => `${param}: ${dbDatum[param]} ––> ${pageDatum[param]}`);
+    };
+    return changes;
 };
 
-const checkIfDatumShouldUpdateDeep = ({ params, dbDatum, pageDatum, deep }) => {
+const checkIfDatumShouldUpdateDeep = ({ dbDatum, pageDatum, deep }) => {
+    let newDeepItems = pageDatum[deep].filter(x => !dbDatum[deep].includes(x)); // Return all pageData that isn't included in the dbData.
+    let deletedDeepItems = dbDatum[deep].filter(x => !pageDatum[deep].includes(x)); // Return all dbData that isn't included in the pageData.
+    if(newDeepItems.concat(deletedDeepItems).length > 0){ // If any changes...
+        var deepChanges = newDeepItems.reduce((agg, x) => { 
+                agg = agg.concat(`- ${x}\n`);
+                return newDeepItems.length > 0 ? agg : '';
+            }, 'Added:\n')
+            .concat(deletedDeepItems.reduce((agg, x) => { 
+                agg = agg.concat(`- ${x}\n`);
+                return deletedDeepItems.length > 0 ? agg : '';
+            }, 'Removed:\n'));
+    };
 
-    // First, check for updates in normal parameters...
-    let normalParams = params.filter(p => p !== deep);
-    let isDifference = !normalParams.every(param => pageDatum[param] === dbDatum[param]); // Once a single difference is noticed, will return false (which is then flipped). Otherwise, will return true.
-    if(isDifference){
-        return true;
-    }
+    return deepChanges;
 
-    // Then see if the deep list has any changes (will return number of chnages. Zero is falsey value.)
-    isDifference = pageDatum[deep].filter(x => !dbDatum[deep].includes(x)).length + dbDatum[deep].filter(x => !pageDatum[deep].includes(x)).length;
-    return isDifference;
 };
 
 module.exports = async ({ existingData, model, comparer, params }, deep) => {
@@ -33,15 +41,18 @@ module.exports = async ({ existingData, model, comparer, params }, deep) => {
             }
         ]);
 
-        if(deep && Array.isArray(item[0][deep])){ // If deep argument passed, and matching dbItem contains array...
-            var shouldUpdate = checkIfDatumShouldUpdateDeep({ dbDatum: item[0], pageDatum: datum, params, deep });
-        } else {
-            var shouldUpdate = checkIfDatumShouldUpdate({ dbDatum: item[0], pageDatum: datum, params }); // Check to see if times have changed...
-        }
-        if(shouldUpdate){ // If should update is either 1 or 2...
-            res.push({ new: datum, old: item[0] });
+        let changes = checkIfDatumShouldUpdateShallow({ dbDatum: item[0], pageDatum: datum, params, deep });
+        let deepChanges = checkIfDatumShouldUpdateDeep({ dbDatum: item[0], pageDatum: datum, deep });
+
+        if(!!changes || !!deepChanges){
+            res.push({ 
+                changes,
+                deepChanges,
+                new: datum, 
+                old: item[0], 
+            });
         };
     });
 
-    return res;
+    return res; // An array of changed/new data with details on what changed...
 };
