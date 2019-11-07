@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: "../envs/sked_checker.env" });
 
 const cron = require("node-cron");
 const moment = require("moment");
