@@ -12,6 +12,7 @@ const HASC = require("./bots/HASC");
 const SASC = require("./bots/SASC"); 
 const SFRC = require("./bots/SFRC"); 
 const SVAC = require("./bots/SVAC"); 
+const HVAC = require("./bots/HVAC"); 
 
 // Run program...
 if(process.env.NODE_ENV === 'production'){
@@ -38,8 +39,9 @@ if(process.env.NODE_ENV === 'production'){
 
             // await HFAC({ today, browser, page });
             // await HASC({ today, browser, page });
-            //  await SASC({ today, browser, page });
-            await SVAC({ today, browser, page });
+            // await SASC({ today, browser, page });
+            // await SVAC({ today, browser, page });
+            await HVAC({ today, browser, page });
             // await SFRC({ today, browser, page });
 
             await page.close();
