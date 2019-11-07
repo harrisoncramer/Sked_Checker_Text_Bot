@@ -9,7 +9,7 @@ const moment = require("moment");
     fs.mkdirSync(logDir);
 }
 
-const filename = process.env.NODE_ENV === "production" ? path.join(logDir, 'results.log') : path.join(logDir, 'results-test.log');
+const filename = process.env.NODE_ENV === "production" ? path.join(logDir, 'results.log') : path.join(logDir, 'dev-results.log');
 
 module.exports = winston.createLogger({
     transports: [

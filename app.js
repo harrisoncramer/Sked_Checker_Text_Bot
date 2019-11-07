@@ -1,7 +1,8 @@
+require('dotenv').config();
+
 const cron = require("node-cron");
 const moment = require("moment");
 const logger = require("./logger");
-require('dotenv').config();
 
 // Import utility functions...
 const { launchBots, setUpPuppeteer } = require("./setup"); 
@@ -22,7 +23,7 @@ if(process.env.NODE_ENV === 'production'){
             let { today, browser, page } = await setUpPuppeteer();
             logger.info(`Running program at ${today.format("llll")}`);
 
-            await launchBots({ page, browser, today, bots: [HFAC, HASC, SASC, SFRC, SVAC] }); // Launch bots in production...
+            await launchBots({ page, browser, today, bots: [HFAC, HASC, HVAC, SASC, SFRC, SVAC] }); // Launch bots in production...
 
             await page.close();
             await browser.close();

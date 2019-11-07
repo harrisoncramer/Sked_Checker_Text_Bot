@@ -23,7 +23,7 @@ module.exports = async ({ page, browser, today }) => {
     };
 
     try {
-        await page.goto("https://veterans.house.gov/events/hearings", { waitUntil: 'networkidle2' }); // Ensure no network requests are happening (in last 500ms).
+        await page.goto("https://veterans.house.gov/events/hearings", { waitUntil: 'load', timeout: 0 }); // Ensure no network requests are happening (in last 500ms).
         logger.info("Navigated to hearings page.");
     } catch (err) {
         return logger.error(`Could not navigate to hearings page. `, err);
@@ -52,7 +52,7 @@ module.exports = async ({ page, browser, today }) => {
     try {
         await asyncForEach(pageData, async (datum) => {
 
-            await page.goto(datum.link, { waitUntil: 'networkidle2' });
+            await page.goto(datum.link, { waitUntil: 'load', timeout: 0 });
             let witnesses = await page.evaluate(() => {
                 return Array.from(document.querySelectorAll("section.hearing__agenda b"))
                     .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()))
@@ -66,7 +66,7 @@ module.exports = async ({ page, browser, today }) => {
     }
 
     try {
-        await page.goto("https://veterans.house.gov/events/markups", { waitUntil: 'networkidle2' }); // Ensure no network requests are happening (in last 500ms).
+        await page.goto("https://veterans.house.gov/events/markups", { waitUntil: 'load', timeout: 0 }); // Ensure no network requests are happening (in last 500ms).
         logger.info("Navigated to markups page.");
     } catch (err) {
         return logger.error(`Could not navigate to markups page. `, err);
