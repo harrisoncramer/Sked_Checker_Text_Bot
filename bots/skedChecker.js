@@ -1,9 +1,9 @@
 const { asyncForEach } = require("../util");
 
-const getData = require("../mongodb/getData");
-const uploadNewData = require("../mongodb/uploadNewData");
+const find = require("../mongodb/find");
+const insertMany = require("../mongodb/insertMany");
 const getChangedData = require("../mongodb/getChangedData");
-const modifyData = require("../mongodb/modifyData");
+const updateMany = require("../mongodb/updateMany");
 
 const { sortPageData } = require("./guts/skedChecker");
 
@@ -62,7 +62,7 @@ module.exports = async ({ page, args }) => {
     }
 
     try {
-        var dbData = await getData(args.schema);
+        var dbData = await find(args.schema);
         var { newData, existingData } = await sortPageData({ pageData, dbData, comparer: args.comparer });
         var { dataToChange, dataToText } = await getChangedData({ existingData, model: args.schema, comparer: args.comparer, params: [ ...args.params ]}, 'witnesses');    
         logger.info(`**** New records: ${newData.length} || Records to change: ${dataToChange.length} ****`);
@@ -72,11 +72,11 @@ module.exports = async ({ page, args }) => {
     
     try {
         if(newData.length > 0 ){
-            await uploadNewData(newData, args.schema);
+            await insertMany(newData, args.schema);
             logger.info(`${newData.length} records uploaded successfully.`)
         };
         if(dataToChange.length > 0){
-            await modifyData({ dataToChange, model: args.schema });
+            await updateMany({ dataToChange, model: args.schema });
             logger.info(`${dataToChange.length} records modified successfully.`)
         };
     } catch (err) {
