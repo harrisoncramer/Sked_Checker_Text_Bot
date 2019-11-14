@@ -27,7 +27,7 @@ module.exports = async ({ title, data }) => {
        return message;
 
     } catch (err) {
-        logger.error(err);
+        logger.error('Error processing text', err);
     }
 };
 

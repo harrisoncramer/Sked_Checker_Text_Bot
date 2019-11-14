@@ -36,9 +36,9 @@ module.exports = {
     
         let catcher = (err, bot) => process.env.NODE_ENV === 'production' ? logger.error(bot, err) : logger.info(bot, err);
     
-        await asyncForEach(bots, async(bot) => {
+        await asyncForEach(bots, async(x) => {
              try {
-                await bot({ page, browser, today, bots });
+                await x.bot({ page, browser, today, args: x.args });
              } catch(err){
                  catcher(err);
              }

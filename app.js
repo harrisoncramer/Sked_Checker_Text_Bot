@@ -8,12 +8,13 @@ const logger = require("./logger");
 const { launchBots, setUpPuppeteer } = require("./setup"); 
 
 // Import bots...
-const HFAC = require("./bots/HFAC"); 
-const HASC = require("./bots/HASC"); 
-const SASC = require("./bots/SASC"); 
-const SFRC = require("./bots/SFRC"); 
-const SVAC = require("./bots/SVAC"); 
-const HVAC = require("./bots/HVAC"); 
+const skedChecker = require("./bots/skedChecker");
+
+// Import business
+const { hfacBusiness, hfacWitnesses } = require("./bots/util/skedCheckerBusiness");
+
+// Import schemas...
+const schemas = require("./mongodb/schemas");
 
 // Run program...
 if(process.env.NODE_ENV === 'production'){
@@ -23,7 +24,12 @@ if(process.env.NODE_ENV === 'production'){
             let { today, browser, page } = await setUpPuppeteer();
             logger.info(`Running program at ${today.format("llll")}`);
 
-            await launchBots({ page, browser, today, bots: [HFAC, HASC, HVAC, SASC, SFRC, SVAC] }); // Launch bots in production...
+            await launchBots({ page, browser, today, bots: [
+                // { bot: skedChecker, args: {  }},
+                // { bot: skedChecker, args: {  }},
+                // { bot: skedChecker, args: {  }},
+                { bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: hfacBusiness, getWitnesses: hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: schemas.HFACSchema, params: ['recordListTime', 'recordListDate'] }},
+            ]});
 
             await page.close();
             await browser.close();
@@ -38,12 +44,7 @@ if(process.env.NODE_ENV === 'production'){
             let { today, browser, page } = await setUpPuppeteer();
             logger.info(`Running program at ${today.format("llll")}`);
 
-            // await HFAC({ today, browser, page });
-            // await HASC({ today, browser, page });
-            // await SASC({ today, browser, page });
-            // await SVAC({ today, browser, page });
-            await HVAC({ today, browser, page });
-            // await SFRC({ today, browser, page });
+            await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: hfacBusiness, getWitnesses: hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HFACSchema }});
 
             await page.close();
             await browser.close();
