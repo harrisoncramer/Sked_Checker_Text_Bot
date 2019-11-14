@@ -1,4 +1,19 @@
 module.exports = {    
+    sortPageData: ({ pageData, dbData, comparer }) => {    
+        let dbTitles = dbData.map(x => x[comparer]);
+        let existingData = [];
+        let newData = pageData.filter(x => {
+            let pageTitle = x[comparer]; // Get title of doc.
+            let i = dbTitles.indexOf(pageTitle);
+            if(i === -1){ // If it's new...
+                return true;
+            }
+            existingData.push(x)
+            return false;
+        });
+    
+        return { existingData, newData }
+    },
     hfacBusiness: page => page.evaluate(() => {
         let trs = Array.from(document.querySelectorAll("table tbody tr"));
         let res = trs.reduce((agg, item, i) => {

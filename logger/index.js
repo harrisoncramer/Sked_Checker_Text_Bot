@@ -28,6 +28,7 @@ module.exports = winston.createLogger({
                 })
             )
     }),
-    new winston.transports.File({ filename })
+    new winston.transports.File({ filename }),
+    new winston.transports.Console()
     ]
 });

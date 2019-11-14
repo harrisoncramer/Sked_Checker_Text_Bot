@@ -10,11 +10,23 @@ const { launchBots, setUpPuppeteer } = require("./setup");
 // Import bots...
 const skedChecker = require("./bots/skedChecker");
 
-// Import business...
-const business = require("./bots/util/skedCheckerBusiness");
+// Import business logic...
+const { 
+    sfrcBusiness, 
+    sfrcWitnesses, 
+    sascBusiness, 
+    sascWitnesses, 
+    hfacBusiness, 
+    hfacWitnesses, 
+    hascBusiness, 
+    hascWitnesses } = require("./bots/guts/skedChecker");
 
 // Import schemas...
-const schemas = require("./mongodb/schemas");
+const { 
+    SASCSchema, 
+    SFRCSchema, 
+    HASCSchema, 
+    HFACSchema } = require("./mongodb/schemas");
 
 // Run program...
 if(process.env.NODE_ENV === 'production'){
@@ -25,10 +37,10 @@ if(process.env.NODE_ENV === 'production'){
             logger.info(`Running program at ${today.format("llll")}`);
 
             await launchBots({ page, browser, today, bots: [
-                // { bot: skedChecker, args: {  }},
-                // { bot: skedChecker, args: {  }},
-                { bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: business.hfacBusiness, getWitnesses: business.hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: schemas.HFACSchema, params: ['recordListTime', 'recordListDate'] }},
-                { bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: business.hfacBusiness, getWitnesses: business.hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: schemas.HASCSchema, params: ['recordListTime', 'recordListDate'] }},
+                { bot: skedChecker, args: { link: 'https://www.foreign.senate.gov/hearings', business: sfrcBusiness, getWitnesses: sfrcWitnesses, type: 'SFRC', comparer: 'title', params: ['location', 'date'], schema: SFRCSchema }},
+                { bot: skedChecker, args: { link: 'https://www.armed-services.senate.gov/hearings', business: sascBusiness, getWitnesses: sascWitnesses, type: 'SASC', comparer: 'title', schema: SASCSchema, params: ['location', 'date'] }},
+                { bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: hfacBusiness, getWitnesses: hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: HFACSchema, params: ['recordListTime', 'recordListDate'] }},
+                { bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: hascBusiness, getWitnesses: hascWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: HASCSchema, params: ['recordListTime', 'recordListDate'] }},
             ]});
 
             await page.close();
@@ -47,7 +59,7 @@ if(process.env.NODE_ENV === 'production'){
            // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: business.hfacBusiness, getWitnesses: business.hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HFACSchema }});
            // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: business.hascBusiness, getWitnesses: business.hascWitnesses, type: 'HASC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HASCSchema }});
            // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://www.armed-services.senate.gov/hearings', business: business.sascBusiness, getWitnesses: business.sascWitnesses, type: 'SASC', comparer: 'title', params: ['location', 'date'], schema: schemas.SASCSchema }});
-            await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://www.foreign.senate.gov/hearings', business: business.sfrcBusiness, getWitnesses: business.sfrcBusiness, type: 'SFRC', comparer: 'title', params: ['location', 'date'], schema: schemas.SFRCSchema }});
+           // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://www.foreign.senate.gov/hearings', business: business.sfrcBusiness, getWitnesses: business.sfrcBusiness, type: 'SFRC', comparer: 'title', params: ['location', 'date'], schema: schemas.SFRCSchema }});
 
             await page.close();
             await browser.close();

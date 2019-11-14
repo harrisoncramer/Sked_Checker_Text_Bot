@@ -5,7 +5,7 @@ const uploadNewData = require("../mongodb/uploadNewData");
 const getChangedData = require("../mongodb/getChangedData");
 const modifyData = require("../mongodb/modifyData");
 
-const sortPageData = require("./util/sortPageData");
+const { sortPageData } = require("./guts/skedChecker");
 
 const sendText = require("../texter");
 const mongoose = require("mongoose");
