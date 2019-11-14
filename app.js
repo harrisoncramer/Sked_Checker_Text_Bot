@@ -19,14 +19,19 @@ const {
     hfacBusiness, 
     hfacWitnesses, 
     hascBusiness, 
-    hascWitnesses } = require("./bots/guts/skedChecker");
+    hascWitnesses,
+    svacBusiness,
+    svacWitnesses
+ } = require("./bots/guts/skedChecker");
 
 // Import schemas...
 const { 
     SASCSchema, 
     SFRCSchema, 
     HASCSchema, 
-    HFACSchema } = require("./mongodb/schemas");
+    HFACSchema,
+    SVACSchema
+ } = require("./mongodb/schemas");
 
 // Run program...
 if(process.env.NODE_ENV === 'production'){
@@ -41,6 +46,7 @@ if(process.env.NODE_ENV === 'production'){
                 { bot: skedChecker, args: { link: 'https://www.armed-services.senate.gov/hearings', business: sascBusiness, getWitnesses: sascWitnesses, type: 'SASC', comparer: 'title', schema: SASCSchema, params: ['location', 'date'] }},
                 { bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: hfacBusiness, getWitnesses: hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: HFACSchema, params: ['recordListTime', 'recordListDate'] }},
                 { bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: hascBusiness, getWitnesses: hascWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: HASCSchema, params: ['recordListTime', 'recordListDate'] }},
+                { bot: skedChecker, args: { link: 'https://www.veterans.senate.gov/hearings', business: svacBusiness, getWitnesses: svacWitnesses, type: 'SVAC', comparer: 'title', schema: SVACSchema, params: ['location', 'date'] }},
             ]});
 
             await page.close();
@@ -60,6 +66,7 @@ if(process.env.NODE_ENV === 'production'){
            // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: business.hascBusiness, getWitnesses: business.hascWitnesses, type: 'HASC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HASCSchema }});
            // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://www.armed-services.senate.gov/hearings', business: business.sascBusiness, getWitnesses: business.sascWitnesses, type: 'SASC', comparer: 'title', params: ['location', 'date'], schema: schemas.SASCSchema }});
            // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://www.foreign.senate.gov/hearings', business: business.sfrcBusiness, getWitnesses: business.sfrcBusiness, type: 'SFRC', comparer: 'title', params: ['location', 'date'], schema: schemas.SFRCSchema }});
+           // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://www.veterans.senate.gov/hearings', business: svacBusiness, getWitnesses: svacWitnesses, type: 'SVAC', comparer: 'title', schema: SVACSchema, params: ['location', 'date'] }});
 
             await page.close();
             await browser.close();

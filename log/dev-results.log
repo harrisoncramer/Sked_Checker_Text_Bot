@@ -1,0 +1,26 @@
+{"message":"Running program at Thu, Nov 14, 2019 4:45 PM","level":"info"}
+{"level":"error","message":"Root Error in development. svacBusiness is not defined","stack":"ReferenceError: svacBusiness is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:64:131\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Thu, Nov 14, 2019 4:45 PM","level":"info"}
+{"level":"error","message":"Root Error in development. svacBusiness is not defined","stack":"ReferenceError: svacBusiness is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:64:131\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Thu, Nov 14, 2019 4:47 PM","level":"info"}
+{"level":"error","message":"Root Error in development. svacBusiness is not defined","stack":"ReferenceError: svacBusiness is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:64:131\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Thu, Nov 14, 2019 4:47 PM","level":"info"}
+{"level":"error","message":"Root Error in development. svacBusiness is not defined","stack":"ReferenceError: svacBusiness is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:64:131\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Thu, Nov 14, 2019 4:47 PM","level":"info"}
+{"level":"error","message":"Root Error in development. svacBusiness is not defined","stack":"ReferenceError: svacBusiness is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:64:131\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Thu, Nov 14, 2019 4:52 PM","level":"info"}
+{"level":"error","message":"Root Error in development. svacBusiness is not defined","stack":"ReferenceError: svacBusiness is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:64:131\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Thu, Nov 14, 2019 4:52 PM","level":"info"}
+{"level":"error","message":"Root Error in development. svacBusiness is not defined","stack":"ReferenceError: svacBusiness is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:64:131\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Thu, Nov 14, 2019 4:53 PM","level":"info"}
+{"level":"error","message":"Root Error in development. SVACSchema is not defined","stack":"ReferenceError: SVACSchema is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:67:215\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Thu, Nov 14, 2019 4:53 PM","level":"info"}
+{"message":"Checking SVAC at Thu, Nov 14, 2019 4:53 PM...","level":"info"}
+{"message":"Database connected.","level":"info"}
+{"message":"Navigated to page.","level":"info"}
+{"message":"Page data defined.","level":"info"}
+{"message":"**** New records: 15 || Records to change: 0 ****","level":"info"}
+{"message":"15 records uploaded successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"SVAC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}

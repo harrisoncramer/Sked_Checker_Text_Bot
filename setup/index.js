@@ -10,7 +10,7 @@ module.exports = {
     setUpPuppeteer: async () => {
         const today = moment();
         const headless = process.env.NODE_ENV === "production";
-        const browser = await pupeteer.launch({headless, devtools: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--incognito']});
+        const browser = await pupeteer.launch({headless, devtools: true, args: ['--no-sandbox', '--disable-setuid-sandbox' ]});
         const context = await browser.createIncognitoBrowserContext();
         const page = await context.newPage(); // Create new instance of puppet
         

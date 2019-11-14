@@ -93,4 +93,21 @@ module.exports = {
         return Array.from(document.querySelectorAll("span.fn"))
             .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()));
     }),
+    svacBusiness: page => page.evaluate(() => {
+        let trs = Array.from(document.querySelectorAll("tr.vevent")).map(x => x.querySelectorAll("td > div.faux-col"));
+        let res = trs.reduce((agg, item, i) => {
+            let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+            let link = item[0].querySelector("a").href;
+            let location = item[1].textContent.trim();
+            let date = item[2].textContent.trim();
+            agg[i] = { link, title, location, date };
+            return agg;
+        }, Array(trs.length).fill().map(_ => ({})));
+
+        return res;
+    }),
+    svacWitnesses: page => page.evaluate(() => {
+        return Array.from(document.querySelectorAll("span.fn"))
+            .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()));
+    }),
 };
