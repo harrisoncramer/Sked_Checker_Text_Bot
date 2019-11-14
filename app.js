@@ -11,7 +11,7 @@ const { launchBots, setUpPuppeteer } = require("./setup");
 const skedChecker = require("./bots/skedChecker");
 
 // Import business
-const { hfacBusiness, hfacWitnesses } = require("./bots/util/skedCheckerBusiness");
+const business = require("./bots/util/skedCheckerBusiness");
 
 // Import schemas...
 const schemas = require("./mongodb/schemas");
@@ -27,8 +27,8 @@ if(process.env.NODE_ENV === 'production'){
             await launchBots({ page, browser, today, bots: [
                 // { bot: skedChecker, args: {  }},
                 // { bot: skedChecker, args: {  }},
-                // { bot: skedChecker, args: {  }},
-                { bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: hfacBusiness, getWitnesses: hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: schemas.HFACSchema, params: ['recordListTime', 'recordListDate'] }},
+                { bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: business.hfacBusiness, getWitnesses: business.hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: schemas.HFACSchema, params: ['recordListTime', 'recordListDate'] }},
+                { bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: business.hfacBusiness, getWitnesses: business.hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: schemas.HASCSchema, params: ['recordListTime', 'recordListDate'] }},
             ]});
 
             await page.close();
@@ -44,7 +44,8 @@ if(process.env.NODE_ENV === 'production'){
             let { today, browser, page } = await setUpPuppeteer();
             logger.info(`Running program at ${today.format("llll")}`);
 
-            await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: hfacBusiness, getWitnesses: hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HFACSchema }});
+            await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: business.hfacBusiness, getWitnesses: business.hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HFACSchema }});
+            await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: business.hascBusiness, getWitnesses: business.hascWitnesses, type: 'HASC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HASCSchema }});
 
             await page.close();
             await browser.close();
