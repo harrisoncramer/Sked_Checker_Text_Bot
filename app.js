@@ -8,7 +8,7 @@ const logger = require("./logger");
 const { launchBots, setUpPuppeteer } = require("./setup"); 
 
 // Import bots...
-const skedChecker = require("./bots/skedChecker");
+const skedChecker = require("./bot");
 
 // Import business logic...
 const { 
@@ -25,7 +25,7 @@ const {
     hvacBusiness,
     hvacWitnesses,
     hvacMarkup
- } = require("./bots/guts/skedChecker");
+ } = require("./bot/guts");
 
 // Import schemas...
 const { 

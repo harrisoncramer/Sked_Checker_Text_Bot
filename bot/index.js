@@ -5,7 +5,7 @@ const insertMany = require("../mongodb/insertMany");
 const getChangedData = require("../mongodb/getChangedData");
 const updateMany = require("../mongodb/updateMany");
 
-const { sortPageData } = require("./guts/skedChecker");
+const { sortPageData } = require("./guts");
 
 const sendText = require("../texter");
 const mongoose = require("mongoose");
