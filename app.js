@@ -10,7 +10,7 @@ const { launchBots, setUpPuppeteer } = require("./setup");
 // Import bots...
 const skedChecker = require("./bots/skedChecker");
 
-// Import business
+// Import business...
 const business = require("./bots/util/skedCheckerBusiness");
 
 // Import schemas...
@@ -44,8 +44,10 @@ if(process.env.NODE_ENV === 'production'){
             let { today, browser, page } = await setUpPuppeteer();
             logger.info(`Running program at ${today.format("llll")}`);
 
-            await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: business.hfacBusiness, getWitnesses: business.hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HFACSchema }});
-            await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: business.hascBusiness, getWitnesses: business.hascWitnesses, type: 'HASC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HASCSchema }});
+           // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: business.hfacBusiness, getWitnesses: business.hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HFACSchema }});
+           // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: business.hascBusiness, getWitnesses: business.hascWitnesses, type: 'HASC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: schemas.HASCSchema }});
+           // await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://www.armed-services.senate.gov/hearings', business: business.sascBusiness, getWitnesses: business.sascWitnesses, type: 'SASC', comparer: 'title', params: ['location', 'date'], schema: schemas.SASCSchema }});
+            await skedChecker({ page, today, bot: skedChecker, args: { link: 'https://www.foreign.senate.gov/hearings', business: business.sfrcBusiness, getWitnesses: business.sfrcBusiness, type: 'SFRC', comparer: 'title', params: ['location', 'date'], schema: schemas.SFRCSchema }});
 
             await page.close();
             await browser.close();
