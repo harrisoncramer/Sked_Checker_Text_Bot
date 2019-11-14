@@ -110,4 +110,36 @@ module.exports = {
         return Array.from(document.querySelectorAll("span.fn"))
             .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()));
     }),
+    hvacBusiness: page => page.evaluate(() => {
+        let trs = Array.from(document.querySelectorAll("tr.vevent")).map(x => x.querySelectorAll("td > div.faux-col"));
+        let res = trs.reduce((agg, item, i) => {
+            let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+            let link = item[0].querySelector("a").href;
+            let location = item[2].textContent.trim();
+            let date = item[3].textContent.trim();
+            agg[i] = { link, title, location, date };
+            return agg;
+        }, Array(trs.length).fill().map(_ => ({})));
+
+        return res;
+    }),
+    hvacWitnesses: page => page.evaluate(() => {
+        return Array.from(document.querySelectorAll("section.hearing__agenda b"))
+            .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()))
+            .filter(x => !["Witnesses:", "", "Panel 1", "Panel 2", "Panel One", "Panel Two"].includes(x));
+    }),
+    hvacMarkup: page => page.evaluate(() => {
+        let trs = Array.from(document.querySelectorAll("tr.vevent")).map(x => x.querySelectorAll("td > div.faux-col"));
+        let res = trs.reduce((agg, item, i) => {
+            let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+            let link = item[0].querySelector("a").href;
+            let location = item[1].textContent.trim();
+            let date = item[2].textContent.trim().concat(` at ${item[3].textContent.trim()}`);
+            let witnesses = [];
+            agg[i] = { link, title, location, date, witnesses };
+            return agg;
+        }, Array(trs.length).fill().map(_ => ({})));
+
+        return res;
+    })
 };

@@ -11,27 +11,24 @@ const sendText = require("../texter");
 const mongoose = require("mongoose");
 const logger = require("../logger");
 
-module.exports = async ({ page, today, args }) => {
+module.exports = async ({ page, args }) => {
 
-    logger.info(`Checking ${args.type} at ${today.format("llll")}...`);
+    logger.info(`Checking ${args.type}`);
 
     try {
         var db = await mongoose.connect('mongodb://localhost:27017/resources', { useNewUrlParser: true, useUnifiedTopology: true });
-        logger.info("Database connected.");
     } catch(err){
         return logger.error(`Could not connect to database. `, err);
     };
 
     try {
         await page.goto(args.link, { waitUntil: 'networkidle2' });
-        logger.info("Navigated to page.");
     } catch(err) {
         return logger.error(`Could not navigate to page. `, err);
     }
 
     try {
         var pageData = await args.business(page);
-        logger.info("Page data defined.");
     } catch(err){
         return logger.error(`Error parsing page data. `, err);
     };
@@ -47,6 +44,21 @@ module.exports = async ({ page, today, args }) => {
         });
     } catch(err){
         return logger.error(`Error fetching ${args.type} witnesses. `, err);
+    }
+
+    if(args.extra){
+        try {
+            await page.goto(args.extra.link, { waitUntil: 'networkidle2' }); // Ensure no network requests are happening (in last 500ms).
+        } catch (err) {
+            return logger.error(`Could not navigate to extra page. `, err);
+        };
+
+        try {
+            let extraData = await args.extra.business(page);
+            pageData = pageData.concat(extraData);
+        } catch (err) {
+            logger.info(`Error fetching extra data `, err);
+        };
     }
 
     try {
