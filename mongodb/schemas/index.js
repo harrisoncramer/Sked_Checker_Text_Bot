@@ -23,6 +23,28 @@ module.exports = {
             require: true
         }
     }),
+    SFRCSchema: mongoose.model('SFRC', {
+        link: {
+            type: String,
+            require: true
+        },
+        date: {
+            type: String,
+            require: true
+        },
+        title: {
+            type: String,
+            require: true
+        },
+        location: {
+            type: String,
+            require: true
+        },
+        witnesses: {
+            type: Array,
+            require: true
+        }
+    }),
     HASCSchema: mongoose.model('HASC', {
         recordListTitle: {
             type: String,
@@ -67,28 +89,6 @@ module.exports = {
             require: true
         }
     }),
-    SVACSchema: mongoose.model('SVAC', {
-        link: {
-            type: String,
-            require: true
-        },
-        date: {
-            type: String,
-            require: true
-        },
-        title: {
-            type: String,
-            require: true
-        },
-        location: {
-            type: String,
-            require: true
-        },        
-        witnesses: {
-            type: Array,
-            require: true
-        }
-    }),
     HVACSchema: mongoose.model('HVAC', {
         link: {
             type: String,
@@ -111,7 +111,7 @@ module.exports = {
             require: true
         }
     }),
-    SFRCSchema: mongoose.model('SFRC', {
+    SVACSchema: mongoose.model('SVAC', {
         link: {
             type: String,
             require: true
@@ -127,10 +127,32 @@ module.exports = {
         location: {
             type: String,
             require: true
-        },
+        },        
         witnesses: {
             type: Array,
             require: true
         }
-    })
+    }),
+    HHSCSchema: mongoose.model('HHSC', {
+        link: {
+            type: String,
+            require: true
+        },
+        date: {
+            type: String,
+            require: true
+        },
+        title: {
+            type: String,
+            require: true
+        },
+        location: {
+            type: String,
+            require: true
+        },        
+        witnesses: {
+            type: Array,
+            require: true
+        }
+    }),
 };

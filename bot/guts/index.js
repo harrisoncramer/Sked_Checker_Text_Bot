@@ -141,5 +141,22 @@ module.exports = {
         }, Array(trs.length).fill().map(_ => ({})));
 
         return res;
+    }),
+    hhscWitnesses: page => page.evaluate(() => {
+        return Array.from(document.querySelectorAll("section.sectionhead__hearingInfo a"))
+            .map((i => i.textContent.replace(/\s\s+/g, ' ').trim()))
+            .filter(x => !["Witnesses:", "", "Panel 1", "Panel 2", "Panel One", "Panel Two", "Panel I", "Panel II"].includes(x)); 
+    }),
+    hhscBusiness: page => page.evaluate(() => {
+        let trs = Array.from(document.querySelectorAll("tbody.upcomingholder tr.vevent")).map(x => x.querySelectorAll("td > div.faux-col"));
+        let res = trs.reduce((agg, item, i) => {
+            let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+            let link = item[0].querySelector("a").href;
+            let location = item[1].textContent.trim();
+            let date = item[2].textContent.trim().concat(` at ${item[3].textContent.trim()}`);
+            agg[i] = { link, title, location, date };
+            return agg;
+        }, Array(trs.length).fill().map(_ => ({})));
+        return res;
     })
 };
