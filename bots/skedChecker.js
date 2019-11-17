@@ -38,9 +38,6 @@ module.exports = async ({ page, args }) => {
             await page.goto(datum.link, { waitUntil: 'networkidle2' });
             let witnesses = await args.getWitnesses(page);            
             datum.witnesses = witnesses;
-            if(args.type === "SFRC"){
-                datum.title = datum.title.concat(`: ${datum.date}`);
-            };
         });
     } catch(err){
         return logger.error(`Error fetching ${args.type} witnesses. `, err);

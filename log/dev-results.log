@@ -1,23 +1,30 @@
-{"message":"Running program at Thu, Nov 14, 2019 6:35 PM","level":"info"}
-{"message":"Checking HVAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HVAC Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Nov 14, 2019 6:54 PM","level":"info"}
-{"level":"error","message":"Root Error in development. hhscBusiness is not defined","stack":"ReferenceError: hhscBusiness is not defined\n    at /Users/harrisoncramer/Desktop/coding/Bots/sked_checker/app.js:76:130\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
-{"message":"Running program at Thu, Nov 14, 2019 6:54 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"level":"error","message":"Error fetching HHSC witnesses. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at asyncForEach (/Users/harrisoncramer/Desktop/coding/Bots/sked_checker/util/index.js:4:43)\n    at module.exports (/Users/harrisoncramer/Desktop/coding/Bots/sked_checker/bot/index.js:37:15)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"level":"error"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Nov 14, 2019 7:00 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"level":"error"}
+{"level":"error","message":"Root Error in development. today is not defined","stack":"ReferenceError: today is not defined\n    at setUpPuppeteer (/Users/harrisoncramer/Desktop/coding/Bots/sked_checker/setup/index.js:31:18)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
+{"message":"Running program at Sun, Nov 17, 2019 3:30 PM","level":"info"}
+{"message":"Checking SFRC","level":"info"}
+{"message":"Running program at Sun, Nov 17, 2019 3:37 PM","level":"info"}
+{"message":"Checking SFRC","level":"info"}
+{"message":"Running program at Sun, Nov 17, 2019 3:37 PM","level":"info"}
+{"message":"Checking SFRC","level":"info"}
 {"message":"**** New records: 2 || Records to change: 0 ****","level":"info"}
 {"message":"2 records uploaded successfully.","level":"info"}
 {"message":"Message not sent, running in development.","level":"info"}
-{"message":"HHSC Done.","level":"info"}
+{"message":"SFRC Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Nov 14, 2019 7:01 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Nov 17, 2019 3:40 PM","level":"info"}
+{"message":"Checking SASC","level":"info"}
+{"message":"Running program at Sun, Nov 17, 2019 3:41 PM","level":"info"}
+{"message":"Checking SASC","level":"info"}
+{"message":"Running program at Sun, Nov 17, 2019 3:41 PM","level":"info"}
+{"message":"Checking SASC","level":"info"}

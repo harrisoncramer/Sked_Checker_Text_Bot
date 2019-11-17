@@ -61,12 +61,14 @@ module.exports = {
     sascBusiness: page => page.evaluate(() => {
         let trs = Array.from(document.querySelectorAll("table tbody tr.vevent"));
         let res = trs.reduce((agg, item, i) => {
+            debugger;
             const tds = Array.from(item.children);
             let link = tds[0].children[0] ? tds[0].children[0].href : 'No Link.';
             let title = tds[0].children[0].textContent.replace(/\s\s+/g, ' ').trim();
             let location = tds[1].children[0] ? tds[1].children[0].textContent.trim() : 'No location.'; 
-            let date = tds[2].children[0] ? tds[2].children[0].textContent.trim() : 'No date.';
-            agg[i] = { link, title, location, date };
+            let date = tds[2].children[0] ? tds[2].children[0].textContent.split(" ")[0].trim() : 'No date.';
+            let time = tds[2].children[0] ? tds[2].children[0].textContent.split(" ")[1].trim() : 'No time.';
+            agg[i] = { link, title, location, date, time };
             return agg;
         }, Array(trs.length).fill().map(_ => ({})));
 
@@ -82,8 +84,9 @@ module.exports = {
             let link = item.children[0] ? item.children[0].href : 'No Link.';
             let title = item.querySelector("h2.title").textContent;
             let location = item.querySelector("span.location") ? item.querySelector("span.location").textContent.replace(/\s\s+/g, ' ').trim() : 'No location.';
-            let date = item.querySelector("span.date") ? item.querySelector("span.date").textContent.replace(/\s\s+/g, ' ').trim() : 'No date.';
-            agg[i] = { link, title, location, date };
+            let date = item.querySelector("span.date") ? item.querySelector("span.date").textContent.split("@")[0].replace(/\s\s+/g, ' ').trim() : 'No date.';
+            let time = item.querySelector("span.date") ? item.querySelector("span.date").textContent.split("@")[1].replace(/\s\s+/g, ' ').trim() : 'No time.';
+            agg[i] = { link, title, location, date, time };
             return agg;
         }, Array(divs.length).fill().map(_ => ({})));
 

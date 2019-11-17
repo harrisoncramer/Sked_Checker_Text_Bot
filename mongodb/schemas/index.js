@@ -32,6 +32,10 @@ module.exports = {
             type: String,
             require: true
         },
+        time: {
+            type: String,
+            require: true,
+        },
         title: {
             type: String,
             require: true
@@ -73,6 +77,10 @@ module.exports = {
             require: true
         },
         date: {
+            type: String,
+            require: true
+        },
+        time: {
             type: String,
             require: true
         },
