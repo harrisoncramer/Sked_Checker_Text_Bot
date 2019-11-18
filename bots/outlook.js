@@ -55,5 +55,5 @@ module.exports = async ({ email, schemas }) => {
                 logger.info("Error disconnecting: ", err);
             };      
         })
-        .catch(err => logger.err("Could not fetch data", err);
+        .catch(err => logger.err("Could not fetch data", err));
 };
