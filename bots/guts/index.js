@@ -61,7 +61,6 @@ module.exports = {
     sascBusiness: page => page.evaluate(() => {
         let trs = Array.from(document.querySelectorAll("table tbody tr.vevent"));
         let res = trs.reduce((agg, item, i) => {
-            debugger;
             const tds = Array.from(item.children);
             let link = tds[0].children[0] ? tds[0].children[0].href : 'No Link.';
             let title = tds[0].children[0].textContent.replace(/\s\s+/g, ' ').trim();

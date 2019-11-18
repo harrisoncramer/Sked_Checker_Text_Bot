@@ -8,8 +8,10 @@ const moment = require("moment");
 
 module.exports = async ({ email, schemas }) => {
 
+    const today = moment();
+
     try {
-        var db = await mongoose.connect('mongodb://localhost:27017/resources', { useNewUrlParser: true, useUnifiedTopology: true });
+        var db = await mongoose.connect("mongodb://localhost:27017/resources", { useNewUrlParser: true, useUnifiedTopology: true });
     } catch(err){
         return logger.error(`Could not connect to database. `, err);
     };
@@ -23,31 +25,35 @@ module.exports = async ({ email, schemas }) => {
     Promise.all(information)
         .then(async res => {
             try {
-                let refined = res.map(x => {
+                debugger;
+                var refined = res.map(x => {
                     return x.vals.filter(y => {
-                        console.log(moment(y.date).valueOf, moment(today).valueOf);
-                        moment(y.date).valueOf > moment().valueOf 
-                    });
+                        let itemDay = moment(y.date || y.recordListDate).valueOf();
+                        let todayDay = moment(today).valueOf();
+                        let diff = itemDay - todayDay;
+                        return ((diff <= 604800000) && (diff > 0));
+                    }).map(x => {
+                        delete x.__v;
+                        delete x._id;
+                        return x;
+                    })
                 });
-                console.log(refined);
             } catch (err){
-                logger.error(err);
-            }
-           
-        })
-        .catch(err => logger.error(err));
-    
-    // Promise.all(information)
-    //     .then(async res => {
-    //         console.log(res);
+                logger.error("Error processing newest data", err);
+            };
 
-    //         try {
-    //             await db.disconnect();
-    //             logger.info(`${args.type} Done.`)
-    //         } catch (err) {
-    //             logger.info("Error disconnecting: ", err);
-    //         };        
-    //     })
-    //     .catch(err => logger.error('Could not fetch data', err));
-        // await mailer({ emails: [email], text: text, mailDuringDevelopment: false });
+            try {
+                await mailer({ emails: [email], text: refined, mailDuringDevelopment: true })
+            } catch(err){
+                logger.error("Could not mail emails ", err);
+            };
+            
+            try {
+                await db.disconnect();
+                logger.info(`${args.type} Done.`)
+            } catch (err) {
+                logger.info("Error disconnecting: ", err);
+            };      
+        })
+        .catch(err => logger.err("Could not fetch data", err);
 };

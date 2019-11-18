@@ -24,7 +24,7 @@ module.exports = async ({ emails, text, mailDuringDevelopment  }) => {
             from: '<hcramer@nationaljournal.com>',
             to: email,
             subject: "Hearings",
-            body: text
+            text: JSON.stringify(text, null, 2)
         };
         return transporter.sendMail(HelperOptions);
     });

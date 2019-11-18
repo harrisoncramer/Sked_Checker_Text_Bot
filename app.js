@@ -85,12 +85,12 @@ if(process.env.NODE_ENV === 'production'){
 
         //    await skedChecker({ page, args: { link: 'https://foreignaffairs.house.gov/hearings', business: hfacBusiness, getWitnesses: hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: HFACSchema }});
         //    await skedChecker({ page, args: { link: 'https://armedservices.house.gov/hearings', business: hascBusiness, getWitnesses: hascWitnesses, type: 'HASC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: HASCSchema }});
-            await skedChecker({ page, args: { link: 'https://www.armed-services.senate.gov/hearings', business: sascBusiness, getWitnesses: sascWitnesses, type: 'SASC', comparer: 'title', params: ['location', 'date'], schema: SASCSchema }});
+        //    await skedChecker({ page, args: { link: 'https://www.armed-services.senate.gov/hearings', business: sascBusiness, getWitnesses: sascWitnesses, type: 'SASC', comparer: 'title', params: ['location', 'date'], schema: SASCSchema }});
         //    await skedChecker({ page, args: { link: 'https://www.foreign.senate.gov/hearings', business: sfrcBusiness, getWitnesses: sfrcBusiness, type: 'SFRC', comparer: 'title', params: ['location', 'date'], schema: SFRCSchema }});
         //    await skedChecker({ page, args: { link: 'https://www.veterans.senate.gov/hearings', business: svacBusiness, getWitnesses: svacWitnesses, type: 'SVAC', comparer: 'title', schema: SVACSchema, params: ['location', 'date'] }});
         //    await skedChecker({ page, args: { link: 'https://veterans.house.gov/events/hearings', extra: { link: 'https://veterans.house.gov/events/markups', business: hvacMarkup }, business: hvacBusiness, getWitnesses: hvacWitnesses, type: 'HVAC', comparer: 'title', schema: HVACSchema, params: ['location', 'date'] }});
         //    await skedChecker({ page, args: { link: 'https://homeland.house.gov/activities/hearings', business: hhscBusiness, getWitnesses: hhscWitnesses, type: 'HHSC', comparer: 'title', schema: HHSCSchema, params: ['location', 'date'] }});
-        //      await outlook({ schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema], email: process.env.EMAIL });
+             await outlook({ schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema], email: process.env.EMAIL });
 
             await page.close();
             await browser.close();
