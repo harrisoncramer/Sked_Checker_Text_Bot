@@ -2,8 +2,6 @@ const find = require("../mongodb/find");
 const mailer = require("../mailer");
 const logger = require("../logger");
 const mongoose = require("mongoose");
-const { HFACSchema } = require("../mongodb/schemas");
-const { asyncForEach } = require("../util");
 const moment = require("moment");
 
 module.exports = async ({ email, schemas }) => {
@@ -50,7 +48,6 @@ module.exports = async ({ email, schemas }) => {
             
             try {
                 await db.disconnect();
-                logger.info(`${args.type} Done.`)
             } catch (err) {
                 logger.info("Error disconnecting: ", err);
             };      

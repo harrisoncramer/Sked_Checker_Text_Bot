@@ -78,3 +78,38 @@
 {"message":"Chrome Closed Bots.","level":"info"}
 {"message":"Running program at Sun, Nov 17, 2019 9:41 PM","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Fri, Nov 22, 2019 11:05 AM","level":"info"}
+{"name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error","message":"Could not connect to database. connect ECONNREFUSED 127.0.0.1:27017","stack":"Error: connect ECONNREFUSED 127.0.0.1:27017\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1085:14)"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Fri, Nov 22, 2019 11:07 AM","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"level":"info","message":"Error disconnecting: args is not defined","stack":"ReferenceError: args is not defined\n    at Promise.all.then (/Users/harrisoncramer/Desktop/coding/Bots/sked_checker/bots/outlook.js:53:32)"}
+{"message":"Running program at Fri, Nov 22, 2019 11:08 AM","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"level":"info","message":"Error disconnecting: args is not defined","stack":"ReferenceError: args is not defined\n    at Promise.all.then (/Users/harrisoncramer/Desktop/coding/Bots/sked_checker/bots/outlook.js:53:32)"}
+{"message":"Running program at Fri, Nov 22, 2019 11:09 AM","level":"info"}
+{"message":"Checking HFAC","level":"info"}
+{"message":"Running program at Fri, Nov 22, 2019 11:09 AM","level":"info"}
+{"message":"Checking HFAC","level":"info"}
+{"message":"**** New records: 1 || Records to change: 1 ****","level":"info"}
+{"message":"1 records uploaded successfully.","level":"info"}
+{"message":"1 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC","level":"info"}
+{"message":"**** New records: 2 || Records to change: 0 ****","level":"info"}
+{"message":"2 records uploaded successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"HASC Done.","level":"info"}
+{"message":"Checking SASC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
+{"message":"1 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC","level":"info"}
+{"message":"**** New records: 1 || Records to change: 0 ****","level":"info"}
+{"message":"1 records uploaded successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"SFRC Done.","level":"info"}
+{"message":"Checking SVAC","level":"info"}
