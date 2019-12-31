@@ -145,3 +145,18 @@
 {"message":"Checking HHSC","level":"info"}
 {"name":"TimeoutError","level":"error","message":"Could not navigate to page. Navigation Timeout Exceeded: 30000ms exceeded","stack":"TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded\n    at Promise.then (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/LifecycleWatcher.js:143:21)\n    at <anonymous>\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:27:20)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Dec 31, 2019 2:50 PM","level":"info"}
+{"message":"Checking HFAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC","level":"info"}
+{"message":"Running program at Tue, Dec 31, 2019 3:09 PM","level":"info"}
+{"message":"Checking HVAC","level":"info"}
+{"message":"**** New records: 37 || Records to change: 0 ****","level":"info"}
+{"message":"37 records uploaded successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"HVAC Done.","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
