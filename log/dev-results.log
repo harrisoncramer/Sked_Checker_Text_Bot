@@ -160,3 +160,39 @@
 {"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
 {"message":"HHSC Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Dec 31, 2019 6:29 PM","level":"info"}
+{"message":"Checking HVAC","level":"info"}
+{"message":"Running program at Tue, Dec 31, 2019 6:30 PM","level":"info"}
+{"message":"Checking SVAC","level":"info"}
+{"level":"error","message":"Error parsing page data. Evaluation failed: ReferenceError: timeInfo is not defined\n    at __puppeteer_evaluation_script__:12:22\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:5:21","stack":"Error: Evaluation failed: ReferenceError: timeInfo is not defined\n    at __puppeteer_evaluation_script__:12:22\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:5:21\n    at ExecutionContext.evaluateHandle (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.svacBusiness [as business] (/home/vagrant/Sked_Checker_Text_Bot/bots/guts/index.js:159:10)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
+{"message":"Checking HVAC","level":"info"}
+{"message":"Running program at Tue, Dec 31, 2019 6:32 PM","level":"info"}
+{"message":"Checking SVAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 15 ****","level":"info"}
+{"message":"15 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"SVAC Done.","level":"info"}
+{"message":"Checking HVAC","level":"info"}
+{"message":"Running program at Tue, Dec 31, 2019 7:18 PM","level":"info"}
+{"message":"Checking SVAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SVAC Done.","level":"info"}
+{"message":"Checking HVAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
+{"message":"1 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"HVAC Done.","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"Running program at Tue, Dec 31, 2019 7:23 PM","level":"info"}
+{"message":"Checking SVAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SVAC Done.","level":"info"}
+{"message":"Checking HVAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 26 ****","level":"info"}
+{"message":"26 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"HVAC Done.","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}

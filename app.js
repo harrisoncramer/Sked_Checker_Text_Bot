@@ -159,7 +159,7 @@ if (process.env.NODE_ENV === 'production') {
       // await skedChecker({ page, args: { link: 'https://armedservices.house.gov/hearings', business: hascBusiness, getWitnesses: hascWitnesses, type: 'HASC', comparer: 'recordListTitle', params: ['recordListTime', 'recordListDate'], schema: HASCSchema }});
       // await skedChecker({ page, args: { link: 'https://www.armed-services.senate.gov/hearings', business: sascBusiness, getWitnesses: sascWitnesses, type: 'SASC', comparer: 'title', params: ['location', 'date'], schema: SASCSchema }});
       // await skedChecker({ page, args: { link: 'https://www.foreign.senate.gov/hearings', business: sfrcBusiness, getWitnesses: sfrcBusiness, type: 'SFRC', comparer: 'title', params: ['location', 'date'], schema: SFRCSchema }});
-      // await skedChecker({ page, args: { link: 'https://www.veterans.senate.gov/hearings', business: svacBusiness, getWitnesses: svacWitnesses, type: 'SVAC', comparer: 'title', schema: SVACSchema, params: ['location', 'date'] }});
+      await skedChecker({ page, args: { link: 'https://www.veterans.senate.gov/hearings', business: svacBusiness, getWitnesses: svacWitnesses, type: 'SVAC', comparer: 'title', schema: SVACSchema, params: ['location', 'date'] }});
       await skedChecker({
         page,
         args: {
