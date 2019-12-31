@@ -16,8 +16,10 @@ module.exports = async ({ page, args }) => {
     logger.info(`Checking ${args.type}`);
 
     try {
-        var db = await mongoose.connect('mongodb://localhost:27017/resources', { useNewUrlParser: true, useUnifiedTopology: true });
-    } catch(err){
+      let uri = "mongodb://localhost:27017/sked_checker?authSource=admin";
+      let options =  { useNewUrlParser: true, useUnifiedTopology: true, keepAlive: true,  user: "admin", pass: process.env.MONGO_PASS };
+      let db = await mongoose.connect(uri, options);
+    } catch (err) { 
         return logger.error(`Could not connect to database. `, err);
     };
 

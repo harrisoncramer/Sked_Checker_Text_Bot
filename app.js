@@ -57,7 +57,7 @@ if(process.env.NODE_ENV === 'production'){
                 { bot: skedChecker, args: { link: 'https://foreignaffairs.house.gov/hearings', business: hfacBusiness, getWitnesses: hfacWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: HFACSchema, params: ['recordListTime', 'recordListDate'] }},
                 { bot: skedChecker, args: { link: 'https://armedservices.house.gov/hearings', business: hascBusiness, getWitnesses: hascWitnesses, type: 'HFAC', comparer: 'recordListTitle', schema: HASCSchema, params: ['recordListTime', 'recordListDate'] }},
                 { bot: skedChecker, args: { link: 'https://www.veterans.senate.gov/hearings', business: svacBusiness, getWitnesses: svacWitnesses, type: 'SVAC', comparer: 'title', schema: SVACSchema, params: ['location', 'date'] }},
-                { bot: skedChecker, args: { link: 'https://veterans.house.gov/events/hearings', extra: { link: 'https://veterans.house.gov/events/markups', business: hvacMarkup }, business: hvacBusiness, getWitnesses: hvacWitnesses, type: 'HVAC', comparer: 'title', schema: HVACSchema, params: ['location', 'date'] }}
+               // { bot: skedChecker, args: { link: 'https://veterans.house.gov/events/hearings', extra: { link: 'https://veterans.house.gov/events/markups', business: hvacMarkup }, business: hvacBusiness, getWitnesses: hvacWitnesses, type: 'HVAC', comparer: 'title', schema: HVACSchema, params: ['location', 'date'] }}
             ]});
 
             await page.close();
@@ -69,9 +69,9 @@ if(process.env.NODE_ENV === 'production'){
     });
 
     // Email for outlook...
-    cron.schedule('30 10 * * 5', async () => {
+    cron.schedule('55 10 * * 5', async () => {
         try {
-            await outlook({ schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema], email: process.env.email });
+            await outlook({ schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema], email: process.env.EMAIL });
         } catch (err){
             logger.error('Could not send hearings', err);
         }
