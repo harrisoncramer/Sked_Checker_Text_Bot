@@ -7,31 +7,6 @@ const pupeteer = require('puppeteer');
 const {asyncForEach} = require('../util');
 
 module.exports = {
-  setUpPuppeteerNoJavascript: async () => {
-    const browser = await pupeteer.launch({
-      headless: true,
-      devtools: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
-
-    const context = await browser.createIncognitoBrowserContext();
-    const page = await context.newPage(); // Create new instance of puppet
-
-    page.on('error', err => {
-      logger.error('Puppeteer error.', err);
-    });
-
-    await page.setRequestInterception(true); // Optimize (no stylesheets, images)...
-    page.on('request', request => {
-      if (['image', 'stylesheet', 'script' ].includes(request.resourceType())) {
-        request.abort();
-      } else {
-        request.continue();
-      }
-    });
-
-    return {browser, page};
-  },
   setUpPuppeteer: async () => {
     // const headless = process.env.NODE_ENV === "production";
     const browser = await pupeteer.launch({
@@ -49,7 +24,7 @@ module.exports = {
     if (process.env.NODE_ENV === 'production') {
       await page.setRequestInterception(true); // Optimize (no stylesheets, images)...
       page.on('request', request => {
-        if (['image', 'stylesheet'].includes(request.resourceType())) {
+        if (['image', 'stylesheet', 'script'].includes(request.resourceType())) {
           request.abort();
         } else {
           request.continue();
