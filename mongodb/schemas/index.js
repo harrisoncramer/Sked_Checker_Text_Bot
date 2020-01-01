@@ -158,6 +158,10 @@ module.exports = {
       type: String,
       require: true,
     },
+    time: {
+      type: String,
+      require: true
+    },
     title: {
       type: String,
       require: true,
@@ -171,4 +175,30 @@ module.exports = {
       require: true,
     },
   }),
+  HAGCSchema: mongoose.model('HAGC', {
+    link: {
+      type: String,
+      require: true,
+    },
+    date: {
+      type: String,
+      require: true,
+    },
+    time: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      require: true,
+    },
+    location: {
+      type: String,
+      require: true,
+    },
+    witnesses: {
+      type: Array,
+      require: true,
+    }
+   }),
 };

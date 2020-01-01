@@ -10,10 +10,11 @@ const {sortPageData} = require('./guts');
 const sendText = require('../texter');
 const mongoose = require('mongoose');
 const logger = require('../logger');
+const saslprep = require("saslprep");
 
 module.exports = async ({page, args}) => {
   logger.info(`Checking ${args.type}`);
-
+  
   var db;
   try {
     let uri = 'mongodb://localhost:27017/sked_checker?authSource=admin';

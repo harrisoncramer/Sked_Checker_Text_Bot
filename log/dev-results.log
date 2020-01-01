@@ -196,3 +196,95 @@
 {"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
 {"message":"HHSC Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Tue, Dec 31, 2019 10:29 PM","level":"info"}
+{"message":"Checking HFAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HFAC Done.","level":"info"}
+{"message":"Checking HASC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HASC Done.","level":"info"}
+{"message":"Checking SASC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SASC Done.","level":"info"}
+{"message":"Checking SFRC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SFRC Done.","level":"info"}
+{"message":"Checking SVAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"SVAC Done.","level":"info"}
+{"message":"Checking HVAC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
+{"message":"1 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"HVAC Done.","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:08 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:31 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:35 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:36 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:39 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:41 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:41 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:42 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:44 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 5:45 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"level":"error","message":"Root Error in development. Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"","stack":"Error: Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"\n    at Launcher.launch (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:119:15)"}
+{"level":"error","message":"Root Error in development. Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"","stack":"Error: Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"\n    at Launcher.launch (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:119:15)"}
+{"level":"error","message":"Root Error in development. Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"","stack":"Error: Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"\n    at Launcher.launch (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:119:15)\n    at async setUpPuppeteer (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/setup/index.js:12:21)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:164:29"}
+{"message":"Running program at Wed, Jan 1, 2020 12:53 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"name":"TimeoutError","level":"error","message":"Could not navigate to page. Navigation Timeout Exceeded: 30000ms exceeded","stack":"TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/LifecycleWatcher.js:143:21\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:34:16)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:244:7"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 12:54 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"level":"error","message":"Root Error in development. Failed to launch chrome!\n\n(chrome:5323): Gtk-WARNING **: 17:50:58.597: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n","stack":"Error: Failed to launch chrome!\n\n(chrome:5323): Gtk-WARNING **: 17:50:58.597: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n\n    at onClose (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:342:14)\n    at ChildProcess.helper.addEventListener (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:332:60)\n    at emitTwo (events.js:131:20)\n    at ChildProcess.emit (events.js:214:7)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:198:12)"}
+{"message":"Running program at Wed, Jan 1, 2020 5:51 PM","level":"info"}
+{"message":"Checking HHSC","level":"info"}
+{"message":"**** New records: 25 || Records to change: 0 ****","level":"info"}
+{"message":"25 records uploaded successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"HHSC Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}

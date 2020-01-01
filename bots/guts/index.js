@@ -175,7 +175,6 @@ module.exports = {
           .fill()
           .map(_ => ({})),
       );
-      console.log(JSON.stringify(res));
       return res;
     }),
   svacWitnesses: page =>
@@ -249,37 +248,23 @@ module.exports = {
   hhscWitnesses: page =>
     page.evaluate(() => {
       return Array.from(
-        document.querySelectorAll('section.sectionhead__hearingInfo a'),
-      )
-        .map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
-        .filter(
-          x =>
-            ![
-              'Witnesses:',
-              '',
-              'Panel 1',
-              'Panel 2',
-              'Panel One',
-              'Panel Two',
-              'Panel I',
-              'Panel II',
-            ].includes(x),
-        );
+        document.querySelectorAll('section.sectionhead__hearingInfo ul:first-of-type a'),
+      ).map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
     }),
   hhscBusiness: page =>
     page.evaluate(() => {
+      debugger
       let trs = Array.from(
-        document.querySelectorAll('tbody.upcomingholder tr.vevent'),
+        document.querySelectorAll("#main_column > div.hearings-table tbody tr.vevent"),
       ).map(x => x.querySelectorAll('td > div.faux-col'));
       let res = trs.reduce(
         (agg, item, i) => {
           let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
           let link = item[0].querySelector('a').href;
-          let location = item[1].textContent.trim();
-          let date = item[2].textContent
-            .trim()
-            .concat(` at ${item[3].textContent.trim()}`);
-          agg[i] = {link, title, location, date};
+          let location = item[1].textContent.trim().replace(" House Office Building, Washington, DC 20515", "");
+          let date = item[2].textContent.replace(/\s\s+/g, ' ').trim();
+          let time = item[3].textContent.replace(/\s\s+/g, ' ').trim();
+          agg[i] = {link, title, location, date, time};
           return agg;
         },
         Array(trs.length)
