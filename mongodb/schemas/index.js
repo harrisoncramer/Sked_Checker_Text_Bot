@@ -1,5 +1,28 @@
 const mongoose = require('mongoose');
 
+const basicDataStructure = {
+    title: {
+      type: String,
+      require: true,
+    },
+    time: {
+      type: String,
+      require: true,
+    },
+    date: {
+      type: String,
+      require: true,
+    },
+    link: {
+      type: String,
+      require: true,
+    },
+    witnesses: {
+      type: Array,
+      require: true,
+    }
+};
+
 module.exports = {
   HFACSchema: mongoose.model('HFAC', {
     recordListTitle: {
@@ -23,32 +46,7 @@ module.exports = {
       require: true,
     },
   }),
-  SFRCSchema: mongoose.model('SFRC', {
-    link: {
-      type: String,
-      require: true,
-    },
-    date: {
-      type: String,
-      require: true,
-    },
-    time: {
-      type: String,
-      require: true,
-    },
-    title: {
-      type: String,
-      require: true,
-    },
-    location: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    },
-  }),
+  SFRCSchema: mongoose.model('SFRC', basicDataStructure),
   HASCSchema: mongoose.model('HASC', {
     recordListTitle: {
       type: String,
@@ -71,134 +69,9 @@ module.exports = {
       require: true,
     },
   }),
-  SASCSchema: mongoose.model('SASC', {
-    link: {
-      type: String,
-      require: true,
-    },
-    date: {
-      type: String,
-      require: true,
-    },
-    time: {
-      type: String,
-      require: true,
-    },
-    title: {
-      type: String,
-      require: true,
-    },
-    location: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    },
-  }),
-  HVACSchema: mongoose.model('HVAC', {
-    link: {
-      type: String,
-      require: true,
-    },
-    date: {
-      type: String,
-      require: true,
-    },
-    time: {
-      type: String,
-      require: true
-    },
-    title: {
-      type: String,
-      require: true,
-    },
-    location: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    },
-  }),
-  SVACSchema: mongoose.model('SVAC', {
-    link: {
-      type: String,
-      require: true,
-    },
-    date: {
-      type: String,
-      require: true,
-    },
-    time: {
-      type: String,
-      require: true,
-    },
-    title: {
-      type: String,
-      require: true,
-    },
-    location: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    },
-  }),
-  HHSCSchema: mongoose.model('HHSC', {
-    link: {
-      type: String,
-      require: true,
-    },
-    date: {
-      type: String,
-      require: true,
-    },
-    time: {
-      type: String,
-      require: true
-    },
-    title: {
-      type: String,
-      require: true,
-    },
-    location: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    },
-  }),
-  HAGCSchema: mongoose.model('HAGC', {
-    link: {
-      type: String,
-      require: true,
-    },
-    date: {
-      type: String,
-      require: true,
-    },
-    time: {
-      type: String,
-      required: true
-    },
-    title: {
-      type: String,
-      require: true,
-    },
-    location: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    }
-   }),
+  SASCSchema: mongoose.model('SASC', basicDataStructure),
+  HVACSchema: mongoose.model('HVAC', basicDataStructure),
+  SVACSchema: mongoose.model('SVAC', basicDataStructure),
+  HHSCSchema: mongoose.model('HHSC', basicDataStructure),
+  HAGCSchema: mongoose.model('HAGC', basicDataStructure),
 };

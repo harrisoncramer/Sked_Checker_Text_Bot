@@ -13,8 +13,7 @@ const logger = require('../logger');
 const saslprep = require("saslprep");
 
 module.exports = async ({page, args}) => {
-  logger.info(`Checking ${args.type}`);
-  
+  logger.info(`Checking ${args.schema.collection.collectionName}`);
   var db;
   try {
     let uri = 'mongodb://localhost:27017/sked_checker?authSource=admin';
