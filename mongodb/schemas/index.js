@@ -23,55 +23,38 @@ const basicDataStructure = {
     }
 };
 
+const modifiedDataStructure = {
+  recordListTitle: {
+    type: String,
+    require: true,
+  },
+  recordListTime: {
+    type: String,
+    require: true,
+  },
+  recordListDate: {
+    type: String,
+    require: true,
+  },
+  link: {
+    type: String,
+    require: true,
+  },
+  witnesses: {
+    type: Array,
+    require: true,
+  }
+};
+
 module.exports = {
-  HFACSchema: mongoose.model('HFAC', {
-    recordListTitle: {
-      type: String,
-      require: true,
-    },
-    recordListTime: {
-      type: String,
-      require: true,
-    },
-    recordListDate: {
-      type: String,
-      require: true,
-    },
-    link: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    },
-  }),
+  // Senate Committees
   SFRCSchema: mongoose.model('SFRC', basicDataStructure),
-  HASCSchema: mongoose.model('HASC', {
-    recordListTitle: {
-      type: String,
-      require: true,
-    },
-    recordListTime: {
-      type: String,
-      require: true,
-    },
-    recordListDate: {
-      type: String,
-      require: true,
-    },
-    link: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    },
-  }),
   SASCSchema: mongoose.model('SASC', basicDataStructure),
-  HVACSchema: mongoose.model('HVAC', basicDataStructure),
   SVACSchema: mongoose.model('SVAC', basicDataStructure),
+  // House Committees
+  HASCSchema: mongoose.model('HASC', modifiedDataStructure),
+  HFACSchema: mongoose.model('HFAC', modifiedDataStructure),
+  HVACSchema: mongoose.model('HVAC', basicDataStructure),
   HHSCSchema: mongoose.model('HHSC', basicDataStructure),
   HAGCSchema: mongoose.model('HAGC', { 
     ...basicDataStructure,
@@ -80,4 +63,5 @@ module.exports = {
       type: Array
     }
   }),
+  HAPCSchema: mongoose.model('HAPC', basicDataStructure),
 };

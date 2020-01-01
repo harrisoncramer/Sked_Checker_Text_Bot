@@ -31,7 +31,9 @@ const {
   hhscBusiness,
   hhscWitnesses,
   hagcBusiness,
-  hagcWitnesses
+  hagcWitnesses,
+  hapcBusiness,
+  hapcWitnesses
 } = require('./bots/guts');
 
 // Import schemas...
@@ -43,7 +45,8 @@ const {
   SVACSchema,
   HVACSchema,
   HHSCSchema,
-  HAGCSchema
+  HAGCSchema,
+  HAPCSchema
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -228,17 +231,28 @@ if (process.env.NODE_ENV === 'production') {
       //     params: ['location', 'date', 'time'],
       //   },
       // });
-       await skedChecker({
-         page,
-         args: {
-           link: 'https://agriculture.house.gov/calendar/',
-           business: hagcBusiness,
-           getWitnesses: hagcWitnesses,
-           schema: HAGCSchema,
-           comparer: 'title',
-           params: ['date', 'time'],
-         }
-       });
+      // await skedChecker({
+      //   page,
+      //   args: {
+      //     link: 'https://agriculture.house.gov/calendar/',
+      //     business: hagcBusiness,
+      //     getWitnesses: hagcWitnesses,
+      //     schema: HAGCSchema,
+      //     comparer: 'title',
+      //     params: ['date', 'time'],
+      //   }
+      // });
+      await skedChecker({
+        page,
+        args: {
+          link: 'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
+          business: hapcBusiness,
+          getWitnesses: hapcWitnesses,
+          schema: HAPCSchema,
+          comparer: 'title',
+          params: [ 'location', 'date', 'time'],
+        }
+      });
 
       // await outlook({
       //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],
