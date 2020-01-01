@@ -299,3 +299,65 @@
 {"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
 {"message":"undefined Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 1:48 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"level":"error","message":"Error parsing page data. Evaluation failed: ReferenceError: trs is not defined\n    at __puppeteer_evaluation_script__:16:15","stack":"Error: Evaluation failed: ReferenceError: trs is not defined\n    at __puppeteer_evaluation_script__:16:15\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hagcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:283:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 1:48 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"level":"error","message":"Error processing data. args.params is not iterable","stack":"TypeError: args.params is not iterable\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:81:26)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8"}
+{"message":"10 records uploaded successfully.","level":"info"}
+{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:97:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:119:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8"}
+{"message":"undefined Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 1:54 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
+{"message":"10 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"undefined Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 1:55 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
+{"message":"10 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 1:56 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
+{"message":"10 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 1:57 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
+{"message":"10 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 2:01 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
+{"message":"10 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 2:04 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 2:07 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 1 || Records to change: 0 ****","level":"info"}
+{"message":"1 records uploaded successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Wed, Jan 1, 2020 2:08 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}

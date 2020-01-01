@@ -273,4 +273,31 @@ module.exports = {
       );
       return res;
     }),
+  hagcWitnesses: page =>
+    page.evaluate(() => {
+      return Array.from(
+        document.querySelectorAll('.thiswillnotbefound'),
+      ).map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
+  }),
+  hagcBusiness: page =>
+    page.evaluate(() => {
+      let info = Array.from(
+        document.querySelectorAll("ul.calendar-listing li"),
+      );
+      let res = info.reduce(
+        (agg, item, i) => {
+          let title = item.querySelector('a').textContent.replace(/\s\s+/g, ' ').trim();
+          let link = item.querySelector('a').href;
+          let date = item.querySelector("div.newsie-details span:nth-child(1)").nextSibling.nodeValue.replace(/\s\s+/g, ' ').replace("|","").trim();
+          let time = item.querySelector("div.newsie-details span:nth-child(2)").nextSibling.nodeValue.replace(/\s\s+/g, ' ').trim();          
+          // let location = item[1].textContent.trim().replace(" House Office Building, Washington, DC 20515", "");
+          agg[i] = {link, title, location: '', date, time};
+          return agg;
+        },
+        Array(info.length)
+          .fill()
+          .map(_ => ({})),
+      );
+      return res;
+    }),
 };

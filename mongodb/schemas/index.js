@@ -73,5 +73,11 @@ module.exports = {
   HVACSchema: mongoose.model('HVAC', basicDataStructure),
   SVACSchema: mongoose.model('SVAC', basicDataStructure),
   HHSCSchema: mongoose.model('HHSC', basicDataStructure),
-  HAGCSchema: mongoose.model('HAGC', basicDataStructure),
+  HAGCSchema: mongoose.model('HAGC', { 
+    ...basicDataStructure,
+    witnesses: {
+      required: false,
+      type: Array
+    }
+  }),
 };

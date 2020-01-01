@@ -30,6 +30,8 @@ const {
   hvacMarkup,
   hhscBusiness,
   hhscWitnesses,
+  hagcBusiness,
+  hagcWitnesses
 } = require('./bots/guts');
 
 // Import schemas...
@@ -41,6 +43,7 @@ const {
   SVACSchema,
   HVACSchema,
   HHSCSchema,
+  HAGCSchema
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -67,7 +70,7 @@ if (process.env.NODE_ENV === 'production') {
               business: sfrcBusiness,
               getWitnesses: sfrcWitnesses,
               comparer: 'title',
-              params: ['location', 'date'],
+              params: ['location', 'date', 'time'],
               schema: SFRCSchema,
             },
           },
@@ -79,7 +82,7 @@ if (process.env.NODE_ENV === 'production') {
               getWitnesses: sascWitnesses,
               comparer: 'title',
               schema: SASCSchema,
-              params: ['location', 'date'],
+              params: ['location', 'date', 'time'],
             },
           },
           {
@@ -112,7 +115,7 @@ if (process.env.NODE_ENV === 'production') {
               getWitnesses: svacWitnesses,
               comparer: 'title',
               schema: HVACSchema,
-              params: ['location', 'date'],
+              params: ['location', 'date', 'time'],
             },
           },
         ],
@@ -173,7 +176,7 @@ if (process.env.NODE_ENV === 'production') {
       //     business: sascBusiness,
       //     getWitnesses: sascWitnesses,
       //     comparer: 'title',
-      //     params: ['location', 'date'],
+      //     params: ['location', 'date', 'time'],
       //     schema: SASCSchema,
       //   },
       // });
@@ -184,7 +187,7 @@ if (process.env.NODE_ENV === 'production') {
       //     business: sfrcBusiness,
       //     getWitnesses: sfrcBusiness,
       //     comparer: 'title',
-      //     params: ['location', 'date'],
+      //     params: ['location', 'date', 'time'],
       //     schema: SFRCSchema,
       //   },
       // });
@@ -196,7 +199,7 @@ if (process.env.NODE_ENV === 'production') {
       //     getWitnesses: svacWitnesses,
       //     comparer: 'title',
       //     schema: SVACSchema,
-      //     params: ['location', 'date'],
+      //     params: ['location', 'date', 'time'],
       //   },
       // });
       // await skedChecker({
@@ -211,34 +214,36 @@ if (process.env.NODE_ENV === 'production') {
       //     getWitnesses: hvacWitnesses,
       //     comparer: 'title',
       //     schema: HVACSchema,
-      //     params: ['location', 'date'],
+      //     params: ['location', 'date', 'time'],
       //   },
       // });
-      await skedChecker({
-        page,
-        args: {
-          link: 'https://homeland.house.gov/activities/hearings',
-          business: hhscBusiness,
-          getWitnesses: hhscWitnesses,
-          comparer: 'title',
-          schema: HHSCSchema,
-          params: ['location', 'date'],
-        },
-      });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://agriculture.house.gov/calendar/',
-      //      business: hagcBusiness,
-      //      getWitnesses: hgacWitnesses,
-      //      schema: HGACSchema
-      //    }
-      //  });
+      // await skedChecker({
+      //   page,
+      //   args: {
+      //     link: 'https://homeland.house.gov/activities/hearings',
+      //     business: hhscBusiness,
+      //     getWitnesses: hhscWitnesses,
+      //     comparer: 'title',
+      //     schema: HHSCSchema,
+      //     params: ['location', 'date', 'time'],
+      //   },
+      // });
+       await skedChecker({
+         page,
+         args: {
+           link: 'https://agriculture.house.gov/calendar/',
+           business: hagcBusiness,
+           getWitnesses: hagcWitnesses,
+           schema: HAGCSchema,
+           comparer: 'title',
+           params: ['date', 'time'],
+         }
+       });
 
-      await outlook({
-        schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],
-        email: process.env.EMAIL,
-      });
+      // await outlook({
+      //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],
+      //   email: process.env.EMAIL,
+      // });
 
       await page.close();
       await browser.close();

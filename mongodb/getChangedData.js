@@ -45,6 +45,7 @@ module.exports = async ({ existingData, model, comparer, params }, deep) => {
         let deepChanges = checkIfDatumShouldUpdateDeep({ dbDatum: item[0], pageDatum: datum, deep });
 
         if(!!changes || !!deepChanges){
+            console.log(changes, deepChanges)
             dataToChange.push({ 
                 changes,
                 deepChanges,

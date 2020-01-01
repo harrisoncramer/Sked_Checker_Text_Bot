@@ -48,7 +48,7 @@ module.exports = async ({page, args}) => {
       datum.witnesses = witnesses;
     });
   } catch (err) {
-    return logger.error(`Error fetching ${args.type} witnesses. `, err);
+    return logger.error(`Error fetching ${args.schema.collection.collectionName} witnesses. `, err);
   }
 
   if (args.extra) {
@@ -105,7 +105,7 @@ module.exports = async ({page, args}) => {
   try {
     if (newData.length > 0) {
       let myMessage = await sendText({
-        title: `New ${args.type} Meeting(s)`,
+        title: `New ${args.schema.collection.collectionName} Meeting(s)`,
         data: newData,
       });
       logger.info(
@@ -118,7 +118,7 @@ module.exports = async ({page, args}) => {
     }
     if (dataToChange.length > 0) {
       let myMessage = await sendText({
-        title: `Updated ${args.type} Meeting(s)`,
+        title: `Updated ${args.schema.collection.collectionName} Meeting(s)`,
         data: dataToText,
       });
       logger.info(
@@ -135,7 +135,7 @@ module.exports = async ({page, args}) => {
 
   try {
     await db.disconnect();
-    logger.info(`${args.type} Done.`);
+    logger.info(`${args.schema.collection.collectionName} Done.`);
   } catch (err) {
     logger.info('Error disconnecting: ', err);
   }
