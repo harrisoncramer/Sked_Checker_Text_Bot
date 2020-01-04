@@ -7,12 +7,21 @@ const moment = require("moment");
 module.exports = async ({ email, schemas }) => {
 
     const today = moment();
-
+    
+    var db;
     try {
-        var db = await mongoose.connect("mongodb://localhost:27017/resources", { useNewUrlParser: true, useUnifiedTopology: true });
-    } catch(err){
-        return logger.error(`Could not connect to database. `, err);
-    };
+      let uri = 'mongodb://localhost:27017/sked_checker?authSource=admin';
+      let options = {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        keepAlive: true,
+        user: 'admin',
+        pass: process.env.MONGO_PASS,
+      };
+      db = await mongoose.connect(uri, options);
+    } catch (err) {
+      return logger.error(`Could not connect to database. `, err);
+    }
 
     var information = schemas.map(async schema => {
         let name = schema.modelName;
