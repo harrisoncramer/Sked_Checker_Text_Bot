@@ -13,6 +13,10 @@ const basicDataStructure = {
       type: String,
       require: true,
     },
+    location: {
+      type: String,
+      required: false
+    },
     link: {
       type: String,
       require: true,
@@ -65,4 +69,5 @@ module.exports = {
   }),
   HAPCSchema: mongoose.model('HAPC', basicDataStructure),
   HBUCSchema: mongoose.model('HBUC', basicDataStructure),
+  HELPSchema: mongoose.model('HELP', basicDataStructure),
 };

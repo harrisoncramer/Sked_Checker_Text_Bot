@@ -27,7 +27,10 @@ const {
   hapcBusinessAndMarkup,
   hapcWitnesses,
   hbucBusinessAndMarkup,
-  hbucWitnesses,
+  hbucWitnessesAndLocation,
+  helpBusiness,
+  helpMarkup,
+  helpWitnessesAndTime,
 } = require('./bots/guts/house');
 
 const {
@@ -50,7 +53,8 @@ const {
   HHSCSchema,
   HAGCSchema,
   HAPCSchema,
-  HBUCSchema
+  HBUCSchema,
+  HELPSchema
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -75,7 +79,7 @@ if (process.env.NODE_ENV === 'production') {
             args: {
               link: 'https://www.foreign.senate.gov/hearings',
               business: sfrcBusiness,
-              getWitnesses: sfrcWitnesses,
+              getAdditionalData: sfrcWitnesses,
               comparer: 'title',
               params: ['location', 'date', 'time'],
               schema: SFRCSchema,
@@ -86,7 +90,7 @@ if (process.env.NODE_ENV === 'production') {
             args: {
               link: 'https://www.armed-services.senate.gov/hearings',
               business: sascBusiness,
-              getWitnesses: sascWitnesses,
+              getAdditionalData: sascWitnesses,
               comparer: 'title',
               schema: SASCSchema,
               params: ['location', 'date', 'time'],
@@ -97,7 +101,7 @@ if (process.env.NODE_ENV === 'production') {
             args: {
               link: 'https://foreignaffairs.house.gov/hearings',
               business: hfacBusiness,
-              getWitnesses: hfacWitnesses,
+              getAdditionalData: hfacWitnesses,
               comparer: 'recordListTitle',
               schema: HFACSchema,
               params: ['recordListTime', 'recordListDate'],
@@ -108,7 +112,7 @@ if (process.env.NODE_ENV === 'production') {
             args: {
               link: 'https://armedservices.house.gov/hearings',
               business: hascBusiness,
-              getWitnesses: hascWitnesses,
+              getAdditionalData: hascWitnesses,
               comparer: 'recordListTitle',
               schema: HASCSchema,
               params: ['recordListTime', 'recordListDate'],
@@ -119,7 +123,7 @@ if (process.env.NODE_ENV === 'production') {
             args: {
               link: 'https://www.veterans.senate.gov/hearings',
               business: svacBusiness,
-              getWitnesses: svacWitnesses,
+              getAdditionalData: svacWitnesses,
               comparer: 'title',
               schema: HVACSchema,
               params: ['location', 'date', 'time'],
@@ -159,7 +163,7 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://foreignaffairs.house.gov/hearings',
       //     business: hfacBusiness,
-      //     getWitnesses: hfacWitnesses,
+      //     getAdditionalData: hfacWitnesses,
       //     comparer: 'recordListTitle',
       //     params: ['recordListTime', 'recordListDate'],
       //     schema: HFACSchema,
@@ -170,7 +174,7 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://armedservices.house.gov/hearings',
       //     business: hascBusiness,
-      //     getWitnesses: hascWitnesses,
+      //     getAdditionalData: hascWitnesses,
       //     comparer: 'recordListTitle',
       //     params: ['recordListTime', 'recordListDate'],
       //     schema: HASCSchema,
@@ -181,7 +185,7 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://www.armed-services.senate.gov/hearings',
       //     business: sascBusiness,
-      //     getWitnesses: sascWitnesses,
+      //     getAdditionalData: sascWitnesses,
       //     comparer: 'title',
       //     params: ['location', 'date', 'time'],
       //     schema: SASCSchema,
@@ -192,7 +196,7 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://www.foreign.senate.gov/hearings',
       //     business: sfrcBusiness,
-      //     getWitnesses: sfrcBusiness,
+      //     getAdditionalData: sfrcBusiness,
       //     comparer: 'title',
       //     params: ['location', 'date', 'time'],
       //     schema: SFRCSchema,
@@ -203,7 +207,7 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://www.veterans.senate.gov/hearings',
       //     business: svacBusiness,
-      //     getWitnesses: svacWitnesses,
+      //     getAdditionalData: svacWitnesses,
       //     comparer: 'title',
       //     schema: SVACSchema,
       //     params: ['location', 'date', 'time'],
@@ -218,7 +222,7 @@ if (process.env.NODE_ENV === 'production') {
       //       business: hvacMarkup,
       //     },
       //     business: hvacBusiness,
-      //     getWitnesses: hvacWitnesses,
+      //     getAdditionalData: hvacWitnesses,
       //     comparer: 'title',
       //     schema: HVACSchema,
       //     params: ['location', 'date', 'time'],
@@ -229,7 +233,7 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://homeland.house.gov/activities/hearings',
       //     business: hhscBusiness,
-      //     getWitnesses: hhscWitnesses,
+      //     getAdditionalData: hhscWitnesses,
       //     comparer: 'title',
       //     schema: HHSCSchema,
       //     params: ['location', 'date', 'time'],
@@ -240,7 +244,7 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://agriculture.house.gov/calendar/',
       //     business: hagcBusiness,
-      //     getWitnesses: hagcWitnesses,
+      //     getAdditionalData: hagcWitnesses,
       //     schema: HAGCSchema,
       //     comparer: 'title',
       //     params: ['date', 'time'],
@@ -251,7 +255,7 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
       //     business: hapcBusinessAndMarkup,
-      //     getWitnesses: hapcWitnesses,
+      //     getAdditionalData: hapcWitnesses,
       //     extra: {
       //       link: 'https://appropriations.house.gov/events/markups',
       //       business: hapcBusinessAndMarkup,
@@ -266,16 +270,31 @@ if (process.env.NODE_ENV === 'production') {
         args: {
           link: 'https://budget.house.gov/legislation/hearings',
           business: hbucBusinessAndMarkup,
-          getWitnesses: hbucWitnesses,
+          getAdditionalData: hbucWitnessesAndLocation,
           extra: {
             link: 'https://budget.house.gov/legislation/markups',
             business: hbucBusinessAndMarkup
           },
           schema: HBUCSchema,
           comparer: 'title',
-          params: ['date', 'time']
+          params: ['date', 'time', 'location', 'witnesses']
         }
       })
+      // await skedChecker({
+      //   page,
+      //   args: {
+      //     link: 'https://edlabor.house.gov/full-committee-hearings',
+      //     business: helpBusiness,
+      //     getAdditionalData: helpWitnessesAndTime,
+      //     extra: {
+      //       link: 'https://edlabor.house.gov/markups',
+      //       business: helpMarkup
+      //     },
+      //     schema: HELPSchema,
+      //     comparer: 'title',
+      //     params: ['location', 'date', 'time']
+      //   }
+      // })
 
       // await outlook({
       //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],

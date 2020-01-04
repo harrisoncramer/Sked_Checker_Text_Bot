@@ -42,14 +42,14 @@ module.exports = async ({page, args}) => {
   }
 
   try {
-    await asyncForEach(pageData, async datum => {
+    pageData = await asyncForEach(pageData, async datum => {
       await page.goto(datum.link, {waitUntil: 'networkidle2'});
-      let witnesses = await args.getWitnesses(page);
-      datum.witnesses = witnesses;
+      let additionalData = await args.getAdditionalData(page); // Get any additional data not available on the first page...
+      return { ...datum, ...additionalData };
     });
   } catch (err) {
-    return logger.error(`Error fetching ${args.schema.collection.collectionName} witnesses. `, err);
-  }
+    return logger.error(`Error fetching ${args.schema.collection.collectionName} additional details. `, err);
+  };
 
   if (args.extra) {
     try {

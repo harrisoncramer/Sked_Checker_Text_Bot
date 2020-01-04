@@ -239,11 +239,6 @@ module.exports = {
           .textContent.split('-');
         let date = timeInfo[0].replace(/\s\s+/g, ' ').trim();
         let time = timeInfo[1].replace(/\s\s+/g, ' ').trim();
-        // let location = item
-        //   .querySelector('.views-field-field-congress-meeting-location')
-        //   .textContent.replace(/\s\s+/g, ' ')
-        //   .replace(' House Office Building, Washington, DC 20515', '')
-        //   .trim();
 
         agg[i] = {link, title, date, time};
         return agg;
@@ -254,12 +249,56 @@ module.exports = {
     );
     return res;
   }),
-hbucWitnesses: page =>
+hbucWitnessesAndLocation: page =>
   page.evaluate(() => {
-    return Array.from(
+    let witnesses = Array.from(
       document.querySelectorAll(
         '.field-name-field-congress-meeting-witnesses strong',
       ),
     ).map(i => i.textContent.replace(/\s\s+/g, ' ').trim());
+    let location = document.querySelector(".pane-node-field-congress-meeting-location") ? document.querySelector(".pane-node-field-congress-meeting-location").querySelector(".field-items").textContent.replace(' House Office Building, Washington, DC 20515', '') : '';
+    return { witnesses, location };
   }),
+// helpBusiness: page =>
+//   page.evaluate(() => {
+//       let trs = Array.from(document.querySelectorAll('tr.vevent')).map(x =>
+//         x.querySelectorAll('td > div.faux-col'),
+//       );
+//       let res = trs.reduce(
+//         (agg, item, i) => {
+//           let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+//           let link = item[0].querySelector('a').href;
+//           let location = item[1].textContent.replace('House Office Building', '').replace("Washington, D.C.", "").trim();
+//           let date = item[2].textContent.trim().replace(/\./g, "/");
+//           // let time = item[3].textContent.trim();
+//           agg[i] = {link, title, location, date};
+//           return agg;
+//         },
+//         Array(trs.length)
+//           .fill()
+//           .map(_ => ({})),
+//       );
+
+//       return res;
+//   }),
+// helpWitnessesAndTime: page =>
+//   page.evaluate(() => {
+//       return Array.from(document.querySelectorAll('section.hearing__agenda b'))
+//         .map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
+//         .filter(
+//           x =>
+//             ![
+//               'Witnesses:',
+//               '',
+//               'Panel 1',
+//               'Panel 2',
+//               'Panel One',
+//               'Panel Two',
+//             ].includes(x),
+//         );
+//   }),
+//   helpMarkup: page =>
+//   page.evaluate(() => {
+    
+//   }),
 };
