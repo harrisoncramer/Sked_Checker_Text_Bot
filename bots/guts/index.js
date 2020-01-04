@@ -300,7 +300,7 @@ module.exports = {
       );
       return res;
     }),
-    hapcBusiness: page =>
+  hapcBusinessAndMarkup: page =>
     page.evaluate(() => {
       let boxes = Array.from(document.querySelector(".pane-content").querySelectorAll(".views-row"))
       let res = boxes.reduce((agg, item, i) => {

@@ -406,3 +406,9 @@
 {"message":"Message not sent, running in development.","level":"info"}
 {"message":"hapcs Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"level":"error","message":"Root Error in development. Failed to launch chrome!\n\n(chrome:3330): Gtk-WARNING **: 19:13:10.888: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n","stack":"Error: Failed to launch chrome!\n\n(chrome:3330): Gtk-WARNING **: 19:13:10.888: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n\n    at onClose (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:342:14)\n    at ChildProcess.helper.addEventListener (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:332:60)\n    at emitTwo (events.js:131:20)\n    at ChildProcess.emit (events.js:214:7)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:198:12)"}
+{"message":"Running program at Sat, Jan 4, 2020 7:13 PM","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hapcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}

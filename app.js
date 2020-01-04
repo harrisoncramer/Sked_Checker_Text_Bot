@@ -5,10 +5,7 @@ const moment = require('moment');
 const logger = require('./logger');
 
 // Import utility functions...
-const {
-  launchBots,
-  setUpPuppeteer,
-} = require('./setup');
+const {launchBots, setUpPuppeteer} = require('./setup');
 
 // Import bots...
 const skedChecker = require('./bots/skedChecker');
@@ -32,8 +29,8 @@ const {
   hhscWitnesses,
   hagcBusiness,
   hagcWitnesses,
-  hapcBusiness,
-  hapcWitnesses
+  hapcBusinessAndMarkup,
+  hapcWitnesses,
 } = require('./bots/guts');
 
 // Import schemas...
@@ -46,7 +43,7 @@ const {
   HVACSchema,
   HHSCSchema,
   HAGCSchema,
-  HAPCSchema
+  HAPCSchema,
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -245,13 +242,18 @@ if (process.env.NODE_ENV === 'production') {
       await skedChecker({
         page,
         args: {
-          link: 'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
-          business: hapcBusiness,
+          link:
+            'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
+          business: hapcBusinessAndMarkup,
           getWitnesses: hapcWitnesses,
+          extra: {
+            link: 'https://appropriations.house.gov/events/markups',
+            business: hapcBusinessAndMarkup,
+          },
           schema: HAPCSchema,
           comparer: 'title',
-          params: [ 'location', 'date', 'time'],
-        }
+          params: ['location', 'date', 'time'],
+        },
       });
 
       // await outlook({
