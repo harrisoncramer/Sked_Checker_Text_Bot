@@ -27,7 +27,7 @@ const checkIfDatumShouldUpdateDeep = ({ dbDatum, pageDatum, deep }) => {
 
 };
 
-module.exports = async ({ existingData, model, comparer, params }, deep) => {
+module.exports = async ({ existingData, model, comparer, isDifferent }, deep) => {
     let dataToChange = [];
     await asyncForEach(existingData, async (datum) => {
         
@@ -41,7 +41,7 @@ module.exports = async ({ existingData, model, comparer, params }, deep) => {
             }
         ]);
 
-        let changes = checkIfDatumShouldUpdateShallow({ dbDatum: item[0], pageDatum: datum, params, deep });
+        let changes = checkIfDatumShouldUpdateShallow({ dbDatum: item[0], pageDatum: datum, params: isDifferent, deep });
         let deepChanges = checkIfDatumShouldUpdateDeep({ dbDatum: item[0], pageDatum: datum, deep });
 
         if(!!changes || !!deepChanges){

@@ -78,7 +78,7 @@ module.exports = async ({page, args}) => {
         existingData,
         model: args.schema,
         comparer: args.comparer,
-        params: [...args.params],
+        isDifferent: [...args.isDifferent],
       },
       'witnesses',
     );

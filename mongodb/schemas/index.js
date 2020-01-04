@@ -40,6 +40,10 @@ const modifiedDataStructure = {
     type: String,
     require: true,
   },
+  location: {
+    type: String,
+    require: true
+  },
   link: {
     type: String,
     require: true,

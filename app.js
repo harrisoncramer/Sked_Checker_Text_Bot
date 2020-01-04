@@ -14,7 +14,7 @@ const outlook = require('./bots/outlook');
 // Import business logic...
 const {
   hfacBusiness,
-  hfacWitnesses,
+  hfacWitnessesAndLocation,
   hascBusiness,
   hascWitnesses,
   hvacBusiness,
@@ -23,7 +23,7 @@ const {
   hhscBusiness,
   hhscWitnesses,
   hagcBusiness,
-  hagcWitnesses,
+  hagcWitnessesAndLocation,
   hapcBusinessAndMarkup,
   hapcWitnesses,
   hbucBusinessAndMarkup,
@@ -81,7 +81,7 @@ if (process.env.NODE_ENV === 'production') {
               business: sfrcBusiness,
               getAdditionalData: sfrcWitnesses,
               comparer: 'title',
-              params: ['location', 'date', 'time'],
+              isDifferent: ['location', 'date', 'time'],
               schema: SFRCSchema,
             },
           },
@@ -93,7 +93,7 @@ if (process.env.NODE_ENV === 'production') {
               getAdditionalData: sascWitnesses,
               comparer: 'title',
               schema: SASCSchema,
-              params: ['location', 'date', 'time'],
+              isDifferent: ['location', 'date', 'time'],
             },
           },
           {
@@ -101,10 +101,10 @@ if (process.env.NODE_ENV === 'production') {
             args: {
               link: 'https://foreignaffairs.house.gov/hearings',
               business: hfacBusiness,
-              getAdditionalData: hfacWitnesses,
+              getAdditionalData: hfacWitnessesAndLocation,
               comparer: 'recordListTitle',
               schema: HFACSchema,
-              params: ['recordListTime', 'recordListDate'],
+              isDifferent: ['recordListTime', 'recordListDate'],
             },
           },
           {
@@ -115,7 +115,7 @@ if (process.env.NODE_ENV === 'production') {
               getAdditionalData: hascWitnesses,
               comparer: 'recordListTitle',
               schema: HASCSchema,
-              params: ['recordListTime', 'recordListDate'],
+              isDifferent: ['recordListTime', 'recordListDate'],
             },
           },
           {
@@ -126,7 +126,7 @@ if (process.env.NODE_ENV === 'production') {
               getAdditionalData: svacWitnesses,
               comparer: 'title',
               schema: HVACSchema,
-              params: ['location', 'date', 'time'],
+              isDifferent: ['location', 'date', 'time'],
             },
           },
         ],
@@ -158,17 +158,17 @@ if (process.env.NODE_ENV === 'production') {
       let today = moment();
       logger.info(`Running program at ${today.format('llll')}`);
 
-      // await skedChecker({
-      //   page,
-      //   args: {
-      //     link: 'https://foreignaffairs.house.gov/hearings',
-      //     business: hfacBusiness,
-      //     getAdditionalData: hfacWitnesses,
-      //     comparer: 'recordListTitle',
-      //     params: ['recordListTime', 'recordListDate'],
-      //     schema: HFACSchema,
-      //   },
-      // });
+      await skedChecker({
+        page,
+        args: {
+          link: 'https://foreignaffairs.house.gov/hearings',
+          business: hfacBusiness,
+          getAdditionalData: hfacWitnessesAndLocation,
+          comparer: 'recordListTitle',
+          isDifferent: ['recordListTime', 'recordListDate', 'location'],
+          schema: HFACSchema,
+        },
+      });
       // await skedChecker({
       //   page,
       //   args: {
@@ -176,7 +176,7 @@ if (process.env.NODE_ENV === 'production') {
       //     business: hascBusiness,
       //     getAdditionalData: hascWitnesses,
       //     comparer: 'recordListTitle',
-      //     params: ['recordListTime', 'recordListDate'],
+      //     isDifferent: ['recordListTime', 'recordListDate'],
       //     schema: HASCSchema,
       //   },
       // });
@@ -187,7 +187,7 @@ if (process.env.NODE_ENV === 'production') {
       //     business: sascBusiness,
       //     getAdditionalData: sascWitnesses,
       //     comparer: 'title',
-      //     params: ['location', 'date', 'time'],
+      //     isDifferent: ['location', 'date', 'time'],
       //     schema: SASCSchema,
       //   },
       // });
@@ -198,7 +198,7 @@ if (process.env.NODE_ENV === 'production') {
       //     business: sfrcBusiness,
       //     getAdditionalData: sfrcBusiness,
       //     comparer: 'title',
-      //     params: ['location', 'date', 'time'],
+      //     isDifferent: ['location', 'date', 'time'],
       //     schema: SFRCSchema,
       //   },
       // });
@@ -210,7 +210,7 @@ if (process.env.NODE_ENV === 'production') {
       //     getAdditionalData: svacWitnesses,
       //     comparer: 'title',
       //     schema: SVACSchema,
-      //     params: ['location', 'date', 'time'],
+      //     isDifferent: ['location', 'date', 'time'],
       //   },
       // });
       // await skedChecker({
@@ -225,7 +225,7 @@ if (process.env.NODE_ENV === 'production') {
       //     getAdditionalData: hvacWitnesses,
       //     comparer: 'title',
       //     schema: HVACSchema,
-      //     params: ['location', 'date', 'time'],
+      //     isDifferent: ['location', 'date', 'time'],
       //   },
       // });
       // await skedChecker({
@@ -236,7 +236,7 @@ if (process.env.NODE_ENV === 'production') {
       //     getAdditionalData: hhscWitnesses,
       //     comparer: 'title',
       //     schema: HHSCSchema,
-      //     params: ['location', 'date', 'time'],
+      //     isDifferent: ['location', 'date', 'time'],
       //   },
       // });
       // await skedChecker({
@@ -244,10 +244,10 @@ if (process.env.NODE_ENV === 'production') {
       //   args: {
       //     link: 'https://agriculture.house.gov/calendar/',
       //     business: hagcBusiness,
-      //     getAdditionalData: hagcWitnesses,
+      //     getAdditionalData: hagcWitnessesAndLocation,
       //     schema: HAGCSchema,
       //     comparer: 'title',
-      //     params: ['date', 'time'],
+      //     isDifferent: ['date', 'time'],
       //   }
       // });
       // await skedChecker({
@@ -262,24 +262,24 @@ if (process.env.NODE_ENV === 'production') {
       //     },
       //     schema: HAPCSchema,
       //     comparer: 'title',
-      //     params: ['date', 'time'],
+      //     isDifferent: ['date', 'time', 'location'],
       //   },
       // });
-      await skedChecker({
-        page,
-        args: {
-          link: 'https://budget.house.gov/legislation/hearings',
-          business: hbucBusinessAndMarkup,
-          getAdditionalData: hbucWitnessesAndLocation,
-          extra: {
-            link: 'https://budget.house.gov/legislation/markups',
-            business: hbucBusinessAndMarkup
-          },
-          schema: HBUCSchema,
-          comparer: 'title',
-          params: ['date', 'time', 'location', 'witnesses']
-        }
-      })
+      // await skedChecker({
+      //   page,
+      //   args: {
+      //     link: 'https://budget.house.gov/legislation/hearings',
+      //     business: hbucBusinessAndMarkup,
+      //     getAdditionalData: hbucWitnessesAndLocation,
+      //     extra: {
+      //       link: 'https://budget.house.gov/legislation/markups',
+      //       business: hbucBusinessAndMarkup
+      //     },
+      //     schema: HBUCSchema,
+      //     comparer: 'title',
+      //     isDifferent: ['date', 'time', 'location', 'witnesses']
+      //   }
+      // })
       // await skedChecker({
       //   page,
       //   args: {
@@ -292,7 +292,7 @@ if (process.env.NODE_ENV === 'production') {
       //     },
       //     schema: HELPSchema,
       //     comparer: 'title',
-      //     params: ['location', 'date', 'time']
+      //     isDifferent: ['location', 'date', 'time']
       //   }
       // })
 

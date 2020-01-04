@@ -466,3 +466,58 @@
 {"message":"Message not sent, running in development.","level":"info"}
 {"message":"hbucs Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:19 PM","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:23 PM","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hapcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:26 PM","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:26 PM","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:28 PM","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:31 PM","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:5:26)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:32:5)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:76:38)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:253:7"}
+{"message":"37 records uploaded successfully.","level":"info"}
+{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:97:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:253:7"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:119:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:253:7"}
+{"message":"hapcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:41 PM","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 4 ****","level":"info"}
+{"message":"4 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hapcs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:44 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:46 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
+{"message":"10 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:47 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 2 ****","level":"info"}
+{"message":"2 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 4:50 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 5 ****","level":"info"}
+{"message":"5 records modified successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}

@@ -22,11 +22,13 @@ module.exports = {
       );
       return res;
     }),
-  hfacWitnesses: page =>
+  hfacWitnessesAndLocation: page =>
     page.evaluate(() => {
-      return Array.from(document.querySelectorAll('div.witnesses > strong'))
+      let witnesses = Array.from(document.querySelectorAll('div.witnesses strong'))
         .map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
         .filter(x => x !== '');
+      let location = document.querySelector("span.location strong").nextSibling.textContent.replace("House Office Building, Washington, DC 20515", "").replace(" House Office Building", "").trim();
+      return { witnesses, location };
     }),
   hascBusiness: page =>
     page.evaluate(() => {
@@ -54,10 +56,11 @@ module.exports = {
     }),
   hascWitnesses: page =>
     page.evaluate(() => {
-      return Array.from(document.querySelectorAll('div.post-content b'))
+      let witnesses = Array.from(document.querySelectorAll('div.post-content b'))
         .map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
         .slice(1) // Get rid of title...
         .filter(x => !['Witnesses:', '', 'Panel 1:', 'Panel 2:'].includes(x));
+      return { witnesses };
     }),
   hvacBusiness: page =>
     page.evaluate(() => {
@@ -83,7 +86,7 @@ module.exports = {
     }),
   hvacWitnesses: page =>
     page.evaluate(() => {
-      return Array.from(document.querySelectorAll('section.hearing__agenda b'))
+      let witnesses = Array.from(document.querySelectorAll('section.hearing__agenda b'))
         .map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
         .filter(
           x =>
@@ -96,6 +99,7 @@ module.exports = {
               'Panel Two',
             ].includes(x),
         );
+        return { witnesses };
     }),
   hvacMarkup: page =>
     page.evaluate(() => {
@@ -123,11 +127,12 @@ module.exports = {
     }),
   hhscWitnesses: page =>
     page.evaluate(() => {
-      return Array.from(
+      let witnesses = Array.from(
         document.querySelectorAll(
           'section.sectionhead__hearingInfo ul:first-of-type a',
         ),
       ).map(i => i.textContent.replace(/\s\s+/g, ' ').trim());
+      return { witnesses }
     }),
   hhscBusiness: page =>
     page.evaluate(() => {
@@ -155,11 +160,13 @@ module.exports = {
       );
       return res;
     }),
-  hagcWitnesses: page =>
+  hagcWitnessesAndLocation: page =>
     page.evaluate(() => {
-      return Array.from(
+      let witnesses = Array.from(
         document.querySelectorAll('.thiswillnotbefound'),
       ).map(i => i.textContent.replace(/\s\s+/g, ' ').trim());
+      let location = document.querySelector(".thiswillnotbefound") ? document.querySelector(".thiswillnotbefound").querySelector(".testing").textContent.replace('House Office Building', '') : '';
+      return { witnesses, location };
     }),
   hagcBusiness: page =>
     page.evaluate(() => {
@@ -195,7 +202,7 @@ module.exports = {
   hapcBusinessAndMarkup: page =>
     page.evaluate(() => {
       let boxes = Array.from(
-        document.querySelector('.pane-content').querySelectorAll('.views-row'),
+        document.querySelectorAll('.pane-content')[1].querySelectorAll('.views-row'),
       );
       let res = boxes.reduce(
         (agg, item, i) => {
@@ -206,9 +213,8 @@ module.exports = {
             .textContent.split('-');
           let date = timeInfo[0].replace(/\s\s+/g, ' ').trim();
           let time = timeInfo[1].replace(/\s\s+/g, ' ').trim();
-          // let location = ''
-
-          agg[i] = {link, title, date, time};
+          let location = item.querySelector(".views-field-field-congress-meeting-location").textContent.replace("House Office Building, Washington, DC 20515", "").trim();
+          agg[i] = {link, title, date, time, location};
           return agg;
         },
         Array(boxes.length)
@@ -219,11 +225,12 @@ module.exports = {
     }),
   hapcWitnesses: page =>
     page.evaluate(() => {
-      return Array.from(
+      let witnesses = Array.from(
         document.querySelectorAll(
           '.field-name-field-congress-meeting-witnesses strong',
         ),
       ).map(i => i.textContent.replace(/\s\s+/g, ' ').trim());
+      return { witnesses };
     }),
   hbucBusinessAndMarkup: page =>
   page.evaluate(() => {
