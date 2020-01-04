@@ -412,3 +412,14 @@
 {"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
 {"message":"hapcs Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 3:02 PM","level":"info"}
+{"message":"Checking hbucs","level":"info"}
+{"level":"error","message":"Error fetching hbucs witnesses. args.getWitnesses is not a function","stack":"TypeError: args.getWitnesses is not a function\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:47:34\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:5:26)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:45:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:264:7"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sat, Jan 4, 2020 3:03 PM","level":"info"}
+{"message":"Checking hbucs","level":"info"}
+{"message":"**** New records: 113 || Records to change: 0 ****","level":"info"}
+{"message":"113 records uploaded successfully.","level":"info"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"hbucs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}

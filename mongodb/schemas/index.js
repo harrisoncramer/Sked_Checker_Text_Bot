@@ -64,4 +64,5 @@ module.exports = {
     }
   }),
   HAPCSchema: mongoose.model('HAPC', basicDataStructure),
+  HBUCSchema: mongoose.model('HBUC', basicDataStructure),
 };

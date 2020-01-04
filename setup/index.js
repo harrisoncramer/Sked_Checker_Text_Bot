@@ -10,7 +10,7 @@ module.exports = {
   setUpPuppeteer: async () => {
     // const headless = process.env.NODE_ENV === "production";
     const browser = await pupeteer.launch({
-      headless: true,
+      headless: false,
       devtools: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });

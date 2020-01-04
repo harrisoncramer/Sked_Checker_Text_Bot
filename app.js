@@ -5,23 +5,18 @@ const moment = require('moment');
 const logger = require('./logger');
 
 // Import utility functions...
-const {launchBots, setUpPuppeteer} = require('./setup');
+const { launchBots, setUpPuppeteer } = require('./setup');
 
 // Import bots...
 const skedChecker = require('./bots/skedChecker');
 const outlook = require('./bots/outlook');
+
 // Import business logic...
 const {
-  sfrcBusiness,
-  sfrcWitnesses,
-  sascBusiness,
-  sascWitnesses,
   hfacBusiness,
   hfacWitnesses,
   hascBusiness,
   hascWitnesses,
-  svacBusiness,
-  svacWitnesses,
   hvacBusiness,
   hvacWitnesses,
   hvacMarkup,
@@ -31,7 +26,18 @@ const {
   hagcWitnesses,
   hapcBusinessAndMarkup,
   hapcWitnesses,
-} = require('./bots/guts');
+  hbucBusinessAndMarkup,
+  hbucWitnesses,
+} = require('./bots/guts/house');
+
+const {
+  sfrcBusiness,
+  sfrcWitnesses,
+  sascBusiness,
+  sascWitnesses,
+  svacBusiness,
+  svacWitnesses,
+} = require("./bots/guts/senate");
 
 // Import schemas...
 const {
@@ -44,6 +50,7 @@ const {
   HHSCSchema,
   HAGCSchema,
   HAPCSchema,
+  HBUCSchema
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -239,22 +246,36 @@ if (process.env.NODE_ENV === 'production') {
       //     params: ['date', 'time'],
       //   }
       // });
+      // await skedChecker({
+      //   page,
+      //   args: {
+      //     link: 'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
+      //     business: hapcBusinessAndMarkup,
+      //     getWitnesses: hapcWitnesses,
+      //     extra: {
+      //       link: 'https://appropriations.house.gov/events/markups',
+      //       business: hapcBusinessAndMarkup,
+      //     },
+      //     schema: HAPCSchema,
+      //     comparer: 'title',
+      //     params: ['date', 'time'],
+      //   },
+      // });
       await skedChecker({
         page,
         args: {
-          link:
-            'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
-          business: hapcBusinessAndMarkup,
-          getWitnesses: hapcWitnesses,
+          link: 'https://budget.house.gov/legislation/hearings',
+          business: hbucBusinessAndMarkup,
+          getWitnesses: hbucWitnesses,
           extra: {
-            link: 'https://appropriations.house.gov/events/markups',
-            business: hapcBusinessAndMarkup,
+            link: 'https://budget.house.gov/legislation/markups',
+            business: hbucBusinessAndMarkup
           },
-          schema: HAPCSchema,
+          schema: HBUCSchema,
           comparer: 'title',
-          params: ['location', 'date', 'time'],
-        },
-      });
+          params: ['date', 'time']
+        }
+      })
 
       // await outlook({
       //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],
