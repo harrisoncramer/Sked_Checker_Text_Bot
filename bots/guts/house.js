@@ -183,7 +183,7 @@ module.exports = {
             .nextSibling.nodeValue.replace(/\s\s+/g, ' ')
             .trim();
           // let location = item[1].textContent.trim().replace(" House Office Building, Washington, DC 20515", "");
-          agg[i] = {link, title, location: '', date, time};
+          agg[i] = {link, title, date, time};
           return agg;
         },
         Array(info.length)
@@ -206,13 +206,9 @@ module.exports = {
             .textContent.split('-');
           let date = timeInfo[0].replace(/\s\s+/g, ' ').trim();
           let time = timeInfo[1].replace(/\s\s+/g, ' ').trim();
-          let location = item
-            .querySelector('.views-field-field-congress-meeting-location')
-            .textContent.replace(/\s\s+/g, ' ')
-            .replace(' House Office Building, Washington, DC 20515', '')
-            .trim();
+          // let location = ''
 
-          agg[i] = {link, title, location, date, time};
+          agg[i] = {link, title, date, time};
           return agg;
         },
         Array(boxes.length)
@@ -229,4 +225,41 @@ module.exports = {
         ),
       ).map(i => i.textContent.replace(/\s\s+/g, ' ').trim());
     }),
+  hbucBusinessAndMarkup: page =>
+  page.evaluate(() => {
+    let boxes = Array.from(
+      document.querySelectorAll('.pane-content')[1].querySelectorAll('.views-row'),
+    );
+    let res = boxes.reduce(
+      (agg, item, i) => {
+        let link = item.querySelector('a').href;
+        let title = item.querySelector('a').textContent;
+        let timeInfo = item
+          .querySelector('span.date-display-single')
+          .textContent.split('-');
+        let date = timeInfo[0].replace(/\s\s+/g, ' ').trim();
+        let time = timeInfo[1].replace(/\s\s+/g, ' ').trim();
+        // let location = item
+        //   .querySelector('.views-field-field-congress-meeting-location')
+        //   .textContent.replace(/\s\s+/g, ' ')
+        //   .replace(' House Office Building, Washington, DC 20515', '')
+        //   .trim();
+
+        agg[i] = {link, title, date, time};
+        return agg;
+      },
+      Array(boxes.length)
+        .fill()
+        .map(_ => ({})),
+    );
+    return res;
+  }),
+hbucWitnesses: page =>
+  page.evaluate(() => {
+    return Array.from(
+      document.querySelectorAll(
+        '.field-name-field-congress-meeting-witnesses strong',
+      ),
+    ).map(i => i.textContent.replace(/\s\s+/g, ' ').trim());
+  }),
 };
