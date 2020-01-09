@@ -32,7 +32,6 @@ module.exports = async ({ email, schemas }) => {
     Promise.all(information)
         .then(async res => {
             try {
-                debugger;
                 var refined = res.map(x => {
                     return x.vals.filter(y => {
                         let itemDay = moment(y.date || y.recordListDate).valueOf();

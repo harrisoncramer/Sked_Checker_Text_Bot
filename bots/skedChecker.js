@@ -30,7 +30,8 @@ module.exports = async ({page, args}) => {
   }
 
   try {
-    await page.goto(args.link, {waitUntil: 'networkidle2'});
+//    await page.screenshot({path: './log/screenshot.png'});
+    await page.goto(args.link, { waitUntil: 'networkidle2'});
   } catch (err) {
     return logger.error(`Could not navigate to page. `, err);
   }

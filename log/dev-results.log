@@ -1,523 +1,79 @@
+{"message":"Running program at Thu, Jan 9, 2020 2:39 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"level":"error","message":"Error fetching helps additional details. Evaluation failed: TypeError: Cannot read property 'parentElement' of null\n    at __puppeteer_evaluation_script__:4:42","stack":"Error: Evaluation failed: TypeError: Cannot read property 'parentElement' of null\n    at __puppeteer_evaluation_script__:4:42\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.helpWitnessesAndTime [as getAdditionalData] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:296:8)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:47:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"level":"error"}
+{"message":"Running program at Thu, Jan 9, 2020 7:34 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"level":"error","message":"Could not navigate to page. net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events","stack":"Error: net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events\n    at navigate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:34:16)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 7:37 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"level":"error","message":"Could not navigate to page. net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events","stack":"Error: net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events\n    at navigate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:33:16)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 7:39 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"level":"error","message":"Could not navigate to page. net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events","stack":"Error: net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events\n    at navigate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:34:16)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 7:40 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"level":"error","message":"Could not navigate to page. net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events","stack":"Error: net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events\n    at navigate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:34:16)\n    at <anonymous>"}
 {"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 2:52 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 2:53 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"level":"error","message":"Error fetching helps additional details. Evaluation failed: TypeError: Cannot read property 'parentElement' of null\n    at __puppeteer_evaluation_script__:4:42","stack":"Error: Evaluation failed: TypeError: Cannot read property 'parentElement' of null\n    at __puppeteer_evaluation_script__:4:42\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.helpWitnessesAndTime [as getAdditionalData] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:296:8)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:48:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"level":"error"}
-{"level":"error","message":"Root Error in development. today is not defined","stack":"ReferenceError: today is not defined\n    at setUpPuppeteer (/Users/harrisoncramer/Desktop/coding/Bots/sked_checker/setup/index.js:31:18)\n    at process.internalTickCallback (internal/process/next_tick.js:77:7)"}
-{"message":"Running program at Sun, Nov 17, 2019 3:30 PM","level":"info"}
-{"message":"Checking SFRC","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 3:37 PM","level":"info"}
-{"message":"Checking SFRC","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 3:37 PM","level":"info"}
-{"message":"Checking SFRC","level":"info"}
-{"message":"**** New records: 2 || Records to change: 0 ****","level":"info"}
-{"message":"2 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"SFRC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 3:40 PM","level":"info"}
-{"message":"Checking SASC","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 3:41 PM","level":"info"}
-{"message":"Checking SASC","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 3:41 PM","level":"info"}
-{"message":"Checking SASC","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 3:56 PM","level":"info"}
-{"message":"Checking SASC","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 3:57 PM","level":"info"}
-{"message":"Checking SASC","level":"info"}
-{"message":"**** New records: 1 || Records to change: 30 ****","level":"info"}
-{"message":"1 records uploaded successfully.","level":"info"}
-{"message":"30 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"SASC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 4:01 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"level":"error"}
-{"message":"Running program at Sun, Nov 17, 2019 4:02 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"level":"error"}
-{"message":"Running program at Sun, Nov 17, 2019 4:02 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"level":"error"}
-{"message":"Running program at Sun, Nov 17, 2019 4:03 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 4:03 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:20 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:21 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:27 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:28 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:29 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:32 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:34 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:34 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:35 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:35 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:38 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:40 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sun, Nov 17, 2019 9:41 PM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Fri, Nov 22, 2019 11:05 AM","level":"info"}
-{"name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error","message":"Could not connect to database. connect ECONNREFUSED 127.0.0.1:27017","stack":"Error: connect ECONNREFUSED 127.0.0.1:27017\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1085:14)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Fri, Nov 22, 2019 11:07 AM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"level":"info","message":"Error disconnecting: args is not defined","stack":"ReferenceError: args is not defined\n    at Promise.all.then (/Users/harrisoncramer/Desktop/coding/Bots/sked_checker/bots/outlook.js:53:32)"}
-{"message":"Running program at Fri, Nov 22, 2019 11:08 AM","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"level":"info","message":"Error disconnecting: args is not defined","stack":"ReferenceError: args is not defined\n    at Promise.all.then (/Users/harrisoncramer/Desktop/coding/Bots/sked_checker/bots/outlook.js:53:32)"}
-{"message":"Running program at Fri, Nov 22, 2019 11:09 AM","level":"info"}
-{"message":"Checking HFAC","level":"info"}
-{"message":"Running program at Fri, Nov 22, 2019 11:09 AM","level":"info"}
-{"message":"Checking HFAC","level":"info"}
-{"message":"**** New records: 1 || Records to change: 1 ****","level":"info"}
-{"message":"1 records uploaded successfully.","level":"info"}
-{"message":"1 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"HFAC Done.","level":"info"}
-{"message":"Checking HASC","level":"info"}
-{"message":"**** New records: 2 || Records to change: 0 ****","level":"info"}
-{"message":"2 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"HASC Done.","level":"info"}
-{"message":"Checking SASC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
-{"message":"1 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"SASC Done.","level":"info"}
-{"message":"Checking SFRC","level":"info"}
-{"message":"**** New records: 1 || Records to change: 0 ****","level":"info"}
-{"message":"1 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"SFRC Done.","level":"info"}
-{"message":"Checking SVAC","level":"info"}
-{"level":"error","message":"Root Error in development. Failed to launch chrome!\n\n(chrome:19120): Gtk-WARNING **: 13:45:01.694: cannot open display: \n[1231/134501.711410:ERROR:nacl_helper_linux.cc(310)] NaCl helper process running without a sandbox!\nMost likely you need to configure your SUID sandbox correctly\n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n","stack":"Error: Failed to launch chrome!\n\n(chrome:19120): Gtk-WARNING **: 13:45:01.694: cannot open display: \n[1231/134501.711410:ERROR:nacl_helper_linux.cc(310)] NaCl helper process running without a sandbox!\nMost likely you need to configure your SUID sandbox correctly\n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n\n    at onClose (/home/harrison/bots/sked_checker/node_modules/puppeteer/lib/Launcher.js:342:14)\n    at Interface.helper.addEventListener (/home/harrison/bots/sked_checker/node_modules/puppeteer/lib/Launcher.js:331:50)\n    at emitNone (events.js:111:20)\n    at Interface.emit (events.js:208:7)\n    at Interface.close (readline.js:370:8)\n    at Socket.onend (readline.js:149:10)\n    at emitNone (events.js:111:20)\n    at Socket.emit (events.js:208:7)\n    at endReadableNT (_stream_readable.js:1064:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)"}
-{"level":"error","message":"Root Error in development. Failed to launch chrome!\n/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/.local-chromium/linux-637110/chrome-linux/chrome: error while loading shared libraries: libX11-xcb.so.1: cannot open shared object file: No such file or directory\n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n","stack":"Error: Failed to launch chrome!\n/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/.local-chromium/linux-637110/chrome-linux/chrome: error while loading shared libraries: libX11-xcb.so.1: cannot open shared object file: No such file or directory\n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n\n    at onClose (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:342:14)\n    at Interface.helper.addEventListener (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:331:50)\n    at emitNone (events.js:111:20)\n    at Interface.emit (events.js:208:7)\n    at Interface.close (readline.js:370:8)\n    at Socket.onend (readline.js:149:10)\n    at emitNone (events.js:111:20)\n    at Socket.emit (events.js:208:7)\n    at endReadableNT (_stream_readable.js:1064:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)"}
-{"level":"error","message":"Root Error in development. Failed to launch chrome!\n\n(chrome:22207): Gtk-WARNING **: 14:42:37.745: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n","stack":"Error: Failed to launch chrome!\n\n(chrome:22207): Gtk-WARNING **: 14:42:37.745: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n\n    at onClose (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:342:14)\n    at ChildProcess.helper.addEventListener (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:332:60)\n    at emitTwo (events.js:131:20)\n    at ChildProcess.emit (events.js:214:7)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:198:12)"}
-{"message":"Running program at Tue, Dec 31, 2019 2:44 PM","level":"info"}
-{"message":"Checking HFAC","level":"info"}
-{"message":"**** New records: 10 || Records to change: 0 ****","level":"info"}
-{"message":"10 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"level":"info","message":"Error disconnecting: db is not defined","stack":"ReferenceError: db is not defined\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:99:9)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Checking HASC","level":"info"}
-{"message":"**** New records: 10 || Records to change: 0 ****","level":"info"}
-{"message":"10 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"level":"info","message":"Error disconnecting: db is not defined","stack":"ReferenceError: db is not defined\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:99:9)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Checking SASC","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 3:00 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 3:14 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 3:22 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 3:23 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 3:26 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 3:27 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 3:28 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
 {"message":"**** New records: 25 || Records to change: 0 ****","level":"info"}
 {"message":"25 records uploaded successfully.","level":"info"}
 {"message":"Message not sent, running in development.","level":"info"}
-{"level":"info","message":"Error disconnecting: db is not defined","stack":"ReferenceError: db is not defined\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:99:9)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Checking SFRC","level":"info"}
+{"message":"helps Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 4:01 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 4:02 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
 {"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"level":"info","message":"Error disconnecting: db is not defined","stack":"ReferenceError: db is not defined\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:99:9)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Checking SVAC","level":"info"}
-{"message":"**** New records: 15 || Records to change: 0 ****","level":"info"}
-{"message":"15 records uploaded successfully.","level":"info"}
+{"message":"helps Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 4:03 PM","level":"info"}
+{"level":"error","message":"Root Error in development. helpMarkup is not defined","stack":"ReferenceError: helpMarkup is not defined\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:290:28\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Running program at Thu, Jan 9, 2020 4:03 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"level":"info","message":"Error fetching extra data Evaluation failed: ReferenceError: trs is not defined\n    at __puppeteer_evaluation_script__:20:15","stack":"Error: Evaluation failed: ReferenceError: trs is not defined\n    at __puppeteer_evaluation_script__:20:15\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.helpMarkup [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:308:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:63:40)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"helps Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 4:05 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 4:07 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"level":"info","message":"Error fetching extra data Evaluation failed: TypeError: Cannot read property 'textContent' of undefined\n    at __puppeteer_evaluation_script__:16:30\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:8:23","stack":"Error: Evaluation failed: TypeError: Cannot read property 'textContent' of undefined\n    at __puppeteer_evaluation_script__:16:30\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:8:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.helpMarkup [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:308:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:63:40)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"helps Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 4:08 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 4:12 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"Running program at Thu, Jan 9, 2020 4:15 PM","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"**** New records: 18 || Records to change: 0 ****","level":"info"}
+{"message":"18 records uploaded successfully.","level":"info"}
 {"message":"Message not sent, running in development.","level":"info"}
-{"level":"info","message":"Error disconnecting: db is not defined","stack":"ReferenceError: db is not defined\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:99:9)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Checking HVAC","level":"info"}
-{"name":"TimeoutError","level":"error","message":"Could not navigate to page. Navigation Timeout Exceeded: 30000ms exceeded","stack":"TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded\n    at Promise.then (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/LifecycleWatcher.js:143:21)\n    at <anonymous>\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:27:20)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Checking HHSC","level":"info"}
-{"name":"TimeoutError","level":"error","message":"Could not navigate to page. Navigation Timeout Exceeded: 30000ms exceeded","stack":"TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded\n    at Promise.then (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/LifecycleWatcher.js:143:21)\n    at <anonymous>\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:27:20)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Dec 31, 2019 2:50 PM","level":"info"}
-{"message":"Checking HFAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HFAC Done.","level":"info"}
-{"message":"Checking HASC","level":"info"}
-{"message":"Running program at Tue, Dec 31, 2019 3:09 PM","level":"info"}
-{"message":"Checking HVAC","level":"info"}
-{"message":"**** New records: 37 || Records to change: 0 ****","level":"info"}
-{"message":"37 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"HVAC Done.","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Dec 31, 2019 6:29 PM","level":"info"}
-{"message":"Checking HVAC","level":"info"}
-{"message":"Running program at Tue, Dec 31, 2019 6:30 PM","level":"info"}
-{"message":"Checking SVAC","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: ReferenceError: timeInfo is not defined\n    at __puppeteer_evaluation_script__:12:22\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:5:21","stack":"Error: Evaluation failed: ReferenceError: timeInfo is not defined\n    at __puppeteer_evaluation_script__:12:22\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:5:21\n    at ExecutionContext.evaluateHandle (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.svacBusiness [as business] (/home/vagrant/Sked_Checker_Text_Bot/bots/guts/index.js:159:10)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Checking HVAC","level":"info"}
-{"message":"Running program at Tue, Dec 31, 2019 6:32 PM","level":"info"}
-{"message":"Checking SVAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 15 ****","level":"info"}
-{"message":"15 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"SVAC Done.","level":"info"}
-{"message":"Checking HVAC","level":"info"}
-{"message":"Running program at Tue, Dec 31, 2019 7:18 PM","level":"info"}
-{"message":"Checking SVAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"SVAC Done.","level":"info"}
-{"message":"Checking HVAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
-{"message":"1 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"HVAC Done.","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"Running program at Tue, Dec 31, 2019 7:23 PM","level":"info"}
-{"message":"Checking SVAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"SVAC Done.","level":"info"}
-{"message":"Checking HVAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 26 ****","level":"info"}
-{"message":"26 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"HVAC Done.","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Tue, Dec 31, 2019 10:29 PM","level":"info"}
-{"message":"Checking HFAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HFAC Done.","level":"info"}
-{"message":"Checking HASC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HASC Done.","level":"info"}
-{"message":"Checking SASC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"SASC Done.","level":"info"}
-{"message":"Checking SFRC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"SFRC Done.","level":"info"}
-{"message":"Checking SVAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"SVAC Done.","level":"info"}
-{"message":"Checking HVAC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
-{"message":"1 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"HVAC Done.","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:08 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:31 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:35 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:36 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:39 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:41 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:41 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:42 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:44 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:45 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"level":"error","message":"Root Error in development. Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"","stack":"Error: Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"\n    at Launcher.launch (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:119:15)"}
-{"level":"error","message":"Root Error in development. Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"","stack":"Error: Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"\n    at Launcher.launch (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:119:15)"}
-{"level":"error","message":"Root Error in development. Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"","stack":"Error: Chromium revision is not downloaded. Run \"npm install\" or \"yarn install\"\n    at Launcher.launch (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:119:15)\n    at async setUpPuppeteer (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/setup/index.js:12:21)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:164:29"}
-{"message":"Running program at Wed, Jan 1, 2020 12:53 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"name":"TimeoutError","level":"error","message":"Could not navigate to page. Navigation Timeout Exceeded: 30000ms exceeded","stack":"TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/LifecycleWatcher.js:143:21\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:34:16)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:244:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 12:54 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"level":"error","message":"Root Error in development. Failed to launch chrome!\n\n(chrome:5323): Gtk-WARNING **: 17:50:58.597: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n","stack":"Error: Failed to launch chrome!\n\n(chrome:5323): Gtk-WARNING **: 17:50:58.597: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n\n    at onClose (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:342:14)\n    at ChildProcess.helper.addEventListener (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:332:60)\n    at emitTwo (events.js:131:20)\n    at ChildProcess.emit (events.js:214:7)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:198:12)"}
-{"message":"Running program at Wed, Jan 1, 2020 5:51 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"**** New records: 25 || Records to change: 0 ****","level":"info"}
-{"message":"25 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"HHSC Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 5:59 PM","level":"info"}
-{"message":"Checking HHSC","level":"info"}
-{"message":"Checking hhscs","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 6:01 PM","level":"info"}
-{"message":"Checking undefined","level":"info"}
-{"message":"Checking hhscs","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 6:07 PM","level":"info"}
-{"message":"Checking hhscs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"undefined Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 1:48 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: ReferenceError: trs is not defined\n    at __puppeteer_evaluation_script__:16:15","stack":"Error: Evaluation failed: ReferenceError: trs is not defined\n    at __puppeteer_evaluation_script__:16:15\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hagcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:283:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 1:48 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"level":"error","message":"Error processing data. args.params is not iterable","stack":"TypeError: args.params is not iterable\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:81:26)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8"}
-{"message":"10 records uploaded successfully.","level":"info"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:97:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:119:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:231:8"}
-{"message":"undefined Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 1:54 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
-{"message":"10 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"undefined Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 1:55 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
-{"message":"10 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hagcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 1:56 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
-{"message":"10 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hagcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 1:57 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
-{"message":"10 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hagcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:01 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
-{"message":"10 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hagcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:04 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:07 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 1 || Records to change: 0 ****","level":"info"}
-{"message":"1 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hagcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:08 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"hagcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:36 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: Cannot read property 'textContent' of null\n    at __puppeteer_evaluation_script__:5:72\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: TypeError: Cannot read property 'textContent' of null\n    at __puppeteer_evaluation_script__:5:72\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:40 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: document.querySelectorAll(...).querySelectorAll is not a function\n    at __puppeteer_evaluation_script__:2:73","stack":"Error: Evaluation failed: TypeError: document.querySelectorAll(...).querySelectorAll is not a function\n    at __puppeteer_evaluation_script__:2:73\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:41 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: ReferenceError: title is not defined\n    at __puppeteer_evaluation_script__:9:27\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: ReferenceError: title is not defined\n    at __puppeteer_evaluation_script__:9:27\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:42 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:10:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:10:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:43 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:11:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:11:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:45 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:10:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:10:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:46 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:11:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:11:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:48 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:12:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:12:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:50 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error parsing page data. Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:13:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23","stack":"Error: Evaluation failed: TypeError: Cannot set property '1' of undefined\n    at __puppeteer_evaluation_script__:13:18\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:3:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hapcBusiness [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/index.js:304:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:39:31)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:245:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:51 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"message":"Running program at Wed, Jan 1, 2020 2:53 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"message":"**** New records: 158 || Records to change: 0 ****","level":"info"}
-{"message":"158 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hapcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"level":"error","message":"Root Error in development. Failed to launch chrome!\n\n(chrome:3330): Gtk-WARNING **: 19:13:10.888: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n","stack":"Error: Failed to launch chrome!\n\n(chrome:3330): Gtk-WARNING **: 19:13:10.888: cannot open display: \n\n\nTROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md\n\n    at onClose (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:342:14)\n    at ChildProcess.helper.addEventListener (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Launcher.js:332:60)\n    at emitTwo (events.js:131:20)\n    at ChildProcess.emit (events.js:214:7)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:198:12)"}
-{"message":"Running program at Sat, Jan 4, 2020 7:13 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"hapcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 3:02 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"level":"error","message":"Error fetching hbucs witnesses. args.getWitnesses is not a function","stack":"TypeError: args.getWitnesses is not a function\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:47:34\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:5:26)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:45:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:264:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 3:03 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"message":"**** New records: 113 || Records to change: 0 ****","level":"info"}
-{"message":"113 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hbucs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 3:37 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"level":"error","message":"Error fetching hbucs witnesses. Evaluation failed: TypeError: Cannot read property 'querySelector' of null\n    at __puppeteer_evaluation_script__:7:88","stack":"Error: Evaluation failed: TypeError: Cannot read property 'querySelector' of null\n    at __puppeteer_evaluation_script__:7:88\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:20)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:47:23\n    at async asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:5:26)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:45:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:268:7\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hbucWitnessesAndLocation [as getAdditionalData] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:253:8)\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:47:34\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:5:26)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:45:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:268:7"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 3:38 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"level":"error","message":"Error fetching hbucs witnesses. Evaluation failed: TypeError: Cannot read property 'querySelector' of null\n    at __puppeteer_evaluation_script__:7:88","stack":"Error: Evaluation failed: TypeError: Cannot read property 'querySelector' of null\n    at __puppeteer_evaluation_script__:7:88\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hbucWitnessesAndLocation [as getAdditionalData] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:255:8)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:47:34)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 3:40 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"level":"error","message":"Error fetching hbucs witnesses. Evaluation failed: TypeError: Cannot read property 'querySelector' of null\n    at __puppeteer_evaluation_script__:7:88","stack":"Error: Evaluation failed: TypeError: Cannot read property 'querySelector' of null\n    at __puppeteer_evaluation_script__:7:88\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.hbucWitnessesAndLocation [as getAdditionalData] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:255:8)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:47:34)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 3:44 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:5:26)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:32:5)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:76:38)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:268:7"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:97:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:119:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"}
-{"message":"hbucs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 3:53 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:02 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:02 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"level":"error","message":"Error fetching hbucs witnesses. data is not defined","stack":"ReferenceError: data is not defined\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:49:19)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:04 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:05 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:09 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"hbucs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:11 PM","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 5 ****","level":"info"}
-{"message":"5 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hbucs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:19 PM","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"hagcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:23 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"hapcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:26 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:26 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:28 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:31 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:5:26)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:32:5)\n    at async module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:76:38)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:253:7"}
-{"message":"37 records uploaded successfully.","level":"info"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:97:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:253:7"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:119:22)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:253:7"}
-{"message":"hapcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:41 PM","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 4 ****","level":"info"}
-{"message":"4 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hapcs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:44 PM","level":"info"}
-{"message":"Checking hfacs","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:46 PM","level":"info"}
-{"message":"Checking hfacs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 10 ****","level":"info"}
-{"message":"10 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hfacs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:47 PM","level":"info"}
-{"message":"Checking hfacs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 2 ****","level":"info"}
-{"message":"2 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hfacs Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Sat, Jan 4, 2020 4:50 PM","level":"info"}
-{"message":"Checking hfacs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 5 ****","level":"info"}
-{"message":"5 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hfacs Done.","level":"info"}
+{"message":"helps Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}

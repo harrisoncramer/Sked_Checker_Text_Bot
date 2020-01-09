@@ -1,5 +1,5 @@
 node_modules
 .env
-.DS_STORE
+.DS_Store
 dev-results.log
 .eslintrc.js

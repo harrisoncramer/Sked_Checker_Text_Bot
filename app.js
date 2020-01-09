@@ -5,12 +5,12 @@ const moment = require('moment');
 const logger = require('./logger');
 
 // Import utility functions...
-const { launchBots, setUpPuppeteer } = require('./setup');
+const {launchBots, setUpPuppeteer} = require('./setup');
 
 // Import bots...
 const skedChecker = require('./bots/skedChecker');
 const outlook = require('./bots/outlook');
-
+debugger;
 // Import business logic...
 const {
   hfacBusiness,
@@ -40,7 +40,7 @@ const {
   sascWitnesses,
   svacBusiness,
   svacWitnesses,
-} = require("./bots/guts/senate");
+} = require('./bots/guts/senate');
 
 // Import schemas...
 const {
@@ -54,7 +54,7 @@ const {
   HAGCSchema,
   HAPCSchema,
   HBUCSchema,
-  HELPSchema
+  HELPSchema,
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -158,17 +158,17 @@ if (process.env.NODE_ENV === 'production') {
       let today = moment();
       logger.info(`Running program at ${today.format('llll')}`);
 
-      await skedChecker({
-        page,
-        args: {
-          link: 'https://foreignaffairs.house.gov/hearings',
-          business: hfacBusiness,
-          getAdditionalData: hfacWitnessesAndLocation,
-          comparer: 'recordListTitle',
-          isDifferent: ['recordListTime', 'recordListDate', 'location'],
-          schema: HFACSchema,
-        },
-      });
+      // await skedChecker({
+      //   page,
+      //   args: {
+      //     link: 'https://foreignaffairs.house.gov/hearings',
+      //     business: hfacBusiness,
+      //     getAdditionalData: hfacWitnessesAndLocation,
+      //     comparer: 'recordListTitle',
+      //     isDifferent: ['recordListTime', 'recordListDate', 'location'],
+      //     schema: HFACSchema,
+      //   },
+      // });
       // await skedChecker({
       //   page,
       //   args: {
@@ -280,21 +280,21 @@ if (process.env.NODE_ENV === 'production') {
       //     isDifferent: ['date', 'time', 'location', 'witnesses']
       //   }
       // })
-      // await skedChecker({
-      //   page,
-      //   args: {
-      //     link: 'https://edlabor.house.gov/full-committee-hearings',
-      //     business: helpBusiness,
-      //     getAdditionalData: helpWitnessesAndTime,
-      //     extra: {
-      //       link: 'https://edlabor.house.gov/markups',
-      //       business: helpMarkup
-      //     },
-      //     schema: HELPSchema,
-      //     comparer: 'title',
-      //     isDifferent: ['location', 'date', 'time']
-      //   }
-      // })
+      await skedChecker({
+        page,
+        args: {
+          link: 'https://edlabor.house.gov/hearings-and-events',
+          business: helpBusiness,
+          getAdditionalData: helpWitnessesAndTime,
+               extra: {
+                 link: 'https://budget.house.gov/legislation/markups',
+                 business: helpMarkup
+               },
+          schema: HELPSchema,
+          comparer: 'title',
+          isDifferent: ['location', 'date', 'time'],
+        },
+      });
 
       // await outlook({
       //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],

@@ -12,7 +12,7 @@ module.exports = {
     const browser = await pupeteer.launch({
       headless: false,
       devtools: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu','--window-size=1920x1080'],
     });
     const context = await browser.createIncognitoBrowserContext();
     const page = await context.newPage(); // Create new instance of puppet
