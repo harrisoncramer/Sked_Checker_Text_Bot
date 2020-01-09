@@ -30,9 +30,10 @@ module.exports = {
     }),
   sascWitnesses: page =>
     page.evaluate(() => {
-      return Array.from(document.querySelectorAll('li.vcard span.fn')).map(i =>
+      let witnesses = Array.from(document.querySelectorAll('li.vcard span.fn')).map(i =>
         i.textContent.replace(/\s\s+/g, ' ').trim(),
       );
+      return { witnesses };
     }),
   sfrcBusiness: page =>
     page.evaluate(() => {
@@ -75,9 +76,10 @@ module.exports = {
     }),
   sfrcWitnesses: page =>
     page.evaluate(() => {
-      return Array.from(document.querySelectorAll('span.fn')).map(i =>
+      let witnesses = Array.from(document.querySelectorAll('span.fn')).map(i =>
         i.textContent.replace(/\s\s+/g, ' ').trim(),
       );
+      return { witnesses };
     }),
   svacBusiness: page =>
     page.evaluate(() => {
@@ -103,8 +105,9 @@ module.exports = {
     }),
   svacWitnesses: page =>
     page.evaluate(() => {
-      return Array.from(document.querySelectorAll('span.fn')).map(i =>
+      let witnesses = Array.from(document.querySelectorAll('span.fn')).map(i =>
         i.textContent.replace(/\s\s+/g, ' ').trim(),
       );
+      return { witnesses };
     }),
 };

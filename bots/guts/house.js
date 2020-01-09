@@ -156,7 +156,7 @@ module.exports = {
       ).map(x => x.querySelectorAll('td > div.faux-col'));
       let res = trs.reduce(
         (agg, item, i) => {
-          let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+          let title = item[0].textContent.replace("Add to my Calendar", "").replace(/\s\s+/g, ' ').trim();
           let link = item[0].querySelector('a').href;
           let location = item[1].textContent
             .trim()
