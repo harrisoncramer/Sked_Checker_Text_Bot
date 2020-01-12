@@ -1,4 +1,4 @@
-const {asyncForEach} = require('../util');
+const {asyncForEach, handleEachJob, flatten} = require('../util');
 
 const find = require('../mongodb/find');
 const insertMany = require('../mongodb/insertMany');
@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 const logger = require('../logger');
 const saslprep = require("saslprep");
 
-module.exports = async ({page, args}) => {
+module.exports = async ({page, browser, args}) => {
   logger.info(`Checking ${args.schema.collection.collectionName}`);
   var db;
   try {
@@ -29,43 +29,50 @@ module.exports = async ({page, args}) => {
     return logger.error(`Could not connect to database. `, err);
   }
 
-  try {
-//    await page.screenshot({path: './log/screenshot.png'});
-    await page.goto(args.link, { waitUntil: 'networkidle2'});
-  } catch (err) {
-    return logger.error(`Could not navigate to page. `, err);
-  }
+  // Return data from first layer of job. This is done synchronously for each job.
+  let jobs = await asyncForEach(args.jobs, async job => {
+    try {
+      await page.goto(job.link, { waitUntil: 'networkidle2'});
+    } catch (err) {
+      return logger.error(`Could not navigate to page. `, err);
+    }
+    try {
+      var data = await job.layer1(page);
+      return { ...data, type: job.type, work: job.layer2 };
+    } catch (err) {
+      return logger.error(`Error parsing page data. `, err);
+    }
+  });
 
+  // Get data for each job.
   try {
-    var pageData = await args.business(page);
-  } catch (err) {
-    return logger.error(`Error parsing page data. `, err);
-  }
+    var pageData = await handleEachJob({ jobs, browser }, async ({ job, browser }) => {
+        let { work, type, links } = job;
+        let pages = await Promise.all(links.map(_ => browser.newPage()));
+        await Promise.all(pages.map((page, i) => page.goto(links[i]), {waitUntil: 'networkidle2'}));
+        let layerTwoData = await Promise.all(pages.map(async uniquePage => {
+          let data = await work(uniquePage);
+          let link = uniquePage.url();
+          // Combine the data gathered with the link from the page.
+          return { ...data, type, link };
+        }));
 
-  try {
-    pageData = await asyncForEach(pageData, async datum => {
-      await page.goto(datum.link, {waitUntil: 'networkidle2'});
-      let additionalData = await args.getAdditionalData(page); // Get any additional data not available on the first page...
-      return { ...datum, ...additionalData };
+        // Combine the layerOne data and layerTwo data with reduction on link.
+        let combinedData = links.reduce((agg, link, i) => {
+          let match = layerTwoData.filter(x => x.link === link)[0]
+          agg[i] = { link, ...match };
+          return agg;
+        }, []);
+
+        await Promise.all(pages.map(page => page.close()));
+
+      return combinedData;
     });
   } catch (err) {
     return logger.error(`Error fetching ${args.schema.collection.collectionName} additional details. `, err);
   };
 
-  if (args.extra) {
-    try {
-      await page.goto(args.extra.link, {waitUntil: 'networkidle2'}); // Ensure no network requests are happening (in last 500ms).
-    } catch (err) {
-      return logger.error(`Could not navigate to extra page. `, err);
-    }
-
-    try {
-      let extraData = await args.extra.business(page);
-      pageData = pageData.concat(extraData);
-    } catch (err) {
-      logger.info(`Error fetching extra data `, err);
-    }
-  }
+  pageData = pageData.flatten(); /// Flatten all jobs into single array for processing. Added as array prototype in util.
 
   try {
     var dbData = await find(args.schema);

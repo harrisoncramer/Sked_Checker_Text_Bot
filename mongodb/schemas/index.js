@@ -1,30 +1,42 @@
 const mongoose = require('mongoose');
 
 const basicDataStructure = {
-    title: {
-      type: String,
-      require: true,
-    },
-    time: {
-      type: String,
-      require: true,
-    },
-    date: {
-      type: String,
-      require: true,
-    },
-    location: {
-      type: String,
-      required: false
-    },
-    link: {
-      type: String,
-      require: true,
-    },
-    witnesses: {
-      type: Array,
-      require: true,
-    }
+  type: {
+    type: String,
+    require: true
+  },
+  link: {
+    type: String,
+    require: true,
+  },
+  title: {
+    type: String,
+    require: true,
+  },
+  date: {
+    type: String,
+    require: true,
+  },
+  time: {
+    type: String,
+    require: true,
+  },
+  location: {
+    type: String,
+    required: false,
+  },
+  witnesses: {
+    type: Array,
+    require: true,
+  },
+  isSubcommittee: {
+    type: Boolean,
+    require: true,
+  },
+  subcommittee: {
+    type: String,
+    require: false
+  },
 };
 
 const modifiedDataStructure = {
@@ -42,7 +54,7 @@ const modifiedDataStructure = {
   },
   location: {
     type: String,
-    require: true
+    require: true,
   },
   link: {
     type: String,
@@ -51,7 +63,7 @@ const modifiedDataStructure = {
   witnesses: {
     type: Array,
     require: true,
-  }
+  },
 };
 
 module.exports = {
@@ -60,16 +72,16 @@ module.exports = {
   SASCSchema: mongoose.model('SASC', basicDataStructure),
   SVACSchema: mongoose.model('SVAC', basicDataStructure),
   // House Committees
-  HASCSchema: mongoose.model('HASC', modifiedDataStructure),
-  HFACSchema: mongoose.model('HFAC', modifiedDataStructure),
+  HASCSchema: mongoose.model('HASC', basicDataStructure),
+  HFACSchema: mongoose.model('HFAC', basicDataStructure),
   HVACSchema: mongoose.model('HVAC', basicDataStructure),
   HHSCSchema: mongoose.model('HHSC', basicDataStructure),
-  HAGCSchema: mongoose.model('HAGC', { 
+  HAGCSchema: mongoose.model('HAGC', {
     ...basicDataStructure,
     witnesses: {
       required: false,
-      type: Array
-    }
+      type: Array,
+    },
   }),
   HAPCSchema: mongoose.model('HAPC', basicDataStructure),
   HBUCSchema: mongoose.model('HBUC', basicDataStructure),

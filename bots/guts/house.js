@@ -1,43 +1,28 @@
-module.exports = {
-  hfacBusiness: page =>
-    page.evaluate(() => {
-      let trs = Array.from(document.querySelectorAll('table tbody tr'));
-      let res = trs.reduce(
-        (agg, item, i) => {
-          const tds = Array.from(item.children);
-          tds.forEach(td => {
-            let type = td.classList.value.split(' ').pop();
-            let val = td.textContent;
-            agg[i][type] = val;
-            td.childElementCount
-              ? (agg[i]['link'] = td.children[0].href)
-              : null;
-          });
+const { getLinks } = require("./index");
 
-          return agg;
-        },
-        Array(trs.length)
-          .fill()
-          .map(_ => ({})),
-      );
-      return res;
-    }),
-  hfacWitnessesAndLocation: page =>
+module.exports = {
+  hfacGetLinks: page => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" } }),
+  hfacHearingsAndMarkups: page =>
     page.evaluate(() => {
-      let witnesses = Array.from(
-        document.querySelectorAll('div.witnesses strong'),
-      )
-        .map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
-        .filter(x => x !== '');
+      let title = document.querySelector(".title").textContent.trim();
+      let date = document.querySelector("span.date").textContent.trim();
+      let time = document.querySelector("span.time").textContent.trim();
       let location = document
-        .querySelector('span.location strong')
-        .nextSibling.textContent.replace(
-          'House Office Building, Washington, DC 20515',
-          '',
-        )
-        .replace(' House Office Building', '')
+        .querySelector("span.location strong")
+        .nextSibling.textContent.replace("House Office Building, Washington, DC 20515", "")
+        .replace(" House Office Building", "")
         .trim();
-      return {witnesses, location};
+      let witnesses = Array.from(document.querySelectorAll("div.witnesses strong"))
+        .map(i => i.textContent.replace(/\s\s+/g, " ").trim())
+        .filter(x => x !== "");
+      let isSubcommittee = !!document.querySelector("span.subcommittee");
+      let subcommittee = isSubcommittee
+        ? document
+            .querySelector("span.subcommittee")
+            .querySelector("strong")
+            .nextSibling.textContent.trim()
+        : null;
+      return { title, date, time, location, witnesses, isSubcommittee, subcommittee };
     }),
   hascBusiness: page =>
     page.evaluate(() => {

@@ -1,8 +1,3 @@
-const winston = require('winston');
-const fs = require('fs');
-const path = require('path');
-const logDir = 'log';
-const moment = require('moment');
 const pupeteer = require('puppeteer');
 const {asyncForEach} = require('../util');
 
@@ -32,7 +27,7 @@ module.exports = {
       });
     }
 
-    return {browser, page};
+    return {browser: context, page};
   },
 
   launchBots: async ({page, browser, today, bots}) => {

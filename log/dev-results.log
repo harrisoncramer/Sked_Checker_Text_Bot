@@ -1,231 +1,49 @@
-{"message":"Running program at Thu, Jan 9, 2020 2:39 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"error","message":"Error fetching helps additional details. Evaluation failed: TypeError: Cannot read property 'parentElement' of null\n    at __puppeteer_evaluation_script__:4:42","stack":"Error: Evaluation failed: TypeError: Cannot read property 'parentElement' of null\n    at __puppeteer_evaluation_script__:4:42\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.helpWitnessesAndTime [as getAdditionalData] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:296:8)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:47:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 7:34 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"error","message":"Could not navigate to page. net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events","stack":"Error: net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events\n    at navigate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:34:16)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 7:37 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"error","message":"Could not navigate to page. net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events","stack":"Error: net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events\n    at navigate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:33:16)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 7:39 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"error","message":"Could not navigate to page. net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events","stack":"Error: net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events\n    at navigate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:34:16)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 7:40 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"error","message":"Could not navigate to page. net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events","stack":"Error: net::ERR_NAME_RESOLUTION_FAILED at https://edlabor.house.gov/hearings-and-events\n    at navigate (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/FrameManager.js:101:37)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/home/vagrant/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at module.exports (/home/vagrant/Sked_Checker_Text_Bot/bots/skedChecker.js:34:16)\n    at <anonymous>"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 2:52 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 2:53 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"error","message":"Error fetching helps additional details. Evaluation failed: TypeError: Cannot read property 'parentElement' of null\n    at __puppeteer_evaluation_script__:4:42","stack":"Error: Evaluation failed: TypeError: Cannot read property 'parentElement' of null\n    at __puppeteer_evaluation_script__:4:42\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.helpWitnessesAndTime [as getAdditionalData] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:296:8)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:48:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 3:00 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 3:14 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 3:22 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 3:23 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 3:26 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 3:27 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 3:28 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"**** New records: 25 || Records to change: 0 ****","level":"info"}
-{"message":"25 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"helps Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:01 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:02 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"helps Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:03 PM","level":"info"}
-{"level":"error","message":"Root Error in development. helpMarkup is not defined","stack":"ReferenceError: helpMarkup is not defined\n    at /Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:290:28\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Running program at Thu, Jan 9, 2020 4:03 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"info","message":"Error fetching extra data Evaluation failed: ReferenceError: trs is not defined\n    at __puppeteer_evaluation_script__:20:15","stack":"Error: Evaluation failed: ReferenceError: trs is not defined\n    at __puppeteer_evaluation_script__:20:15\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.helpMarkup [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:308:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:63:40)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"helps Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:05 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:07 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"info","message":"Error fetching extra data Evaluation failed: TypeError: Cannot read property 'textContent' of undefined\n    at __puppeteer_evaluation_script__:16:30\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:8:23","stack":"Error: Evaluation failed: TypeError: Cannot read property 'textContent' of undefined\n    at __puppeteer_evaluation_script__:16:30\n    at Array.reduce (<anonymous>)\n    at __puppeteer_evaluation_script__:8:23\n    at ExecutionContext.evaluateHandle (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:121:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at ExecutionContext.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/ExecutionContext.js:48:31)\n    at ExecutionContext.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at DOMWorld.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/DOMWorld.js:105:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.evaluate (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:809:43)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at Object.helpMarkup [as business] (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/guts/house.js:308:10)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:63:40)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"helps Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:08 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:12 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:15 PM","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"message":"**** New records: 18 || Records to change: 0 ****","level":"info"}
-{"message":"18 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"helps Done.","level":"info"}
-{"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:26 PM","level":"info"}
+{"level":"error","message":"Root Error in development. Assignment to constant variable.","stack":"TypeError: Assignment to constant variable.\n    at setUpPuppeteer (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/setup/index.js:17:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Running program at Sun, Jan 12, 2020 2:20 PM","level":"info"}
 {"message":"Checking hfacs","level":"info"}
-{"message":"**** New records: 3 || Records to change: 0 ****","level":"info"}
-{"message":"3 records uploaded successfully.","level":"info"}
+{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:14:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:46:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:100:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:122:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:22 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:23 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:24 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:14:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:46:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:100:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:122:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Running program at Sun, Jan 12, 2020 2:25 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:26 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:31 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:37 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"level":"error","message":"Error parsing page data. job.layer1 is not a function","stack":"TypeError: job.layer1 is not a function\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:40:28)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Error fetching hfacs additional details. Cannot read property 'map' of undefined","stack":"TypeError: Cannot read property 'map' of undefined\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:50:45)\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:13:32)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:38 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:42 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:43 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"level":"error","message":"Error fetching hfacs additional details. pages.close is not a function","stack":"TypeError: pages.close is not a function\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:66:33)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Chrome Closed Bots.","level":"info"}
+{"message":"Running program at Sun, Jan 12, 2020 2:44 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"level":"error","message":"Root Error in development. flatten is not defined","stack":"ReferenceError: flatten is not defined\n    at flatten (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:22:27)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:74:14)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Running program at Sun, Jan 12, 2020 2:47 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"level":"error","message":"Root Error in development. flatten is not defined","stack":"ReferenceError: flatten is not defined\n    at flatten (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:22:27)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:75:14)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Running program at Sun, Jan 12, 2020 2:49 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 9 || Records to change: 0 ****","level":"info"}
+{"message":"9 records uploaded successfully.","level":"info"}
 {"message":"Message not sent, running in development.","level":"info"}
 {"message":"hfacs Done.","level":"info"}
-{"message":"Checking hascs","level":"info"}
-{"message":"**** New records: 1 || Records to change: 0 ****","level":"info"}
-{"message":"1 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hascs Done.","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"1 records uploaded successfully.","level":"info"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:98:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:120:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"sascs Done.","level":"info"}
-{"message":"Checking sfrcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"sfrcs Done.","level":"info"}
-{"message":"Checking svacs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:98:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:120:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"svacs Done.","level":"info"}
-{"message":"Checking hvacs","level":"info"}
-{"message":"**** New records: 2 || Records to change: 1 ****","level":"info"}
-{"message":"2 records uploaded successfully.","level":"info"}
-{"message":"1 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hvacs Done.","level":"info"}
-{"message":"Checking hhscs","level":"info"}
-{"message":"**** New records: 5 || Records to change: 0 ****","level":"info"}
-{"message":"5 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hhscs Done.","level":"info"}
-{"message":"Checking hagcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"hagcs Done.","level":"info"}
-{"message":"Checking hapcs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:98:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:120:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"hapcs Done.","level":"info"}
-{"message":"Checking hbucs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:98:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:120:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"hbucs Done.","level":"info"}
-{"message":"Checking helps","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:98:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:120:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"helps Done.","level":"info"}
 {"message":"Chrome Closed Bots.","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:48 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:98:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:120:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"sascs Done.","level":"info"}
-{"message":"Checking sfrcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"sfrcs Done.","level":"info"}
-{"message":"Checking svacs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:98:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:120:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"svacs Done.","level":"info"}
-{"message":"Checking hvacs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:50 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:52 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:54 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:54 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:99:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:121:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"sascs Done.","level":"info"}
-{"message":"Checking sfrcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"sfrcs Done.","level":"info"}
-{"message":"Checking svacs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:13:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:45:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:99:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:121:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"svacs Done.","level":"info"}
-{"message":"Checking hvacs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:57 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:14:38)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:46:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:99:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:121:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"sascs Done.","level":"info"}
-{"message":"Checking sfrcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"sfrcs Done.","level":"info"}
-{"message":"Checking svacs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 4:59 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:14:38)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:46:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:99:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:121:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"sascs Done.","level":"info"}
-{"message":"Checking sfrcs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"sfrcs Done.","level":"info"}
-{"message":"Checking svacs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:14:38)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:46:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:99:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:121:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"svacs Done.","level":"info"}
-{"message":"Checking hvacs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 5:00 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 5:00 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 5:02 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:14:38)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:46:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Running program at Thu, Jan 9, 2020 5:13 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:14:38)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:46:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
-{"message":"Running program at Thu, Jan 9, 2020 5:15 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 5:24 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"message":"Running program at Thu, Jan 9, 2020 5:27 PM","level":"info"}
-{"message":"Checking sascs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
-{"message":"1 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"sascs Done.","level":"info"}
-{"message":"Checking sfrcs","level":"info"}
-{"message":"**** New records: 1 || Records to change: 0 ****","level":"info"}
-{"message":"1 records uploaded successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"sfrcs Done.","level":"info"}
-{"message":"Checking svacs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
-{"message":"svacs Done.","level":"info"}
-{"message":"Checking hvacs","level":"info"}
-{"message":"**** New records: 0 || Records to change: 1 ****","level":"info"}
-{"message":"1 records modified successfully.","level":"info"}
-{"message":"Message not sent, running in development.","level":"info"}
-{"message":"hvacs Done.","level":"info"}
-{"message":"Checking hhscs","level":"info"}
