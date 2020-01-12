@@ -1,4 +1,6 @@
-const {asyncForEach, handleEachJob, flatten} = require('../util');
+const { asyncForEach, handleEachJob } = require('../util');
+
+const { setupFunctions } = require("../setup")
 
 const find = require('../mongodb/find');
 const insertMany = require('../mongodb/insertMany');
@@ -29,13 +31,20 @@ module.exports = async ({page, browser, args}) => {
     return logger.error(`Could not connect to database. `, err);
   }
 
-  // Return data from first layer of job. This is done synchronously for each job.
+  // Return data from first layer of job.
   let jobs = await asyncForEach(args.jobs, async job => {
     try {
       await page.goto(job.link, { waitUntil: 'networkidle2'});
     } catch (err) {
       return logger.error(`Could not navigate to page. `, err);
     }
+
+    try {
+      await setupFunctions(page);
+    } catch (err) {
+      return logger.error(`Could not set up helper functions `, err);
+    }
+
     try {
       var data = await job.layer1(page);
       return { ...data, type: job.type, work: job.layer2 };
@@ -44,19 +53,37 @@ module.exports = async ({page, browser, args}) => {
     }
   });
 
-  // Get data for each job.
   try {
     var pageData = await handleEachJob({ jobs, browser }, async ({ job, browser }) => {
         let { work, type, links } = job;
-        let pages = await Promise.all(links.map(_ => browser.newPage()));
-        await Promise.all(pages.map((page, i) => page.goto(links[i]), {waitUntil: 'networkidle2'}));
-        let layerTwoData = await Promise.all(pages.map(async uniquePage => {
-          let data = await work(uniquePage);
-          let link = uniquePage.url();
-          // Combine the data gathered with the link from the page.
-          return { ...data, type, link };
-        }));
+        
+        try {
+          var pages = await Promise.all(links.map(_ => browser.newPage()));
+        } catch(err){
+          return logger.error(`Could not open pages. `, err);
+        };
+        
+        try {
+          await Promise.all(pages.map((page, i) => page.goto(links[i]), {waitUntil: 'networkidle2'}));
+        } catch (err){
+          return logger.error(`Could not navigate to pages. `, err);
+        }
 
+        try {
+          var layerTwoData = await Promise.all(pages.map(async uniquePage => {
+            try {
+              await setupFunctions(uniquePage)
+            } catch(err){
+              return logger.error(`Could not set up helper functions for unique page. `, err);
+            }
+            let data = await work(uniquePage);
+            let link = uniquePage.url();
+            return { ...data, type, link }; // Combine the data gathered with the link from the page.
+          }));
+        } catch(err){
+          return logger.error(`Could not produce layerTwo data. `, err);
+        }
+       
         // Combine the layerOne data and layerTwo data with reduction on link.
         let combinedData = links.reduce((agg, link, i) => {
           let match = layerTwoData.filter(x => x.link === link)[0]
@@ -64,7 +91,11 @@ module.exports = async ({page, browser, args}) => {
           return agg;
         }, []);
 
-        await Promise.all(pages.map(page => page.close()));
+        try {
+          await Promise.all(pages.map(page => page.close()));
+        } catch(err){
+          return logger.error(`Could not exit pages. `, err);
+        }
 
       return combinedData;
     });

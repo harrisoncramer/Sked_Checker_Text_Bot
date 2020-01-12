@@ -13,7 +13,7 @@ const outlook = require('./bots/outlook');
 
 // Import business logic...
 const {
-  hfacGetLinks,
+  hfacLayerOne,
   hfacHearingsAndMarkups,
   hascBusiness,
   hascWitnesses,
@@ -33,8 +33,6 @@ const {
   helpWitnessesAndTime,
 } = require('./bots/guts/house');
 
-const { getLinks } = require("./bots/guts");
-
 const {
   sfrcBusiness,
   sfrcWitnesses,
@@ -43,6 +41,8 @@ const {
   svacBusiness,
   svacWitnesses,
 } = require('./bots/guts/senate');
+
+const { getLinks } = require("./bots/guts");
 
 // Import schemas...
 const {
@@ -156,10 +156,10 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   (async () => {
     try {
-      let {browser, page} = await setUpPuppeteer();
+      let { browser, page } = await setUpPuppeteer();
+      
       let today = moment();
       logger.info(`Running program at ${today.format('llll')}`);
-
        await skedChecker({
          page,
          browser,
@@ -168,14 +168,14 @@ if (process.env.NODE_ENV === 'production') {
              { 
               link: 'https://foreignaffairs.house.gov/hearings',
               type: 'hearing',
-              layer1: () => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" } }),
-              layer2: (uniquePage) => hfacHearingsAndMarkups(uniquePage)
+              layer1: x => getLinks({ page: x, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
+              layer2: uniquePage => hfacHearingsAndMarkups(uniquePage)
              },
              {
               link: 'https://foreignaffairs.house.gov/markups',
               type: 'markup',
-              layer1: () => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" } }),
-              layer2: (uniquePage) => hfacHearingsAndMarkups(uniquePage)
+              layer1: x => getLinks({ page: x, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
+              layer2: uniquePage => hfacHearingsAndMarkups(uniquePage)
              }
            ],
            comparer: 'title',

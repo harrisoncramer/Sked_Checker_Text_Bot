@@ -1,5 +1,7 @@
 const pupeteer = require('puppeteer');
 const {asyncForEach} = require('../util');
+const { clean } = require("../bots/guts");
+const logger = require("../logger");
 
 module.exports = {
   setUpPuppeteer: async () => {
@@ -29,7 +31,9 @@ module.exports = {
 
     return {browser: context, page};
   },
-
+  setupFunctions: async page => {
+    await page.addScriptTag({ path: "./setup/helperFunctions.js" })
+  },
   launchBots: async ({page, browser, today, bots}) => {
     let catcher = (err, bot) =>
       process.env.NODE_ENV === 'production'

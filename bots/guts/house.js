@@ -1,27 +1,20 @@
-const { getLinks } = require("./index");
+const { getLinksTwo } = require("./index");
 
 module.exports = {
-  hfacGetLinks: page => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" } }),
   hfacHearingsAndMarkups: page =>
     page.evaluate(() => {
-      let title = document.querySelector(".title").textContent.trim();
-      let date = document.querySelector("span.date").textContent.trim();
-      let time = document.querySelector("span.time").textContent.trim();
-      let location = document
-        .querySelector("span.location strong")
-        .nextSibling.textContent.replace("House Office Building, Washington, DC 20515", "")
+      let title = getText(".title");
+      let date = getText("span.date");
+      let time = getText("span.time");
+      let location = getNextText("span.location strong")
+        .replace("House Office Building, Washington, DC 20515", "")
         .replace(" House Office Building", "")
         .trim();
-      let witnesses = Array.from(document.querySelectorAll("div.witnesses strong"))
-        .map(i => i.textContent.replace(/\s\s+/g, " ").trim())
+      let witnesses = makeArray("div.witnesses strong")
+        .map(x => clean(x.textContent))
         .filter(x => x !== "");
-      let isSubcommittee = !!document.querySelector("span.subcommittee");
-      let subcommittee = isSubcommittee
-        ? document
-            .querySelector("span.subcommittee")
-            .querySelector("strong")
-            .nextSibling.textContent.trim()
-        : null;
+      let isSubcommittee = !!getNode("span.subcommittee");
+      let subcommittee = isSubcommittee ? getNextText("span.subcommittee strong") : null;
       return { title, date, time, location, witnesses, isSubcommittee, subcommittee };
     }),
   hascBusiness: page =>
@@ -53,7 +46,7 @@ module.exports = {
       let witnesses = Array.from(
         document.querySelectorAll('div.post-content b'),
       )
-        .map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
+        .map(i => clean(i.textContent))
         .slice(1) // Get rid of title...
         .filter(x => !['Witnesses:', '', 'Panel 1:', 'Panel 2:'].includes(x));
       return {witnesses};
@@ -65,7 +58,7 @@ module.exports = {
       );
       let res = trs.reduce(
         (agg, item, i) => {
-          let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+          let title = clean(item[0].textContent)
           let link = item[0].querySelector('a').href;
           let location = item[1].textContent.trim();
           let date = item[2].textContent.trim();
@@ -106,7 +99,7 @@ module.exports = {
       );
       let res = trs.reduce(
         (agg, item, i) => {
-          let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+          let title = clean(item[0].textContent)
           let link = item[0].querySelector('a').href;
           let location = item[1].textContent.trim();
           let date = item[2].textContent
@@ -141,13 +134,13 @@ module.exports = {
       ).map(x => x.querySelectorAll('td > div.faux-col'));
       let res = trs.reduce(
         (agg, item, i) => {
-          let title = item[0].textContent.replace("Add to my Calendar", "").replace(/\s\s+/g, ' ').trim();
+          let title = clean(item[0].textContent.replace("Add to my Calendar", ""))
           let link = item[0].querySelector('a').href;
           let location = item[1].textContent
             .trim()
             .replace(' House Office Building, Washington, DC 20515', '');
-          let date = item[2].textContent.replace(/\s\s+/g, ' ').trim();
-          let time = item[3].textContent.replace(/\s\s+/g, ' ').trim();
+          let date = clean(item[2].textContent)
+          let time = clean(item[3].textContent)
           agg[i] = {link, title, location, date, time};
           return agg;
         },
@@ -215,8 +208,8 @@ module.exports = {
           let timeInfo = item
             .querySelector('span.date-display-single')
             .textContent.split('-');
-          let date = timeInfo[0].replace(/\s\s+/g, ' ').trim();
-          let time = timeInfo[1].replace(/\s\s+/g, ' ').trim();
+          let date = clean(timeInfo[0])
+          let time = clean(timeInfo[1])
           let location = item
             .querySelector('.views-field-field-congress-meeting-location')
             .textContent.replace(
@@ -257,8 +250,8 @@ module.exports = {
           let timeInfo = item
             .querySelector('span.date-display-single')
             .textContent.split('-');
-          let date = timeInfo[0].replace(/\s\s+/g, ' ').trim();
-          let time = timeInfo[1].replace(/\s\s+/g, ' ').trim();
+          let date = clean(timeInfo[0])
+          let time = clean(timeInfo[1])
 
           agg[i] = {link, title, date, time};
           return agg;
@@ -299,7 +292,7 @@ module.exports = {
       
       let res = boxes.reduce(
         (agg, item, i) => {
-          let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+          let title = clean(item[0].textContent)
           let link = item[0].querySelector('a').href;
           let dateInfo = item[1].textContent.split("-");
           let date = dateInfo[0].trim();
@@ -324,7 +317,7 @@ module.exports = {
 
       let res = trs.reduce(
         (agg, item, i) => {
-          let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+          let title = clean(item[0].textContent)
           let link = item[0].querySelector('a').href;
           let location = item[1].textContent
             .replace('House Office Building', '')

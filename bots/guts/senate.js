@@ -1,6 +1,6 @@
 module.exports = {
   sascBusiness: page =>
-    page.evaluate(() => {
+    page.evaluate(_ => {
       let trs = Array.from(document.querySelectorAll('table tbody tr.vevent'));
       let res = trs.reduce(
         (agg, item, i) => {
@@ -29,14 +29,14 @@ module.exports = {
       return res;
     }),
   sascWitnesses: page =>
-    page.evaluate(() => {
+    page.evaluate(_ => {
       let witnesses = Array.from(document.querySelectorAll('li.vcard span.fn')).map(i =>
         i.textContent.replace(/\s\s+/g, ' ').trim(),
       );
       return { witnesses };
     }),
   sfrcBusiness: page =>
-    page.evaluate(() => {
+    page.evaluate(_ => {
       let divs = Array.from(
         document.querySelectorAll('div.table-holder > div.text-center'),
       );
@@ -75,14 +75,14 @@ module.exports = {
       return res;
     }),
   sfrcWitnesses: page =>
-    page.evaluate(() => {
+    page.evaluate(_ => {
       let witnesses = Array.from(document.querySelectorAll('span.fn')).map(i =>
         i.textContent.replace(/\s\s+/g, ' ').trim(),
       );
       return { witnesses };
     }),
   svacBusiness: page =>
-    page.evaluate(() => {
+    page.evaluate(_ => {
       let trs = Array.from(document.querySelectorAll('tr.vevent')).map(x =>
         x.querySelectorAll('td > div.faux-col'),
       );
@@ -104,7 +104,7 @@ module.exports = {
       return res;
     }),
   svacWitnesses: page =>
-    page.evaluate(() => {
+    page.evaluate(_ => {
       let witnesses = Array.from(document.querySelectorAll('span.fn')).map(i =>
         i.textContent.replace(/\s\s+/g, ' ').trim(),
       );
