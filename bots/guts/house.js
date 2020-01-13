@@ -6,10 +6,7 @@ module.exports = {
       let title = getText(".title");
       let date = getText("span.date");
       let time = getText("span.time");
-      let location = getNextText("span.location strong")
-        .replace("House Office Building, Washington, DC 20515", "")
-        .replace(" House Office Building", "")
-        .trim();
+      let location = getNextText("span.location strong").replaceAll(["House Office Building, Washington, DC 20515", " House Office Building"])
       let witnesses = makeArray("div.witnesses strong")
         .map(x => clean(x.textContent))
         .filter(x => x !== "");
