@@ -1,52 +1,52 @@
 const { getLinksTwo } = require("./index");
 
 module.exports = {
-  hfacHearingsAndMarkups: page =>
+  getLinks: ({ page, selectors }) => {
+    return page.evaluate(({ selectors }) => {
+      let { boxSelectors, linkSelectors } = selectors;
+      let boxes = makeArray(boxSelectors);
+      let links = boxes.map(x => x.querySelector(linkSelectors).href);
+      let data = links.map(link => ({ link }));
+      return data;
+      // return { links: links.slice(0,9) }; // Assume there won't be more than 10 links to process..
+    }, { selectors })
+  },
+  hfacLayerTwo: page =>
     page.evaluate(() => {
       let title = getText(".title");
       let date = getText("span.date");
       let time = getText("span.time");
-      let location = getNextText("span.location strong").replaceAll(["House Office Building, Washington, DC 20515", " House Office Building"])
+      let location = getNextText("span.location strong")
+        .replaceAll(["House Office Building, Washington, DC 20515", " House Office Building"])
       let witnesses = makeArray("div.witnesses strong")
         .map(x => clean(x.textContent))
         .filter(x => x !== "");
       let isSubcommittee = !!getNode("span.subcommittee");
       let subcommittee = isSubcommittee ? getNextText("span.subcommittee strong") : null;
+      debugger;
       return { title, date, time, location, witnesses, isSubcommittee, subcommittee };
     }),
-  hascBusiness: page =>
+  hascLayerOne: page => {
+    return page.evaluate(() => {
+      let boxes = makeArray("table tbody tr");
+      let title = boxes.map(x => x.querySelector("a").textContent);
+      let x = new RegExp("Subcommittee", "i");
+      let isSubcommittee = title.includes(x);
+      let links = boxes.map(x => x.querySelector("a").href);
+      /// THIS IS WHERE WE NEED TO MAKE THE CHANGE
+      return { title, isSubcommittee, links };
+    });
+  },
+  hascLayerTwo: page =>
     page.evaluate(() => {
-      let trs = Array.from(document.querySelectorAll('table tbody tr'));
-      let res = trs.reduce(
-        (agg, item, i) => {
-          const tds = Array.from(item.children);
-          tds.forEach(td => {
-            let type = td.classList.value.split(' ').pop();
-            let val = td.textContent;
-            agg[i][type] = val;
-            td.childElementCount
-              ? (agg[i]['link'] = td.children[0].href)
-              : null;
-          });
-
-          return agg;
-        },
-        Array(trs.length)
-          .fill()
-          .map(_ => ({})),
-      );
-
-      return res;
-    }),
-  hascWitnesses: page =>
-    page.evaluate(() => {
-      let witnesses = Array.from(
-        document.querySelectorAll('div.post-content b'),
-      )
+      let pageData = getText("div.post-content").split("(")[1].split(")")[0].split("–");
+      let time = pageData[0].trim();
+      let location = pageData[1].trim();
+      let witnesses = makeArray("div.post-content b")
         .map(i => clean(i.textContent))
         .slice(1) // Get rid of title...
         .filter(x => !['Witnesses:', '', 'Panel 1:', 'Panel 2:'].includes(x));
-      return {witnesses};
+      return { time, location, witnesses };
     }),
   hvacBusiness: page =>
     page.evaluate(() => {

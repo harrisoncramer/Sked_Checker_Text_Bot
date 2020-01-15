@@ -47,24 +47,26 @@ module.exports = async ({page, browser, args}) => {
 
     try {
       var data = await job.layer1(page);
-      return { ...data, type: job.type, work: job.layer2 };
+      // { links: [link,link,link] }
+      return { data, type: job.type, work: job.layer2 };
     } catch (err) {
       return logger.error(`Error parsing page data. `, err);
     }
   });
 
   try {
+    // For every job, create pages from the numbers of links 
     var pageData = await handleEachJob({ jobs, browser }, async ({ job, browser }) => {
-        let { work, type, links } = job;
+        let { work, type, data } = job;
         
         try {
-          var pages = await Promise.all(links.map(_ => browser.newPage()));
+          var pages = await Promise.all(data.map(_ => browser.newPage()));
         } catch(err){
           return logger.error(`Could not open pages. `, err);
         };
         
         try {
-          await Promise.all(pages.map((page, i) => page.goto(links[i]), {waitUntil: 'networkidle2'}));
+          await Promise.all(pages.map((page, i) => page.goto(data[i].link), {waitUntil: 'networkidle2'}));
         } catch (err){
           return logger.error(`Could not navigate to pages. `, err);
         }
@@ -76,18 +78,18 @@ module.exports = async ({page, browser, args}) => {
             } catch(err){
               return logger.error(`Could not set up helper functions for unique page. `, err);
             }
-            let data = await work(uniquePage);
+            let newData = await work(uniquePage);
             let link = uniquePage.url();
-            return { ...data, type, link }; // Combine the data gathered with the link from the page.
+            return { ...newData, type, link }; // Combine the data gathered with the link from the page.
           }));
         } catch(err){
           return logger.error(`Could not produce layerTwo data. `, err);
         }
        
         // Combine the layerOne data and layerTwo data with reduction on link.
-        let combinedData = links.reduce((agg, link, i) => {
-          let match = layerTwoData.filter(x => x.link === link)[0]
-          agg[i] = { link, ...match };
+        let combinedData = data.reduce((agg, datum, i) => {
+          let match = layerTwoData.filter(x => x.link === datum.link)[0];
+          agg[i] = match;
           return agg;
         }, []);
 

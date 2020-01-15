@@ -13,10 +13,10 @@ const outlook = require('./bots/outlook');
 
 // Import business logic...
 const {
-  hfacLayerOne,
-  hfacHearingsAndMarkups,
-  hascBusiness,
-  hascWitnesses,
+  getLinks,
+  hfacLayerTwo,
+  hascLayerOne,
+  hascLayerTwo,
   hvacBusiness,
   hvacWitnesses,
   hvacMarkup,
@@ -41,8 +41,6 @@ const {
   svacBusiness,
   svacWitnesses,
 } = require('./bots/guts/senate');
-
-const { getLinks } = require("./bots/guts");
 
 // Import schemas...
 const {
@@ -103,7 +101,7 @@ if (process.env.NODE_ENV === 'production') {
             args: {
               link: 'https://foreignaffairs.house.gov/hearings',
               business: hfacGetLinks,
-              getAdditionalData: hfacHearingsAndMarkups,
+              getAdditionalData: hfacLayerTwo,
               comparer: 'recordListTitle',
               schema: HFACSchema,
               isDifferent: ['recordListTime', 'recordListDate'],
@@ -113,7 +111,7 @@ if (process.env.NODE_ENV === 'production') {
             bot: skedChecker,
             args: {
               link: 'https://armedservices.house.gov/hearings',
-              business: hascBusiness,
+              business: hascLayerTwo,
               getAdditionalData: hascWitnesses,
               comparer: 'recordListTitle',
               schema: HASCSchema,
@@ -168,32 +166,38 @@ if (process.env.NODE_ENV === 'production') {
              { 
               link: 'https://foreignaffairs.house.gov/hearings',
               type: 'hearing',
-              layer1: x => getLinks({ page: x, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
-              layer2: uniquePage => hfacHearingsAndMarkups(uniquePage)
+              layer1: page => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
+              layer2: uniquePage => hfacLayerTwo(uniquePage)
              },
-             {
-              link: 'https://foreignaffairs.house.gov/markups',
-              type: 'markup',
-              layer1: x => getLinks({ page: x, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
-              layer2: uniquePage => hfacHearingsAndMarkups(uniquePage)
-             }
+            //  {
+            //   link: 'https://foreignaffairs.house.gov/markups',
+            //   type: 'markup',
+            //   layer1: page => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
+            //   layer2: uniquePage => hfacLayerTwo(uniquePage)
+            //  }
            ],
            comparer: 'title',
            isDifferent: ['time', 'date', 'location'],
            schema: HFACSchema,
          },
        });
-       // await skedChecker({
-       //   page,
-       //   args: {
-       //     link: 'https://armedservices.house.gov/hearings',
-       //     business: hascBusiness,
-       //     getAdditionalData: hascWitnesses,
-       //     comparer: 'recordListTitle',
-       //     isDifferent: ['recordListTime', 'recordListDate'],
-       //     schema: HASCSchema,
-       //   },
-       // });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+          jobs: [
+            { 
+             link: 'https://armedservices.house.gov/hearings',
+             type: 'hearing',
+             layer1: page => hascLayerOne(page),
+             layer2: uniquePage => hascLayerTwo(uniquePage)
+            },
+          ],
+           comparer: 'title',
+           isDifferent: ['time', 'date', 'location'],
+           schema: HASCSchema,
+         },
+       });
       //  await skedChecker({
       //    page,
       //    args: {
