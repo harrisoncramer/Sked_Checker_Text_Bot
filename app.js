@@ -169,12 +169,12 @@ if (process.env.NODE_ENV === 'production') {
               layer1: page => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
               layer2: uniquePage => hfacLayerTwo(uniquePage)
              },
-            //  {
-            //   link: 'https://foreignaffairs.house.gov/markups',
-            //   type: 'markup',
-            //   layer1: page => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
-            //   layer2: uniquePage => hfacLayerTwo(uniquePage)
-            //  }
+             {
+              link: 'https://foreignaffairs.house.gov/markups',
+              type: 'markup',
+              layer1: page => getLinks({ page, selectors: { boxSelectors: "table tbody tr", linkSelectors: "a" }}),
+              layer2: uniquePage => hfacLayerTwo(uniquePage)
+             }
            ],
            comparer: 'title',
            isDifferent: ['time', 'date', 'location'],

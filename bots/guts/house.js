@@ -23,18 +23,21 @@ module.exports = {
         .filter(x => x !== "");
       let isSubcommittee = !!getNode("span.subcommittee");
       let subcommittee = isSubcommittee ? getNextText("span.subcommittee strong") : null;
-      debugger;
       return { title, date, time, location, witnesses, isSubcommittee, subcommittee };
     }),
   hascLayerOne: page => {
     return page.evaluate(() => {
       let boxes = makeArray("table tbody tr");
-      let title = boxes.map(x => x.querySelector("a").textContent);
-      let x = new RegExp("Subcommittee", "i");
-      let isSubcommittee = title.includes(x);
-      let links = boxes.map(x => x.querySelector("a").href);
-      /// THIS IS WHERE WE NEED TO MAKE THE CHANGE
-      return { title, isSubcommittee, links };
+      let data = boxes.map(box => {
+        let link = getLink(box);
+        let title = getLinkText(box);
+        let x = new RegExp("Subcommittee", "i");
+        let isSubcommittee = !!title.match(x);
+        let subcommittee = isSubcommittee ? title.split(":")[0] : null;
+        title = title.replaceAll([subcommittee, ":"]).trim();
+        return { link, title, subcommittee, isSubcommittee };
+      });
+      return data;
     });
   },
   hascLayerTwo: page =>

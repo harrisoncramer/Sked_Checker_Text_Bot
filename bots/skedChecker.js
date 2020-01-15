@@ -47,8 +47,8 @@ module.exports = async ({page, browser, args}) => {
 
     try {
       var data = await job.layer1(page);
-      // { links: [link,link,link] }
-      return { data, type: job.type, work: job.layer2 };
+      data = data.map(datum => ({ ...datum, type: job.type })); // Add type to every piece of data.
+      return { data, work: job.layer2 };
     } catch (err) {
       return logger.error(`Error parsing page data. `, err);
     }
@@ -57,7 +57,7 @@ module.exports = async ({page, browser, args}) => {
   try {
     // For every job, create pages from the numbers of links 
     var pageData = await handleEachJob({ jobs, browser }, async ({ job, browser }) => {
-        let { work, type, data } = job;
+        let { work, data } = job;
         
         try {
           var pages = await Promise.all(data.map(_ => browser.newPage()));
@@ -80,7 +80,7 @@ module.exports = async ({page, browser, args}) => {
             }
             let newData = await work(uniquePage);
             let link = uniquePage.url();
-            return { ...newData, type, link }; // Combine the data gathered with the link from the page.
+            return { ...newData, link }; // Combine the data gathered with the link from the page.
           }));
         } catch(err){
           return logger.error(`Could not produce layerTwo data. `, err);
@@ -89,7 +89,7 @@ module.exports = async ({page, browser, args}) => {
         // Combine the layerOne data and layerTwo data with reduction on link.
         let combinedData = data.reduce((agg, datum, i) => {
           let match = layerTwoData.filter(x => x.link === datum.link)[0];
-          agg[i] = match;
+          agg[i] = { ...datum, ...match};
           return agg;
         }, []);
 

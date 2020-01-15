@@ -11,6 +11,7 @@ const getNode = query => document.querySelector(query);
 const getNextNode = query => document.querySelector(query).nextSibling;
 const getText = query => document.querySelector(query).textContent.trim();
 const getLink = node => node.querySelector("a").href;
+const getLinkText = node => node.querySelector("a").textContent;
 const getNextText = query => document.querySelector(query).nextSibling.textContent
 const makeArray = query => Array.from(document.querySelectorAll(query));
 
