@@ -15,12 +15,15 @@ module.exports = {
 
     return {existingData, newData};
   },
-  getLinks: ({ page, selectors }) => {
-    return page.evaluate(({ selectors }) => {
-      let { boxSelectors, linkSelectors } = selectors;
-      let boxes = Array.from(document.querySelectorAll(boxSelectors));
-      let links = boxes.map(x => x.querySelector(linkSelectors).href);
-      return { links: links.slice(0,9) }; // Assume there won't be more than 10 links to process..
-    }, { selectors })
-  }
+  getLinks: ({page, selectors}) => {
+    return page.evaluate(
+      ({selectors}) => {
+        let {boxSelectors, linkSelectors} = selectors;
+        let boxes = Array.from(document.querySelectorAll(boxSelectors));
+        let links = boxes.map(x => x.querySelector(linkSelectors).href);
+        return {links: links.slice(0, 9)}; // Assume there won't be more than 10 links to process..
+      },
+      {selectors},
+    );
+  },
 };

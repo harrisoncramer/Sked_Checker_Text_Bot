@@ -1,7 +1,7 @@
 module.exports = {
   sascLayerOne: page =>
     page.evaluate(_ => {
-      let trs = makeArray('table tbody tr.vevent').slice(0,9);
+      let trs = makeArray('table tbody tr.vevent').slice(0, 9);
       let res = trs.reduce(
         (agg, item, i) => {
           const tds = Array.from(item.children);
@@ -16,7 +16,7 @@ module.exports = {
           let time = tds[2].children[0]
             ? clean(tds[2].children[0].textContent.split(' ')[1])
             : 'No time.';
-          agg[i] = { link, title, location, date, time };
+          agg[i] = {link, title, location, date, time};
           return agg;
         },
         Array(trs.length)
@@ -28,8 +28,10 @@ module.exports = {
     }),
   sascLayerTwo: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray('li.vcard span.fn').map(x => clean(x.textContent));
-      return { witnesses };
+      let witnesses = makeArray('li.vcard span.fn').map(x =>
+        clean(x.textContent),
+      );
+      return {witnesses};
     }),
   sfrcBusiness: page =>
     page.evaluate(_ => {
@@ -70,18 +72,20 @@ module.exports = {
     }),
   sfrcWitnesses: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray('span.fn').map(i => clean(i.textContent))
-      return { witnesses };
+      let witnesses = makeArray('span.fn').map(i => clean(i.textContent));
+      return {witnesses};
     }),
   svacBusiness: page =>
     page.evaluate(_ => {
-      let trs = makeArray('tr.vevent').slice(0,9).map(x => x.querySelectorAll('td > div.faux-col'));
+      let trs = makeArray('tr.vevent')
+        .slice(0, 9)
+        .map(x => x.querySelectorAll('td > div.faux-col'));
       let res = trs.reduce(
         (agg, item, i) => {
           let title = clean(item[0].textContent);
           let link = item[0].querySelector('a').href;
           let location = clean(item[1].textContent);
-          let dateInfo = item[2].textContent.trim().split(" ");
+          let dateInfo = item[2].textContent.trim().split(' ');
           let date = dateInfo[0];
           let time = dateInfo[1];
           agg[i] = {link, title, location, date, time};
@@ -96,6 +100,6 @@ module.exports = {
   svacWitnesses: page =>
     page.evaluate(_ => {
       let witnesses = makeArray('span.fn').map(i => clean(i.textContent));
-      return { witnesses };
+      return {witnesses};
     }),
 };

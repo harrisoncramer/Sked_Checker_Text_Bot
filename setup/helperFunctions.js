@@ -8,11 +8,15 @@ String.prototype.replaceAll = function (unwanteds) {
 };
 
 const getNode = query => document.querySelector(query);
+const getFromNode = (node, query) => node.querySelector(query);
+const getFromText = (node, query) => node.querySelector(query).textContent;
+const getFromLink = (node, query) => node.querySelector(query).href;
 const getNextNode = query => document.querySelector(query).nextSibling;
 const getNextMatch = (node, query) => node.querySelector(query).nextSibling.nodeValue
 const getText = query => document.querySelector(query).textContent.trim();
 const getNextText = query => document.querySelector(query).nextSibling.textContent
 const makeArray = query => Array.from(document.querySelectorAll(query));
+const makeTextArray = (node, query) => Array.from(node.querySelectorAll(query)).map(x => clean(x.textContent));
 
 const getLink = node => node.querySelector("a").href;
 const getLinkText = node => node.querySelector("a").textContent;
