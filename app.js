@@ -36,8 +36,8 @@ const {
 const {
   sfrcBusiness,
   sfrcWitnesses,
-  sascBusiness,
-  sascWitnesses,
+  sascLayerOne,
+  sascLayerTwo,
   svacBusiness,
   svacWitnesses,
 } = require('./bots/guts/senate');
@@ -89,8 +89,8 @@ if (process.env.NODE_ENV === 'production') {
             bot: skedChecker,
             args: {
               link: 'https://www.armed-services.senate.gov/hearings',
-              business: sascBusiness,
-              getAdditionalData: sascWitnesses,
+              business: sascLayerOne,
+              getAdditionalData: sascLayerTwo,
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: SASCSchema,
@@ -198,121 +198,177 @@ if (process.env.NODE_ENV === 'production') {
            schema: HASCSchema,
          },
        });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://www.armed-services.senate.gov/hearings',
-      //      business: sascBusiness,
-      //      getAdditionalData: sascWitnesses,
-      //      comparer: 'title',
-      //      isDifferent: ['location', 'date', 'time'],
-      //      schema: SASCSchema,
-      //    },
-      //  });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://www.foreign.senate.gov/hearings',
-      //      business: sfrcBusiness,
-      //      getAdditionalData: sfrcBusiness,
-      //      comparer: 'title',
-      //      isDifferent: ['location', 'date', 'time'],
-      //      schema: SFRCSchema,
-      //    },
-      //  });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://www.veterans.senate.gov/hearings',
-      //      business: svacBusiness,
-      //      getAdditionalData: svacWitnesses,
-      //      comparer: 'title',
-      //      schema: SVACSchema,
-      //      isDifferent: ['location', 'date', 'time'],
-      //    },
-      //  });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://veterans.house.gov/events/hearings',
-      //      extra: {
-      //        link: 'https://veterans.house.gov/events/markups',
-      //        business: hvacMarkup,
-      //      },
-      //      business: hvacBusiness,
-      //      getAdditionalData: hvacWitnesses,
-      //      comparer: 'title',
-      //      schema: HVACSchema,
-      //      isDifferent: ['location', 'date', 'time'],
-      //    },
-      //  });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://homeland.house.gov/activities/hearings',
-      //      business: hhscBusiness,
-      //      getAdditionalData: hhscWitnesses,
-      //      comparer: 'title',
-      //      schema: HHSCSchema,
-      //      isDifferent: ['location', 'date', 'time'],
-      //    },
-      //  });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://agriculture.house.gov/calendar/',
-      //      business: hagcBusiness,
-      //      getAdditionalData: hagcWitnessesAndLocation,
-      //      schema: HAGCSchema,
-      //      comparer: 'title',
-      //      isDifferent: ['date', 'time'],
-      //    }
-      //  });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
-      //      business: hapcBusinessAndMarkup,
-      //      getAdditionalData: hapcWitnesses,
-      //      extra: {
-      //        link: 'https://appropriations.house.gov/events/markups',
-      //        business: hapcBusinessAndMarkup,
-      //      },
-      //      schema: HAPCSchema,
-      //      comparer: 'title',
-      //      isDifferent: ['date', 'time', 'location'],
-      //    },
-      //  });
-      //  await skedChecker({
-      //    page,
-      //    args: {
-      //      link: 'https://budget.house.gov/legislation/hearings',
-      //      business: hbucBusinessAndMarkup,
-      //      getAdditionalData: hbucWitnessesAndLocation,
-      //      extra: {
-      //        link: 'https://budget.house.gov/legislation/markups',
-      //        business: hbucBusinessAndMarkup
-      //      },
-      //      schema: HBUCSchema,
-      //      comparer: 'title',
-      //      isDifferent: ['date', 'time', 'location', 'witnesses']
-      //    }
-      //  })
-      // await skedChecker({
-      //   page,
-      //   args: {
-      //     link: 'https://edlabor.house.gov/hearings-and-events',
-      //     business: helpBusiness,
-      //     getAdditionalData: helpWitnessesAndTime,
-      //          extra: {
-      //            link: 'https://budget.house.gov/legislation/markups',
-      //            business: helpMarkup
-      //          },
-      //     schema: HELPSchema,
-      //     comparer: 'title',
-      //     isDifferent: ['location', 'date', 'time'],
-      //   },
-      // });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+           jobs: [
+             {
+              link: 'https://www.armed-services.senate.gov/hearings',
+              type: 'hearing',
+              layer1: page => sascLayerOne(page),
+              layer2: uniquePage => sascLayerTwo(uniquePage)
+             }
+           ],
+           comparer: 'title',
+           isDifferent: ['time', 'date', 'location'],
+           schema: SASCSchema,
+         },
+       });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+           jobs: [
+            {
+              link: 'https://www.foreign.senate.gov/hearings',
+              type: 'hearing',
+              layer1: page => sfrcBusiness(page),
+              layer2: uniquePage => sfrcWitnesses(uniquePage),
+            }
+           ],
+           comparer: 'title',
+           isDifferent: ['time', 'date', 'location'],
+           schema: SFRCSchema,
+         },
+       });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+            jobs: [
+              {
+                link: 'https://www.veterans.senate.gov/hearings',
+                type: 'hearing',
+                layer1: page => svacBusiness(page),
+                layer2: uniquePage => svacWitnesses(uniquePage),
+              }
+            ],
+           comparer: 'title',
+           isDifferent: ['time', 'date', 'location'],
+           schema: SVACSchema,
+         },
+       });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+           jobs: [
+             {
+              link: 'https://veterans.house.gov/events/hearings',
+              type: 'hearing',
+              layer1: page => hvacBusiness(page),
+              layer2: uniquePage => hvacWitnesses(uniquePage)
+             },
+             {
+              link: 'https://veterans.house.gov/events/markups',
+              type: 'markup',
+              layer1: page => hvacBusiness(page),
+              layer2: uniquePage => hvacMarkup(uniquePage)
+             }
+           ],
+           comparer: 'title',
+           isDifferent: ['time', 'date', 'location'],
+           schema: HVACSchema
+         },
+       });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+          jobs: [
+            {
+              link: 'https://homeland.house.gov/activities/hearings',
+              type: 'hearing',
+              layer1: page => hhscBusiness(page),
+              layer2: uniquePage => hhscWitnesses(uniquePage)
+            }
+          ],
+           comparer: 'title',
+           isDifferent: ['time', 'date', 'location'],
+           schema: HHSCSchema
+         },
+       });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+           jobs: [
+             {
+              link: 'https://agriculture.house.gov/calendar/',
+              type: 'hearing',
+              layer1: page => hagcBusiness(page),
+              layer2: uniquePage => hagcWitnessesAndLocation(uniquePage)
+             }
+            ],
+            comparer: 'title',
+            isDifferent: ['date', 'time'],
+            schema: HAGCSchema
+         }
+       });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+           jobs: [
+            {
+              link: 'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
+              type: 'hearing',
+              layer1: page => hapcBusinessAndMarkup(page),
+              layer2: uniquePage => hapcWitnesses(uniquePage)
+            },
+            {
+              link: 'https://appropriations.house.gov/events/markups',
+              type: 'markup',
+              layer1: page => hapcBusinessAndMarkup(page),
+              layer2: uniquePage => hapcWitnesses(uniquePage)
+            }
+           ],
+           comparer: 'title',
+           isDifferent: ['date', 'time', 'location'],
+           schema: HAPCSchema,
+         },
+       });
+       await skedChecker({
+         page,
+         browser,
+         args: {
+           jobs: [
+             {
+              link: 'https://budget.house.gov/legislation/hearings',
+              type: 'hearing',
+              layer1: page => hbucBusinessAndMarkup(page),
+              layer2: uniquePage => hbucWitnessesAndLocation(uniquePage),
+             },
+             {
+              link: 'https://budget.house.gov/legislation/markups',
+              type: 'markup',
+              layer1: page => hbucBusinessAndMarkup(page),
+              layer2: uniquePage => hbucWitnessesAndLocation(uniquePage)
+             }
+           ],
+           comparer: 'title',
+           isDifferent: ['date', 'time', 'location', 'witnesses'],
+           schema: HBUCSchema,
+         }
+       })
+      await skedChecker({
+        page,
+        browser,
+        args: {
+          jobs: [
+            {
+              link: 'https://edlabor.house.gov/hearings-and-events',
+              type: 'hearing',
+              layer1: page => helpBusiness(page),
+              layer2: uniquePage => helpWitnessesAndTime(uniquePage)
+            }
+          ],
+          comparer: 'title',
+          isDifferent: ['location', 'date', 'time'],
+          schema: HELPSchema,
+        },
+      });
 
       // await outlook({
       //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],

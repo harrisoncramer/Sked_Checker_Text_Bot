@@ -88,7 +88,7 @@ module.exports = async ({page, browser, args}) => {
        
         // Combine the layerOne data and layerTwo data with reduction on link.
         let combinedData = data.reduce((agg, datum, i) => {
-          let match = layerTwoData.filter(x => x.link === datum.link)[0];
+          let match = layerTwoData.filter(x => x.link.toLowerCase() === datum.link.toLowerCase())[0];
           agg[i] = { ...datum, ...match};
           return agg;
         }, []);

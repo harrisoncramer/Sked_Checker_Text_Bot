@@ -1,0 +1,41 @@
+{"message":"Running program at Thu, Jan 16, 2020 8:54 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Checking hascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hascs Done.","level":"info"}
+{"message":"Checking sascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"sascs Done.","level":"info"}
+{"message":"Checking sfrcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"sfrcs Done.","level":"info"}
+{"message":"Checking svacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"svacs Done.","level":"info"}
+{"message":"Checking hvacs","level":"info"}
+{"name":"TimeoutError","level":"error","message":"Could not navigate to page. Navigation Timeout Exceeded: 30000ms exceeded","stack":"TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded\n    at Promise.then (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/LifecycleWatcher.js:143:21)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:37:18)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:17:32)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:35:20)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"name":"TimeoutError","level":"error","message":"Could not navigate to page. Navigation Timeout Exceeded: 30000ms exceeded","stack":"TimeoutError: Navigation Timeout Exceeded: 30000ms exceeded\n    at Promise.then (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/LifecycleWatcher.js:143:21)\n  -- ASYNC --\n    at Frame.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:108:27)\n    at Page.goto (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/Page.js:656:49)\n    at Page.<anonymous> (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/node_modules/puppeteer/lib/helper.js:109:23)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:37:18)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:17:32)"}
+{"level":"error","message":"Could not open pages. Cannot read property 'map' of undefined","stack":"TypeError: Cannot read property 'map' of undefined\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:63:46)\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:25:32)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:59:26)"}
+{"level":"error","message":"Could not open pages. Cannot read property 'map' of undefined","stack":"TypeError: Cannot read property 'map' of undefined\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:63:46)\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:25:32)"}
+{"level":"error","message":"Error processing data. Cannot read property 'filter' of undefined","stack":"TypeError: Cannot read property 'filter' of undefined\n    at checkIfDatumShouldUpdateDeep (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:14:40)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/mongodb/getChangedData.js:46:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Error uploading data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:138:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Error texting data. Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:160:22)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"hvacs Done.","level":"info"}
+{"message":"Checking hhscs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hhscs Done.","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hapcs Done.","level":"info"}
+{"message":"Checking hbucs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hbucs Done.","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"helps Done.","level":"info"}
+{"message":"Chrome Closed Bots.","level":"info"}

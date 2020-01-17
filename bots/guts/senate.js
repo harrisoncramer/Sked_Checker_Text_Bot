@@ -1,24 +1,22 @@
 module.exports = {
-  sascBusiness: page =>
+  sascLayerOne: page =>
     page.evaluate(_ => {
-      let trs = Array.from(document.querySelectorAll('table tbody tr.vevent'));
+      let trs = makeArray('table tbody tr.vevent').slice(0,9);
       let res = trs.reduce(
         (agg, item, i) => {
           const tds = Array.from(item.children);
-          let link = tds[0].children[0] ? tds[0].children[0].href : 'No Link.';
-          let title = tds[0].children[0].textContent
-            .replace(/\s\s+/g, ' ')
-            .trim();
+          let title = clean(tds[0].children[0].textContent);
+          let link = getLink(tds[0]);
           let location = tds[1].children[0]
-            ? tds[1].children[0].textContent.trim()
+            ? clean(tds[1].children[0].textContent)
             : 'No location.';
           let date = tds[2].children[0]
-            ? tds[2].children[0].textContent.split(' ')[0].trim()
+            ? clean(tds[2].children[0].textContent.split(' ')[0])
             : 'No date.';
           let time = tds[2].children[0]
-            ? tds[2].children[0].textContent.split(' ')[1].trim()
+            ? clean(tds[2].children[0].textContent.split(' ')[1])
             : 'No time.';
-          agg[i] = {link, title, location, date, time};
+          agg[i] = { link, title, location, date, time };
           return agg;
         },
         Array(trs.length)
@@ -28,18 +26,14 @@ module.exports = {
 
       return res;
     }),
-  sascWitnesses: page =>
+  sascLayerTwo: page =>
     page.evaluate(_ => {
-      let witnesses = Array.from(document.querySelectorAll('li.vcard span.fn')).map(i =>
-        i.textContent.replace(/\s\s+/g, ' ').trim(),
-      );
+      let witnesses = makeArray('li.vcard span.fn').map(x => clean(x.textContent));
       return { witnesses };
     }),
   sfrcBusiness: page =>
     page.evaluate(_ => {
-      let divs = Array.from(
-        document.querySelectorAll('div.table-holder > div.text-center'),
-      );
+      let divs = makeArray('div.table-holder > div.text-center');
       let res = divs.reduce(
         (agg, item, i) => {
           let link = item.children[0] ? item.children[0].href : 'No Link.';
@@ -76,21 +70,17 @@ module.exports = {
     }),
   sfrcWitnesses: page =>
     page.evaluate(_ => {
-      let witnesses = Array.from(document.querySelectorAll('span.fn')).map(i =>
-        i.textContent.replace(/\s\s+/g, ' ').trim(),
-      );
+      let witnesses = makeArray('span.fn').map(i => clean(i.textContent))
       return { witnesses };
     }),
   svacBusiness: page =>
     page.evaluate(_ => {
-      let trs = Array.from(document.querySelectorAll('tr.vevent')).map(x =>
-        x.querySelectorAll('td > div.faux-col'),
-      );
+      let trs = makeArray('tr.vevent').slice(0,9).map(x => x.querySelectorAll('td > div.faux-col'));
       let res = trs.reduce(
         (agg, item, i) => {
-          let title = item[0].textContent.replace(/\s\s+/g, ' ').trim();
+          let title = clean(item[0].textContent);
           let link = item[0].querySelector('a').href;
-          let location = item[1].textContent.trim();
+          let location = clean(item[1].textContent);
           let dateInfo = item[2].textContent.trim().split(" ");
           let date = dateInfo[0];
           let time = dateInfo[1];
@@ -105,9 +95,7 @@ module.exports = {
     }),
   svacWitnesses: page =>
     page.evaluate(_ => {
-      let witnesses = Array.from(document.querySelectorAll('span.fn')).map(i =>
-        i.textContent.replace(/\s\s+/g, ' ').trim(),
-      );
+      let witnesses = makeArray('span.fn').map(i => clean(i.textContent));
       return { witnesses };
     }),
 };
