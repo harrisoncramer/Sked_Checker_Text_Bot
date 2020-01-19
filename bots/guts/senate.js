@@ -1,7 +1,7 @@
 module.exports = {
   sascLayerOne: page =>
     page.evaluate(_ => {
-      let trs = makeArray('table tbody tr.vevent').slice(0, 9);
+      let trs = makeArrayFromDocument('table tbody tr.vevent').slice(0, 9);
       let res = trs.reduce(
         (agg, item, i) => {
           const tds = Array.from(item.children);
@@ -28,14 +28,14 @@ module.exports = {
     }),
   sascLayerTwo: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray('li.vcard span.fn').map(x =>
+      let witnesses = makeArrayFromDocument('li.vcard span.fn').map(x =>
         clean(x.textContent),
       );
       return {witnesses};
     }),
   sfrcBusiness: page =>
     page.evaluate(_ => {
-      let divs = makeArray('div.table-holder > div.text-center');
+      let divs = makeArrayFromDocument('div.table-holder > div.text-center');
       let res = divs.reduce(
         (agg, item, i) => {
           let link = item.children[0] ? item.children[0].href : 'No Link.';
@@ -72,12 +72,12 @@ module.exports = {
     }),
   sfrcWitnesses: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray('span.fn').map(i => clean(i.textContent));
+      let witnesses = makeArrayFromDocument('span.fn').map(i => clean(i.textContent));
       return {witnesses};
     }),
   svacBusiness: page =>
     page.evaluate(_ => {
-      let trs = makeArray('tr.vevent')
+      let trs = makeArrayFromDocument('tr.vevent')
         .slice(0, 9)
         .map(x => x.querySelectorAll('td > div.faux-col'));
       let res = trs.reduce(
@@ -99,7 +99,7 @@ module.exports = {
     }),
   svacWitnesses: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray('span.fn').map(i => clean(i.textContent));
+      let witnesses = makeArrayFromDocument('span.fn').map(i => clean(i.textContent));
       return {witnesses};
     }),
 };

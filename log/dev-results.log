@@ -1,0 +1,30 @@
+{"message":"Running program at Fri, Jan 17, 2020 7:47 PM","level":"info"}
+{"message":"Checking nrgies","level":"info"}
+{"message":"Running program at Fri, Jan 17, 2020 7:47 PM","level":"info"}
+{"message":"Checking fisvs","level":"info"}
+{"level":"error","message":"Error parsing page data. financialServicesBusiness is not a function","stack":"TypeError: financialServicesBusiness is not a function\n    at Object.layer1 (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:425:31)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:49:28)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Error parsing page data. financialServicesBusiness is not a function","stack":"TypeError: financialServicesBusiness is not a function\n    at Object.layer1 (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/app.js:431:31)\n    at asyncForEach (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:49:28)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Could not open pages. Cannot read property 'map' of undefined","stack":"TypeError: Cannot read property 'map' of undefined\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:65:46)\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:25:32)\n    at module.exports (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:59:26)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"error","message":"Could not open pages. Cannot read property 'map' of undefined","stack":"TypeError: Cannot read property 'map' of undefined\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/bots/skedChecker.js:65:46)\n    at handleEachJob (/Users/harrisoncramer/Vagrant/ubuntu_practice/machine/Sked_Checker_Text_Bot/util/index.js:25:32)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"**** New records: 2 || Records to change: 0 ****","level":"info"}
+{"message":"Running program at Fri, Jan 17, 2020 7:48 PM","level":"info"}
+{"message":"Checking fisvs","level":"info"}
+{"message":"Running program at Sat, Jan 18, 2020 7:36 PM","level":"info"}
+{"message":"Checking fisvs","level":"info"}
+{"message":"Running program at Sat, Jan 18, 2020 7:37 PM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Checking hascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hascs Done.","level":"info"}
+{"message":"Checking sascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"sascs Done.","level":"info"}
+{"message":"Checking sfrcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"sfrcs Done.","level":"info"}
+{"message":"Checking svacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"svacs Done.","level":"info"}
+{"message":"Checking hvacs","level":"info"}

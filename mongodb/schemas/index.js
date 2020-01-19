@@ -87,4 +87,5 @@ module.exports = {
   HBUCSchema: mongoose.model('HBUC', basicDataStructure),
   HELPSchema: mongoose.model('HELP', basicDataStructure),
   NRGYSchema: mongoose.model('NRGY', basicDataStructure),
+  FISVSchema: mongoose.model('FISV', basicDataStructure)
 };

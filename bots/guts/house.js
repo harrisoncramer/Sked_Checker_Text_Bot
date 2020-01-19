@@ -5,7 +5,7 @@ module.exports = {
     return page.evaluate(
       ({selectors}) => {
         let {boxSelectors, linkSelectors} = selectors;
-        let boxes = makeArray(boxSelectors);
+        let boxes = makeArrayFromDocument(boxSelectors);
         let links = boxes.map(x => x.querySelector(linkSelectors).href);
         let data = links.slice(0, 9).map(link => ({link}));
         return data;
@@ -15,19 +15,19 @@ module.exports = {
   },
   hfacLayerTwo: page =>
     page.evaluate(_ => {
-      let title = getText('.title');
-      let date = getText('span.date');
-      let time = getText('span.time');
-      let location = getNextText('span.location strong').replaceAll([
+      let title = getTextFromDocument('.title');
+      let date = getTextFromDocument('span.date');
+      let time = getTextFromDocument('span.time');
+      let location = getNextTextFromDocument('span.location strong').replaceAll([
         'House Office Building, Washington, DC 20515',
         ' House Office Building',
       ]);
-      let witnesses = makeArray('div.witnesses strong')
+      let witnesses = makeArrayFromDocument('div.witnesses strong')
         .map(x => clean(x.textContent))
         .filter(x => x !== '');
-      let isSubcommittee = !!getNode('span.subcommittee');
+      let isSubcommittee = !!getNodeFromDocument('span.subcommittee');
       let subcommittee = isSubcommittee
-        ? getNextText('span.subcommittee strong')
+        ? getNextTextFromDocument('span.subcommittee strong')
         : null;
       return {
         title,
@@ -41,7 +41,7 @@ module.exports = {
     }),
   hascLayerOne: page => {
     return page.evaluate(_ => {
-      let boxes = makeArray('table tbody tr');
+      let boxes = makeArrayFromDocument('table tbody tr');
       let data = boxes.map(box => {
         let link = getLink(box);
         let title = getLinkText(box);
@@ -56,13 +56,13 @@ module.exports = {
   },
   hascLayerTwo: page =>
     page.evaluate(_ => {
-      let pageData = getText('div.post-content')
+      let pageData = getTextFromDocument('div.post-content')
         .split('(')[1]
         .split(')')[0]
         .split('–');
       let time = pageData[0].trim();
       let location = pageData[1].trim();
-      let witnesses = makeArray('div.post-content b')
+      let witnesses = makeArrayFromDocument('div.post-content b')
         .map(i => clean(i.textContent))
         .slice(1) // Get rid of title...
         .filter(x => !['Witnesses:', '', 'Panel 1:', 'Panel 2:'].includes(x));
@@ -135,7 +135,7 @@ module.exports = {
     }),
   hhscBusiness: page =>
     page.evaluate(_ => {
-      let trs = makeArray('#main_column > div.hearings-table tbody tr.vevent')
+      let trs = makeArrayFromDocument('#main_column > div.hearings-table tbody tr.vevent')
         .slice(0, 9)
         .map(x => x.querySelectorAll('td > div.faux-col'));
       let res = trs.reduce(
@@ -160,18 +160,18 @@ module.exports = {
     }),
   hhscWitnesses: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray(
+      let witnesses = makeArrayFromDocument(
         'section.sectionhead__hearingInfo ul:first-of-type a',
       ).map(i => clean(i.textContent));
       return {witnesses};
     }),
   hagcWitnessesAndLocation: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray('.thiswillnotbefound').map(i =>
+      let witnesses = makeArrayFromDocument('.thiswillnotbefound').map(i =>
         clean(i.textContent),
       );
-      let location = getNode('.thiswillnotbefound')
-        ? getText('.thiswillnotbefound .testing').replace(
+      let location = getNodeFromDocument('.thiswillnotbefound')
+        ? getTextFromDocument('.thiswillnotbefound .testing').replace(
             'House Office Building',
             '',
           )
@@ -180,7 +180,7 @@ module.exports = {
     }),
   hagcBusiness: page =>
     page.evaluate(_ => {
-      let info = makeArray('ul.calendar-listing li').slice(0, 9);
+      let info = makeArrayFromDocument('ul.calendar-listing li').slice(0, 9);
       let res = info.reduce(
         (agg, item, i) => {
           let title = clean(getLinkText(item));
@@ -234,7 +234,7 @@ module.exports = {
     }),
   hapcWitnesses: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray('.thiswillnotbefound').map(x =>
+      let witnesses = makeArrayFromDocument('.thiswillnotbefound').map(x =>
         clean(x.textContent),
       );
       return {witnesses};
@@ -268,11 +268,11 @@ module.exports = {
     }),
   hbucWitnessesAndLocation: page =>
     page.evaluate(_ => {
-      let witnesses = makeArray(
+      let witnesses = makeArrayFromDocument(
         '.field-name-field-congress-meeting-witnesses strong',
       ).map(i => clean(i.textContent));
-      let location = getNode('.pane-node-field-congress-meeting-location')
-        ? getText(
+      let location = getNodeFromDocument('.pane-node-field-congress-meeting-location')
+        ? getTextFromDocument(
             '.pane-node-field-congress-meeting-location .field-items',
           ).replace(' House Office Building, Washington, DC 20515', '')
         : '';
@@ -280,7 +280,7 @@ module.exports = {
     }),
   helpMarkup: page =>
     page.evaluate(_ => {
-      let boxes = makeArray('div.views-row')
+      let boxes = makeArrayFromDocument('div.views-row')
         .map(x => x.querySelectorAll('.views-field'))
         .slice(0, 9)
         .filter(x => x.length > 0);
@@ -305,7 +305,7 @@ module.exports = {
     }),
   helpBusiness: page =>
     page.evaluate(_ => {
-      let trs = makeArray('tr.vevent')
+      let trs = makeArrayFromDocument('tr.vevent')
         .slice(0, 9)
         .map(x => x.querySelectorAll('td > div.faux-col'))
         .filter(row => row.length > 0);
@@ -349,7 +349,7 @@ module.exports = {
           ).map(item => item.textContent.trim())
         : [];
 
-      let timeSelector = getNode('.time b');
+      let timeSelector = getNodeFromDocument('.time b');
 
       let time = timeSelector ? timeSelector.nextSibling.textContent : '';
 
@@ -357,7 +357,7 @@ module.exports = {
     }),
     energyBusiness: page =>
       page.evaluate(_ => {
-        let boxes = makeArray("div.views-row");
+        let boxes = makeArrayFromDocument("div.views-row");
         let data = boxes.reduce(
           (agg, item, i) => {
             let title = getFromText(item, ".views-field-title").replaceAll(["Hearing on", '"']);
@@ -396,6 +396,17 @@ module.exports = {
     energyMarkup: page =>
       page.evaluate(_ => {
         let witnesses = [];
+        return { witnesses };
+      }),
+    financialServicesBusiness: page =>
+      page.evaluate(_ => {
+        debugger;
+        let witnesses = []
+        return { witnesses };
+      }),
+    financialServicesWitnesses: page =>
+      page.evaluate(_ => {
+        let witnesses = []
         return { witnesses };
       }),
 };
