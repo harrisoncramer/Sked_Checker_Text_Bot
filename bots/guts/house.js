@@ -400,13 +400,47 @@ module.exports = {
       }),
     financialServicesBusiness: page =>
       page.evaluate(_ => {
-        debugger;
-        let witnesses = []
-        return { witnesses };
+        let boxes = makeArrayFromDocument(".calendar-listing li");
+        let data = boxes.reduce((agg,item,i) =>{
+          let title = getLinkText(item);
+          let link = getLink(item); 
+          let date = clean(getNextMatch(item, ".newsie-details span").replace("|",""));
+          let time = clean(getNextMatch(item, "div.newsie-details span:nth-child(2)"));
+          agg[i] = { title, link, date, time };
+          return agg;
+        }, Array(boxes.length)
+        .fill()
+        .map(_ => ({})));
+        return data;
       }),
     financialServicesWitnesses: page =>
       page.evaluate(_ => {
-        let witnesses = []
+        let span = document.evaluate(
+          "//span[contains(., 'Witness List')]",
+          document,
+          null,
+          XPathResult.ANY_TYPE,
+          null,
+        );
+        
+        let jumpPoint = span.iterateNext();
+        if(!jumpPoint){ // If no Witness List is found, return empty array.
+          return { witnesses: [] };
+        };
+
+        let jumpPointTwo = jumpPoint.parentElement;
+        let sibling = jumpPointTwo.nextElementSibling;
+        let uls = [];
+        
+        if(!sibling){ // If no sibling is found, return empty array.
+          return { witnesses: [] };
+        };
+
+        while(sibling.tagName == "UL"){
+          uls.push(sibling);
+          sibling = sibling.nextElementSibling;
+        };
+        let witnesses = uls.map(x => getFromText(x, "strong"));
         return { witnesses };
       }),
 };
