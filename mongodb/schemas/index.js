@@ -88,5 +88,6 @@ module.exports = {
   HELPSchema: mongoose.model('HELP', basicDataStructure),
   NRGYSchema: mongoose.model('NRGY', basicDataStructure),
   FISVSchema: mongoose.model('FISV', basicDataStructure),
-  ADMNSchema: mongoose.model('ADMN', basicDataStructure)
+  ADMNSchema: mongoose.model('ADMN', basicDataStructure),
+  NTTYSchema: mongoose.model('NTTY', basicDataStructure),
 };

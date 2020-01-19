@@ -38,6 +38,8 @@ const {
   financialServicesWitnesses,
   adminBusiness,
   adminWitnesses,
+  nttyBusiness,
+  nttyWitnesses,
 } = require('./bots/guts/house');
 
 const {
@@ -65,6 +67,7 @@ const {
   NRGYSchema,
   FISVSchema,
   ADMNSchema,
+  NTTYSchema
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -440,29 +443,51 @@ if (process.env.NODE_ENV === 'production') {
       //     schema: FISVSchema,
       //   },
       // }); 
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://cha.house.gov/committee-activity/hearings',
+      //         type: 'hearing',
+      //         layer1: page => adminBusiness(page),
+      //         layer2: uniquePage => adminWitnesses(uniquePage),
+      //       },
+      //       {
+      //         link: 'https://cha.house.gov/committee-activity/markups',
+      //         type: 'markup',
+      //         layer1: page => adminBusiness(page),
+      //         layer2: uniquePage => adminWitnesses(uniquePage)
+      //       }
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['location', 'date', 'time'],
+      //     schema: ADMNSchema,
+      //   },
+      // });
+      
+      ////
+        /// JUDICIARY COMMITTEE
+      ////
+      
       await skedChecker({
         page,
         browser,
         args: {
           jobs: [
             {
-              link: 'https://cha.house.gov/committee-activity/hearings',
+              link: 'https://naturalresources.house.gov/hearings',
               type: 'hearing',
-              layer1: page => adminBusiness(page),
-              layer2: uniquePage => adminWitnesses(uniquePage),
-            },
-            {
-              link: 'https://cha.house.gov/committee-activity/markups',
-              type: 'markup',
-              layer1: page => adminBusiness(page),
-              layer2: uniquePage => adminWitnesses(uniquePage)
+              layer1: page => nttyBusiness(page),
+              layer2: uniquePage => nttyWitnesses(uniquePage),
             }
           ],
           comparer: 'title',
           isDifferent: ['location', 'date', 'time'],
-          schema: ADMNSchema,
+          schema: NTTYSchema,
         },
-      });      
+      });
 
       // await outlook({
       //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],

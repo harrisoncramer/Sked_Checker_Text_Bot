@@ -480,4 +480,28 @@ module.exports = {
         let witnesses = siblings.filter(x => x.querySelector("strong")).map(x => getFromText(x, "strong")); // Get only strong text, which is the witnesses.
         return { witnesses };
       }),
+    nttyBusiness: page => 
+      page.evaluate(_ => {
+        let boxes = makeArrayFromDocument("tr.vevent").slice(0,9);
+        let data = boxes.reduce((agg, item, i) => {
+          let link = getLink(item);
+          let title = getLinkText(item);
+          let isSubcommittee = ["Subcommmittee Hearing", "Subcommittee Hearing:"].includes(getFromText(item, "span.type"));
+          let location = getFromText(item, "span.location").replaceAll([" House Office Building"]);
+          let dateInfo = getFromText(item, "time").split(" ");
+          let date = dateInfo[0];
+          let time = dateInfo[1];
+          agg[i] = { link, title, isSubcommittee, location, date, time };
+          return agg;
+        }, Array(boxes.length)
+            .fill()
+            .map(_ => ({}))
+          );
+        return data;
+    }),
+    nttyWitnesses: page =>
+      page.evaluate(_ => {
+        let witnesses = [];
+        return { witnesses };
+      }),
 };

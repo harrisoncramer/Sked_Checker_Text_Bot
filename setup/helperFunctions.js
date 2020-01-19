@@ -18,7 +18,7 @@ String.prototype.replaceAll = function (unwanteds) {
 
 const clean = item => item.replace(/\s\s+/g, ' ').trim();
 const getLink = node => node.querySelector("a").href;
-const getLinkText = node => node.querySelector("a").textContent;
+const getLinkText = node => clean(node.querySelector("a").textContent);
 
 const getNodeFromDocument = query => document.querySelector(query);
 const getNextNodeFromDocument = query => document.querySelector(query).nextSibling;
