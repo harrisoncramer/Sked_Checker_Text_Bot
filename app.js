@@ -36,6 +36,8 @@ const {
   energyWitnesses,
   financialServicesBusiness,
   financialServicesWitnesses,
+  adminBusiness,
+  adminWitnesses,
 } = require('./bots/guts/house');
 
 const {
@@ -62,6 +64,7 @@ const {
   HELPSchema,
   NRGYSchema,
   FISVSchema,
+  ADMNSchema,
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -414,27 +417,50 @@ if (process.env.NODE_ENV === 'production') {
       //     schema: NRGYSchema,
       //   },
       // });
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=116',
+      //         type: 'hearing',
+      //         layer1: page => financialServicesBusiness(page),
+      //         layer2: uniquePage => financialServicesWitnesses(uniquePage),
+      //       },
+      //       {
+      //         link: 'https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=116',
+      //         type: 'markup',
+      //         layer1: page => financialServicesBusiness(page),
+      //         layer2: uniquePage => financialServicesWitnesses(uniquePage)
+      //       }
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['location', 'date', 'time'],
+      //     schema: FISVSchema,
+      //   },
+      // }); 
       await skedChecker({
         page,
         browser,
         args: {
           jobs: [
             {
-              link: 'https://financialservices.house.gov/calendar/?EventTypeID=577&Congress=116',
+              link: 'https://cha.house.gov/committee-activity/hearings',
               type: 'hearing',
-              layer1: page => financialServicesBusiness(page),
-              layer2: uniquePage => financialServicesWitnesses(uniquePage),
+              layer1: page => adminBusiness(page),
+              layer2: uniquePage => adminWitnesses(uniquePage),
             },
             {
-              link: 'https://financialservices.house.gov/calendar/?EventTypeID=575&Congress=116',
+              link: 'https://cha.house.gov/committee-activity/markups',
               type: 'markup',
-              layer1: page => financialServicesBusiness(page),
-              layer2: uniquePage => financialServicesWitnesses(uniquePage)
+              layer1: page => adminBusiness(page),
+              layer2: uniquePage => adminWitnesses(uniquePage)
             }
           ],
           comparer: 'title',
           isDifferent: ['location', 'date', 'time'],
-          schema: FISVSchema,
+          schema: ADMNSchema,
         },
       });      
 

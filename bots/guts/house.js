@@ -443,4 +443,41 @@ module.exports = {
         let witnesses = uls.map(x => getFromText(x, "strong"));
         return { witnesses };
       }),
+    adminBusiness: page => 
+      page.evaluate(_ => {
+        let boxes = makeArrayFromDocument("div.views-row").slice(0,9);
+        let data = boxes.reduce((agg,item,i) =>{
+          let title = getLinkText(item);
+          let link = getLink(item); 
+          let dateInfo = getFromText(item, ".date-display-single").split("-");
+          let date = clean(dateInfo[0]);
+          let time = clean(dateInfo[1]);
+          let location = clean(getFromText(item, ".views-field-field-congress-meeting-location")).replaceAll(["House Office Building, Washington, DC 20515"]);
+          agg[i] = { title, link, date, time, location };
+          return agg;
+        }, Array(boxes.length)
+        .fill()
+        .map(_ => ({})));
+        return data;
+      }),
+    adminWitnesses: page =>
+      page.evaluate(_ => {
+        let witnessTag = document.evaluate(
+          "//h2[contains(., 'Witnesses')]",
+          document,
+          null,
+          XPathResult.ANY_TYPE,
+          null,
+        );
+        let jumpPoint = witnessTag.iterateNext();
+        if(!jumpPoint){
+          return { witnesses: [] }
+        };
+        let siblings = Array.from($(jumpPoint).nextAll("p"));
+        if(siblings.length === 0){
+          return { witnesses: [] }
+        };
+        let witnesses = siblings.filter(x => x.querySelector("strong")).map(x => getFromText(x, "strong")); // Get only strong text, which is the witnesses.
+        return { witnesses };
+      }),
 };

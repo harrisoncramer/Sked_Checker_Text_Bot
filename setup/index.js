@@ -32,7 +32,8 @@ module.exports = {
     return {browser: context, page};
   },
   setupFunctions: async page => {
-    await page.addScriptTag({ path: "./setup/helperFunctions.js" })
+    await page.addScriptTag({ path: "./setup/helperFunctions.js" });
+    await page.addScriptTag({ url: "https://code.jquery.com/jquery-3.4.1.slim.min.js" }); // Add jQuery...
   },
   launchBots: async ({page, browser, today, bots}) => {
     let catcher = (err, bot) =>
