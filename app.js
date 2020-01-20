@@ -96,10 +96,15 @@ if (process.env.NODE_ENV === 'production') {
   // Schedule bots...
   cron.schedule('*/1 * * * *', async () => {
     try {
-      let { browser, page } = await setUpPuppeteer();
-      let today = moment();
+      var { browser, page } = await setUpPuppeteer();
+      var today = moment();
       logger.info(`Running program at ${today.format('llll')}`);
+    }
+    catch (err) {
+      logger.error(`Could not set up puppeteer: `, err);
+    }
 
+    try {
       await launchBots({
         page,
         browser,
@@ -506,7 +511,7 @@ if (process.env.NODE_ENV === 'production') {
       await browser.close();
       logger.info(`Chrome Closed Bots.`);
     } catch (err) {
-      logger.error('Root Error.', err);
+      logger.error('Error launching bots: ', err);
     }
   });
 } else {
