@@ -239,7 +239,7 @@ module.exports = {
       );
       return {witnesses};
     }),
-  hbucBusinessAndMarkup: page =>
+  hbucBusinessAndMarkup: page => ////// THIS NEEDS TO BE CHANGED....
     page.evaluate(_ => {
       let boxes = Array.from(
         document
@@ -611,5 +611,26 @@ module.exports = {
       page.evaluate(_ => {
         let witnesses = [];
         return { witnesses };
+      }),
+    wymnBusiness: page => 
+      page.evaluate(_ => {
+        let boxes = makeArrayFromDocument('div.views-row').slice(0,9);
+        let data = boxes.reduce((agg, item, i) => {
+          let link = getLink(item);
+          let title = getLinkText(item)
+          let date = getFromText(item, ".date-display-single");
+          agg[i] = { link, title, date };
+          return agg;
+        }, Array(boxes.length)
+          .fill()
+          .map(_ => ({}))
+      );
+      return data;
+      }),
+    wymnWitnesses: page =>
+      page.evaluate(_ => {
+        let location = getNextElementSiblingTextFromDocument(".field-name-field-congress-meeting-location .field-label");
+        let witnesses = makeCleanArrayFromDocument(".field-name-field-congress-meeting-witnesses strong").filter(x => !["Witnesses:", "Witnesses", "TRANSCRIPT"].includes(x))
+        return { location, witnesses };
       }),
 };

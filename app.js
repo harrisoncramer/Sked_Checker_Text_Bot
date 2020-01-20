@@ -47,7 +47,9 @@ const {
   smbsBusiness,
   smbsWitnesses,
   trnsBusiness,
-  trnsWitnesses
+  trnsWitnesses,
+  wymnBusiness,
+  wymnWitnesses
 } = require('./bots/guts/house');
 
 const {
@@ -80,6 +82,7 @@ const {
   SCNCSchema,
   SMBSSchema,
   TRNSSchema,
+  WYMNSchema
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -552,22 +555,45 @@ if (process.env.NODE_ENV === 'production') {
       //     schema: SMBSSchema,
       //   },
       // });
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://transportation.house.gov/committee-activity/hearings',
+      //         type: 'hearing',
+      //         layer1: page => trnsBusiness(page),
+      //         layer2: uniquePage => trnsWitnesses(uniquePage),
+      //       },
+      //       {
+      //         link: 'https://transportation.house.gov/committee-activity/hearings',
+      //         type: 'markup',
+      //         layer1: page => trnsBusiness(page),
+      //         layer2: uniquePage => trnsWitnesses(uniquePage),
+      //       }
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['location', 'date', 'time'],
+      //     schema: TRNSSchema,
+      //   },
+      // });
       await skedChecker({
         page,
         browser,
         args: {
           jobs: [
             {
-              link: 'https://transportation.house.gov/committee-activity/hearings',
+              link: 'https://waysandmeans.house.gov/legislation/hearings',
               type: 'hearing',
-              layer1: page => trnsBusiness(page),
-              layer2: uniquePage => trnsWitnesses(uniquePage),
+              layer1: page => wymnBusiness(page),
+              layer2: uniquePage => wymnWitnesses(uniquePage),
             },
             {
-              link: 'https://transportation.house.gov/committee-activity/hearings',
+              link: 'https://waysandmeans.house.gov/legislation/markups',
               type: 'markup',
-              layer1: page => trnsBusiness(page),
-              layer2: uniquePage => trnsWitnesses(uniquePage),
+              layer1: page => wymnBusiness(page),
+              layer2: uniquePage => wymnWitnesses(uniquePage),
             }
           ],
           comparer: 'title',

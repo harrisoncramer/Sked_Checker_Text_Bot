@@ -94,4 +94,5 @@ module.exports = {
   SCNCSchema: mongoose.model('SCNC', basicDataStructure),
   SMBSSchema: mongoose.model('SMBS', basicDataStructure),
   TRNSSchema: mongoose.model('TRNS', basicDataStructure),
+  WYMNSchema: mongoose.model('WYMN', basicDataStructure),
 };
