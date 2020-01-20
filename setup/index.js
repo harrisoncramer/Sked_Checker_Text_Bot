@@ -5,9 +5,9 @@ const logger = require("../logger");
 
 module.exports = {
   setUpPuppeteer: async () => {
-    // const headless = process.env.NODE_ENV === "production";
+    const headless = process.env.NODE_ENV === "production";
     const browser = await pupeteer.launch({
-      headless: false,
+      headless,
       devtools: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu','--window-size=1920x1080'],
     });

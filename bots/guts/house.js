@@ -633,4 +633,12 @@ module.exports = {
         let witnesses = makeCleanArrayFromDocument(".field-name-field-congress-meeting-witnesses strong").filter(x => !["Witnesses:", "Witnesses", "TRANSCRIPT"].includes(x))
         return { location, witnesses };
       }),
+    intlBusiness: page => 
+      page.evaluate(_ => {
+
+      }),
+    intlWitnesses: page =>
+      page.evaluate(_ => {
+
+      }),
 };
