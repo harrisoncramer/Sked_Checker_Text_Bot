@@ -16,6 +16,18 @@ String.prototype.replaceAll = function (unwanteds) {
     return str.trim();
 };
 
+Array.prototype.flatten = function() {
+    var ret = [];
+    for(var i = 0; i < this.length; i++) {
+        if(Array.isArray(this[i])) {
+            ret = ret.concat(this[i].flatten());
+        } else {
+            ret.push(this[i]);
+        }
+    }
+    return ret;
+};
+
 const clean = item => item.replace(/\s\s+/g, ' ').trim();
 const getLink = node => node.querySelector("a").href;
 const getLinkText = node => clean(node.querySelector("a").textContent);
@@ -28,8 +40,9 @@ const makeArrayFromDocument = query => Array.from(document.querySelectorAll(quer
 const makeCleanArrayFromDocument = query => Array.from(document.querySelectorAll(query)).map(x => clean(x));
 
 const getFromNode = (node, query) => node.querySelector(query);
-const getFromText = (node, query) => clean(node.querySelector(query).textContent);
+const getFromText = (node, query) => clean(!!node.querySelector(query) ? node.querySelector(query).textContent: '');
 const getFromLink = (node, query) => node.querySelector(query).href;
 const getNextMatch = (node, query) => node.querySelector(query).nextSibling.nodeValue
+const getNodesFromArray = (arr, query) => arr.map(x => Array.from(x.querySelectorAll(query)));
 
 const makeTextArray = (node, query) => Array.from(node.querySelectorAll(query)).map(x => clean(x.textContent));

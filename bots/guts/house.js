@@ -504,4 +504,63 @@ module.exports = {
         let witnesses = [];
         return { witnesses };
       }),
+    ovstBusiness: page =>
+      page.evaluate(_ => {
+        let boxes = makeArrayFromDocument(".view-congress-hearings");
+        let nodeArrays = getNodesFromArray(boxes, ".views-row");
+        nodeArrays = nodeArrays.flatten().slice(0,9) // Combine the old and upcoming hearings
+        let data = nodeArrays.reduce((agg, item, i) => {
+            let link = getLink(item);
+            let title = getLinkText(item);
+            let dateInfo = getFromText(item, ".date-display-single").split("-");
+            let date = dateInfo[0];
+            let time = dateInfo[1];
+            let location = getFromText(item, ".views-field-field-congress-meeting-location").replaceAll(["House Office Building, Washington, DC 20515"]);
+            agg[i] = { link, title, location, date, time };
+            return agg;
+          }, Array(boxes.length)
+            .fill()
+            .map(_ => ({}))
+        );
+        return data;
+      }),
+    ovstWitnesses: page =>
+      page.evaluate(_ => {
+        let witnesses = [];
+        return { witnesses };
+      }),
+    scncBusiness: page =>
+      page.evaluate(_ => {
+        let boxes = makeArrayFromDocument("div.hearing").slice(0,9);
+        let data = boxes.reduce((agg, item, i) => {
+          let link = getLink(item);
+          let title = getLinkText(item);
+          let date = getFromText(item, ".hearing__date");
+          let time = getFromText(item, ".hearing__time");
+          let location = getFromText(item, ".hearing__location").replaceAll([" House Office Building"]);
+          agg[i] = { link, title, date, time, location };
+          return agg;
+        }, Array(boxes.length)
+          .fill()
+          .map(_ => ({}))
+      );
+      return data;
+      }),
+    scncWitnesses: page =>
+      page.evaluate(_ => {
+        if($("ul[type='disc']").length === 0){
+          return { witnesses: [] }
+        };
+        return { witnesses: [] };
+        //let witnesses = Array.from($("ul[type='disc']")[0].querySelectorAll("b a")).map(x => clean(x.textContent));
+        // return { witnesses };
+      }),
+    smbsBusiness: page => 
+      page.evalauate(_ => {
+        debugger;
+      }),
+    smbsWitnesses: page => 
+      page.evaluate(_ => {
+        debugger;
+      }),
 };

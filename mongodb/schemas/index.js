@@ -90,4 +90,7 @@ module.exports = {
   FISVSchema: mongoose.model('FISV', basicDataStructure),
   ADMNSchema: mongoose.model('ADMN', basicDataStructure),
   NTTYSchema: mongoose.model('NTTY', basicDataStructure),
+  OVSTSchema: mongoose.model('OVST', basicDataStructure),
+  SCNCSchema: mongoose.model('SCNC', basicDataStructure),
+  SMBSSchema: mongoose.model('SMBS', basicDataStructure),
 };

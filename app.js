@@ -40,6 +40,12 @@ const {
   adminWitnesses,
   nttyBusiness,
   nttyWitnesses,
+  ovstBusiness,
+  ovstWitnesses,
+  scncBusiness,
+  scncWitnesses,
+  smbsBusiness,
+  smbsWitnesses,
 } = require('./bots/guts/house');
 
 const {
@@ -67,7 +73,10 @@ const {
   NRGYSchema,
   FISVSchema,
   ADMNSchema,
-  NTTYSchema
+  NTTYSchema,
+  OVSTSchema,
+  SCNCSchema,
+  SMBSSchema
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -259,46 +268,24 @@ if (process.env.NODE_ENV === 'production') {
       //     schema: SFRCSchema,
       //   },
       // });
-      // await skedChecker({
-      //   page,
-      //   browser,
-      //   args: {
-      //     jobs: [
-      //       {
-      //         link: 'https://www.veterans.senate.gov/hearings',
-      //         type: 'hearing',
-      //         layer1: page => svacBusiness(page),
-      //         layer2: uniquePage => svacWitnesses(uniquePage),
-      //       },
-      //     ],
-      //     comparer: 'title',
-      //     isDifferent: ['time', 'date', 'location'],
-      //     schema: SVACSchema,
-      //   },
-      // });
-      // await skedChecker({
-      //   page,
-      //   browser,
-      //   args: {
-      //     jobs: [
-      //       {
-      //         link: 'https://veterans.house.gov/events/hearings',
-      //         type: 'hearing',
-      //         layer1: page => hvacBusiness(page),
-      //         layer2: uniquePage => hvacWitnesses(uniquePage),
-      //       },
-      //       {
-      //         link: 'https://veterans.house.gov/events/markups',
-      //         type: 'markup',
-      //         layer1: page => hvacBusiness(page),
-      //         layer2: uniquePage => hvacMarkup(uniquePage),
-      //       },
-      //     ],
-      //     comparer: 'title',
-      //     isDifferent: ['time', 'date', 'location'],
-      //     schema: HVACSchema,
-      //   },
-      // });
+      // // await skedChecker({
+      // //   page,
+      // //   browser,
+      // //   args: {
+      // //     jobs: [
+      // //       {
+      // //         link: 'https://www.veterans.senate.gov/hearings',
+      // //         type: 'hearing',
+      // //         layer1: page => svacBusiness(page),
+      // //         layer2: uniquePage => svacWitnesses(uniquePage),
+      // //       },
+      // //     ],
+      // //     comparer: 'title',
+      // //     isDifferent: ['time', 'date', 'location'],
+      // //     schema: SVACSchema,
+      // //   },
+      // // });
+      // // 
       // await skedChecker({
       //   page,
       //   browser,
@@ -467,27 +454,84 @@ if (process.env.NODE_ENV === 'production') {
       //   },
       // });
       
-      ////
-        /// JUDICIARY COMMITTEE
-      ////
+      // //
+      //   // JUDICIARY COMMITTEE
+      // //
       
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://naturalresources.house.gov/hearings',
+      //         type: 'hearing',
+      //         layer1: page => nttyBusiness(page),
+      //         layer2: uniquePage => nttyWitnesses(uniquePage),
+      //       }
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['location', 'date', 'time'],
+      //     schema: NTTYSchema,
+      //   },
+      // });
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://oversight.house.gov/legislation/hearings',
+      //         type: 'hearing',
+      //         layer1: page => ovstBusiness(page),
+      //         layer2: uniquePage => ovstWitnesses(uniquePage),
+      //       }
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['location', 'date', 'time'],
+      //     schema: OVSTSchema,
+      //   },
+      // });
       await skedChecker({
         page,
         browser,
         args: {
           jobs: [
             {
-              link: 'https://naturalresources.house.gov/hearings',
+              link: 'https://science.house.gov/hearings',
               type: 'hearing',
-              layer1: page => nttyBusiness(page),
-              layer2: uniquePage => nttyWitnesses(uniquePage),
+              layer1: page => scncBusiness(page),
+              layer2: uniquePage => scncWitnesses(uniquePage),
+            },
+            {
+              link: 'https://science.house.gov/markups',
+              type: 'markup',
+              layer1: page => scncBusiness(page),
+              layer2: uniquePage => scncWitnesses(uniquePage),
             }
           ],
           comparer: 'title',
           isDifferent: ['location', 'date', 'time'],
-          schema: NTTYSchema,
+          schema: SCNCSchema,
         },
       });
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://science.house.gov/hearings',
+      //         type: 'hearing',
+      //         layer1: page => scncBusiness(page),
+      //         layer2: uniquePage => scncWitnesses(uniquePage),
+      //       }
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['location', 'date', 'time'],
+      //     schema: SCNCSchema,
+      //   },
+      // });
 
       // await outlook({
       //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],
