@@ -34,10 +34,10 @@ const getLinkText = node => clean(node.querySelector("a").textContent);
 
 const getNodeFromDocument = query => document.querySelector(query);
 const getNextNodeFromDocument = query => document.querySelector(query).nextSibling;
-const getTextFromDocument = query => clean(document.querySelector(query).textContent);
-const getNextTextFromDocument = query => clean(document.querySelector(query).nextSibling.textContent);
+const getTextFromDocument = query => clean(!!document.querySelector(query) ? document.querySelector(query).textContent : "");
+const getNextTextFromDocument = query => clean(!!document.querySelector(query) ? document.querySelector(query).nextSibling.textContent : "");
 const makeArrayFromDocument = query => Array.from(document.querySelectorAll(query));
-const makeCleanArrayFromDocument = query => Array.from(document.querySelectorAll(query)).map(x => clean(x));
+const makeCleanArrayFromDocument = query => Array.from(document.querySelectorAll(query)).map(x => clean(!!x.textContent ? x.textContent : ""));
 
 const getFromNode = (node, query) => node.querySelector(query);
 const getFromText = (node, query) => clean(!!node.querySelector(query) ? node.querySelector(query).textContent: '');
@@ -45,4 +45,4 @@ const getFromLink = (node, query) => node.querySelector(query).href;
 const getNextMatch = (node, query) => node.querySelector(query).nextSibling.nodeValue
 const getNodesFromArray = (arr, query) => arr.map(x => Array.from(x.querySelectorAll(query)));
 
-const makeTextArray = (node, query) => Array.from(node.querySelectorAll(query)).map(x => clean(x.textContent));
+const makeTextArray = (node, query) => Array.from(node.querySelectorAll(query)).map(x => clean(!!x.textContent ? x.textContent : ""));

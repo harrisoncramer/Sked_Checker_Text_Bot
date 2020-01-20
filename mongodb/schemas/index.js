@@ -93,4 +93,5 @@ module.exports = {
   OVSTSchema: mongoose.model('OVST', basicDataStructure),
   SCNCSchema: mongoose.model('SCNC', basicDataStructure),
   SMBSSchema: mongoose.model('SMBS', basicDataStructure),
+  TRNSSchema: mongoose.model('TRNS', basicDataStructure),
 };

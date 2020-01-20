@@ -556,11 +556,60 @@ module.exports = {
         // return { witnesses };
       }),
     smbsBusiness: page => 
-      page.evalauate(_ => {
-        debugger;
+      page.evaluate(_ => {
+        let boxes = makeArrayFromDocument("ul.calendar-listing li");
+        let data = boxes.reduce((agg, item, i) => {
+          let link = getLink(item);
+          let title = getLinkText(item);
+          let date = clean(getNextMatch(item, "span.webicon").replace("|", ""));
+          let time = clean(getNextMatch(item, "span.webicon:nth-child(2)"));
+          agg[i] = { link, title, date, time };
+          return agg;
+        }, Array(boxes.length)
+          .fill()
+          .map(_ => ({}))
+      );
+      return data;
       }),
     smbsWitnesses: page => 
       page.evaluate(_ => {
-        debugger;
+        let tag = document.evaluate(
+          "//a[contains(., 'Witnesses')]",
+          document,
+          null,
+          XPathResult.ANY_TYPE,
+          null,
+        );
+  
+        let jumpPoint = tag.iterateNext();
+        if(!jumpPoint){
+          return { witnesses: [] }
+        };
+
+        let witnesses = Array.from($(jumpPoint.parentElement).nextAll("strong")).map(x => clean(x.textContent)).filter(x => x !== "");
+        
+        return { witnesses };
+      }),
+    trnsBusiness: page =>
+      page.evaluate(_ => {
+        let boxes = makeArrayFromDocument(".hearings-table tr.vevent").slice(0,9);
+        let data = boxes.reduce((agg, item, i) => {
+          let link = getLink(item);
+          let title = clean(getNextMatch(item, "strong"));
+          let location = getFromText(item, ".location");
+          let date = getFromText(item, "time");
+          let time = clean(item.querySelectorAll("time")[1].textContent);
+          agg[i] = { link, title, date, time, location };
+          return agg;
+        }, Array(boxes.length)
+          .fill()
+          .map(_ => ({}))
+      );
+      return data;
+      }),
+    trnsWitnesses: page => 
+      page.evaluate(_ => {
+        let witnesses = [];
+        return { witnesses };
       }),
 };

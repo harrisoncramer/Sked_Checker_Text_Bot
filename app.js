@@ -46,6 +46,8 @@ const {
   scncWitnesses,
   smbsBusiness,
   smbsWitnesses,
+  trnsBusiness,
+  trnsWitnesses
 } = require('./bots/guts/house');
 
 const {
@@ -76,7 +78,8 @@ const {
   NTTYSchema,
   OVSTSchema,
   SCNCSchema,
-  SMBSSchema
+  SMBSSchema,
+  TRNSSchema,
 } = require('./mongodb/schemas');
 
 // Run program...
@@ -268,24 +271,24 @@ if (process.env.NODE_ENV === 'production') {
       //     schema: SFRCSchema,
       //   },
       // });
-      // // await skedChecker({
-      // //   page,
-      // //   browser,
-      // //   args: {
-      // //     jobs: [
-      // //       {
-      // //         link: 'https://www.veterans.senate.gov/hearings',
-      // //         type: 'hearing',
-      // //         layer1: page => svacBusiness(page),
-      // //         layer2: uniquePage => svacWitnesses(uniquePage),
-      // //       },
-      // //     ],
-      // //     comparer: 'title',
-      // //     isDifferent: ['time', 'date', 'location'],
-      // //     schema: SVACSchema,
-      // //   },
-      // // });
-      // // 
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://www.veterans.senate.gov/hearings',
+      //         type: 'hearing',
+      //         layer1: page => svacBusiness(page),
+      //         layer2: uniquePage => svacWitnesses(uniquePage),
+      //       },
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['time', 'date', 'location'],
+      //     schema: SVACSchema,
+      //   },
+      // });
+      // 
       // await skedChecker({
       //   page,
       //   browser,
@@ -492,29 +495,29 @@ if (process.env.NODE_ENV === 'production') {
       //     schema: OVSTSchema,
       //   },
       // });
-      await skedChecker({
-        page,
-        browser,
-        args: {
-          jobs: [
-            {
-              link: 'https://science.house.gov/hearings',
-              type: 'hearing',
-              layer1: page => scncBusiness(page),
-              layer2: uniquePage => scncWitnesses(uniquePage),
-            },
-            {
-              link: 'https://science.house.gov/markups',
-              type: 'markup',
-              layer1: page => scncBusiness(page),
-              layer2: uniquePage => scncWitnesses(uniquePage),
-            }
-          ],
-          comparer: 'title',
-          isDifferent: ['location', 'date', 'time'],
-          schema: SCNCSchema,
-        },
-      });
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://science.house.gov/hearings',
+      //         type: 'hearing',
+      //         layer1: page => scncBusiness(page),
+      //         layer2: uniquePage => scncWitnesses(uniquePage),
+      //       },
+      //       {
+      //         link: 'https://science.house.gov/markups',
+      //         type: 'markup',
+      //         layer1: page => scncBusiness(page),
+      //         layer2: uniquePage => scncWitnesses(uniquePage),
+      //       }
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['location', 'date', 'time'],
+      //     schema: SCNCSchema,
+      //   },
+      // });
       // await skedChecker({
       //   page,
       //   browser,
@@ -532,7 +535,46 @@ if (process.env.NODE_ENV === 'production') {
       //     schema: SCNCSchema,
       //   },
       // });
-
+      // await skedChecker({
+      //   page,
+      //   browser,
+      //   args: {
+      //     jobs: [
+      //       {
+      //         link: 'https://smallbusiness.house.gov/activity/',
+      //         type: 'hearing',
+      //         layer1: page => smbsBusiness(page),
+      //         layer2: uniquePage => smbsWitnesses(uniquePage),
+      //       }
+      //     ],
+      //     comparer: 'title',
+      //     isDifferent: ['location', 'date', 'time'],
+      //     schema: SMBSSchema,
+      //   },
+      // });
+      await skedChecker({
+        page,
+        browser,
+        args: {
+          jobs: [
+            {
+              link: 'https://transportation.house.gov/committee-activity/hearings',
+              type: 'hearing',
+              layer1: page => trnsBusiness(page),
+              layer2: uniquePage => trnsWitnesses(uniquePage),
+            },
+            {
+              link: 'https://transportation.house.gov/committee-activity/hearings',
+              type: 'markup',
+              layer1: page => trnsBusiness(page),
+              layer2: uniquePage => trnsWitnesses(uniquePage),
+            }
+          ],
+          comparer: 'title',
+          isDifferent: ['location', 'date', 'time'],
+          schema: TRNSSchema,
+        },
+      });
       // await outlook({
       //   schemas: [SASCSchema, SFRCSchema, HASCSchema, HFACSchema],
       //   email: process.env.EMAIL,
