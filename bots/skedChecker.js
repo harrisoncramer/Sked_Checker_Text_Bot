@@ -36,13 +36,15 @@ module.exports = async ({page, browser, args}) => {
     try {
       await page.goto(job.link, {waitUntil: 'networkidle2'});
     } catch (err) {
-      return logger.error(`Could not navigate to page. `, err);
+      logger.error(`Could not navigate to page. `, err);
+      return Promise.reject();
     }
 
     try {
       await setupFunctions(page);
     } catch (err) {
-      return logger.error(`Could not set up helper functions `, err);
+      logger.error(`Could not set up helper functions `, err);
+      return Promise.reject();
     }
 
     try {
@@ -50,7 +52,8 @@ module.exports = async ({page, browser, args}) => {
       data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
       return {data, work: job.layer2};
     } catch (err) {
-      return logger.error(`Error parsing page data. `, err);
+      logger.error(`Error parsing page data. `, err);
+      return Promise.reject();
     }
   });
 

@@ -94,7 +94,7 @@ if (process.env.NODE_ENV === 'production') {
   );
 
   // Schedule bots...
-  cron.schedule('*/1 * * * *', async () => {
+  cron.schedule('*/15 * * * *', async () => {
     try {
       var { browser, page } = await setUpPuppeteer();
       var today = moment();

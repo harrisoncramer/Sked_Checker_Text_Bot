@@ -7,7 +7,7 @@ module.exports = {
   setUpPuppeteer: async () => {
     const headless = process.env.NODE_ENV === "production";
     const browser = await pupeteer.launch({
-      headless: true,
+      headless,
       devtools: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu','--window-size=1920x1080'],
     });
@@ -17,6 +17,8 @@ module.exports = {
     page.on('error', err => {
       logger.error('Puppeteer error.', err);
     });
+
+    page.setDefaultNavigationTimeout(10000);
 
     if (process.env.NODE_ENV === 'production') {
       await page.setRequestInterception(true); // Optimize (no stylesheets, images)...

@@ -32,3 +32,108 @@
 {"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
 {"message":"svacs Done.","level":"info"}
 {"message":"Checking hhscs","level":"info"}
+{"message":"Starting up bots in production at Mon, Jan 20, 2020 7:23 PM","level":"info"}
+{"message":"Starting up bots in production at Mon, Jan 20, 2020 7:27 PM","level":"info"}
+{"message":"Starting up bots in production at Tue, Jan 21, 2020 12:31 AM","level":"info"}
+{"message":"Running program at Tue, Jan 21, 2020 12:32 AM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Checking hascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hascs Done.","level":"info"}
+{"message":"Checking sascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"sascs Done.","level":"info"}
+{"message":"Checking sfrcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"sfrcs Done.","level":"info"}
+{"message":"Checking svacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"svacs Done.","level":"info"}
+{"message":"Checking hhscs","level":"info"}
+{"message":"Running program at Tue, Jan 21, 2020 12:33 AM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hhscs Done.","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Checking hascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hascs Done.","level":"info"}
+{"message":"Checking sascs","level":"info"}
+{"message":"Running program at Tue, Jan 21, 2020 12:34 AM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"Starting up bots in production at Tue, Jan 21, 2020 12:34 AM","level":"info"}
+{"message":"Running program at Tue, Jan 21, 2020 12:35 AM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Checking hascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hascs Done.","level":"info"}
+{"message":"Checking sascs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"sascs Done.","level":"info"}
+{"message":"Checking sfrcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"sfrcs Done.","level":"info"}
+{"message":"Checking svacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"svacs Done.","level":"info"}
+{"message":"Checking hhscs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hhscs Done.","level":"info"}
+{"message":"Checking hagcs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hagcs Done.","level":"info"}
+{"message":"Checking hapcs","level":"info"}
+{"message":"**** New records: 4 || Records to change: 0 ****","level":"info"}
+{"message":"4 records uploaded successfully.","level":"info"}
+{"message":"Message sent: {\"accountSid\":\"ACa7789b43bd662f94701a92bac7eb8bbc\",\"apiVersion\":\"2010-04-01\",\"body\":\"New hapcs Meeting(s)\\n\\nhttps://appropriations.house.gov/events/hearings/oversight-hearing-the-department-of-housing-and-urban-development-s-community || Oversight Hearing: The Department of Housing and Urban Development’s Community Development Block Grant-Disaster Recovery program || Thu, 10/17/2019 || 2:00pm || 2358-A Rayburn || hearing || \\n\\nhttps://appropriations.house.gov/events/hearings/oversight-hearing-chronic-wasting-disease || Oversight Hearing: Chronic Wasting Disease || Thu, 10/17/2019 || 10:00am || 2008 Rayburn || hearing || \\n\\nhttps://appropriations.house.gov/events/hearings/oversight-hearing-faa-aviation-certification || Oversight Hearing: FAA Aviation Certification || Wed, 09/25/2019 || 2:00pm || 2359 Rayburn || hearing || \\n\\nhttps://appropriations.house.gov/events/markups/fy2020-homeland-security-subcommittee-markup || Subcommittee Markup of FY2020 Homeland Security || Wed, 06/05/2019 || 9:00am || H-140 CAPITOL, Washington, DC 20515 || markup ||\",\"dateCreated\":\"2020-01-21T00:37:21.000Z\",\"dateUpdated\":\"2020-01-21T00:37:21.000Z\",\"dateSent\":null,\"direction\":\"outbound-api\",\"errorCode\":null,\"errorMessage\":null,\"from\":\"+13392040928\",\"messagingServiceSid\":null,\"numMedia\":\"0\",\"numSegments\":\"15\",\"price\":null,\"priceUnit\":\"USD\",\"sid\":\"SMb63954c1029848ba8e7049985a05edbd\",\"status\":\"queued\",\"subresourceUris\":{\"media\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SMb63954c1029848ba8e7049985a05edbd/Media.json\"},\"to\":\"+16179973703\",\"uri\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SMb63954c1029848ba8e7049985a05edbd.json\"}","level":"info"}
+{"message":"hapcs Done.","level":"info"}
+{"message":"Checking hbucs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hbucs Done.","level":"info"}
+{"message":"Checking helps","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"helps Done.","level":"info"}
+{"message":"Checking nrgies","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"nrgies Done.","level":"info"}
+{"message":"Checking fisvs","level":"info"}
+{"message":"**** New records: 2 || Records to change: 4 ****","level":"info"}
+{"message":"2 records uploaded successfully.","level":"info"}
+{"message":"4 records modified successfully.","level":"info"}
+{"message":"Message sent: {\"accountSid\":\"ACa7789b43bd662f94701a92bac7eb8bbc\",\"apiVersion\":\"2010-04-01\",\"body\":\"New fisvs Meeting(s)\\n\\nAn Examination of the Federal Housing Administration and Its Impact on Homeownership in America || https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404857 || December 5, 2019 || 2:00 || hearing || \\n\\nH.R. 4458; H.R. 4634; H.R. 4841; and H.R. 4863 || https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404489 || October 29, 2019 || 1:00 || markup ||\",\"dateCreated\":\"2020-01-21T00:38:54.000Z\",\"dateUpdated\":\"2020-01-21T00:38:54.000Z\",\"dateSent\":null,\"direction\":\"outbound-api\",\"errorCode\":null,\"errorMessage\":null,\"from\":\"+13392040928\",\"messagingServiceSid\":null,\"numMedia\":\"0\",\"numSegments\":\"3\",\"price\":null,\"priceUnit\":\"USD\",\"sid\":\"SM213a474aa3a74bb5a38d2616a6790efa\",\"status\":\"queued\",\"subresourceUris\":{\"media\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SM213a474aa3a74bb5a38d2616a6790efa/Media.json\"},\"to\":\"+16179973703\",\"uri\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SM213a474aa3a74bb5a38d2616a6790efa.json\"}","level":"info"}
+{"message":"Message sent: {\"accountSid\":\"ACa7789b43bd662f94701a92bac7eb8bbc\",\"apiVersion\":\"2010-04-01\",\"body\":\"Updated fisvs Meeting(s)\\n\\nA Persistent and Evolving Threat: An Examination of the Financing of Domestic Terrorism and Extremism || https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406018 || January 15, 2020 || 10:00 || hearing || The Honorable Jared Maples,Rena Miller.,,George Selim.,Lecia Brooks,,Mary B. McCord, || Added: Lecia Brooks,, Mary B. McCord,, Removed: Lecia Brooks, , Mary B. McCord, , \\n\\nThe Community Reinvestment Act: Reviewing Who Wins and Who Loses with Comptroller Ottings Proposal || https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406025 || January 14, 2020 || 2:00 || hearing || Ms. Gerron Levi,Mr. Eric Rodriguez,Ms. Paulina Gonzalez-Brito,Ms. Hope Knight,,Ms. Faith Bautista, || Added: Ms. Faith Bautista,, Removed: Ms. Faith Bautista, , \\n\\nRobots on Wall Street: The Impact of AI on Capital Markets and Jobs in the Financial Services Industry. || https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404858 || December 6, 2019 || 9:30 || hearing || Dr. Charlton McIlwain,Dr. Marcos Lopez de Prado,Ms. Rebecca Fender,Ms. Kirsten Wegner,,Ms. Martina Rejsjö, || Added: Ms. Martina Rejsjö,, Removed: Ms. Martina Rejsjö, , \\n\\nBanking on Your Data: the Role of Big Data in Financial Services || https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404653 || November 21, 2019 || 9:30 || hearing || Ms. Lauren Saunders,Dr. Seny Kamara, PhD.,,Dr. Christopher Gillard, PhD.,Mr. Don Cardinal,,Mr. Duane Pozza, || Added: Mr. Duane Pozza,, Removed: Mr. Duane Pozza, ,\",\"dateCreated\":\"2020-01-21T00:38:54.000Z\",\"dateUpdated\":\"2020-01-21T00:38:54.000Z\",\"dateSent\":null,\"direction\":\"outbound-api\",\"errorCode\":null,\"errorMessage\":null,\"from\":\"+13392040928\",\"messagingServiceSid\":null,\"numMedia\":\"0\",\"numSegments\":\"24\",\"price\":null,\"priceUnit\":\"USD\",\"sid\":\"SMebd86f116d1842c6aeaa3e490b880c7e\",\"status\":\"queued\",\"subresourceUris\":{\"media\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SMebd86f116d1842c6aeaa3e490b880c7e/Media.json\"},\"to\":\"+16179973703\",\"uri\":\"/2010-04-01/Accounts/ACa7789b43bd662f94701a92bac7eb8bbc/Messages/SMebd86f116d1842c6aeaa3e490b880c7e.json\"}","level":"info"}
+{"message":"fisvs Done.","level":"info"}
+{"message":"Checking admns","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"admns Done.","level":"info"}
+{"message":"Checking ntties","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"ntties Done.","level":"info"}
+{"message":"Checking ovsts","level":"info"}
+{"message":"**** New records: 9 || Records to change: 0 ****","level":"info"}
+{"message":"9 records uploaded successfully.","level":"info"}
+{"status":400,"message":"Error processing textThe concatenated message body exceeds the 1600 character limit.","code":21617,"moreInfo":"https://www.twilio.com/docs/errors/21617","level":"error"}
+{"message":"Message not sent, running in development.","level":"info"}
+{"message":"ovsts Done.","level":"info"}
+{"message":"Checking scncs","level":"info"}
+{"message":"Running program at Tue, Jan 21, 2020 12:40 AM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"scncs Done.","level":"info"}
+{"message":"Checking scncs","level":"info"}
+{"message":"Starting up bots in production at Tue, Jan 21, 2020 12:41 AM","level":"info"}
+{"message":"Starting up bots in production at Tue, Jan 21, 2020 12:41 AM","level":"info"}
+{"message":"Running program at Tue, Jan 21, 2020 12:42 AM","level":"info"}
+{"message":"Checking hfacs","level":"info"}
+{"message":"**** New records: 0 || Records to change: 0 ****","level":"info"}
+{"message":"hfacs Done.","level":"info"}
+{"message":"Checking hascs","level":"info"}
