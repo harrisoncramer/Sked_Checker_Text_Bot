@@ -7,7 +7,7 @@ module.exports = {
   setUpPuppeteer: async () => {
     const headless = process.env.NODE_ENV === "production";
     const browser = await pupeteer.launch({
-      headless,
+      headless: true,
       devtools: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu','--window-size=1920x1080'],
     });
@@ -21,7 +21,7 @@ module.exports = {
     if (process.env.NODE_ENV === 'production') {
       await page.setRequestInterception(true); // Optimize (no stylesheets, images)...
       page.on('request', request => {
-        if (['image', 'stylesheet', 'script'].includes(request.resourceType())) {
+        if (['image', 'stylesheet'].includes(request.resourceType())) {
           request.abort();
         } else {
           request.continue();

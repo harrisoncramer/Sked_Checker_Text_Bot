@@ -1,4 +1,3 @@
-const {getLinksTwo} = require('./index');
 
 module.exports = {
   getLinks: ({page, selectors}) => {
