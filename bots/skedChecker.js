@@ -12,7 +12,6 @@ const {sortPageData} = require('./guts');
 const sendText = require('../texter');
 const mongoose = require('mongoose');
 const logger = require('../logger');
-const saslprep = require('saslprep');
 
 module.exports = async ({page, browser, args}) => {
   logger.info(`Checking ${args.schema.collection.collectionName}`);
