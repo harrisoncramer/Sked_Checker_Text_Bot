@@ -3,3 +3,5 @@ node_modules
 .DS_Store
 dev-results.log
 .eslintrc.js
+yarn-error.log
+yarn.lock
