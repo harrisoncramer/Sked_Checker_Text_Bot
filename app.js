@@ -108,62 +108,55 @@ if (process.env.NODE_ENV === 'production') {
       await launchBots({
         page,
         browser,
-        bots: [
+        bot: skedChecker,
+        instances: [
           {
-            bot: skedChecker,
-            args: {
-              jobs: [
-                {
-                  link: 'https://foreignaffairs.house.gov/hearings',
-                  type: 'hearing',
-                  layer1: page =>
-                    getLinks({
-                      page,
-                      selectors: {
-                        boxSelectors: 'table tbody tr',
-                        linkSelectors: 'a',
-                      },
-                    }),
-                  layer2: uniquePage => hfacLayerTwo(uniquePage),
-                },
-                {
-                  link: 'https://foreignaffairs.house.gov/markups',
-                  type: 'markup',
-                  layer1: page =>
-                    getLinks({
-                      page,
-                      selectors: {
-                        boxSelectors: 'table tbody tr',
-                        linkSelectors: 'a',
-                      },
-                    }),
-                  layer2: uniquePage => hfacLayerTwo(uniquePage),
-                },
-              ],
-              comparer: 'title',
-              isDifferent: ['time', 'date', 'location'],
-              schema: HFACSchema,
-            },
+            jobs: [
+              {
+                link: 'https://foreignaffairs.house.gov/hearings',
+                type: 'hearing',
+                layer1: page =>
+                  getLinks({
+                    page,
+                    selectors: {
+                      boxSelectors: 'table tbody tr',
+                      linkSelectors: 'a',
+                    },
+                  }),
+                layer2: uniquePage => hfacLayerTwo(uniquePage),
+              },
+              {
+                link: 'https://foreignaffairs.house.gov/markups',
+                type: 'markup',
+                layer1: page =>
+                  getLinks({
+                    page,
+                    selectors: {
+                      boxSelectors: 'table tbody tr',
+                      linkSelectors: 'a',
+                    },
+                  }),
+                layer2: uniquePage => hfacLayerTwo(uniquePage),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: HFACSchema
           },
           {
-            bot: skedChecker,
-            args: {
-              jobs: [
-                {
-                  link: 'https://armedservices.house.gov/hearings',
-                  type: 'hearing',
-                  layer1: page => hascLayerOne(page),
-                  layer2: uniquePage => hascLayerTwo(uniquePage),
-                },
-              ],
-              comparer: 'title',
-              isDifferent: ['time', 'date', 'location'],
-              schema: HASCSchema,
-            },
+            jobs: [
+              {
+                link: 'https://armedservices.house.gov/hearings',
+                type: 'hearing',
+                layer1: page => hascLayerOne(page),
+                layer2: uniquePage => hascLayerTwo(uniquePage),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: HASCSchema,
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://www.armed-services.senate.gov/hearings',
@@ -175,11 +168,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
               schema: SASCSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://www.foreign.senate.gov/hearings',
@@ -191,11 +181,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
               schema: SFRCSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://www.veterans.senate.gov/hearings',
@@ -207,11 +194,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
               schema: SVACSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://homeland.house.gov/activities/hearings',
@@ -223,11 +207,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
               schema: HHSCSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://agriculture.house.gov/calendar/',
@@ -239,11 +220,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['date', 'time'],
               schema: HAGCSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link:
@@ -262,11 +240,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['date', 'time', 'location'],
               schema: HAPCSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://budget.house.gov/legislation/hearings',
@@ -282,13 +257,10 @@ if (process.env.NODE_ENV === 'production') {
                 },
               ],
               comparer: 'title',
-              isDifferent: ['date', 'time', 'location', 'witnesses'],
+              isDifferent: ['date', 'time', 'location'],
               schema: HBUCSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://edlabor.house.gov/hearings-and-events',
@@ -300,11 +272,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: HELPSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link:
@@ -324,11 +293,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: NRGYSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link:
@@ -348,11 +314,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: FISVSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://cha.house.gov/committee-activity/hearings',
@@ -370,11 +333,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: ADMNSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://naturalresources.house.gov/hearings',
@@ -386,11 +346,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: NTTYSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://oversight.house.gov/legislation/hearings',
@@ -402,11 +359,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: OVSTSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://science.house.gov/hearings',
@@ -424,11 +378,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: SCNCSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://science.house.gov/hearings',
@@ -440,11 +391,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: SCNCSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://smallbusiness.house.gov/activity/',
@@ -456,11 +404,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: SMBSSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link:
@@ -480,11 +425,8 @@ if (process.env.NODE_ENV === 'production') {
               comparer: 'title',
               isDifferent: ['location', 'date', 'time'],
               schema: TRNSSchema,
-            },
           },
           {
-            bot: skedChecker,
-            args: {
               jobs: [
                 {
                   link: 'https://waysandmeans.house.gov/legislation/hearings',
@@ -503,7 +445,6 @@ if (process.env.NODE_ENV === 'production') {
               isDifferent: ['location', 'date', 'time'],
               schema: TRNSSchema,
             },
-          },
         ],
       });
 

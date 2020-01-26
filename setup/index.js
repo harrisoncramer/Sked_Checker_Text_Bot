@@ -37,10 +37,10 @@ module.exports = {
     await page.addScriptTag({ path: "./setup/helperFunctions.js" });
     await page.addScriptTag({ url: "https://code.jquery.com/jquery-3.4.1.slim.min.js" }); // Add jQuery...
   },
-  launchBots: async ({page, browser, today, bots}) => {
-    await asyncForEach(bots, async x => {
+  launchBots: async ({page, browser, bot, instances}) => {
+    await asyncForEach(instances, async x => {
       try {
-        await x.bot({page, browser, today, args: x.args});
+        await bot({page, browser, args: x });
       } catch (err) {
         logger.error('There was a problem with the bot', err);
       }
