@@ -16,9 +16,9 @@ The bots also require a working installation of Chromium running on your local m
 
 ## Author
 
-* **Harrison Cramer** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Harrison Cramer** - [@harrisoncramer](https://twitter.com/harrisoncramer)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+This work was built for journalists at [National Journal](https://nationaljournal.com).
 
 ## License
 
