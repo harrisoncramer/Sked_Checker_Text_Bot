@@ -1,4 +1,4 @@
-const { asyncForEach } = require("../util");
+const { asyncForEach } = require("../../util");
 
 const checkIfDatumShouldUpdateShallow = ({ params, dbDatum, pageDatum, deep }) => { 
     let normalParams = params.filter(p => p !== deep);

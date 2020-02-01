@@ -19,10 +19,10 @@ module.exports = {
         }
         return results;
     },
-    handleEachJob: async({ jobs, browser }, callback) => {
+    handleEachJob: async({ layerOneData, browser }, callback) => {
         let results = [];
-        for (let index = 0; index < jobs.length; index++) {
-            let result = await callback({job: jobs[index], browser });
+        for (let index = 0; index < layerOneData.length; index++) {
+            let result = await callback({job: layerOneData[index], browser });
             results.push(result);
         }
         return results;

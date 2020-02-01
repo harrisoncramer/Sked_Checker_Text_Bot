@@ -1,4 +1,4 @@
-const find = require("../mongodb/find");
+const find = require("../mongodb/methods/find");
 const mailer = require("../mailer");
 const logger = require("../logger");
 const mongoose = require("mongoose");
@@ -8,22 +8,17 @@ module.exports = async ({ email, schemas }) => {
 
     const today = moment();
     
-    var db;
-    try {
-      let uri = 'mongodb://localhost:27017/sked_checker?authSource=admin';
-      let options = {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        keepAlive: true,
-        user: 'admin',
-        pass: process.env.MONGO_PASS,
-      };
-      db = await mongoose.connect(uri, options);
-    } catch (err) {
-      return logger.error(`Could not connect to database. `, err);
-    }
+    let db;
+    let uri = 'mongodb://localhost:27017/sked_checker?authSource=admin';
+    let options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    keepAlive: true,
+    user: 'admin',
+    pass: process.env.MONGO_PASS,
+    };
 
-    var information = schemas.map(async schema => {
+    let information = schemas.map(async schema => {
         let name = schema.modelName;
         let vals = await find(schema);
         return { name, vals };

@@ -1,5 +1,5 @@
-const logger = require("../logger");
-const { asyncForEach } = require("../util");
+const logger = require("../../logger");
+const { asyncForEach } = require("../../util");
 module.exports = async ({ dataToChange, model }) => {
     try {
         await asyncForEach(dataToChange, async (datum) => {

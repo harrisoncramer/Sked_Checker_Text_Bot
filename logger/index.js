@@ -1,7 +1,7 @@
 const winston  = require('winston');
 const fs = require('fs');
 const path = require('path');
-const logDir = 'log';
+const logDir = 'logger/logs';
 const moment = require("moment");
 
 // Create the log directory if it does not exist
@@ -21,14 +21,21 @@ module.exports = winston.createLogger({
                 winston.format.timestamp(),
                 winston.format.colorize(),
                 winston.format.printf(info => {
-
                     const message = info[Symbol.for('splat')] ? info.message + ' - ' + info[Symbol.for('splat')][0] : info.message;
-
-                    return `[${moment(info.timestamp).format("llll")}][PID=${process.pid}][${info.level}]: ${message} –– ${moment(info.timestamp).format("llll")}`;
+                    return `[${moment(info.timestamp).format("llll")}][PID=${process.pid}][${info.level}]: ${message}`;
                 })
             )
-    }),
-    new winston.transports.File({ filename }),
-    new winston.transports.Console()
+        }),
+        new (winston.transports.File)({ 
+            filename,
+            format: winston.format.combine(
+                winston.format.timestamp(),
+                winston.format.colorize(),
+                winston.format.printf(info => {
+                    const message = info[Symbol.for('splat')] ? info.message + ' - ' + info[Symbol.for('splat')][0] : info.message;
+                    return `[${moment(info.timestamp).format("llll")}][PID=${process.pid}][${info.level}]: ${message}`;
+                })
+            )
+        })
     ]
 });
