@@ -12,7 +12,6 @@ const connect = require("./mongodb/connect");
 
 // Import bots...
 const skedChecker = require('./bots/skedChecker');
-const outlook = require('./bots/outlook');
 
 // Import business logic...
 const {

@@ -9,7 +9,6 @@ const updateMany = require('../mongodb/methods/updateMany');
 
 const {sortPageData} = require('./guts');
 
-const sendText = require('../texter');
 const logger = require('../logger');
 
 module.exports = async ({page, browser, db, args}) => {
@@ -62,29 +61,5 @@ module.exports = async ({page, browser, db, args}) => {
   if (dataToChange.length > 0) {
     await updateMany({dataToChange, model: schema});
     logger.info(`${jobName} > ${dataToChange.length} records modified successfully.`);
-  }
-
-  if (newData.length > 0) {
-      let myMessage = await sendText({
-        title: `New ${schema.collection.collectionName} Meeting(s)`,
-        data: newData,
-      });
-      logger.info(`${jobName} > ${
-          myMessage
-            ? 'Message sent: '.concat(JSON.stringify(myMessage))
-            : 'Message not sent, running in development.'
-      }`);
-  }
-  if (dataToChange.length > 0) {
-    let myMessage = await sendText({
-      title: `Updated ${schema.collection.collectionName} Meeting(s)`,
-      data: dataToText,
-    });
-    logger.info(
-      `${jobName} > ${
-        myMessage
-          ? 'Message sent: '.concat(JSON.stringify(myMessage))
-          : 'Message not sent, running in development.'
-      }`);
   }
 };
