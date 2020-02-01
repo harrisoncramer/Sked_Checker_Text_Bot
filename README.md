@@ -10,9 +10,11 @@ These bots download data from every committee in the House and Senate, and uploa
 
 ### Prerequisites
 
-These bots require a running instance of MongoDB in order to work, with an admin user setup. While you can reconfigure the DB connection (in the `mongodb/connect/index.js` file) it is not recommended.
-
-The bots also require a working installation of Chromium running on your local machine.
+1) These bots require a running instance of MongoDB in order to work, with an admin user setup. While you can reconfigure the DB connection (in the `mongodb/connect/index.js` file) it is not recommended.
+2) The bots also require a working installation of Chromium running on your local machine.
+3) Finally, they require an `.env` file stored in the working directory. The file must include the following information
+`MONGO_PASS=**MongoDB Password For admin**`
+`NODE_ENV=**production OR development**`
 
 ## Author
 
