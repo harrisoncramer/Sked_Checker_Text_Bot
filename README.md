@@ -4,9 +4,9 @@ These bots download data from every committee in the House and Senate, and uploa
 
 ## Getting Started
 
-git clone git@github.com:KingOfCramers/Sked_Checker_Text_Bot.git
-yarn install
-node app.js
+`git clone git@github.com:KingOfCramers/Sked_Checker_Text_Bot.git`
+`yarn install`
+`node app.js`
 
 ### Prerequisites
 
