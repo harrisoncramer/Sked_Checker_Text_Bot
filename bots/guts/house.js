@@ -388,7 +388,13 @@ module.exports = {
         );
   
         let jumpPoint = witnessTag.iterateNext();
+        if(!jumpPoint){
+          return { witnesses: [] }
+        };
         let parent = jumpPoint.parentElement.parentElement;
+        if(!parent){
+          return { witnesses: [] }
+        };
         let witnesses = makeTextArray(parent, "em");
         return { witnesses };
       }),

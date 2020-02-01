@@ -4,7 +4,7 @@ const checkIfDatumShouldUpdateShallow = ({ params, dbDatum, pageDatum, deep }) =
     let normalParams = params.filter(p => p !== deep);
     let shallowChanges = normalParams.filter(param => pageDatum[param] !== dbDatum[param])
     if(shallowChanges.length > 0){
-        var changes = shallowChanges.map(param => `${param}: ${dbDatum[param]} ––> ${pageDatum[param]}`);
+        var changes = shallowChanges.map(param => `${param} > ${dbDatum[param]} ––> ${pageDatum[param]}`);
     };
     return changes;
 };

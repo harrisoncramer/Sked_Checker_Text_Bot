@@ -16,7 +16,7 @@ module.exports = async ({page, browser, db, args}) => {
 
   const { schema, comparer, isDifferent, jobs } = args;
   const jobName = schema.collection.collectionName;
-  logger.info(`${jobName}: Running.`)
+  logger.info(`${jobName} > Running.`)
 
   let layerOneData = await asyncForEach(jobs, async job => {
       await page.goto(job.link, {waitUntil: 'networkidle2'});
@@ -26,7 +26,7 @@ module.exports = async ({page, browser, db, args}) => {
       return {data, work: job.layer2};
   });
 
-  logger.info(`${jobName}: Info gathered from first layer.`);
+  logger.info(`${jobName} > Info gathered from first layer.`);
 
   let pageData = await handleEachJob({layerOneData, browser}, async ({job, browser}) => {
     let { work, data } = job;
@@ -47,13 +47,13 @@ module.exports = async ({page, browser, db, args}) => {
     return combinedData;
   });
 
-  logger.info(`${jobName}: Info gathered and combined from second layer.`);
+  logger.info(`${jobName} > Info gathered and combined from second layer.`);
 
   pageData = pageData.flatten();
   let dbData = await find(schema);
   let { newData, existingData } = await sortPageData({ pageData, dbData, comparer });
   let { dataToChange, dataToText } = await getChangedData({ existingData, model: schema, comparer: comparer, isDifferent: [...isDifferent] }, 'witnesses');
-  logger.info(newData.length + dataToChange.length > 0 ? `${jobName}: ${newData.length + dataToChange.length} record(s) to change or modify...` : `${jobName}: No new records...`);
+  logger.info(newData.length + dataToChange.length > 0 ? `${jobName} > ${newData.length + dataToChange.length} record(s) to change or modify...` : `${jobName} > No new records...`);
   
   // try {
   //   if (newData.length > 0) {

@@ -96,169 +96,169 @@ const run = async ({ db, browser, page, skedChecker }) => await launchBots({
   browser,
   bot: skedChecker,
   instances: [
-    {
-      jobs: [
-        {
-          link: 'https://foreignaffairs.house.gov/hearings',
-          type: 'hearing',
-          layer1: page =>
-            getLinks({
-              page,
-              selectors: {
-                boxSelectors: 'table tbody tr',
-                linkSelectors: 'a',
-              },
-            }),
-          layer2: uniquePage => hfacLayerTwo(uniquePage),
-        },
-        {
-          link: 'https://foreignaffairs.house.gov/markups',
-          type: 'markup',
-          layer1: page =>
-            getLinks({
-              page,
-              selectors: {
-                boxSelectors: 'table tbody tr',
-                linkSelectors: 'a',
-              },
-            }),
-          layer2: uniquePage => hfacLayerTwo(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['time', 'date', 'location'],
-      schema: HFACSchema,
-    },
-    {
-      jobs: [
-        {
-          link: 'https://armedservices.house.gov/hearings',
-          type: 'hearing',
-          layer1: page => hascLayerOne(page),
-          layer2: uniquePage => hascLayerTwo(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['time', 'date', 'location'],
-      schema: HASCSchema,
-    },
-    {
-      jobs: [
-        {
-          link: 'https://www.armed-services.senate.gov/hearings',
-          type: 'hearing',
-          layer1: page => sascLayerOne(page),
-          layer2: uniquePage => sascLayerTwo(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['time', 'date', 'location'],
-      schema: SASCSchema,
-    },
-    {
-      jobs: [
-        {
-          link: 'https://www.foreign.senate.gov/hearings',
-          type: 'hearing',
-          layer1: page => sfrcBusiness(page),
-          layer2: uniquePage => sfrcWitnesses(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['time', 'date', 'location'],
-      schema: SFRCSchema,
-    },
-    {
-      jobs: [
-        {
-          link: 'https://www.veterans.senate.gov/hearings',
-          type: 'hearing',
-          layer1: page => svacBusiness(page),
-          layer2: uniquePage => svacWitnesses(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['time', 'date', 'location'],
-      schema: SVACSchema,
-    },
-    {
-      jobs: [
-        {
-          link: 'https://homeland.house.gov/activities/hearings',
-          type: 'hearing',
-          layer1: page => hhscBusiness(page),
-          layer2: uniquePage => hhscWitnesses(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['time', 'date', 'location'],
-      schema: HHSCSchema,
-    },
-    {
-      jobs: [
-        {
-          link: 'https://agriculture.house.gov/calendar/',
-          type: 'hearing',
-          layer1: page => hagcBusiness(page),
-          layer2: uniquePage => hagcWitnessesAndLocation(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['date', 'time'],
-      schema: HAGCSchema,
-    },
-    {
-      jobs: [
-        {
-          link:
-            'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
-          type: 'hearing',
-          layer1: page => hapcBusinessAndMarkup(page),
-          layer2: uniquePage => hapcWitnesses(uniquePage),
-        },
-        {
-          link: 'https://appropriations.house.gov/events/markups',
-          type: 'markup',
-          layer1: page => hapcBusinessAndMarkup(page),
-          layer2: uniquePage => hapcWitnesses(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['date', 'time', 'location'],
-      schema: HAPCSchema,
-    },
-    {
-      jobs: [
-        {
-          link: 'https://budget.house.gov/legislation/hearings',
-          type: 'hearing',
-          layer1: page => hbucBusinessAndMarkup(page),
-          layer2: uniquePage => hbucWitnessesAndLocation(uniquePage),
-        },
-        {
-          link: 'https://budget.house.gov/legislation/markups',
-          type: 'markup',
-          layer1: page => hbucBusinessAndMarkup(page),
-          layer2: uniquePage => hbucWitnessesAndLocation(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['date', 'time', 'location'],
-      schema: HBUCSchema,
-    },
-    {
-      jobs: [
-        {
-          link: 'https://edlabor.house.gov/hearings-and-events',
-          type: 'hearing',
-          layer1: page => helpBusiness(page),
-          layer2: uniquePage => helpWitnessesAndTime(uniquePage),
-        },
-      ],
-      comparer: 'title',
-      isDifferent: ['location', 'date', 'time'],
-      schema: HELPSchema,
-    },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://foreignaffairs.house.gov/hearings',
+    //       type: 'hearing',
+    //       layer1: page =>
+    //         getLinks({
+    //           page,
+    //           selectors: {
+    //             boxSelectors: 'table tbody tr',
+    //             linkSelectors: 'a',
+    //           },
+    //         }),
+    //       layer2: uniquePage => hfacLayerTwo(uniquePage),
+    //     },
+    //     {
+    //       link: 'https://foreignaffairs.house.gov/markups',
+    //       type: 'markup',
+    //       layer1: page =>
+    //         getLinks({
+    //           page,
+    //           selectors: {
+    //             boxSelectors: 'table tbody tr',
+    //             linkSelectors: 'a',
+    //           },
+    //         }),
+    //       layer2: uniquePage => hfacLayerTwo(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['time', 'date', 'location'],
+    //   schema: HFACSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://armedservices.house.gov/hearings',
+    //       type: 'hearing',
+    //       layer1: page => hascLayerOne(page),
+    //       layer2: uniquePage => hascLayerTwo(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['time', 'date', 'location'],
+    //   schema: HASCSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://www.armed-services.senate.gov/hearings',
+    //       type: 'hearing',
+    //       layer1: page => sascLayerOne(page),
+    //       layer2: uniquePage => sascLayerTwo(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['time', 'date', 'location'],
+    //   schema: SASCSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://www.foreign.senate.gov/hearings',
+    //       type: 'hearing',
+    //       layer1: page => sfrcBusiness(page),
+    //       layer2: uniquePage => sfrcWitnesses(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['time', 'date', 'location'],
+    //   schema: SFRCSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://www.veterans.senate.gov/hearings',
+    //       type: 'hearing',
+    //       layer1: page => svacBusiness(page),
+    //       layer2: uniquePage => svacWitnesses(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['time', 'date', 'location'],
+    //   schema: SVACSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://homeland.house.gov/activities/hearings',
+    //       type: 'hearing',
+    //       layer1: page => hhscBusiness(page),
+    //       layer2: uniquePage => hhscWitnesses(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['time', 'date', 'location'],
+    //   schema: HHSCSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://agriculture.house.gov/calendar/',
+    //       type: 'hearing',
+    //       layer1: page => hagcBusiness(page),
+    //       layer2: uniquePage => hagcWitnessesAndLocation(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['date', 'time'],
+    //   schema: HAGCSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link:
+    //         'https://appropriations.house.gov/events/hearings?subcommittee=All&congress_number=752',
+    //       type: 'hearing',
+    //       layer1: page => hapcBusinessAndMarkup(page),
+    //       layer2: uniquePage => hapcWitnesses(uniquePage),
+    //     },
+    //     {
+    //       link: 'https://appropriations.house.gov/events/markups',
+    //       type: 'markup',
+    //       layer1: page => hapcBusinessAndMarkup(page),
+    //       layer2: uniquePage => hapcWitnesses(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['date', 'time', 'location'],
+    //   schema: HAPCSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://budget.house.gov/legislation/hearings',
+    //       type: 'hearing',
+    //       layer1: page => hbucBusinessAndMarkup(page),
+    //       layer2: uniquePage => hbucWitnessesAndLocation(uniquePage),
+    //     },
+    //     {
+    //       link: 'https://budget.house.gov/legislation/markups',
+    //       type: 'markup',
+    //       layer1: page => hbucBusinessAndMarkup(page),
+    //       layer2: uniquePage => hbucWitnessesAndLocation(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['date', 'time', 'location'],
+    //   schema: HBUCSchema,
+    // },
+    // {
+    //   jobs: [
+    //     {
+    //       link: 'https://edlabor.house.gov/hearings-and-events',
+    //       type: 'hearing',
+    //       layer1: page => helpBusiness(page),
+    //       layer2: uniquePage => helpWitnessesAndTime(uniquePage),
+    //     },
+    //   ],
+    //   comparer: 'title',
+    //   isDifferent: ['location', 'date', 'time'],
+    //   schema: HELPSchema,
+    // },
     {
       jobs: [
         {

@@ -8,7 +8,7 @@ module.exports = {
     const isHeadless = process.env.NODE_ENV === "production";
     const browser = await pupeteer.launch({
       headless: isHeadless,
-      devtools: isHeadless,
+      devtools: !isHeadless,
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu','--window-size=1920x1080'],
     });
     const context = await browser.createIncognitoBrowserContext();
@@ -43,7 +43,7 @@ module.exports = {
       } catch (err) {
         let deadPages = await browser.pages();
         await Promise.all(deadPages.filter((x,i) => i !== 0).map(page => page.close()));
-        logger.error(`${args.schema.collection.collectionName}: There was a problem with the bot: `, err.stack);
+        logger.error(`${args.schema.collection.collectionName} > There was a problem with the bot: `, err.stack);
       }
     });
   },
