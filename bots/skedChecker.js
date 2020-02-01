@@ -55,47 +55,36 @@ module.exports = async ({page, browser, db, args}) => {
   let { dataToChange, dataToText } = await getChangedData({ existingData, model: schema, comparer: comparer, isDifferent: [...isDifferent] }, 'witnesses');
   logger.info(newData.length + dataToChange.length > 0 ? `${jobName} > ${newData.length + dataToChange.length} record(s) to change or modify...` : `${jobName} > No new records...`);
   
-  // try {
-  //   if (newData.length > 0) {
-  //     await insertMany(newData, schema);
-  //     logger.info(`${newData.length} records uploaded successfully.`);
-  //   }
-  //   if (dataToChange.length > 0) {
-  //     await updateMany({dataToChange, model: schema});
-  //     logger.info(`${dataToChange.length} records modified successfully.`);
-  //   }
-  // } catch (err) {
-  //   logger.error(`Error uploading data. `, err);
-  // }
+  if (newData.length > 0) {
+    await insertMany(newData, schema);
+    logger.info(`${jobName} > ${newData.length} records uploaded successfully.`);
+  }
+  if (dataToChange.length > 0) {
+    await updateMany({dataToChange, model: schema});
+    logger.info(`${jobName} > ${dataToChange.length} records modified successfully.`);
+  }
 
-  // try {
-  //   if (newData.length > 0) {
-  //     let myMessage = await sendText({
-  //       title: `New ${schema.collection.collectionName} Meeting(s)`,
-  //       data: newData,
-  //     });
-  //     logger.info(
-  //       `${
-  //         myMessage
-  //           ? 'Message sent: '.concat(JSON.stringify(myMessage))
-  //           : 'Message not sent, running in development.'
-  //       }`,
-  //     );
-  //   }
-  //   if (dataToChange.length > 0) {
-  //     let myMessage = await sendText({
-  //       title: `Updated ${schema.collection.collectionName} Meeting(s)`,
-  //       data: dataToText,
-  //     });
-  //     logger.info(
-  //       `${
-  //         myMessage
-  //           ? 'Message sent: '.concat(JSON.stringify(myMessage))
-  //           : 'Message not sent, running in development.'
-  //       }`,
-  //     );
-  //   }
-  // } catch (err) {
-  //   logger.error(`Error texting data. `, err);
-  // }
+  if (newData.length > 0) {
+      let myMessage = await sendText({
+        title: `New ${schema.collection.collectionName} Meeting(s)`,
+        data: newData,
+      });
+      logger.info(`${jobName} > ${
+          myMessage
+            ? 'Message sent: '.concat(JSON.stringify(myMessage))
+            : 'Message not sent, running in development.'
+      }`);
+  }
+  if (dataToChange.length > 0) {
+    let myMessage = await sendText({
+      title: `Updated ${schema.collection.collectionName} Meeting(s)`,
+      data: dataToText,
+    });
+    logger.info(
+      `${jobName} > ${
+        myMessage
+          ? 'Message sent: '.concat(JSON.stringify(myMessage))
+          : 'Message not sent, running in development.'
+      }`);
+  }
 };
