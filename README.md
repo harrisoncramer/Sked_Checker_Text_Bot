@@ -12,9 +12,10 @@ These bots download data from every committee in the House and Senate, and uploa
 
 1) These bots require a running instance of MongoDB in order to work, with an admin user setup. While you can reconfigure the DB connection (in the `mongodb/connect/index.js` file) it is not recommended.
 2) The bots also require a working installation of Chromium running on your local machine.
-3) Finally, they require an `.env` file stored in the working directory. The file must include the following information
+3) The app also requires an `.env` file stored in the working directory. The file must include the following information
 `MONGO_PASS=**MongoDB Password For admin**`
 `NODE_ENV=**production OR development**`
+4) When running through the Tor network, you must have Tor installed on the local machine. My version of this app runs through Ubuntu 18.04, and an installation guide for Tor is online [here](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)
 
 ## Author
 
