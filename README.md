@@ -15,6 +15,8 @@ These bots download data from every committee in the House and Senate, and uploa
 3) The app also requires an `.env` file stored in the working directory. The file must include the following information
 `MONGO_PASS=**MongoDB Password For admin**`
 `NODE_ENV=**production OR development**`
+`TOR_PORTS=**the ports in torrc, as a string separated by spaces (see ./setup/index.js)**`
+
 4) When running through the Tor network, you must have Tor installed on the local machine. My version of this app runs through Ubuntu 18.04, and an installation guide for Tor is online [here](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)
 
 ## Author

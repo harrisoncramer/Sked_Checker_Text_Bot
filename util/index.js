@@ -26,5 +26,10 @@ module.exports = {
             results.push(result);
         }
         return results;
+    },
+    getRandom: (bottom, top) => {
+        return function() {
+            return Math.floor( Math.random() * ( 1 + top - bottom ) ) + bottom;
+        }
     }
 }

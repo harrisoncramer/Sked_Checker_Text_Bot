@@ -1,12 +1,15 @@
 const pupeteer = require('puppeteer');
-const {asyncForEach} = require('../util');
+const { asyncForEach, getRandom } = require('../util');
 const { clean } = require("../bots/guts");
 const logger = require("../logger");
 
 module.exports = {
   setUpPuppeteer: async () => {
     const isHeadless = process.env.NODE_ENV === "production";
-    const args =  ['--no-sandbox', '--proxy-server=socks5://127.0.0.1:9050'];
+    let ports = process.env.TOR_PORTS.split(" "); // Enable Tor ports in .env file as string, separated by spaces...
+    let portIndex = getRandom(0, ports.length - 1)();
+    let port = ports[portIndex];
+    const args =  ['--no-sandbox', '--proxy-server=socks5://127.0.0.1:' + port];
     const browser = await pupeteer.launch({
       headless: isHeadless,
       devtools: !isHeadless,
