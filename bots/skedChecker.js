@@ -1,6 +1,6 @@
 const {asyncForEach, handleEachJob} = require('../util');
 
-const {setupFunctions} = require('../setup');
+const {setupPage} = require('../setup');
 
 const find = require('../mongodb/methods/find');
 const insertMany = require('../mongodb/methods/insertMany');
@@ -19,7 +19,7 @@ module.exports = async ({page, browser, db, args}) => {
 
   let layerOneData = await asyncForEach(jobs, async job => {
       await page.goto(job.link, {waitUntil: 'networkidle2'});
-      await setupFunctions(page);
+      await setupPage(page);
       var data = await job.layer1(page);
       data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
       return {data, work: job.layer2};
@@ -32,7 +32,7 @@ module.exports = async ({page, browser, db, args}) => {
     var pages = await Promise.all(data.map(_ => browser.newPage()));
     await Promise.all(pages.map((page, i) => page.goto(data[i].link), { waitUntil: 'networkidle2'}));
     let layerTwoData = await Promise.all(pages.map(async uniquePage => {
-      await setupFunctions(uniquePage);
+      await setupPage(uniquePage);
       let newData = await work(uniquePage);
       let link = uniquePage.url();
       return {...newData, link}; // Combine the data gathered with the link from the page.

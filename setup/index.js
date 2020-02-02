@@ -1,18 +1,20 @@
-const pupeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+puppeteer.use(StealthPlugin());
+
 const { asyncForEach, getRandom } = require('../util');
-const { clean } = require("../bots/guts");
 const logger = require("../logger");
 
 module.exports = {
   setUpPuppeteer: async () => {
-    const isHeadless = process.env.NODE_ENV === "production";
+    const isProduction = process.env.NODE_ENV === "production";
     let ports = process.env.TOR_PORTS.split(" "); // Enable Tor ports in .env file as string, separated by spaces...
     let portIndex = getRandom(0, ports.length - 1)();
-    let port = ports[portIndex];
+    let port = isProduction ? ports[portIndex] : '9050';
     const args =  ['--no-sandbox', '--proxy-server=socks5://127.0.0.1:' + port];
-    const browser = await pupeteer.launch({
-      headless: isHeadless,
-      devtools: !isHeadless,
+    const browser = await puppeteer.launch({
+      headless: isProduction,
+      devtools: !isProduction,
       args
     });
 
@@ -20,7 +22,7 @@ module.exports = {
     const page = await context.newPage(); // Create new instance of puppet
 
     page.on('error', err => {
-      logger.error('Puppeteer error. ', err);
+      logger.error('Page error. ', err);
     });
 
     await page.goto('https://check.torproject.org/');
@@ -35,24 +37,50 @@ module.exports = {
       logger.info('Successfully connected to Tor.')
     }
 
+    // page.setDefaultNavigationTimeout(20000); // May be required to lengthen this in order to get more reliable data...
 
-    // page.setDefaultNavigationTimeout(20000);
-
-    if (process.env.NODE_ENV === 'production') {
-      await page.setRequestInterception(true); // Optimize (no stylesheets, images)...
-      page.on('request', request => {
-        if (['image', 'stylesheet'].includes(request.resourceType())) {
-          request.abort();
-        } else {
-          request.continue();
-        }
-      });
-    }
     return {browser: context, page};
   },
-  setupFunctions: async page => {
+  setupPage: async page => {
     await page.addScriptTag({ path: "./setup/functions/index.js" });
     await page.addScriptTag({ url: "https://code.jquery.com/jquery-3.4.1.slim.min.js" }); // Add jQuery...
+    await page.setRequestInterception(true);
+    const blockedResources = [
+      'quantserve',
+      'adzerk',
+      'doubleclick',
+      'adition',
+      'exelator',
+      'sharethrough',
+      'twitter',
+      'google-analytics',
+      'fontawesome',
+      'facebook',
+      'analytics',
+      'optimizely',
+      'clicktale',
+      'mixpanel',
+      'zedo',
+      'clicksor',
+      'tiqcdn',
+      'googlesyndication',
+      'youtube',
+    ];
+
+    page.on('request', request => {
+      const url = request.url().toLowerCase();
+      // BLOCK IMAGES AND VIDEO
+      if (url.endsWith('.mp4') || url.endsWith('.avi') || url.endsWith('.flv') || url.endsWith('.mov') || url.endsWith('.wmv'))
+        request.abort();
+      // BLOCK STYLESHEETS
+      else if (['image', 'stylesheet', 'media', 'jpg', 'png'].includes(request.resourceType()))
+        request.abort();
+      // BLOCK OTHER RESOURCE REQUESTS
+      else if (blockedResources.some(resource => url.indexOf(resource) !== -1))
+        request.abort();
+      else
+        request.continue();
+    });
   },
   launchBots: async ({ page, browser, bot, instances, db }) => {
     await asyncForEach(instances, async args => {
