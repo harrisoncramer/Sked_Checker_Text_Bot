@@ -6,11 +6,13 @@ const logger = require("../logger");
 module.exports = {
   setUpPuppeteer: async () => {
     const isHeadless = process.env.NODE_ENV === "production";
+    const args =  ['--no-sandbox', '--proxy-server=socks5://127.0.0.1:9050'];
     const browser = await pupeteer.launch({
       headless: isHeadless,
       devtools: !isHeadless,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu','--window-size=1920x1080'],
+      args
     });
+
     const context = await browser.createIncognitoBrowserContext();
     const page = await context.newPage(); // Create new instance of puppet
 
@@ -18,7 +20,20 @@ module.exports = {
       logger.error('Puppeteer error. ', err);
     });
 
-    page.setDefaultNavigationTimeout(20000);
+    await page.goto('https://check.torproject.org/');
+    const isUsingTor = await page.$eval('body', el =>
+      el.innerHTML.includes('Congratulations. This browser is configured to use Tor')
+    );
+
+    if (!isUsingTor) {
+      logger.error(`Browser is not using Tor. Exiting...`)
+      return await browser.close();
+    } else {
+      logger.info('Successfully connected to Tor.')
+    }
+
+
+    // page.setDefaultNavigationTimeout(20000);
 
     if (process.env.NODE_ENV === 'production') {
       await page.setRequestInterception(true); // Optimize (no stylesheets, images)...
