@@ -18,7 +18,7 @@ module.exports = async ({page, browser, db, args}) => {
   logger.info(`${jobName} > Running.`)
 
   let layerOneData = await asyncForEach(jobs, async job => {
-      await page.goto(job.link, {waitUntil: 'networkidle2'});
+      await page.goto(job.link);
       await setupPage(page);
       var data = await job.layer1(page);
       data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
@@ -30,7 +30,7 @@ module.exports = async ({page, browser, db, args}) => {
   let pageData = await handleEachJob({layerOneData, browser}, async ({job, browser}) => {
     let { work, data } = job;
     var pages = await Promise.all(data.map(_ => browser.newPage()));
-    await Promise.all(pages.map((page, i) => page.goto(data[i].link), { waitUntil: 'networkidle2'}));
+    await Promise.all(pages.map((page, i) => page.goto(data[i].link)));
     let layerTwoData = await Promise.all(pages.map(async uniquePage => {
       await setupPage(uniquePage);
       let newData = await work(uniquePage);

@@ -444,8 +444,10 @@ if (process.env.NODE_ENV === 'production') {
       await browser.close();
       await db.disconnect();
       logger.info(`Bots complete.`);
+      // Cleanup...
     } catch (err) {
       logger.error('Root error: ', err);
+      // Cleanup...
     }
   });
 } else {

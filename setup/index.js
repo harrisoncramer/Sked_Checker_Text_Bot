@@ -34,10 +34,10 @@ module.exports = {
       logger.error(`Browser is not using Tor. Exiting...`)
       return await browser.close();
     } else {
-      logger.info('Successfully connected to Tor.')
+      logger.info(`Successfully connected to Tor with IP: ${port}.`)
     }
 
-    // page.setDefaultNavigationTimeout(20000); // May be required to lengthen this in order to get more reliable data...
+    page.setDefaultNavigationTimeout(0); // May be required to lengthen this in order to get more reliable data...
 
     return {browser: context, page};
   },
