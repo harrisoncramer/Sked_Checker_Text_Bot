@@ -1,6 +1,6 @@
 const {asyncForEach, handleEachJob} = require('../util');
 
-const {setupPage} = require('../setup');
+const {setPageBlockers, setPageScripts } = require('../setup');
 
 const find = require('../mongodb/methods/find');
 const insertMany = require('../mongodb/methods/insertMany');
@@ -18,8 +18,9 @@ module.exports = async ({page, browser, db, args}) => {
   logger.info(`${jobName} > Running.`)
 
   let layerOneData = await asyncForEach(jobs, async job => {
+      await setPageBlockers(page);
       await page.goto(job.link);
-      await setupPage(page);
+      await setPageScripts(page);
       var data = await job.layer1(page);
       data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
       return {data, work: job.layer2};
@@ -30,9 +31,12 @@ module.exports = async ({page, browser, db, args}) => {
   let pageData = await handleEachJob({layerOneData, browser}, async ({job, browser}) => {
     let { work, data } = job;
     var pages = await Promise.all(data.map(_ => browser.newPage()));
-    await Promise.all(pages.map((page, i) => page.goto(data[i].link)));
+    await Promise.all(pages.map(async(page, i) => {
+      await setPageBlockers(page);
+      return page.goto(data[i].link)
+    }));
     let layerTwoData = await Promise.all(pages.map(async uniquePage => {
-      await setupPage(uniquePage);
+      await setPageScripts(uniquePage);
       let newData = await work(uniquePage);
       let link = uniquePage.url();
       return {...newData, link}; // Combine the data gathered with the link from the page.

@@ -41,9 +41,7 @@ module.exports = {
 
     return {browser: context, page};
   },
-  setupPage: async page => {
-    await page.addScriptTag({ path: "./setup/functions/index.js" });
-    await page.addScriptTag({ url: "https://code.jquery.com/jquery-3.4.1.slim.min.js" }); // Add jQuery...
+  setPageBlockers: async page => {
     await page.setRequestInterception(true);
     const blockedResources = [
       'quantserve',
@@ -67,20 +65,31 @@ module.exports = {
       'youtube',
     ];
 
-    page.on('request', request => {
+    page.on('request', async request => {
       const url = request.url().toLowerCase();
-      // BLOCK IMAGES AND VIDEO
-      if (url.endsWith('.mp4') || url.endsWith('.avi') || url.endsWith('.flv') || url.endsWith('.mov') || url.endsWith('.wmv'))
-        request.abort();
-      // BLOCK STYLESHEETS
-      else if (['image', 'stylesheet', 'media', 'jpg', 'png'].includes(request.resourceType()))
-        request.abort();
-      // BLOCK OTHER RESOURCE REQUESTS
-      else if (blockedResources.some(resource => url.indexOf(resource) !== -1))
-        request.abort();
-      else
-        request.continue();
+      if (url.endsWith('.mp4') || 
+          url.endsWith('.avi') || 
+          url.endsWith('.flv') || 
+          url.endsWith('.mov') || 
+          url.endsWith('.wmv') || 
+          ['image', 'stylesheet', 'media', 'jpg', 'png'].includes(request.resourceType()) ||
+          blockedResources.some(resource => url.indexOf(resource) !== -1)
+          ) {
+            await request.abort();
+        } else {
+          try {
+            await request.continue();
+          } catch(err){
+            if(err.message !== "Request is already handled!"){
+              logger.info(`Problem blocking resource from ${url}`);
+            }
+          }
+      }
     });
+  },
+  setPageScripts: async page => {
+    await page.addScriptTag({ path: "./setup/functions/index.js" });
+    await page.addScriptTag({ url: "https://code.jquery.com/jquery-3.4.1.slim.min.js" }); // Add jQuery...
   },
   launchBots: async ({ page, browser, bot, instances, db }) => {
     await asyncForEach(instances, async args => {
