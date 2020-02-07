@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+var exec = require('child_process').exec;
 const cron = require('node-cron');
 const moment = require('moment');
 const logger = require('./logger');
@@ -444,20 +444,20 @@ if (process.env.NODE_ENV === 'production') {
     logger.info(`Running program at ${moment().format('llll')}`);
     try {
       await run({ db, browser, page, skedChecker });
+      await page.close();
       await browser.close();
       await db.disconnect();
       logger.info(`Bots complete.`);
-      // Cleanup...
     } catch (err) {
       logger.error('Root error: ', err);
-      // Cleanup...
+      exec("kill -9 $(ps -aux | grep puppeteer | awk '{ print $2 }')");
+      process.exit(1);
     }
   });
 } else {
   (async () => {
     try {
       let db = await connect();
-
       let { browser, page } = await setUpPuppeteer();
       await setPageBlockers(page);
       logger.info(`Running program at ${moment().format('llll')}`);
