@@ -638,12 +638,32 @@ module.exports = {
         let witnesses = makeCleanArrayFromDocument(".field-name-field-congress-meeting-witnesses strong").filter(x => !["Witnesses:", "Witnesses", "TRANSCRIPT"].includes(x))
         return { location, witnesses };
       }),
-    intlBusiness: page => 
+    clmtBusiness: page =>
       page.evaluate(_ => {
+        let boxes = makeArrayFromDocument('div.views-row')
+          .map(x => x.querySelectorAll('.views-field'))
+          .slice(0, 9)
+          .filter(x => x.length > 0);
 
+        let res = boxes.reduce(
+          (agg, item, i) => {
+            let title = clean(item[0].textContent);
+            let link = getLink(item[0]);
+            let dateInfo = item[1].textContent.split('-');
+            let date = dateInfo[0].trim();
+            let time = dateInfo[1].trim();
+            agg[i] = {link, title, time, date };
+            return agg;
+          },
+          Array(boxes.length)
+            .fill()
+            .map(_ => ({})),
+        );
+
+        return res;
       }),
-    intlWitnesses: page =>
+    clmtWitnesses: page =>
       page.evaluate(_ => {
-
+        return { witnesses: [] }
       }),
 };
