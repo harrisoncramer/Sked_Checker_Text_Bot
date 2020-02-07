@@ -75,21 +75,27 @@ module.exports = {
           ['image', 'stylesheet', 'media', 'jpg', 'png'].includes(request.resourceType()) ||
           blockedResources.some(resource => url.indexOf(resource) !== -1)
           ) {
-            await request.abort();
+            try {
+              await request.abort();
+            } catch (err) {
+              if(err.message !== "Request is already handled!"){
+                logger.info(`Problem blocking resource from ${url}`);
+              }
+            }
         } else {
           try {
             await request.continue();
-          } catch(err){
+          } catch (err) {
             if(err.message !== "Request is already handled!"){
               logger.info(`Problem blocking resource from ${url}`);
             }
           }
-      }
+        }
     });
   },
   setPageScripts: async page => {
     await page.addScriptTag({ path: "./setup/functions/index.js" });
-    await page.addScriptTag({ url: "https://code.jquery.com/jquery-3.4.1.slim.min.js" }); // Add jQuery...
+    await page.addScriptTag({ path: "./setup/jquery/jquery-3.4.1.slim.min.js" }); /// "https://code.jquery.com/jquery-3.4.1.slim.min.js" }); // Add jQuery...
   },
   launchBots: async ({ page, browser, bot, instances, db }) => {
     await asyncForEach(instances, async args => {

@@ -18,7 +18,6 @@ module.exports = async ({page, browser, db, args}) => {
   logger.info(`${jobName} > Running.`)
 
   let layerOneData = await asyncForEach(jobs, async job => {
-      await setPageBlockers(page);
       await page.goto(job.link);
       await setPageScripts(page);
       var data = await job.layer1(page);
@@ -33,7 +32,11 @@ module.exports = async ({page, browser, db, args}) => {
     var pages = await Promise.all(data.map(_ => browser.newPage()));
     await Promise.all(pages.map(async(page, i) => {
       await setPageBlockers(page);
-      return page.goto(data[i].link)
+      logger.info(`i: ${i}`);
+      logger.info(`data: ${JSON.stringify(data)}`);
+      logger.info(`data[i]: ${JSON.stringify(data[i])}`);
+      logger.info(`data[i].link: ${JSON.stringify(data[i].link)}`);
+      return page.goto(data[i].link);
     }));
     let layerTwoData = await Promise.all(pages.map(async uniquePage => {
       await setPageScripts(uniquePage);

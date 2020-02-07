@@ -5,7 +5,7 @@ const moment = require('moment');
 const logger = require('./logger');
 
 // Import utility functions...
-const {launchBots, setUpPuppeteer} = require('./setup');
+const { launchBots, setUpPuppeteer, setPageBlockers, setPageScripts } = require('./setup');
 
 // Import MongoDB
 const connect = require("./mongodb/connect");
@@ -437,7 +437,10 @@ if (process.env.NODE_ENV === 'production') {
   logger.info(`Starting up bots in ${process.env.NODE_ENV} at ${moment().format('llll')}`);
   cron.schedule('*/30 * * * *', async () => {
     let db = await connect();
+
     let { browser, page } = await setUpPuppeteer();
+    await setPageBlockers(page);
+
     logger.info(`Running program at ${moment().format('llll')}`);
     try {
       await run({ db, browser, page, skedChecker });
@@ -453,8 +456,10 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   (async () => {
     try {
-      let {browser, page} = await setUpPuppeteer();
       let db = await connect();
+
+      let { browser, page } = await setUpPuppeteer();
+      await setPageBlockers(page);
       logger.info(`Running program at ${moment().format('llll')}`);
       await run({ db, browser, page, skedChecker });
       await page.close();
