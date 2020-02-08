@@ -1,0 +1,365 @@
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: Running program on Saturday, February 8, 2020 3:15 PM in production.
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: Connected to MongoDb.
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: Connected to Tor on port 9050.
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > Running.
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=9CACA200-DDEB-4F6E-B452-4A65B01A9623
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=39F49766-FD4D-42CB-B8F3-7762A7387BAC
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=1C5B217A-C9DC-4635-9D53-ED4FEABE3FD6
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=25BB5A61-22FF-4022-9E47-80612FE79793
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=99702B82-CFDF-4709-97D5-C7704B04EEC5
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=BDA27B1F-9B7C-4173-80D2-0433E8974A4A
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=41B2E5E9-E5F8-4869-94F0-019DB3DFD037
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=AB7BB5E0-B243-461F-8A58-A4E7670D6FA1
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/hearings?ID=96C5F93C-ADE6-472A-96CA-5960B7CA4C78
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=58C95844-9367-4C54-966C-6B84871E03C3
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=8BFF622F-37B0-4E8F-9414-7DE9A0079066
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=07706084-CDE3-4E35-A406-371B60A5D88E
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=21499FF1-0781-49D5-A037-78843D658774
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=8762046A-F111-4AAE-AF5B-51DD4AE9BEB7
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=408D4841-4674-407C-92AD-22CF3AEC18CA
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=060326E6-89A8-4540-BB9B-12DF2DFCBA1F
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=1E1580A0-6A8E-4A41-A782-84D16F16BA14
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > data extracted from page https://foreignaffairs.house.gov/markups?ID=82D8ADF7-EAF0-43DF-8568-45744F684699
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hfacs > No new records.
+[Sat, Feb 8, 2020 3:15 PM][PID=30707][[32minfo[39m]: hascs > Running.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=81F62DBD-999B-42E9-8549-86024356CC79
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=EDA15C7D-E3F4-4F38-A69B-968FAD7CDEE5
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=8CD86D4E-F47F-4B24-BFB1-F87F868236DB
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=F12DA6AF-1FB8-42C1-941C-A917406315C9
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=803E76E1-B2BC-41EA-B15F-3579CE59F4FC
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=5ADB31BC-4263-4A52-A1A8-496FDB02324A
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=0D7F3AF9-877E-4ACE-A205-0BCCE6DA53C5
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=5BE32B7C-CF80-4216-A8EC-F41D42DC0452
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=682ABC1D-2B60-481E-B210-2F43BC9476B2
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > data extracted from page https://armedservices.house.gov/hearings?ID=24A3E9A4-15B3-4667-BB61-014F9B546ECA
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > 10 record(s) to change or modify...
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hascs > 10 records modified successfully.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: sascs > Running.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: sascs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: sascs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: sascs > No new records.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: sfrcs > Running.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: sfrcs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: sfrcs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: sfrcs > No new records.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: svacs > Running.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: svacs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: svacs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: svacs > No new records.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > Running.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/assessing-the-adequacy-of-dhs-efforts-to-prevent-child-deaths-in-custody
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/activities/hearings/seventeen-years-later_why-is-morale-at-dhs-still-low
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/activities/hearings/confronting-the-rise-in-anti-semitic-domestic-terrorism
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/activities/hearings/about-face-examining-the-department-of-homeland-securitys-use-of-facial-recognition-and-other-biometric-technologies-part-ii
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/activities/hearings/righting-the-ship-the-coast-guard-must-improve-its-processes-for-addressing-harassment-bullying-and-retaliation
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/activities/hearings/the-northern-northern-border-homeland-security-priorities-in-the-arctic-part-ii
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/activities/hearings/us-iran-tensions-implications-for-homeland-security
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/activities/hearings/understanding-the-importance-of-dhs-preparedness-grants_perspectives-from-the-field
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > data extracted from page https://homeland.house.gov/activities/hearings/promoting-safe-and-efficient-travel-and-trade-at-americas-land-ports-of-entry
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hhscs > No new records.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > Running.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/subcommittee-on-technology-modernization-oversight-hearing-data-privacy-and-portability-at-va-protecting-veterans-personal-data
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/subcommittee-on-health-oversight-hearing-achieving-health-equity-for-americas-minority-veterans
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/subcommittee-on-health-and-subcommittee-on-oversight-and-investigations-joint-oversight-hearing-mission-critical-examining-provider-relations-during-the-transition-to-vas-new-community-care-program
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/full-committee-markup-markup-on-hr-2942-hr-2943-and-hr-3504
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/-subcommittee-on-oversight-and-investigations-oversight-hearing-improving-the-department-of-veterans-affairs-effectiveness-responding-to-recommendations-from-oversight-agencies
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/full-committee-markup
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/postponed-economic-opportunity-subcommittee-oversight-hearing-examining-mid-semester-school-closures-impact-on-student-veterans
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/12/02/2019/full-committee-markup-on-pending-legislation
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/economic-opportunity-subcommittee-hearing-fiscal-year-2020-presidents-budget-requests-related-to-veterans-readjustment-benefits
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/full-committee-markup-pending-legislation
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/full-committee-markup-on-pending-legislation
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/economic-opportunity-subcommittee-markup-pending-legislation
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/subcommittee-on-technology-modernization-mapping-the-challenges-and-progress-of-the-office-of-information-and-technology
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/disability-assistance-and-memorial-affairs-subcommittee-hearing-hr-1199-hr-1200-hr-1126-hr-1628-hr-1826-and-other-draft-legislation
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > data extracted from page https://veterans.house.gov/events/hearings/subcommittee-on-economic-opportunity-hearing-on-pending-legislation
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hvacs > No new records.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > Running.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1505
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1457
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1615
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1379
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1380
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1458
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1456
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1374
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > data extracted from page https://agriculture.house.gov/calendar/eventsingle.aspx?EventID=1580
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hagcs > No new records.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hapcs > Running.
+[Sat, Feb 8, 2020 3:16 PM][PID=30707][[32minfo[39m]: hapcs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/non-tribal-public-witness-day-afternoon-session
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/us-strategic-command-closed
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/office-of-accountability-and-whistleblower-protection-s-failures-at-va
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/non-tribal-public-witness-days
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/strengthening-community-recycling-programs-challenges-and-opportunities
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/the-department-of-energy-s-role-in-addressing-climate-change
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/oversight-hearing-chronic-wasting-disease
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/oversight-hearing-on-doe-s-role-in-advancing-biomedical-sciences
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/hearings/oversight-hearing-the-department-of-housing-and-urban-development-s-community
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy2020-homeland-security-appropriations-bill-and-the-fy2020-financial-services-and
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy2020-homeland-security-subcommittee-markup
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy2020-transportation-housing-urban-development-and-related-agencies-appropriations
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy2020-commerce-justice-and-science-and-interior-and-the-environment-appropriations
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy2020-agriculture-rural-development-food-and-drug-administration-and-related
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy2020-energy-water-and-defense-full-committee-appropriations-bills
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy2020-transportation-housing-and-urban-development-and-related-agencies-subcommittee
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy20-commerce-justice-science-and-related-agencies-subcommittee-markup
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > data extracted from page https://appropriations.house.gov/events/markups/fy2020-financial-services-and-general-government-subcommittee-markup
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hapcs > No new records.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > Running.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/reexamining-economic-costs-debt
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/congressional-budget-offices-budget-and-economic-outlook-2020
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/why-federal-investments-matter-stability-congress-state-capitals
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/economic-outlook-view-federal-reserve
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/solutions-rising-economic-inequality-0
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/strengthening-our-fiscal-toolkit-policy-options-improve-economic-resiliency-0
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/america-s-infrastructure-today-s-gaps-tomorrow-s-opportunities-and-need-0
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/costs-climate-change-coasts-heartland-health-security
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/hearings/building-more-dynamic-economy-benefits-immigration
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/bill-invest-people-raising-discretionary-spending-caps-and-other-budget
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/markup-concurrent-resolution-budget-fiscal-year-2017
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/markup-concurrent-budget-resolution-fy-2018
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/markup-republican-budget-resolution-fy2016
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/markup-gop-health-care-reconciliation-legislation
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/fy-2019-budget-resolution-markup
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/markup-2014-budget-process-reform-bills-hr-1872-hr-1869
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/markup-republican-budget-resolution-fy2015
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > data extracted from page https://budget.house.gov/legislation/markups/markup-republican-reconciliation-legislation
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: hbucs > No new records.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > Running.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/hr-5800-ban-surprise-billing-act
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/balancing-work-health-and-family-the-case-for-expanding-the-family-and-medical-leave-act
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/the-future-of-work-ensuring-workers-are-competitive-in-a-rapidly-changing-economy_
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/expecting-more-addressing-americas-maternal-and-infant-health-crisis
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/solving-americas-child-care-crisis-supporting-parents-children-and-the-economy
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/examining-the-education-departments-implementation-of-borrower-defense
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/the-future-of-work-protecting-workers-civil-rights-in-the-digital-age-
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/hr-2694-pregnant-worker-fairness-act-and-hr-5191-runaway-and-homeless-youth-and-trafficking-preventing-act-of-2019
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > data extracted from page https://edlabor.house.gov/hearings/growing-up-in-fear-how-the-trump-administrations-immigration-policies-are-harming-children-
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: helps > No new records.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: nrgies > Running.
+[Sat, Feb 8, 2020 3:17 PM][PID=30707][[32minfo[39m]: nrgies > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-autonomous-vehicles-promises-and-challenges-of-evolving
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-epas-lead-and-copper-proposal-failing-to-protect-public
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-modernizing-the-natural-gas-act-to-ensure-it-works-for
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-saving-energy-legislation-to-improve-energy-efficiency-and
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-clearing-the-air-legislation-to-promote-carbon-capture
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-vaping-in-america-e-cigarette-manufacturers-impact-on-public
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-improving-safety-and-transparency-in-america-s-food-and-drugs
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-out-of-control-the-impact-of-wildfires-on-our-power-sector
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-lifting-voices-legislation-to-promote-media-marketplace
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-protecting-womens-access-to-reproductive-health-care
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-legislation-to-promote-the-health-and-safety-of-racehorses
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-promoting-american-innovation-and-jobs-legislation-to-phase
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-cannabis-policies-for-the-new-decade
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/hearings/hearing-on-empowering-and-connecting-communities-through-digital-equity
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-hr-3851-and-hr-4779-subcommittee-on-consumer-protection-and
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-9-bills-subcommittee-on-energy-january-9-2020
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-18-bills-full-committee-november-19-2019
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-hr-2781-hr-728-hr-1058-hr-2507-hr-776-hr-2035-hr-2296-hr-2328
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-9-bills-subcommittee-on-communications-and-technology-november
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-hr-3-hr-4665-hr-4671-hr-4618-hr-4650-full-committee-october-17
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-26-bills-full-committee-july-17-2019
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-hr-2339-hr-4995-hr-4996-and-hr-2387-subcommittee-on-health
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-hr-2211-hr-3172-hr-3170-hr-1618-hr-806-hr-2647-subcommittee-on
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > data extracted from page https://energycommerce.house.gov/committee-activity/markups/markup-of-15-bills-subcommittee-on-environment-and-climate-change
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: nrgies > No new records.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > Running.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406121
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406119
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406120
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406112
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406084
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406024
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406109
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406022
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406118
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=406111
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404859
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404234
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404489
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404068
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=403650
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404020
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=403967
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=403829
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=404727
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > data extracted from page https://financialservices.house.gov/calendar/eventsingle.aspx?EventID=402489
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: fisvs > No new records.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > Running.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/native-american-voting-rights-exploring-barriers-and-solutions
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/2020-election-security-perspectives-voting-system-vendors-and-experts
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/voting-rights-and-elections-administration-arizona
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/voting-rights-and-election-administration-america
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/oversight-smithsonian-institution
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/oversight-renovations-cannon-house-office-building
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/member-day-committee-house-administration
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/oversight-smithsonian-institution-opportunities-growth-honoring-latino
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/hearings/oversight-united-states-capitol-police
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/markup-hr-1-or-related-measure-and-other-purposes
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/markup-hr-1980
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/markup-hr-4617-stopping-harmful-interference-elections-lasting-democracy
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/hr-2722-bill-protect-elections-public-office-providing-financial-support
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/hres245-and-committee-resolution-116-09
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/committee-resolution-115-20-approve-updates-congressional-members
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/committee-resolution-115-21
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/committee-resolution-115-19-resolution-allocate-funds-reserve-fund
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > data extracted from page https://cha.house.gov/committee-activity/markups/committee-resolution-115-10-committee-resolution-115-11-committee
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: admns > No new records.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > Running.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/full-committee-oversight-hearing_february-11-2020
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/emr-legislative-hearing_february-5-2020
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/scip-legislative-hearing_february-5-2020
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/wow-legislative-hearing6
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/the-importance-of-public-disclosure-requirements-for-protecting-human-health-the-climate-and-the-environment
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/full-committee-markup_january-15-2020
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/wow-legislative-hearing_january-14-2020
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/full-committee-markup_january-29-2020
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > data extracted from page https://naturalresources.house.gov/hearings/full-committee-markup_december-5-2019
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ntties > No new records.
+[Sat, Feb 8, 2020 3:18 PM][PID=30707][[32minfo[39m]: ovsts > Running.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/hearings/a-threat-to-america-s-children-the-trump-administration-s-proposed-changes-to
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/hearings/ending-global-religious-persecution
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/hearings/a-threat-to-america-s-children-the-trump-administration-s-proposal-to-gut-fair
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/hearings/75-years-after-the-holocaust-the-ongoing-battle-against-hate
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/hearings/with-census-bureau-director
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/hearings/protecting-those-who-blow-the-whistle-on-government-wrongdoing
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/markups/business-meeting-on-hr-washington-dc-admission-act
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/hearings/a-threat-to-america-s-children-the-trump-administration-s-proposed-changes-to-0
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > data extracted from page https://oversight.house.gov/legislation/hearings/a-threat-to-america-s-children-the-trump-administration-s-proposal-to-undermine
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > 2 record(s) to change or modify...
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: ovsts > 2 records uploaded successfully.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > Running.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/more-hires-fewer-hacks-developing-the-us-cybersecurity-workforce
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/americas-seed-fund-a-review-of-sbir-and-sttr
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/management-and-spending-challenges-within-the-department-of-energys-office-of-energy-efficiency-and-renewable-energy
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/losing-ground-us-competitiveness-in-critical-technologies
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/the-department-of-energys-office-of-science-exploring-the-next-frontiers-in-energy-research-and-scientific-discovery
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/space-situational-awareness-key-issues-in-an-evolving-landscape
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/research-and-innovation-to-address-the-critical-materials-challenge
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/an-update-on-the-climate-crisis-from-science-to-solutions
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/experts-needed-options-for-improved-science-and-technology-advice-for-congress
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/full-committee-markup-of-hr-4373-hr-4372-and-hr-4355
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/full-committee-markup-of-hr-4979-hr-4704-and-hr-4990
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/full-committee-markup-of-hr-5260
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/subcommittee-markup-of-hr-5666
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/full-committee-markup-of-hr-4091-hr-2051-and-hr-1709
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/markup-of-hr-2986-hr-5376-and-hr-5428
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/full-committee-markup-of-hr-3597-hr-3607-hr-3609-and-hr-335
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/subcommittee-markup-of-hr-4091-and-hr-4230
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/markups/full-committee-markup-of-hr-2986-hr-4230-hr-5374-hr-5428-and-hr-5760
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > No new records.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > Running.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/more-hires-fewer-hacks-developing-the-us-cybersecurity-workforce
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/management-and-spending-challenges-within-the-department-of-energys-office-of-energy-efficiency-and-renewable-energy
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/an-update-on-the-climate-crisis-from-science-to-solutions
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/space-situational-awareness-key-issues-in-an-evolving-landscape
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/research-and-innovation-to-address-the-critical-materials-challenge
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/americas-seed-fund-a-review-of-sbir-and-sttr
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/the-department-of-energys-office-of-science-exploring-the-next-frontiers-in-energy-research-and-scientific-discovery
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/experts-needed-options-for-improved-science-and-technology-advice-for-congress
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > data extracted from page https://science.house.gov/hearings/losing-ground-us-competitiveness-in-critical-technologies
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: scncs > No new records.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > Running.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3101
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3114
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3107
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3076
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3072
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3020
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3111
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3053
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3050
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > data extracted from page https://smallbusiness.house.gov/calendar/eventsingle.aspx?EventID=3097
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: smbs > No new records.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > Running.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/gsa-outleases-and-the-trump-old-post-office-hotel
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/looking-forward-the-future-of-americas-aviation-maintenance-and-manufacturing-workforce
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/proposals-for-a-water-resources-development-act-of-2020
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/animals-in-disasters
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/tracking-toward-zero-improving-grade-crossing-safety-and-addressing-community-concerns
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/the-boeing-737-max-examining-the-federal-aviation-administrations-oversight-of-the-aircrafts-certification
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/assessing-the-transportation-needs-of-tribes-federal-land-management-agencies_and-us-territories
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/oversight-of-working-conditions-for-airline-ground-workers
+[Sat, Feb 8, 2020 3:19 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/the-path-to-a-carbon-free-maritime-industry-investments-and-innovation
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/looking-forward-the-future-of-americas-aviation-maintenance-and-manufacturing-workforce
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/assessing-the-transportation-needs-of-tribes-federal-land-management-agencies_and-us-territories
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/animals-in-disasters
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/the-path-to-a-carbon-free-maritime-industry-investments-and-innovation
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/tracking-toward-zero-improving-grade-crossing-safety-and-addressing-community-concerns
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/proposals-for-a-water-resources-development-act-of-2020
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/oversight-of-working-conditions-for-airline-ground-workers
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/the-boeing-737-max-examining-the-federal-aviation-administrations-oversight-of-the-aircrafts-certification
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > data extracted from page https://transportation.house.gov/committee-activity/hearings/gsa-outleases-and-the-trump-old-post-office-hotel
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > 4 record(s) to change or modify...
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: trns > 4 records uploaded successfully.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > Running.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/more-cures-more-patients-overcoming-pharmaceutical-barriers
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/legislative-proposals-paid-family-and-medical-leave
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/disappearing-corporate-income-tax
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/caring-aging-americans
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/paving-way-funding-and-financing-infrastructure-investments
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/trade-infrastructure-global-competitiveness
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/us-japan-trade-agreements
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/investing-us-health-system-lowering-drug-prices-reducing-out-pocket-costs-and
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/hearings/public-health-consequences-and-costs-gun-violence
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/markups/markup-h-res-746-and-hr-5430
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/markups/markup-social-security-and-tax-legislation
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/markups/markup-tax-and-health-legislation-1
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > data extracted from page https://waysandmeans.house.gov/legislation/markups/markup-health-legislation
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > 13 record(s) to change or modify...
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: wymns > 13 records uploaded successfully.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > Running.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > Info gathered from first layer.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/committee-activity/hearings/resilience-reducing-risks-costs
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/committee-activity/hearings/healthrisks
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/hearings/smart-resilience-finance
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/committee-activity/hearings/voices-leading-next-generation-global-climate-crisis-0
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/committee-activity/hearings/hearing-reducingindustrialemissions
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/member-day-2019
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/committee-activity/hearings/solving-climate-crisis-natural-solutions-cutting-pollution-and-building
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/agricultural-opportunities
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/committee-activity/hearings/solving-climate-crisis-cleaner-stronger-buildings
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > data extracted from page https://climatecrisis.house.gov/committee-activity/business-meetings/organizational-meeting
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > Info gathered and combined from second layer.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: clmts > No new records.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: Browser was disconnected.
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: Bots complete: Saturday, February 8, 2020 3:20 PM
+[Sat, Feb 8, 2020 3:20 PM][PID=30707][[32minfo[39m]: Time elapsed: 284.191 seconds.
+[Sat, Feb 8, 2020 3:29 PM][PID=31140][[32minfo[39m]: Running program on Saturday, February 8, 2020 3:29 PM in production.
+[Sat, Feb 8, 2020 3:29 PM][PID=31140][[32minfo[39m]: Connected to MongoDb.
+[Sat, Feb 8, 2020 3:29 PM][PID=31140][[31merror[39m]: There was an error at Saturday, February 8, 2020 3:29 PM: net::ERR_PROXY_CONNECTION_FAILED at https://check.torproject.org/ - Error: net::ERR_PROXY_CONNECTION_FAILED at https://check.torproject.org/

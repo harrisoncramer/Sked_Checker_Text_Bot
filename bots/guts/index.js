@@ -29,9 +29,10 @@ module.exports = {
     );
   },
   cleanupData: (data) => {
+    let acceptableFormats = [ "ddd, MM/DD/YYYY", "ddd, M/D/YYYY", "dddd, M/D/YYYY", "HH:mma", "H:mma", "H:mm", "MMMM D, YYYY"];
     data.map(x => { 
-      let cleanedDate = moment(x.date).format("MMMM DD");
-      let cleanedTime = moment(x.time).format("LT");
+      let cleanedDate = moment(x.date, acceptableFormats).format("MMMM DD");
+      let cleanedTime = moment(x.time, acceptableFormats).format("LT");
       let date = cleanedDate !== "Invalid date" ? cleanedDate : x.date;
       let time = cleanedTime !== "Invalid date" ? cleanedTime : x.time;
       return { ...x, date, time };
