@@ -12,7 +12,7 @@ module.exports = async () => {
     pass: process.env.MONGO_PASS,
   };
   
-  logger.info("Connecting to MongoDb...")
   let db = await mongoose.connect(uri, options);
+  logger.info("Connected to MongoDb.")
   return db;  
 };

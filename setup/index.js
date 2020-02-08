@@ -18,8 +18,11 @@ module.exports = {
       args
     });
 
-    const context = await browser.createIncognitoBrowserContext();
-    const page = await context.newPage(); // Create new instance of puppet
+    browser.on('disconnected', () => {
+      logger.info("Browser was disconnected.");
+    });
+
+    const page = await browser.newPage(); // Create new instance of puppet
 
     page.on('error', err => {
       logger.error('Page error. ', err);
@@ -34,12 +37,12 @@ module.exports = {
       logger.error(`Browser is not using Tor. Exiting...`)
       return await browser.close();
     } else {
-      logger.info(`Successfully connected to Tor with IP: ${port}.`)
+      logger.info(`Connected to Tor on port ${port}.`)
     }
 
     page.setDefaultNavigationTimeout(0); // May be required to lengthen this in order to get more reliable data...
 
-    return {browser: context, page};
+    return {browser, page};
   },
   setPageBlockers: async page => {
     await page.setRequestInterception(true);

@@ -18,11 +18,17 @@ module.exports = async ({page, browser, db, args}) => {
   logger.info(`${jobName} > Running.`)
 
   let layerOneData = await asyncForEach(jobs, async job => {
-      await page.goto(job.link);
-      await setPageScripts(page);
-      var data = await job.layer1(page);
-      data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
-      return {data, work: job.layer2};
+      try {
+        await page.goto(job.link);
+        await setPageScripts(page);
+        let data = await job.layer1(page);
+        data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
+        return {data, work: job.layer2};
+      } catch (err) {
+        let link = page.url();
+        logger.error(`Error for page ${link}: `, err);
+        return { data: [], work: job.layer2 };
+      }
   });
 
   logger.info(`${jobName} > Info gathered from first layer.`);
@@ -32,17 +38,22 @@ module.exports = async ({page, browser, db, args}) => {
     var pages = await Promise.all(data.map(_ => browser.newPage()));
     await Promise.all(pages.map(async(page, i) => {
       await setPageBlockers(page);
-      logger.info(`i: ${i}`);
-      logger.info(`data: ${JSON.stringify(data)}`);
-      logger.info(`data[i]: ${JSON.stringify(data[i])}`);
-      logger.info(`data[i].link: ${JSON.stringify(data[i].link)}`);
       return page.goto(data[i].link);
     }));
+    
+    
     let layerTwoData = await Promise.all(pages.map(async uniquePage => {
       await setPageScripts(uniquePage);
-      let newData = await work(uniquePage);
-      let link = uniquePage.url();
-      return {...newData, link}; // Combine the data gathered with the link from the page.
+      try {
+        let newData = await work(uniquePage);
+        let link = uniquePage.url();
+        logger.info(`${jobName} > data extracted from page ${link}`);
+        return {...newData, link}; // Combine the data gathered with the link from the page.
+      } catch (err) {
+        let link = uniquePage.url();
+        logger.error(`Error on page ${link}: `, err);
+        return { newData: [], link };
+      }
     }));
     let combinedData = data.reduce((agg, datum, i) => {
       let match = layerTwoData.filter(x => x.link.toLowerCase() === datum.link.toLowerCase())[0];
@@ -59,7 +70,7 @@ module.exports = async ({page, browser, db, args}) => {
   let dbData = await find(schema);
   let { newData, existingData } = await sortPageData({ pageData, dbData, comparer });
   let { dataToChange, dataToText } = await getChangedData({ existingData, model: schema, comparer: comparer, isDifferent: [...isDifferent] }, 'witnesses');
-  logger.info(newData.length + dataToChange.length > 0 ? `${jobName} > ${newData.length + dataToChange.length} record(s) to change or modify...` : `${jobName} > No new records...`);
+  logger.info(newData.length + dataToChange.length > 0 ? `${jobName} > ${newData.length + dataToChange.length} record(s) to change or modify...` : `${jobName} > No new records.`);
   
   if (newData.length > 0) {
     await insertMany(newData, schema);
