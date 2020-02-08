@@ -66,8 +66,7 @@ module.exports = async ({page, browser, db, args}) => {
 
   logger.info(`${jobName} > Info gathered and combined from second layer.`);
 
-  pageData = pageData.flatten();
-  cleanupData(pageData); // Clean the times and dates.
+  pageData = cleanupData(pageData.flatten());
 
   let dbData = await find(schema);
   let { newData, existingData } = await sortPageData({ pageData, dbData, comparer });
