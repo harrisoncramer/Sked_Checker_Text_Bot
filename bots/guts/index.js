@@ -1,3 +1,5 @@
+const moment = require("moment");
+
 module.exports = {
   sortPageData: ({pageData, dbData, comparer}) => {
     let dbTitles = dbData.map(x => x[comparer]);
@@ -26,4 +28,14 @@ module.exports = {
       {selectors},
     );
   },
+  cleanupData: (data) => {
+    data.map(x => { 
+      let cleanedDate = moment(x.date).format("MMMM DD");
+      let cleanedTime = moment(x.time).format("LT");
+      let date = cleanedDate !== "Invalid date" ? cleanedDate : x.date;
+      let time = cleanedTime !== "Invalid date" ? cleanedTime : x.time;
+      return { ...x, date, time };
+    });
+    return data;
+  }
 };

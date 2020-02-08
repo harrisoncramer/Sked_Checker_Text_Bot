@@ -1,4 +1,4 @@
-const {asyncForEach, handleEachJob} = require('../util');
+const {asyncForEach, handleEachJob } = require('../util');
 
 const {setPageBlockers, setPageScripts } = require('../setup');
 
@@ -7,7 +7,7 @@ const insertMany = require('../mongodb/methods/insertMany');
 const getChangedData = require('../mongodb/methods/getChangedData');
 const updateMany = require('../mongodb/methods/updateMany');
 
-const {sortPageData} = require('./guts');
+const { sortPageData, cleanupData } = require('./guts');
 
 const logger = require('../logger');
 
@@ -67,6 +67,8 @@ module.exports = async ({page, browser, db, args}) => {
   logger.info(`${jobName} > Info gathered and combined from second layer.`);
 
   pageData = pageData.flatten();
+  cleanupData(pageData); // Clean the times and dates.
+
   let dbData = await find(schema);
   let { newData, existingData } = await sortPageData({ pageData, dbData, comparer });
   let { dataToChange, dataToText } = await getChangedData({ existingData, model: schema, comparer: comparer, isDifferent: [...isDifferent] }, 'witnesses');

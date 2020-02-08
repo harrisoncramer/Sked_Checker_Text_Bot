@@ -201,6 +201,25 @@ const runProgram = async () => {
           {
             jobs: [
               {
+              link: 'https://veterans.house.gov/events/hearings',
+              type: 'hearing',
+              layer1: page => hvacBusiness(page),
+              layer2: uniquePage => hvacWitnesses(uniquePage)
+              },
+              {
+                link: 'https://veterans.house.gov/events/markups',
+                type: 'markup',
+                layer1: page => hvacMarkup(page),
+                layer2: uniquePage => hvacWitnesses(uniquePage)
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['date', 'time', 'location'],
+            schema: HVACSchema,
+          },
+          {
+            jobs: [
+              {
                 link: 'https://agriculture.house.gov/calendar/',
                 type: 'hearing',
                 layer1: page => hagcBusiness(page),
@@ -463,7 +482,7 @@ const runProgram = async () => {
         logger.info(`Time elapsed: ${(new Date().valueOf() - startTime)/1000} seconds.`);
         doingWork = false;
       } catch (err) {
-        logger.error(`There was an error at ${moment().format("LLLL")}`, err);
+        logger.error(`There was an error at ${moment().format("LLLL")}: `, err);
         process.exit(1);
       };
   }

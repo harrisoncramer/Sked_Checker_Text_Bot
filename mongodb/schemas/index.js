@@ -39,33 +39,6 @@ const basicDataStructure = {
   },
 };
 
-const modifiedDataStructure = {
-  recordListTitle: {
-    type: String,
-    require: true,
-  },
-  recordListTime: {
-    type: String,
-    require: true,
-  },
-  recordListDate: {
-    type: String,
-    require: true,
-  },
-  location: {
-    type: String,
-    require: true,
-  },
-  link: {
-    type: String,
-    require: true,
-  },
-  witnesses: {
-    type: Array,
-    require: true,
-  },
-};
-
 module.exports = {
   // Senate Committees
   SFRCSchema: mongoose.model('SFRC', basicDataStructure),

@@ -44,11 +44,12 @@ module.exports = {
       let data = boxes.map(box => {
         let link = getLink(box);
         let title = getLinkText(box);
+        let date = getFromText(box, "td.recordListDate");
         let x = new RegExp('Subcommittee', 'i');
         let isSubcommittee = !!title.match(x);
         let subcommittee = isSubcommittee ? title.split(':')[0] : null;
         title = title.replaceAll([subcommittee, ':']).trim();
-        return {link, title, subcommittee, isSubcommittee};
+        return {link, title, date, subcommittee, isSubcommittee};
       });
       return data;
     });
@@ -69,32 +70,27 @@ module.exports = {
     }),
   hvacBusiness: page =>
     page.evaluate(_ => {
-      let trs = Array.from(document.querySelectorAll('tr.vevent')).map(x =>
-        x.querySelectorAll('td > div.faux-col'),
-      );
-      let res = trs.reduce(
-        (agg, item, i) => {
+      let boxes = Array.from($("tr.divider:first-of-type").nextUntil("tr.congress"))
+        .map(x => x.querySelectorAll('td > div.faux-col'));
+      let data = boxes.reduce((agg,item,i) => {
           let title = clean(item[0].textContent);
-          let link = item[0].querySelector('a').href;
-          let location = item[1].textContent.trim();
-          let date = item[2].textContent.trim();
-          let time = item[3].textContent.trim();
+          let link = getFromLink(item[0], "a");
+          let location = clean(item[2].textContent);
+          let dateInfo = clean(item[3].textContent);
+          let date = moment(dateInfo).format("MMMM DD"); // This is only possible because their site loads moment...
+          let time = moment(dateInfo).format("LT"); // This is only possible because their site loads moment...
           agg[i] = {link, title, location, time, date};
           return agg;
-        },
-        Array(trs.length)
-          .fill()
-          .map(_ => ({})),
+      }, 
+      Array(boxes.length)
+        .fill()
+        .map(_ => ({}))
       );
-
-      return res;
-    }),
+      return data;
+  }),
   hvacWitnesses: page =>
     page.evaluate(_ => {
-      let witnesses = Array.from(
-        document.querySelectorAll('section.hearing__agenda b'),
-      )
-        .map(i => i.textContent.replace(/\s\s+/g, ' ').trim())
+      let witnesses = makeCleanArrayFromDocument("section.hearing__agenda b")
         .filter(
           x =>
             ![
@@ -110,28 +106,23 @@ module.exports = {
     }),
   hvacMarkup: page =>
     page.evaluate(_ => {
-      let trs = Array.from(document.querySelectorAll('tr.vevent')).map(x =>
-        x.querySelectorAll('td > div.faux-col'),
-      );
-      let res = trs.reduce(
-        (agg, item, i) => {
-          let title = clean(item[0].textContent);
-          let link = item[0].querySelector('a').href;
-          let location = item[1].textContent.trim();
-          let date = item[2].textContent
-            .trim()
-            .concat(` at ${item[3].textContent.trim()}`);
-          let witnesses = [];
-          agg[i] = {link, title, location, date, witnesses};
+      let boxes = Array.from($("tr.divider:first-of-type").nextUntil("tr.congress"))
+        .map(x => x.querySelectorAll('td > div.faux-col'));
+      let data = boxes.reduce((agg,item,i) => {
+          let link = getFromLink(item[0], "a");
+          let date = clean(item[2].textContent);
+          let time = clean(item[3].textContent);
+          let location = clean(item[1].textContent);
+          let title = clean(item[0].textContent).concat(` (on ${date})`);
+          agg[i] = {link, title, location, time, date};
           return agg;
-        },
-        Array(trs.length)
-          .fill()
-          .map(_ => ({})),
+      }, 
+      Array(boxes.length)
+        .fill()
+        .map(_ => ({}))
       );
-
-      return res;
-    }),
+      return data;
+  }),
   hhscBusiness: page =>
     page.evaluate(_ => {
       let trs = makeArrayFromDocument('#main_column > div.hearings-table tbody tr.vevent')
