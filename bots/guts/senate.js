@@ -102,4 +102,35 @@ module.exports = {
       let witnesses = makeArrayFromDocument('span.fn').map(i => clean(i.textContent));
       return {witnesses};
     }),
+  sagcBusiness: ({tor, torOptions}) =>
+    page.evaluate(_ => {
+      debugger;
+      let trs = makeArrayFromDocument('tr.vevent')
+      .slice(0, 9)
+      .map(x => x.querySelectorAll('td > div.faux-col'))
+      .filter(row => row.length > 0);
+
+    let data = trs.reduce(
+      (agg, item, i) => {
+        let title = clean(item[0].textContent);
+        // let isSubcommittee = clean(item[1].textContent) === "Full Committee Hearing";
+        let link = getLink(item[0]);
+        let location = clean(item[2].textContent).replaceAll([ "Senate Office Building, Washington, D.C." ]);
+        let dateInfo = clean(item[3].textContent).split(" ");
+        let date = dateInfo[0];
+        let time = dateInfo[1];
+        agg[i] = {link, title, location, date, time};
+        return agg;
+      },
+      Array(trs.length)
+        .fill()
+        .map(_ => ({})),
+    );
+
+    return data;
+    }),
+  sagcWitnesses: page =>
+    page.evaluate(_ => {
+      debugger;
+    }),
 };

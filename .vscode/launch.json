@@ -7,8 +7,8 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Test bot",
             "program": "${workspaceFolder}/app.js"
-        }
+        },
     ]
 }

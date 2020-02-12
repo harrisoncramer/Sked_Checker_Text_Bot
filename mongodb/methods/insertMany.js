@@ -5,6 +5,6 @@ module.exports = async (newData, Model) => {
         const insertMany = await Model.insertMany(newData);
         return insertMany;
     } catch(err) {
-        logger.error(err);
+        logger.error(err.stack);
     }
 };

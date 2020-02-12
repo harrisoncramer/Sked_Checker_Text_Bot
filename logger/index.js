@@ -28,6 +28,7 @@ module.exports = winston.createLogger({
         }),
         new (winston.transports.File)({ 
             filename,
+            level: 'info',
             format: winston.format.combine(
                 winston.format.timestamp(),
                 winston.format.colorize(),
