@@ -1,11 +1,10 @@
 require('dotenv').config();
-var exec = require('child_process').exec;
 const moment = require('moment');
 const logger = require('./logger');
 
 const { launchPuppeteerBots, launchAxiosBots, setupPuppeteer, setPageBlockers, setPageScripts } = require('./setup');
 const setUpTorAxios = require("./setup/tor");
-const getProxy = require("./setup/proxies");
+const getProxies = require("./setup/proxies");
 
 // Import MongoDB
 const connect = require("./mongodb/connect");
@@ -105,7 +104,7 @@ const runProgram = async () => {
     let startTime = new Date().valueOf();
     try {
         let db = await connect();
-        let proxyData = await getProxy();
+        let proxyData = await getProxies();
         // let { browser, page } = await setupPuppeteer({ type: 'tor' });
         // let { browser, page } = await setupPuppeteer({ type: 'proxy' });
 
@@ -492,8 +491,7 @@ const runProgram = async () => {
               {
                 link: 'https://www.agriculture.senate.gov/hearings',
                 type: 'hearing',
-                layer1: () => sagcBusiness(),
-                layer2: () => sagcWitnesses(),
+                layer1: (data) => sagcBusiness(data),
               },
             ],
             comparer: 'title',
@@ -501,8 +499,8 @@ const runProgram = async () => {
             schema: SAGCSchema,
           }
         ]})
-        await page.close();
-        await browser.close();
+        // await page.close();
+        // await browser.close();
         await db.disconnect();
         logger.info(`Bots complete: ${moment().format("LLLL")}`);
         logger.info(`Time elapsed: ${(new Date().valueOf() - startTime)/1000} seconds.`);

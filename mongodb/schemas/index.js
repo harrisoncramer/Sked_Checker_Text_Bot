@@ -27,7 +27,7 @@ const basicDataStructure = {
   },
   witnesses: {
     type: Array,
-    require: true,
+    require: false,
   },
   isSubcommittee: {
     type: Boolean,

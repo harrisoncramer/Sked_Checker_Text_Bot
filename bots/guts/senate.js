@@ -1,31 +1,28 @@
 module.exports = {
-  sascLayerOne: page =>
-    page.evaluate(_ => {
-      let trs = makeArrayFromDocument('table tbody tr.vevent').slice(0, 9);
-      let res = trs.reduce(
-        (agg, item, i) => {
-          const tds = Array.from(item.children);
-          let title = clean(tds[0].children[0].textContent);
-          let link = getLink(tds[0]);
-          let location = tds[1].children[0]
-            ? clean(tds[1].children[0].textContent)
-            : 'No location.';
-          let date = tds[2].children[0]
-            ? clean(tds[2].children[0].textContent.split(' ')[0])
-            : 'No date.';
-          let time = tds[2].children[0]
-            ? clean(tds[2].children[0].textContent.split(' ')[1])
-            : 'No time.';
-          agg[i] = {link, title, location, date, time};
-          return agg;
-        },
-        Array(trs.length)
-          .fill()
-          .map(_ => ({})),
-      );
+  sascLayerOne: $ => {
+    let rows = $("tr.vevent").slice(0, 9);
+    debugger;
+    let tds = rows.map((i,x) => $(x).find("td > div.faux-col"));
 
-      return res;
-    }),
+    //  .map(x => x.querySelectorAll('td > div.faux-col'))
+    //  .filter(row => row.length > 0);
+    debugger;
+  },
+  sagcBusiness: $ => {
+    let res = [];
+    let $rows = $("tr.vevent").slice(0, 9).map((i,v) => $(v).find("td > div.faux-col"));
+    $rows.each((i,v) => {
+      let linkString = $(v[0]).find("a").attr("href");
+      let link = 'https://www.agriculture.senate.gov/'.concat(linkString);
+      let title = $(v[0]).text().trim();
+      let location = $(v[2]).text().trim();
+      let timeData = $(v[3]).text().trim().split(" ");
+      let date = timeData[0];
+      let time = timeData[1];
+      res.push({ link, title, location, time, date });
+    });
+    return res;
+  },
   sascLayerTwo: page =>
     page.evaluate(_ => {
       let witnesses = makeArrayFromDocument('li.vcard span.fn').map(x =>
@@ -102,35 +99,32 @@ module.exports = {
       let witnesses = makeArrayFromDocument('span.fn').map(i => clean(i.textContent));
       return {witnesses};
     }),
-  sagcBusiness: ({tor, torOptions}) =>
-    page.evaluate(_ => {
-      debugger;
-      let trs = makeArrayFromDocument('tr.vevent')
-      .slice(0, 9)
-      .map(x => x.querySelectorAll('td > div.faux-col'))
-      .filter(row => row.length > 0);
+  // sagcBusiness: ({tor, torOptions}) =>
+  //   page.evaluate(_ => {
+  //     let trs = makeArrayFromDocument('tr.vevent')
+  //     .slice(0, 9)
+  //     .map(x => x.querySelectorAll('td > div.faux-col'))
+  //     .filter(row => row.length > 0);
 
-    let data = trs.reduce(
-      (agg, item, i) => {
-        let title = clean(item[0].textContent);
-        // let isSubcommittee = clean(item[1].textContent) === "Full Committee Hearing";
-        let link = getLink(item[0]);
-        let location = clean(item[2].textContent).replaceAll([ "Senate Office Building, Washington, D.C." ]);
-        let dateInfo = clean(item[3].textContent).split(" ");
-        let date = dateInfo[0];
-        let time = dateInfo[1];
-        agg[i] = {link, title, location, date, time};
-        return agg;
-      },
-      Array(trs.length)
-        .fill()
-        .map(_ => ({})),
-    );
+  //   let data = trs.reduce(
+  //     (agg, item, i) => {
+  //       let title = clean(item[0].textContent);
+  //       // let isSubcommittee = clean(item[1].textContent) === "Full Committee Hearing";
+  //       let link = getLink(item[0]);
+  //       let location = clean(item[2].textContent).replaceAll([ "Senate Office Building, Washington, D.C." ]);
+  //       let dateInfo = clean(item[3].textContent).split(" ");
+  //       let date = dateInfo[0];
+  //       let time = dateInfo[1];
+  //       agg[i] = {link, title, location, date, time};
+  //       return agg;
+  //     },
+  //     Array(trs.length)
+  //       .fill()
+  //       .map(_ => ({})),
+  //   );
 
-    return data;
-    }),
-  sagcWitnesses: page =>
-    page.evaluate(_ => {
-      debugger;
-    }),
+  //   return data;
+  //   }),
+  sagcWitnesses: $ => []
+    //
 };

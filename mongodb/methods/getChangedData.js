@@ -10,7 +10,8 @@ const checkIfDatumShouldUpdateShallow = ({ params, dbDatum, pageDatum, deep }) =
 };
 
 const checkIfDatumShouldUpdateDeep = ({ dbDatum, pageDatum, deep }) => {
-
+    if(!pageDatum[deep])
+        return null
     let newDeepItems = pageDatum[deep].filter(x => !dbDatum[deep].includes(x)); // Return all pageData that isn't included in the dbData.
     let deletedDeepItems = dbDatum[deep].filter(x => !pageDatum[deep].includes(x)); // Return all dbData that isn't included in the pageData.
     if(newDeepItems.concat(deletedDeepItems).length > 0){ // If any changes...
@@ -23,9 +24,7 @@ const checkIfDatumShouldUpdateDeep = ({ dbDatum, pageDatum, deep }) => {
                 return deletedDeepItems.length > 0 ? agg : '';
             }, 'Removed: '));
     };
-
     return deepChanges;
-
 };
 
 module.exports = async ({ existingData, model, comparer, isDifferent }, deep) => {

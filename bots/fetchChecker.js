@@ -1,29 +1,21 @@
-const rp = require("request-promise");
 const cheerio = require("cheerio");
-const randomUser = require('random-useragent');
-const { asyncForEach, handleEachJob } = require('../util');
+const { asyncForEach, requestPromiseRetry } = require('../util');
 const find = require('../mongodb/methods/find');
 const insertMany = require('../mongodb/methods/insertMany');
 const getChangedData = require('../mongodb/methods/getChangedData');
 const updateMany = require('../mongodb/methods/updateMany');
 
-const { sortPageData, cleanupData } = require('./guts');
+const { sortPageData } = require('./guts');
 const logger = require('../logger');
 
 module.exports = async ({ proxyData, args }) => {
   const { schema, comparer, isDifferent, jobs } = args;
   const jobName = schema.collection.collectionName;
   logger.info(`${jobName} > Running.`);
-  
-  // Setup proxy + request options
-  const proxy = `http://${proxyData.ip}:${proxyData.port}/`;
-  const proxiedRequest = rp.defaults({ proxy });
-  const userAgentString = randomUser.getRandom();
-  let options = { headers: { 'User-Agent': userAgentString }};
 
   let layerOneData = await asyncForEach(jobs, async job => {
       try {
-        let res = await proxiedRequest.get(job.link, options);
+        let res = await requestPromiseRetry(job.link, 5, proxyData);
         logger.info(`${jobName} > Data fetched from first page.`);
         let cleaned = res.replace(/[\t\n]+/g,' ');
         let $ = cheerio.load(cleaned);
@@ -31,17 +23,17 @@ module.exports = async ({ proxyData, args }) => {
         data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
         return {data, work: job.layer2};
       } catch (err) {
-        logger.info(`Website could not be reached through ${proxy}. `, err);
-        return { data: [], work: job.layer2 };
+        logger.error(`${jobName} > Data could not be fetched. `, err);
+        throw new Error(err);
       }
   });
 
-  logger.info(`${jobName} > Info gathered from first layer.`);
+  logger.info(`${jobName} > Data processed from first layer.`);
 
-  let combinedData = await asyncForEach(layerOneData, async layer => {
+  let pageData = !layerOneData[0].work ? layerOneData[0].data : await asyncForEach(layerOneData, async layer => {
     await Promise.all(layer.data.map(async datum => {
       try {
-        let res = await proxiedRequest.get(datum.link, options);
+        let res = await requestPromiseRetry(datum.link, 5, proxyData);
         let cleaned = res.replace(/[\t\n]+/g,' ');
         let $ = cheerio.load(cleaned);
         let newData = await layer.work($);
@@ -54,11 +46,11 @@ module.exports = async ({ proxyData, args }) => {
     }));
   });
     
-  logger.info(`${jobName} > Info gathered and combined from second layer.`);
+  logger.info(`${jobName} > ${!layerOneData[0].work ? 'No second layer job.' : 'Second layer data combined.' }`);
 
   let dbData = await find(schema);
-  let { newData, existingData } = await sortPageData({ combinedData, dbData, comparer });
-  let { dataToChange, dataToText } = await getChangedData({ existingData, model: schema, comparer: comparer, isDifferent: [...isDifferent] }, 'witnesses');
+  let { newData, existingData } = await sortPageData({ pageData, dbData, comparer });
+  let { dataToChange } = await getChangedData({ existingData, model: schema, comparer: comparer, isDifferent: [...isDifferent] }, 'witnesses');
   logger.info(newData.length + dataToChange.length > 0 ? `${jobName} > ${newData.length + dataToChange.length} record(s) to change or modify...` : `${jobName} > No new records.`);
   
   if (newData.length > 0) {

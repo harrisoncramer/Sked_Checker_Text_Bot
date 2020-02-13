@@ -1,6 +1,0 @@
-[Tue, Feb 11, 2020 6:43 PM][PID=69281][[32minfo[39m]: Running program on Tuesday, February 11, 2020 6:43 PM in production.
-[Tue, Feb 11, 2020 6:43 PM][PID=69281][[32minfo[39m]: Connected to MongoDb.
-[Tue, Feb 11, 2020 6:44 PM][PID=69306][[32minfo[39m]: Running program on Tuesday, February 11, 2020 6:44 PM in production.
-[Tue, Feb 11, 2020 6:44 PM][PID=69306][[31merror[39m]: There was an error at Tuesday, February 11, 2020 6:44 PM: read ECONNRESET - MongoNetworkError: read ECONNRESET
-[Tue, Feb 11, 2020 6:45 PM][PID=69320][[32minfo[39m]: Running program on Tuesday, February 11, 2020 6:45 PM in production.
-[Tue, Feb 11, 2020 6:45 PM][PID=69320][[31merror[39m]: There was an error at Tuesday, February 11, 2020 6:45 PM: read ECONNRESET - MongoNetworkError: read ECONNRESET
