@@ -93,7 +93,6 @@ const {
   SFRCSchema,
   SVACSchema,
   SAGCSchema,
-  S
 } = require('./mongodb/schemas').senate;
 
 let doingWork = false;
@@ -444,60 +443,60 @@ const runProgram = async () => {
         //     comparer: 'title',
         //     isDifferent: ['location', 'date', 'time'],
         //     schema: CLMTSchema,
-        //   },
-        //   {
-        //     jobs: [
-        //       {
-        //         link: 'https://www.armed-services.senate.gov/hearings',
-        //         type: 'hearing',
-        //         layer1: page => sascLayerOne(page),
-        //         layer2: uniquePage => sascLayerTwo(uniquePage),
-        //       },
-        //     ],
-        //     comparer: 'title',
-        //     isDifferent: ['time', 'date', 'location'],
-        //     schema: SASCSchema,
-        //   },
-        //   {
-        //     jobs: [
-        //       {
-        //         link: 'https://www.foreign.senate.gov/hearings',
-        //         type: 'hearing',
-        //         layer1: page => sfrcBusiness(page),
-        //         layer2: uniquePage => sfrcWitnesses(uniquePage),
-        //       },
-        //     ],
-        //     comparer: 'title',
-        //     isDifferent: ['time', 'date', 'location'],
-        //     schema: SFRCSchema,
-        //   },
-        //   {
-        //     jobs: [
-        //       {
-        //         link: 'https://www.veterans.senate.gov/hearings',
-        //         type: 'hearing',
-        //         layer1: page => svacBusiness(page),
-        //         layer2: uniquePage => svacWitnesses(uniquePage),
-        //       },
-        //     ],
-        //     comparer: 'title',
-        //     isDifferent: ['time', 'date', 'location'],
-        //     schema: SVACSchema,
-        //   },
+        //   }
         // ]});
         await launchAxiosBots({ proxyData, bot: fetchChecker, instances: [
+          // {
+          //   jobs: [
+          //     {
+          //       link: 'https://www.agriculture.senate.gov/hearings',
+          //       type: 'hearing',
+          //       layer1: (data) => sagcBusiness(data),
+          //     },
+          //   ],
+          //   comparer: 'title',
+          //   isDifferent: ['time', 'date', 'location'],
+          //   schema: SAGCSchema,
+          // },
           {
             jobs: [
               {
-                link: 'https://www.agriculture.senate.gov/hearings',
+                link: 'https://www.armed-services.senate.gov/hearings',
                 type: 'hearing',
-                layer1: (data) => sagcBusiness(data),
+                layer1: page => sascLayerOne(page),
+                layer2: uniquePage => sascLayerTwo(uniquePage),
               },
             ],
             comparer: 'title',
             isDifferent: ['time', 'date', 'location'],
-            schema: SAGCSchema,
-          }
+            schema: SASCSchema,
+          },
+          // {
+          //   jobs: [
+          //     {
+          //       link: 'https://www.foreign.senate.gov/hearings',
+          //       type: 'hearing',
+          //       layer1: data => sfrcBusiness(data),
+          //       layer2: data => sfrcWitnesses(data),
+          //     },
+          //   ],
+          //   comparer: 'title',
+          //   isDifferent: ['time', 'date', 'location'],
+          //   schema: SFRCSchema,
+          // },
+          // {
+          //   jobs: [
+          //     {
+          //       link: 'https://www.veterans.senate.gov/hearings',
+          //       type: 'hearing',
+          //       layer1: data => svacBusiness(data),
+          //       layer2: data => svacWitnesses(data),
+          //     },
+          //   ],
+          //   comparer: 'title',
+          //   isDifferent: ['time', 'date', 'location'],
+          //   schema: SVACSchema,
+          // },
         ]})
         // await page.close();
         // await browser.close();

@@ -22,11 +22,12 @@ const getRandom = (bottom, top) => {
 };
 
 const requestPromiseRetry = async (url, n, proxies) => {
-    
-    /// If proxies are used, try a different one each time.
-    
+        
     const userAgentString = randomUser.getRandom();
-    let options = { headers: { 'User-Agent': userAgentString }};
+    let options = { 
+        headers: { 'User-Agent': userAgentString },
+        // timeout: 3000 // This is not the correct way to set a timeout
+    };
 
     if(proxies){
         let proxyIndex = getRandom(0, proxies.length)();
@@ -36,15 +37,17 @@ const requestPromiseRetry = async (url, n, proxies) => {
     };
 
     const proxiedRequest = rp.defaults({  ...options });
-
-
+    
     try {
         let res = await proxiedRequest.get(url);
-        !!proxies && logger.info(`Fetched with proxy ${options.proxy}`);
+        // !!proxies && logger.info(`Fetched with proxy ${options.proxy}`);
         return res;
     } catch(err) {
-        if (n === 1) throw err;
-        !!proxies  && logger.info(`Fail to ${url} with proxy ${options.proxy}. Retrying...`);
+        if (n === 1) {
+            logger.error(`Could not fetch ${url}`);
+            throw err;  
+        };
+        !!proxies  && logger.error(`Proxy fail: ${options.proxy} ––> ${url}`);
         return await requestPromiseRetry(url, n - 1, proxies);
     }
 };

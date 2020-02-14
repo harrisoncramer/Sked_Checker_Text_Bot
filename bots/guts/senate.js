@@ -1,12 +1,23 @@
 module.exports = {
   sascLayerOne: $ => {
-    let rows = $("tr.vevent").slice(0, 9);
     debugger;
-    let tds = rows.map((i,x) => $(x).find("td > div.faux-col"));
-
-    //  .map(x => x.querySelectorAll('td > div.faux-col'))
-    //  .filter(row => row.length > 0);
-    debugger;
+    let res = [];
+    let $rows = $("tr.vevent").slice(0, 9).map((i,v) => $(v).find("td"));
+    $rows.each((i,v) => {
+      let link = $(v[0]).find("a").attr("href");
+      let title = $(v[0]).find("a").first().text().trim();
+      let location = $(v[1]).text().trim();
+      let timeData = $(v[2]).text().trim().split(" ");
+      let date = timeData[0];
+      let time = timeData[1];
+      res.push({ link, title, location, time, date });
+    });
+    debugger
+    return res;
+  },
+  sascLayerTwo: $ => {
+    var witnesses = $("span.fn").map((i,v) => $(v).text());
+    return { witnesses };
   },
   sagcBusiness: $ => {
     let res = [];
@@ -23,13 +34,6 @@ module.exports = {
     });
     return res;
   },
-  sascLayerTwo: page =>
-    page.evaluate(_ => {
-      let witnesses = makeArrayFromDocument('li.vcard span.fn').map(x =>
-        clean(x.textContent),
-      );
-      return {witnesses};
-    }),
   sfrcBusiness: page =>
     page.evaluate(_ => {
       let divs = makeArrayFromDocument('div.table-holder > div.text-center');
