@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const basicDataStructure = {
+const dat = {
   type: {
     type: String,
     require: true
@@ -42,30 +42,46 @@ const basicDataStructure = {
 module.exports = {
   // Senate Committees
   senate: {
-    SFRCSchema: mongoose.model('SFRC', basicDataStructure),
-    SASCSchema: mongoose.model('SASC', basicDataStructure),
-    SVACSchema: mongoose.model('SVAC', basicDataStructure),  
-    SAGCSchema: mongoose.model('SAGC', basicDataStructure),
+    SFRCSchema: mongoose.model('SFRC', dat),
+    SASCSchema: mongoose.model('SASC', dat),
+    SVACSchema: mongoose.model('SVAC', dat),  
+    SAGCSchema: mongoose.model('SAGC', dat),
+    SAPCSchema: mongoose.model('SAPC', dat),
+    SBNKSchema: mongoose.model('SBNK', dat),
+    SBDGSchema: mongoose.model('SBDG', dat),
+    SSTRSchema: mongoose.model('SSTR', dat),
+    SNATSchema: mongoose.model('SNAT', dat),
+    SENVSchema: mongoose.model('SENV', dat),
+    SFINSchema: mongoose.model('SFIN', dat),
+    SHLPSchema: mongoose.model('SHLP', dat),
+    SHSCSchema: mongoose.model('SHSC', dat),
+    SINDSchema: mongoose.model('SIND', dat),
+    SJUDSchema: mongoose.model('SJUD', dat),
+    SRLESchema: mongoose.model('SRLE', dat),
+    SETHSchema: mongoose.model('SETH', dat),
+    SSCISchema: mongoose.model('SSCI', dat),
+    SSBSSchema: mongoose.model('SSBS', dat),
+    SVETSchema: mongoose.model('SVET', dat)
   },
   // House Committees
   house: {
-    HASCSchema: mongoose.model('HASC', basicDataStructure),
-    HFACSchema: mongoose.model('HFAC', basicDataStructure),
-    HVACSchema: mongoose.model('HVAC', basicDataStructure),
-    HHSCSchema: mongoose.model('HHSC', basicDataStructure),
-    HAGCSchema: mongoose.model('HAGC', basicDataStructure),
-    HAPCSchema: mongoose.model('HAPC', basicDataStructure),
-    HBUCSchema: mongoose.model('HBUC', basicDataStructure),
-    HELPSchema: mongoose.model('HELP', basicDataStructure),
-    NRGYSchema: mongoose.model('NRGY', basicDataStructure),
-    FISVSchema: mongoose.model('FISV', basicDataStructure),
-    ADMNSchema: mongoose.model('ADMN', basicDataStructure),
-    NTTYSchema: mongoose.model('NTTY', basicDataStructure),
-    OVSTSchema: mongoose.model('OVST', basicDataStructure),
-    SCNCSchema: mongoose.model('SCNC', basicDataStructure),
-    SMBSSchema: mongoose.model('SMBS', basicDataStructure),
-    TRNSSchema: mongoose.model('TRNS', basicDataStructure),
-    WYMNSchema: mongoose.model('WYMN', basicDataStructure),
-    CLMTSchema: mongoose.model('CLMT', basicDataStructure),
+    HASCSchema: mongoose.model('HASC', dat),
+    HFACSchema: mongoose.model('HFAC', dat),
+    HVACSchema: mongoose.model('HVAC', dat),
+    HHSCSchema: mongoose.model('HHSC', dat),
+    HAGCSchema: mongoose.model('HAGC', dat),
+    HAPCSchema: mongoose.model('HAPC', dat),
+    HBUCSchema: mongoose.model('HBUC', dat),
+    HELPSchema: mongoose.model('HELP', dat),
+    NRGYSchema: mongoose.model('NRGY', dat),
+    FISVSchema: mongoose.model('FISV', dat),
+    ADMNSchema: mongoose.model('ADMN', dat),
+    NTTYSchema: mongoose.model('NTTY', dat),
+    OVSTSchema: mongoose.model('OVST', dat),
+    SCNCSchema: mongoose.model('SCNC', dat),
+    SMBSSchema: mongoose.model('SMBS', dat),
+    TRNSSchema: mongoose.model('TRNS', dat),
+    WYMNSchema: mongoose.model('WYMN', dat),
+    CLMTSchema: mongoose.model('CLMT', dat),
   }
 };

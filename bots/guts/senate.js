@@ -111,32 +111,73 @@ module.exports = {
     let witnesses = $("span.fn").map((v,i) => $(i).text().trim()).toArray();
     return { witnesses };
   },
-  // sagcBusiness: ({tor, torOptions}) =>
-  //   page.evaluate(_ => {
-  //     let trs = makeArrayFromDocument('tr.vevent')
-  //     .slice(0, 9)
-  //     .map(x => x.querySelectorAll('td > div.faux-col'))
-  //     .filter(row => row.length > 0);
-
-  //   let data = trs.reduce(
-  //     (agg, item, i) => {
-  //       let title = clean(item[0].textContent);
-  //       // let isSubcommittee = clean(item[1].textContent) === "Full Committee Hearing";
-  //       let link = getLink(item[0]);
-  //       let location = clean(item[2].textContent).replaceAll([ "Senate Office Building, Washington, D.C." ]);
-  //       let dateInfo = clean(item[3].textContent).split(" ");
-  //       let date = dateInfo[0];
-  //       let time = dateInfo[1];
-  //       agg[i] = {link, title, location, date, time};
-  //       return agg;
-  //     },
-  //     Array(trs.length)
-  //       .fill()
-  //       .map(_ => ({})),
-  //   );
-
-  //   return data;
-  //   }),
-  sagcWitnesses: $ => []
-    //
+  sagcWitnesses: $ => [],
+  sapcBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  sbnkBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  sbdgBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  snatBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  senvBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  sfinBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  shlpBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  shscBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  sindBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  sfinBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  sjudBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  srleBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  sethBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  svetBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  ssciBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  ssbsBusiness: $ => {
+    let res = [];
+    return res;
+  },
+  sstrBusiness: $ => {
+    let res = [];
+    return res;
+  },
 };

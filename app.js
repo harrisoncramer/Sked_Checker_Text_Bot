@@ -64,7 +64,23 @@ const {
   svacBusiness,
   svacWitnesses,
   sagcBusiness,
-  sagcWitnesses
+  sagcWitnesses,
+  sapcBusiness,
+  sbnkBusiness,
+  sbdgBusiness,
+  snatBusiness,
+  senvBusiness,
+  shlpBusiness,
+  shscBusiness,
+  sindBusiness,
+  sfinBusiness,
+  sjudBusiness,
+  srleBusiness,
+  sethBusiness,
+  svetBusiness,
+  ssciBusiness,
+  ssbsBusiness,
+  sstrBusiness,
 } = require('./bots/guts/senate');
 
 // Import house schemas...
@@ -90,10 +106,26 @@ const {
 } = require('./mongodb/schemas').house;
 
 const {
-  SASCSchema,
-  SFRCSchema,
-  SVACSchema,
-  SAGCSchema,
+    SFRCSchema,
+    SASCSchema,
+    SVACSchema,  
+    SAGCSchema,
+    SAPCSchema,
+    SBNKSchema,
+    SBDGSchema,
+    SSTRSchema,
+    SNATSchema,
+    SENVSchema,
+    SFINSchema,
+    SHLPSchema,
+    SHSCSchema,
+    SINDSchema,
+    SJUDSchema,
+    SRLESchema,
+    SETHSchema,
+    SSCISchema,
+    SSBSSchema,
+    SVETSchema
 } = require('./mongodb/schemas').senate;
 
 let doingWork = false;
@@ -447,44 +479,44 @@ const runProgram = async () => {
         //   }
         // ]});
         await launchAxiosBots({ proxyData, bot: fetchChecker, instances: [
-          // {
-          //   jobs: [
-          //     {
-          //       link: 'https://www.agriculture.senate.gov/hearings',
-          //       type: 'hearing',
-          //       layer1: (data) => sagcBusiness(data),
-          //     },
-          //   ],
-          //   comparer: 'title',
-          //   isDifferent: ['time', 'date', 'location'],
-          //   schema: SAGCSchema,
-          // },
-          // {
-          //   jobs: [
-          //     {
-          //       link: 'https://www.armed-services.senate.gov/hearings',
-          //       type: 'hearing',
-          //       layer1: page => sascLayerOne(page),
-          //       layer2: uniquePage => sascLayerTwo(uniquePage),
-          //     },
-          //   ],
-          //   comparer: 'title',
-          //   isDifferent: ['time', 'date', 'location'],
-          //   schema: SASCSchema,
-          // },
-          // {
-          //   jobs: [
-          //     {
-          //       link: 'https://www.foreign.senate.gov/hearings',
-          //       type: 'hearing',
-          //       layer1: $  => sfrcBusiness($),
-          //       layer2: $ => sfrcWitnesses($),
-          //     },
-          //   ],
-          //   comparer: 'title',
-          //   isDifferent: ['time', 'date', 'location'],
-          //   schema: SFRCSchema,
-          // },
+          {
+            jobs: [
+              {
+                link: 'https://www.agriculture.senate.gov/hearings',
+                type: 'hearing',
+                layer1: (data) => sagcBusiness(data),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: SAGCSchema,
+          },
+          {
+            jobs: [
+              {
+                link: 'https://www.armed-services.senate.gov/hearings',
+                type: 'hearing',
+                layer1: page => sascLayerOne(page),
+                layer2: uniquePage => sascLayerTwo(uniquePage),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: SASCSchema,
+          },
+          {
+            jobs: [
+              {
+                link: 'https://www.foreign.senate.gov/hearings',
+                type: 'hearing',
+                layer1: $  => sfrcBusiness($),
+                layer2: $ => sfrcWitnesses($),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: SFRCSchema,
+          },
           {
             jobs: [
               {
@@ -498,7 +530,211 @@ const runProgram = async () => {
             isDifferent: ['time', 'date', 'location'],
             schema: SVACSchema,
           },
-        ]})
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sapcBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SAPCSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sbnkBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SBNKSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sbdgBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SBDGSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => snatBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SNATSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => senvBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SENVSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sfinBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SFINSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => shlpBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SHLPSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => shscBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SHSCSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sindBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SINDSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sfinBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SFINSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sjudBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SJUDSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => srleBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SRLESchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sethBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SETHSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => svetBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SVETSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => ssciBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SSCISchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => ssbsBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SSBSSchema,
+          //  },
+          //  {
+          //    jobs: [
+          //      {
+          //        link: '',
+          //        type: 'hearing',
+          //        layer1: (data) => sstrBusiness(data),
+          //      },
+          //    ],
+          //    comparer: 'title',
+          //    isDifferent: ['time', 'date', 'location'],
+          //    schema: SSTRSchema,
+          //  },
+        ]});
         // await page.close();
         // await browser.close();
         await db.disconnect();
