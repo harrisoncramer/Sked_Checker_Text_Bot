@@ -109,7 +109,7 @@ module.exports = {
   },
   svacWitnesses: $ => {
     let witnesses = $("span.fn").map((v,i) => $(i).text().trim());
-    debugger;
+    return { witnesses };
   },
   // sagcBusiness: ({tor, torOptions}) =>
   //   page.evaluate(_ => {
