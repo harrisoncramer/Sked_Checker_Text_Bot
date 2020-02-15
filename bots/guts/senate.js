@@ -114,10 +114,33 @@ module.exports = {
   sagcWitnesses: $ => [],
   sapcBusiness: $ => {
     let res = [];
+    let $trs = $("tr.vevent").slice(0,9).map((i,v) => $(v).find("td > div.faux-col"));
+    $trs.each((i,v) => {
+      let linkRef = $(v[0]).find("a").attr("href").trim();
+      let link = "https://www.appropriations.senate.gov".concat(linkRef);
+      let title = $(v[0]).find("a span")[0].nextSibling.data.trim();
+      let location = $(v[1]).text().replace("Senate Office Building", "").trim();
+      let timeData = $(v[2]).text().trim().split(" ");
+      let date = timeData[0];
+      let time = timeData[1];
+      res.push({ link, title, time, date, location })
+    });
     return res;
   },
   sbnkBusiness: $ => {
     let res = [];
+    let $objects = $("div.upcoming-hearings div.centered");
+    $objects.each((i,v) => {
+      let linkRef = $(v).find("a.summary").attr("href");
+      let link = "https://www.banking.senate.gov/hearings".concat(linkRef);
+      let title = $(v).find("div.hearing-title").text().trim();
+      let location = $(v).find("div.location").text().replace(" Senate Office Building", "").trim();
+      let timeData = $(v).find("div.date").text().split("@");
+      let date = timeData[0].trim();
+      let time = timeData[1].trim();
+      res.push({ link, title, location, date, time });
+    })
+    debugger;
     return res;
   },
   sbdgBusiness: $ => {
