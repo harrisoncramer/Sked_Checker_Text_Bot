@@ -31,7 +31,7 @@ module.exports = async ({ proxyData, args }) => {
   logger.info(`${jobName} > Data processed from first layer.`);
 
   let pageData = !layerOneData[0].work ? layerOneData[0].data : await asyncForEach(layerOneData, async layer => {
-    await Promise.all(layer.data.map(async datum => {
+    return await Promise.all(layer.data.map(async datum => {
       try {
         let res = await requestPromiseRetry(datum.link, 5, proxyData);
         let cleaned = res.replace(/[\t\n]+/g,' ');
@@ -45,6 +45,8 @@ module.exports = async ({ proxyData, args }) => {
       }
     }));
   });
+
+  pageData = pageData.flatten(); // Flatten the array of data into a single array.
     
   logger.info(`${jobName} > ${!layerOneData[0].work ? 'No second layer job.' : 'Second layer data combined.' }`);
 

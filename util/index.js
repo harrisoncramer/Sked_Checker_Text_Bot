@@ -21,36 +21,59 @@ const getRandom = (bottom, top) => {
     }
 };
 
-const requestPromiseRetry = async (url, n, proxies) => {
-        
-    const userAgentString = randomUser.getRandom();
-    let options = { 
-        headers: { 'User-Agent': userAgentString },
-        // timeout: 3000 // This is not the correct way to set a timeout
-    };
-
-    if(proxies){
+const timeoutRequest = (signal, url, proxies) => {
+    return new Promise((res, rej) => {
+      let userAgentString = randomUser.getRandom();
+      let options = {
+        headers: {'User-Agent': userAgentString},
+      };
+  
+      if (proxies) {
         let proxyIndex = getRandom(0, proxies.length)();
         let proxyData = proxies[proxyIndex];
         let proxy = `http://${proxyData.ip}:${proxyData.port}`;
         options.proxy = proxy;
-    };
-
-    const proxiedRequest = rp.defaults({  ...options });
-    
-    try {
-        let res = await proxiedRequest.get(url);
-        // !!proxies && logger.info(`Fetched with proxy ${options.proxy}`);
+      }
+  
+      let proxiedRequest = rp.defaults({...options});
+      proxiedRequest
+        .get(url)
+        .then(result => res(result))
+        .catch(err => {
+          !!proxies && logger.error(`Proxy fail: ${options.proxy} ––> ${url}`);
+          !proxies && logger.error(`Timeout reached, retrying...`);  
+          rej(err)
+        });
+  
+      signal.catch(err => {
+        rej(err);
+      });
+    });
+  };
+  
+  const cancellableSignal = ms => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject(new Error(`Timeout after ${ms}ms`));
+      }, ms);
+    });
+  };
+  
+  const requestPromiseRetry = async (url, n, proxies) => {
+      try {
+        const signal = cancellableSignal(process.env.LATENCY);
+        let res = await timeoutRequest(signal, url);
         return res;
-    } catch(err) {
+      } catch (err) {
         if (n === 1) {
-            logger.error(`Could not fetch ${url}`);
-            throw err;  
-        };
-        !!proxies  && logger.error(`Proxy fail: ${options.proxy} ––> ${url}`);
-        return await requestPromiseRetry(url, n - 1, proxies);
-    }
-};
+          logger.error(`Could not fetch ${url}`);
+          throw err;
+        } else {
+          logger.warn(err.stack);
+          return await requestPromiseRetry(url, n-1, proxies);
+        }
+      }
+  };
 
 module.exports = {
     asyncForEach: async(array, callback) => {

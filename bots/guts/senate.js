@@ -1,6 +1,5 @@
 module.exports = {
   sascLayerOne: $ => {
-    debugger;
     let res = [];
     let $rows = $("tr.vevent").slice(0, 9).map((i,v) => $(v).find("td"));
     $rows.each((i,v) => {
@@ -12,11 +11,10 @@ module.exports = {
       let time = timeData[1];
       res.push({ link, title, location, time, date });
     });
-    debugger
     return res;
   },
   sascLayerTwo: $ => {
-    var witnesses = $("span.fn").map((i,v) => $(v).text());
+    var witnesses = $("span.fn").map((i,v) => $(v).text()).toArray();
     return { witnesses };
   },
   sagcBusiness: $ => {
