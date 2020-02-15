@@ -14,7 +14,7 @@ module.exports = {
     return res;
   },
   sascLayerTwo: $ => {
-    var witnesses = $("span.fn").map((i,v) => $(v).text()).toArray();
+    var witnesses = $("span.fn").map((i,v) => $(v).text().trim()).toArray();
     return { witnesses };
   },
   sagcBusiness: $ => {
@@ -108,7 +108,7 @@ module.exports = {
     return res;
   },
   svacWitnesses: $ => {
-    let witnesses = $("span.fn").map((v,i) => $(i).text().trim());
+    let witnesses = $("span.fn").map((v,i) => $(i).text().trim()).toArray();
     return { witnesses };
   },
   // sagcBusiness: ({tor, torOptions}) =>

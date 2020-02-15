@@ -46,8 +46,10 @@ module.exports = async ({ proxyData, args }) => {
     }));
   });
 
+  debugger;
   pageData = pageData.flatten(); // Flatten the array of data into a single array.
     
+  debugger;
   logger.info(`${jobName} > ${!layerOneData[0].work ? 'No second layer job.' : 'Second layer data combined.' }`);
 
   let dbData = await find(schema);
