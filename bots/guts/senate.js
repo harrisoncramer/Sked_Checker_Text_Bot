@@ -156,13 +156,28 @@ module.exports = {
     return res;
   },
   sbdgWitnesses: $ => {
-    debugger;
     let time = $("span.time b")[0].nextSibling.data.trim(); 
     return { time };
   },
   snatBusiness: $ => {
     let res = [];
+    let $trs = $("table.recordList").first().find("tr").filter((i,v) => i > 0);
+    $trs.each((i,v) => {
+      let date = $(v).find("td.recordListDate").text();
+      let time = $(v).find("td.recordListTime").text();
+      let title = $(v).find("td.recordListTitle").text();
+      let link = $(v).find("td.recordListTitle a").attr("href");
+      res.push({ date, time, title, link })
+    })
     return res;
+  },
+  snatWitnesses: $ => {
+    let roomNumber = $("span.room-number").text();
+    let location = $("span.location").text().trim();
+    if(roomNumber !== ""){
+      location = roomNumber.concat(` ${location}`).replace("Senate Office Building", "").trim();
+    };
+    return { location }
   },
   senvBusiness: $ => {
     let res = [];

@@ -70,6 +70,7 @@ const {
   sbdgBusiness,
   sbdgWitnesses,
   snatBusiness,
+  snatWitnesses,
   senvBusiness,
   shlpBusiness,
   shscBusiness,
@@ -555,32 +556,32 @@ const runProgram = async () => {
               //isDifferent: ['time', 'date', 'location'],
               //schema: SBNKSchema,
             //},
+            //{
+              //jobs: [
+                //{
+                  //link: 'https://www.budget.senate.gov/hearings',
+                  //type: 'hearing',
+                  //layer1: $ => sbdgBusiness($),
+                  //layer2: $ => sbdgWitnesses($),
+                //},
+              //],
+              //comparer: 'title',
+              //isDifferent: ['time', 'date', 'location'],
+              //schema: SBDGSchema,
+            //},
             {
               jobs: [
                 {
-                  link: 'https://www.budget.senate.gov/hearings',
+                  link: 'https://www.energy.senate.gov/public/index.cfm/hearings-and-business-meetings',
                   type: 'hearing',
-                  layer1: $ => sbdgBusiness($),
-                  layer2: $ => sbdgWitnesses($),
+                  layer1: $ => snatBusiness($),
+                  layer2: $ => snatWitnesses($),
                 },
               ],
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
-              schema: SBDGSchema,
+              schema: SNATSchema,
             },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => snatBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SNATSchema,
-          //  },
-          //  {
           //    jobs: [
           //      {
           //        link: '',
