@@ -140,12 +140,25 @@ module.exports = {
       let time = timeData[1].trim();
       res.push({ link, title, location, date, time });
     })
-    debugger;
     return res;
   },
   sbdgBusiness: $ => {
     let res = [];
+    let $trs = $("tr.vevent").slice(0,9).map((i,v) => $(v).find("td > div.faux-col"));
+    $trs.each((i,v) => {
+      let linkRef = $(v[0]).find("a").attr("href").trim();
+      let link = "https://www.budget.senate.gov".concat(linkRef);
+      let title = $(v[0]).find("a").text().trim(); 
+      let location = $(v).find("span.location").text().split(" ")[0]
+      let date = $(v[2]).text().trim();
+      res.push({ link, title, date, location });
+    });
     return res;
+  },
+  sbdgWitnesses: $ => {
+    debugger;
+    let time = $("span.time b")[0].nextSibling.data.trim(); 
+    return { time };
   },
   snatBusiness: $ => {
     let res = [];

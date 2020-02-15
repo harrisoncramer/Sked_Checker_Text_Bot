@@ -68,6 +68,7 @@ const {
   sapcBusiness,
   sbnkBusiness,
   sbdgBusiness,
+  sbdgWitnesses,
   snatBusiness,
   senvBusiness,
   shlpBusiness,
@@ -542,30 +543,31 @@ const runProgram = async () => {
             //isDifferent: ['time', 'date', 'location'],
             //schema: SAPCSchema,
           //},
+            //{
+              //jobs: [
+                //{
+                  //link: 'https://www.banking.senate.gov/hearings',
+                  //type: 'hearing',
+                  //layer1: (data) => sbnkBusiness(data),
+                //},
+              //],
+              //comparer: 'title',
+              //isDifferent: ['time', 'date', 'location'],
+              //schema: SBNKSchema,
+            //},
             {
               jobs: [
                 {
-                  link: 'https://www.banking.senate.gov/hearings',
+                  link: 'https://www.budget.senate.gov/hearings',
                   type: 'hearing',
-                  layer1: (data) => sbnkBusiness(data),
+                  layer1: $ => sbdgBusiness($),
+                  layer2: $ => sbdgWitnesses($),
                 },
               ],
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
-              schema: SBNKSchema,
+              schema: SBDGSchema,
             },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => sbdgBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SBDGSchema,
-          //  },
           //  {
           //    jobs: [
           //      {

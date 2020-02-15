@@ -33,7 +33,9 @@ module.exports = async ({ proxyData, args }) => {
   let pageData = !layerOneData[0].work ? layerOneData[0].data : await asyncForEach(layerOneData, async layer => {
     return await Promise.all(layer.data.map(async datum => {
       try {
+        debugger;
         let res = await requestPromiseRetry(datum.link, 5, proxyData);
+        debugger;
         let cleaned = res.replace(/[\t\n]+/g,' ');
         let $ = cheerio.load(cleaned);
         let newData = await layer.work($);
