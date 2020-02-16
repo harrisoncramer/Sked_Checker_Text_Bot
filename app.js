@@ -73,6 +73,7 @@ const {
   snatWitnesses,
   senvBusiness,
   shlpBusiness,
+  shlpWitnesses,
   shscBusiness,
   sindBusiness,
   sfinBusiness,
@@ -595,32 +596,33 @@ const runProgram = async () => {
               //isDifferent: ['time', 'date', 'location'],
               //schema: SENVSchema,
             //},
-             {
-               jobs: [
-                 {
-                   link: 'https://www.finance.senate.gov/hearings',
-                   type: 'hearing',
-                   layer1: $ => sfinBusiness($),
-                   layer2: $ => sfinWitnesses($),
-                 },
-               ],
-               comparer: 'title',
-               isDifferent: ['time', 'date', 'location'],
-               schema: SFINSchema,
-             },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => shlpBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SHLPSchema,
-          //  },
-          //  {
+             //{
+               //jobs: [
+                 //{
+                   //link: 'https://www.finance.senate.gov/hearings',
+                   //type: 'hearing',
+                   //layer1: $ => sfinBusiness($),
+                   //layer2: $ => sfinWitnesses($),
+                 //},
+               //],
+               //comparer: 'title',
+               //isDifferent: ['time', 'date', 'location'],
+               //schema: SFINSchema,
+             //},
+            {
+              jobs: [
+                {
+                  link: 'https://www.help.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: ($) => shlpBusiness($),
+                  layer2: $ => shlpWitnesses($)
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SHLPSchema,
+            },
+            //{
           //    jobs: [
           //      {
           //        link: '',

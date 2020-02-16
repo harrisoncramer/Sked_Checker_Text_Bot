@@ -211,7 +211,29 @@ module.exports = {
   },
   shlpBusiness: $ => {
     let res = [];
+    let $trs = $("tr.vevent").slice(0,9).map((i,v) => $(v).find("td > div.faux-col"));
+    $trs.each((i,v) => {
+      let linkRef = $(v[0]).find("a").attr("href").trim();
+      let link = "https://www.help.senate.gov/".concat(linkRef)
+      let simpleTitle = $(v[0]).find("span.type")[0].nextSibling.data.trim();
+      let location = $(v).find("span.location").text().replace("Senate Office Building", "").trim();
+      let timeData = $(v).find("time").text().split(" ");
+      let date = timeData[0].trim();
+      let time = timeData[1].trim();
+      let title;
+      if(simpleTitle === "Nominations") {
+        title = $(v).find("span.type").parent().text().replace("Executive Session:", "Exec Sess:").replace("Full Committee Hearing:", "Full Cmmte:").replace(/\s\s+/g, " ").concat(` (on ${date})`).trim();
+      } else {
+        title = $(v).find("span.type").parent().text().replace("Executive Session:", "Exec Sess:").replace("Full Committee Hearing:", "Full Cmmte:").replace(/\s\s+/g, " ").trim();
+      }
+      res.push({ link, title, location, time, date });
+    });
+    debugger;
     return res;
+  },
+  shlpWitnesses: $ => {
+    let witnesses = $("span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, " ").trim()).toArray();
+    return { witnesses }
   },
   shscBusiness: $ => {
     let res = [];

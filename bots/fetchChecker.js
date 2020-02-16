@@ -20,7 +20,6 @@ module.exports = async ({ proxyData, args }) => {
         let cleaned = res.replace(/[\t\n]+/g,' ');
         let $ = cheerio.load(cleaned);
         let data = job.layer1($);
-        debugger;
         data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
         return {data, work: job.layer2};
       } catch (err) {
@@ -55,6 +54,7 @@ module.exports = async ({ proxyData, args }) => {
   let { newData, existingData } = await sortPageData({ pageData, dbData, comparer });
   let { dataToChange } = await getChangedData({ existingData, model: schema, comparer: comparer, isDifferent: [...isDifferent] }, 'witnesses');
   logger.info(newData.length + dataToChange.length > 0 ? `${jobName} > ${newData.length + dataToChange.length} record(s) to change or modify...` : `${jobName} > No new records.`);
+  debugger;
   
   if (newData.length > 0) {
     await insertMany(newData, schema);
