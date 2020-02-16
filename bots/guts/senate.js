@@ -228,7 +228,6 @@ module.exports = {
       }
       res.push({ link, title, location, time, date });
     });
-    debugger;
     return res;
   },
   shlpWitnesses: $ => {
@@ -237,7 +236,23 @@ module.exports = {
   },
   shscBusiness: $ => {
     let res = [];
+    let $trs = $("tr.vevent").slice(0,9).map((i,v) => $(v).find("td"));
+    $trs.each((i,v) => {
+      let link = $(v).find("a").attr("href");
+      let title = $(v).find("a").text().trim();
+      let timeData = $(v).find("time").text().split(" ");
+      let date = timeData[0];
+      let time = timeData[1];
+      let location = $(v).find(".location").text().replace("Senate Dirksen Building", "Dirksen").replace(", Dirksen Senate Office Building", " Dirksen").replace(/\s\s+/g, " ").trim();
+      if(title.includes("Business Meeting"))
+        title = title.concat(` on (${date})`).replace(/\s\s+/g, " ").trim();
+      res.push({ time, date, title, link, location })
+    });
     return res;
+  },
+  shscWitnesses: $ => {
+    let witnesses = $("h1:contains('Witnesses')").next("ul.people").find("span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, " ").trim()).toArray();
+    return { witnesses };
   },
   sindBusiness: $ => {
     let res = [];

@@ -75,6 +75,7 @@ const {
   shlpBusiness,
   shlpWitnesses,
   shscBusiness,
+  shscWitnesses,
   sindBusiness,
   sfinBusiness,
   sfinWitnesses,
@@ -609,31 +610,32 @@ const runProgram = async () => {
                //isDifferent: ['time', 'date', 'location'],
                //schema: SFINSchema,
              //},
+            //{
+              //jobs: [
+                //{
+                  //link: 'https://www.help.senate.gov/hearings',
+                  //type: 'hearing',
+                  //layer1: ($) => shlpBusiness($),
+                  //layer2: $ => shlpWitnesses($)
+                //},
+              //],
+              //comparer: 'title',
+              //isDifferent: ['time', 'date', 'location'],
+              //schema: SHLPSchema,
+            //},
             {
               jobs: [
                 {
-                  link: 'https://www.help.senate.gov/hearings',
+                  link: 'https://www.hsgac.senate.gov/hearings',
                   type: 'hearing',
-                  layer1: ($) => shlpBusiness($),
-                  layer2: $ => shlpWitnesses($)
+                  layer1: ($) => shscBusiness($),
+                  layer2: $ => shscWitnesses($)
                 },
               ],
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
-              schema: SHLPSchema,
+              schema: SHSCSchema,
             },
-            //{
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => shscBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SHSCSchema,
-          //  },
           //  {
           //    jobs: [
           //      {
