@@ -76,6 +76,7 @@ const {
   shscBusiness,
   sindBusiness,
   sfinBusiness,
+  sfinWitnesses,
   sjudBusiness,
   srleBusiness,
   sethBusiness,
@@ -569,42 +570,44 @@ const runProgram = async () => {
               //isDifferent: ['time', 'date', 'location'],
               //schema: SBDGSchema,
             //},
-            {
-              jobs: [
-                {
-                  link: 'https://www.energy.senate.gov/public/index.cfm/hearings-and-business-meetings',
-                  type: 'hearing',
-                  layer1: $ => snatBusiness($),
-                  layer2: $ => snatWitnesses($),
-                },
-              ],
-              comparer: 'title',
-              isDifferent: ['time', 'date', 'location'],
-              schema: SNATSchema,
-            },
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => senvBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SENVSchema,
-          //  },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => sfinBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SFINSchema,
-          //  },
+            //{
+              //jobs: [
+                //{
+                  //link: 'https://www.energy.senate.gov/public/index.cfm/hearings-and-business-meetings',
+                  //type: 'hearing',
+                  //layer1: $ => snatBusiness($),
+                  //layer2: $ => snatWitnesses($),
+                //},
+              //],
+              //comparer: 'title',
+              //isDifferent: ['time', 'date', 'location'],
+              //schema: SNATSchema,
+            //},
+            //{
+              //jobs: [
+                //{
+                  //link: 'https://www.epw.senate.gov/public/index.cfm/hearings',
+                  //type: 'hearing',
+                  //layer1: $ => senvBusiness($),
+                //},
+              //],
+              //comparer: 'title',
+              //isDifferent: ['time', 'date', 'location'],
+              //schema: SENVSchema,
+            //},
+             {
+               jobs: [
+                 {
+                   link: 'https://www.finance.senate.gov/hearings',
+                   type: 'hearing',
+                   layer1: $ => sfinBusiness($),
+                   layer2: $ => sfinWitnesses($),
+                 },
+               ],
+               comparer: 'title',
+               isDifferent: ['time', 'date', 'location'],
+               schema: SFINSchema,
+             },
           //  {
           //    jobs: [
           //      {
@@ -640,18 +643,6 @@ const runProgram = async () => {
           //    comparer: 'title',
           //    isDifferent: ['time', 'date', 'location'],
           //    schema: SINDSchema,
-          //  },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => sfinBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SFINSchema,
           //  },
           //  {
           //    jobs: [

@@ -181,11 +181,33 @@ module.exports = {
   },
   senvBusiness: $ => {
     let res = [];
+    let $trs = $("div.recordsContainer table.recordList").first().find("tr");
+    $trs.each((i,v) => {
+      if(i === 0)
+        return;
+    });
+    debugger;
     return res;
   },
   sfinBusiness: $ => {
     let res = [];
+    let $trs = $("tr.vevent").slice(0,9).map((i,v) => $(v).find("td > div.faux-col"));
+    $trs.each((i,v) => {
+      let linkRef = $(v[0]).find("a").attr("href").trim();
+      let link = "https://www.finance.senate.gov".concat(linkRef);
+      let title = $(v[0]).find("a").text().trim();
+      let date = $(v[2]).text().trim();
+      if(title.includes("The President’s Fiscal"))
+        title = title.concat(` (on ${date})`);
+      res.push({ link, title, date, });
+    });
     return res;
+  },
+  sfinWitnesses: $ => {
+    let time = $("span.time b")[0].nextSibling.data.trim();
+    let location = $("span.location b")[0].nextSibling.data.trim();
+    var witnesses = $("hr").last().nextAll().find("span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, ' ').trim()).toArray();
+    return { time, location, witnesses }
   },
   shlpBusiness: $ => {
     let res = [];
@@ -196,10 +218,6 @@ module.exports = {
     return res;
   },
   sindBusiness: $ => {
-    let res = [];
-    return res;
-  },
-  sfinBusiness: $ => {
     let res = [];
     return res;
   },

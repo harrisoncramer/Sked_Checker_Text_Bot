@@ -19,7 +19,8 @@ module.exports = async ({ proxyData, args }) => {
         logger.info(`${jobName} > Data fetched from first page.`);
         let cleaned = res.replace(/[\t\n]+/g,' ');
         let $ = cheerio.load(cleaned);
-        let data = await job.layer1($);
+        let data = job.layer1($);
+        debugger;
         data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
         return {data, work: job.layer2};
       } catch (err) {
