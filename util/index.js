@@ -51,17 +51,17 @@ const timeoutRequest = (signal, url, proxies) => {
     });
   };
   
-  const cancellableSignal = ms => {
+  const cancellableSignal = (ms, url) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        reject(new Error(`Timeout after ${ms}ms`));
+        reject(new Error(`Timeout after ${ms}ms on ${url}`));
       }, ms);
     });
   };
   
   const requestPromiseRetry = async (url, n, proxies) => {
       try {
-        const signal = cancellableSignal(process.env.LATENCY);
+        const signal = cancellableSignal(process.env.LATENCY, url);
         let res = await timeoutRequest(signal, url);
         return res;
       } catch (err) {

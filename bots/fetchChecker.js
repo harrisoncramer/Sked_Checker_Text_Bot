@@ -54,7 +54,6 @@ module.exports = async ({ proxyData, args }) => {
   let { newData, existingData } = await sortPageData({ pageData, dbData, comparer });
   let { dataToChange } = await getChangedData({ existingData, model: schema, comparer: comparer, isDifferent: [...isDifferent] }, 'witnesses');
   logger.info(newData.length + dataToChange.length > 0 ? `${jobName} > ${newData.length + dataToChange.length} record(s) to change or modify...` : `${jobName} > No new records.`);
-  debugger;
   
   if (newData.length > 0) {
     await insertMany(newData, schema);

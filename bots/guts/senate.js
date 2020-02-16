@@ -256,7 +256,21 @@ module.exports = {
   },
   sindBusiness: $ => {
     let res = [];
+    let $trs = $("div.view-hearing-views tbody tr").slice(0,9);
+    $trs.each((i,v) => {
+      let linkRef = $(v).find("a").attr("href");
+      let link = "https://www.indian.senate.gov".concat(linkRef);
+      let title = $(v).find("a").text().trim();
+      let date = $(v).find("span.date-display-single").first().text().trim();
+      let time = $(v).find("span.date-display-single").last().text().trim();
+      let location = $(v).find("td.views-field-field-hearing-new-office").text().trim().replace("Dirksen-628", "628 Dirsken")
+      res.push({ link, title, date, time, location });
+    });
     return res;
+  },
+  sindWitnesses: $ => {
+    let witnesses = $("div.field-name-field-hearing-new-witness").find("div.group-header").map((i,v) => $(v).text().trim()).toArray();
+    return { witnesses }
   },
   sjudBusiness: $ => {
     let res = [];
