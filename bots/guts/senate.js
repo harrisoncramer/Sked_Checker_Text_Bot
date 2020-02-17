@@ -36,7 +36,6 @@ module.exports = {
     let res = [];
     let $divs = $("div.table-holder > div.text-center");
     $divs.each((i,v) => {
-      debugger;
       // MUST WRITE IT WITH ANOTHER
       // HEARING ON THE BOOKS TO FIGURE OUT
       // PROPER METHOD TO SCRAPE THE DATA
@@ -344,16 +343,93 @@ module.exports = {
     let witnesses = $("h2:contains('Witnesses')").next("ol.people").find("span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, " ").trim()).toArray();
     return { witnesses };
   },
-  ssciBusiness: $ => {
+  sstrBusiness: $ => {
     let res = [];
+    let $trs = $("div.elements div.element").slice(0,9);
+    $trs.each((i,v) => {
+      let link = $(v).find("a").attr("href").trim();
+      let title = $(v).find("div.element-title").text().trim();
+      let date = $(v).find("span.element-datetime").text().trim();
+      res.push({ link, title, date });
+    });
     return res;
+  },
+  sstrWitnesses: $ => {
+    let location = $("span.location").text().trim();
+    if(location.includes("Office Building")){
+      let number = $("span.room-number").text();
+      location = number.concat(` ${location}`).replace("Senate Office Building ", "");
+    };
+    let time = !!$("br")[0] ? $("br")[0].nextSibling.data : null;
+    let witnesses = $("u:contains('Witnes2ses:')").parent().parent().next("ul").find("li").map((i,v) => $(v).text().trim()).toArray();
+    return { location, time, witnesses };
+  },
+  sstrMarkup: $ => {
+    let res = [];
+    let $trs = $("div.elements div.element").slice(0,9);
+    $trs.each((i,v) => {
+      let link = $(v).find("a").attr("href").trim();
+      let date = $(v).find("span.element-datetime").text().trim();
+      let title = $(v).find("div.element-title").text().concat(` (on ${date})`);
+      res.push({ link, title, date });
+    });
+    return res;
+  },
+  sstrMarkupLayerTwo: $ => {
+    let time = !!$("p br")[0].nextSibling ? $("p br")[0].nextSibling.data : null;
+    let location = $("span.location").text().trim();
+    if(location.includes("Office Building")){
+      let number = $("span.room-number").text();
+      location = number.concat(` ${location}`).replace("Senate Office Building ", "");
+    };
+    return { time, location };
   },
   ssbsBusiness: $ => {
     let res = [];
+    let $trs = $("div.recordsContainer tbody tr").slice(0,9);
+    $trs.each((i,v) => {
+      let date = $(v).find(".recordListDate").text().trim();
+      let time = $(v).find(".recordListTime").text().trim();
+      let title = $(v).find("a").text().trim();
+      let linkRef = $(v).find("a").attr("href");
+      let link = "https://www.sbc.senate.gov".concat(linkRef);
+      res.push({ link, title, time, date });
+    })
     return res;
   },
-  sstrBusiness: $ => {
+  ssbsWitnesses: $ => {
+    let location = $("span.location").text().trim();
+    let witnesses = $("div.hearing-participants").find("div.person a").map((i,v) => $(v).text().trim()).toArray();
+    return { location, witnesses };
+  },
+  ssciBusiness: $ => {
     let res = [];
+    let $trs = $("div.view-hearings div.views-row").slice(0,9);
+    $trs.each((i,v) => {
+      let dateInfo = $(v).find("span.date-display-single").text().trim().split("-");
+      let date = dateInfo[0].trim();
+      let time = dateInfo[1].trim();
+      let linkRef = $(v).find("a").attr("href").trim();
+      let link = "https://www.intelligence.senate.gov".concat(linkRef);
+      let title = $(v).find("a").text();
+      if(["Closed Briefing: Intelligence Matters"].includes(title)){
+        title = title.concat(` (on ${date})`);
+      };
+      res.push({ date, time, link, title  });
+    })
     return res;
   },
+  ssciWitnesses: $ => {
+    let location = $("div.field-label:contains('Location')").next().text();
+    let witnesses = [];
+    let firstNames = $("div.field-name-field-witness-firstname");
+    if(firstNames.length > 0){
+      firstNames.each((i,v) => {
+        let first = $(v).text().trim();
+        let last = $(v).next("div.field-name-field-witness-lastname").text().trim();
+        witnesses.push(first.concat(` ${last}`));
+      });
+    };
+    return { witnesses, location };
+  }
 };

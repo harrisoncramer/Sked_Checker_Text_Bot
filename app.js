@@ -87,9 +87,14 @@ const {
   sethBusiness,
   svetBusiness,
   svetWitnesses,
-  ssciBusiness,
-  ssbsBusiness,
   sstrBusiness,
+  sstrWitnesses,
+  sstrMarkup,
+  sstrMarkupLayerTwo,
+  ssbsBusiness,
+  ssbsWitnesses,
+  ssciBusiness,
+  ssciWitnesses,
 } = require('./bots/guts/senate');
 
 // Import house schemas...
@@ -488,197 +493,197 @@ const runProgram = async () => {
         //   }
         // ]});
         await launchAxiosBots({ proxyData, bot: fetchChecker, instances: [
-          // {
-          //   jobs: [
-          //     {
-          //       link: 'https://www.agriculture.senate.gov/hearings',
-          //       type: 'hearing',
-          //       layer1: (data) => sagcBusiness(data),
-          //     },
-          //   ],
-          //   comparer: 'title',
-          //   isDifferent: ['time', 'date', 'location'],
-          //   schema: SAGCSchema,
-          // },
-          // {
-          //   jobs: [
-          //     {
-          //       link: 'https://www.armed-services.senate.gov/hearings',
-          //       type: 'hearing',
-          //       layer1: page => sascLayerOne(page),
-          //       layer2: uniquePage => sascLayerTwo(uniquePage),
-          //     },
-          //   ],
-          //   comparer: 'title',
-          //   isDifferent: ['time', 'date', 'location'],
-          //   schema: SASCSchema,
-          // },
-          // {
-          //   jobs: [
-          //     {
-          //       link: 'https://www.foreign.senate.gov/hearings',
-          //       type: 'hearing',
-          //       layer1: $  => sfrcBusiness($),
-          //       layer2: $ => sfrcWitnesses($),
-          //     },
-          //   ],
-          //   comparer: 'title',
-          //   isDifferent: ['time', 'date', 'location'],
-          //   schema: SFRCSchema,
-          // },
-          // {
-          //   jobs: [
-          //     {
-          //       link: 'https://www.veterans.senate.gov/hearings',
-          //       type: 'hearing',
-          //       layer1: $ => svacBusiness($),
-          //       layer2: $ => svacWitnesses($),
-          //     },
-          //   ],
-          //   comparer: 'title',
-          //   isDifferent: ['time', 'date', 'location'],
-          //   schema: SVACSchema,
-          // },
-          //{
-            //jobs: [
-              //{
-                //link: 'https://www.appropriations.senate.gov/hearings',
-                //type: 'hearing',
-                //layer1: (data) => sapcBusiness(data),
-              //},
-            //],
-            //comparer: 'title',
-            //isDifferent: ['time', 'date', 'location'],
-            //schema: SAPCSchema,
-          //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.banking.senate.gov/hearings',
-                  //type: 'hearing',
-                  //layer1: (data) => sbnkBusiness(data),
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SBNKSchema,
-            //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.budget.senate.gov/hearings',
-                  //type: 'hearing',
-                  //layer1: $ => sbdgBusiness($),
-                  //layer2: $ => sbdgWitnesses($),
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SBDGSchema,
-            //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.energy.senate.gov/public/index.cfm/hearings-and-business-meetings',
-                  //type: 'hearing',
-                  //layer1: $ => snatBusiness($),
-                  //layer2: $ => snatWitnesses($),
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SNATSchema,
-            //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.epw.senate.gov/public/index.cfm/hearings',
-                  //type: 'hearing',
-                  //layer1: $ => senvBusiness($),
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SENVSchema,
-            //},
-             //{
-               //jobs: [
-                 //{
-                   //link: 'https://www.finance.senate.gov/hearings',
-                   //type: 'hearing',
-                   //layer1: $ => sfinBusiness($),
-                   //layer2: $ => sfinWitnesses($),
-                 //},
-               //],
-               //comparer: 'title',
-               //isDifferent: ['time', 'date', 'location'],
-               //schema: SFINSchema,
-             //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.help.senate.gov/hearings',
-                  //type: 'hearing',
-                  //layer1: ($) => shlpBusiness($),
-                  //layer2: $ => shlpWitnesses($)
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SHLPSchema,
-            //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.hsgac.senate.gov/hearings',
-                  //type: 'hearing',
-                  //layer1: ($) => shscBusiness($),
-                  //layer2: $ => shscWitnesses($)
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SHSCSchema,
-            //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.indian.senate.gov/hearings',
-                  //type: 'hearing',
-                  //layer1: $ => sindBusiness($),
-                  //layer2: $ => sindWitnesses($)
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SINDSchema,
-            //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.judiciary.senate.gov/hearings',
-                  //type: 'hearing',
-                  //layer1: $ => sjudBusiness($),
-                  //layer2: $ => sjudWitnesses($)
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SJUDSchema,
-            //},
-            //{
-              //jobs: [
-                //{
-                  //link: 'https://www.rules.senate.gov/hearings',
-                  //type: 'hearing',
-                  //layer1: $ => srleBusiness($),
-                  //layer2: $ => srleWitnesses($)
-                //},
-              //],
-              //comparer: 'title',
-              //isDifferent: ['time', 'date', 'location'],
-              //schema: SRLESchema,
-            //},
+          {
+            jobs: [
+              {
+                link: 'https://www.agriculture.senate.gov/hearings',
+                type: 'hearing',
+                layer1: (data) => sagcBusiness(data),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: SAGCSchema,
+          },
+          {
+            jobs: [
+              {
+                link: 'https://www.armed-services.senate.gov/hearings',
+                type: 'hearing',
+                layer1: page => sascLayerOne(page),
+                layer2: uniquePage => sascLayerTwo(uniquePage),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: SASCSchema,
+          },
+           {
+             jobs: [
+               {
+                 link: 'https://www.foreign.senate.gov/hearings',
+                 type: 'hearing',
+                 layer1: $  => sfrcBusiness($),
+                 layer2: $ => sfrcWitnesses($),
+               },
+             ],
+             comparer: 'title',
+             isDifferent: ['time', 'date', 'location'],
+             schema: SFRCSchema,
+           },
+          {
+            jobs: [
+              {
+                link: 'https://www.veterans.senate.gov/hearings',
+                type: 'hearing',
+                layer1: $ => svacBusiness($),
+                layer2: $ => svacWitnesses($),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: SVACSchema,
+          },
+          {
+            jobs: [
+              {
+                link: 'https://www.appropriations.senate.gov/hearings',
+                type: 'hearing',
+                layer1: (data) => sapcBusiness(data),
+              },
+            ],
+            comparer: 'title',
+            isDifferent: ['time', 'date', 'location'],
+            schema: SAPCSchema,
+          },
+            {
+              jobs: [
+                {
+                  link: 'https://www.banking.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: (data) => sbnkBusiness(data),
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SBNKSchema,
+            },
+            {
+              jobs: [
+                {
+                  link: 'https://www.budget.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: $ => sbdgBusiness($),
+                  layer2: $ => sbdgWitnesses($),
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SBDGSchema,
+            },
+            {
+              jobs: [
+                {
+                  link: 'https://www.energy.senate.gov/public/index.cfm/hearings-and-business-meetings',
+                  type: 'hearing',
+                  layer1: $ => snatBusiness($),
+                  layer2: $ => snatWitnesses($),
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SNATSchema,
+            },
+            {
+              jobs: [
+                {
+                  link: 'https://www.epw.senate.gov/public/index.cfm/hearings',
+                  type: 'hearing',
+                  layer1: $ => senvBusiness($),
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SENVSchema,
+            },
+             {
+               jobs: [
+                 {
+                   link: 'https://www.finance.senate.gov/hearings',
+                   type: 'hearing',
+                   layer1: $ => sfinBusiness($),
+                   layer2: $ => sfinWitnesses($),
+                 },
+               ],
+               comparer: 'title',
+               isDifferent: ['time', 'date', 'location'],
+               schema: SFINSchema,
+             },
+            {
+              jobs: [
+                {
+                  link: 'https://www.help.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: ($) => shlpBusiness($),
+                  layer2: $ => shlpWitnesses($)
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SHLPSchema,
+            },
+            {
+              jobs: [
+                {
+                  link: 'https://www.hsgac.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: ($) => shscBusiness($),
+                  layer2: $ => shscWitnesses($)
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SHSCSchema,
+            },
+            {
+              jobs: [
+                {
+                  link: 'https://www.indian.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: $ => sindBusiness($),
+                  layer2: $ => sindWitnesses($)
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SINDSchema,
+            },
+            {
+              jobs: [
+                {
+                  link: 'https://www.judiciary.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: $ => sjudBusiness($),
+                  layer2: $ => sjudWitnesses($)
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SJUDSchema,
+            },
+            {
+              jobs: [
+                {
+                  link: 'https://www.rules.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: $ => srleBusiness($),
+                  layer2: $ => srleWitnesses($)
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SRLESchema,
+            },
             {
               jobs: [
                 {
@@ -692,42 +697,51 @@ const runProgram = async () => {
               isDifferent: ['time', 'date', 'location'],
               schema: SVETSchema,
             },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => ssciBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SSCISchema,
-          //  },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => ssbsBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SSBSSchema,
-          //  },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => sstrBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SSTRSchema,
-          //  },
+            {
+              jobs: [
+                {
+                  link: 'https://www.commerce.senate.gov/hearings',
+                  type: 'hearing',
+                  layer1: $ => sstrBusiness($),
+                  layer2: $ => sstrWitnesses($)
+                },
+                {
+                  link: 'https://www.commerce.senate.gov/markups',
+                  type: 'markup',
+                  layer1: $ => sstrMarkup($),
+                  layer2: $ => sstrMarkupLayerTwo($)
+                }
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SSTRSchema,
+            },
+            {
+              jobs: [
+                {
+                  link: 'https://www.sbc.senate.gov/public/index.cfm/hearings',
+                  type: 'hearing',
+                  layer1: $ => ssbsBusiness($),
+                  layer2: $ => ssbsWitnesses($)
+                },
+              ],
+              comparer: 'title',
+              isDifferent: ['time', 'date', 'location'],
+              schema: SSBSSchema,
+            },
+           {
+             jobs: [
+               {
+                 link: 'https://www.intelligence.senate.gov/hearings',
+                 type: 'hearing',
+                 layer1: $ => ssciBusiness($),
+                 layer2: $ => ssciWitnesses($)
+               },
+             ],
+             comparer: 'title',
+             isDifferent: ['time', 'date', 'location'],
+             schema: SSCISchema,
+           },
         ]});
         // await page.close();
         // await browser.close();
