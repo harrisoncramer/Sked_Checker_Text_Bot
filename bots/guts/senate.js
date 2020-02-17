@@ -274,7 +274,26 @@ module.exports = {
   },
   sjudBusiness: $ => {
     let res = [];
+    let $trs = $("tr.vevent").slice(0,9);
+    $trs.each((i,v) => {
+      let linkRef = $(v).find("a").attr("href");
+      let link = "https://www.judiciary.senate.gov".concat(linkRef);
+      let title = $(v).find("a").text().trim();
+      let timeData = $(v).find("time").text().trim().split(" ");
+      let date = timeData[0];
+      let time = timeData[1];
+      let location = $(v).find("span.location").text().replace("Senate Office Building ", "").trim();
+      if(["Nominations","Executive Business Meeting"].includes(title)){
+        title = title.concat(` (on ${date})`);
+      }
+      res.push({ link, title, date, time, location })
+    });
+    debugger;
     return res;
+  },
+  sjudWitnesses: $ => {
+    let witnesses = $("div.vcard span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, " ").trim()).toArray();
+    return { witnesses }
   },
   srleBusiness: $ => {
     let res = [];
