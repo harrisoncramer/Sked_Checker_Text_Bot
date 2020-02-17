@@ -86,6 +86,7 @@ const {
   srleWitnesses,
   sethBusiness,
   svetBusiness,
+  svetWitnesses,
   ssciBusiness,
   ssbsBusiness,
   sstrBusiness,
@@ -665,43 +666,32 @@ const runProgram = async () => {
               //isDifferent: ['time', 'date', 'location'],
               //schema: SJUDSchema,
             //},
+            //{
+              //jobs: [
+                //{
+                  //link: 'https://www.rules.senate.gov/hearings',
+                  //type: 'hearing',
+                  //layer1: $ => srleBusiness($),
+                  //layer2: $ => srleWitnesses($)
+                //},
+              //],
+              //comparer: 'title',
+              //isDifferent: ['time', 'date', 'location'],
+              //schema: SRLESchema,
+            //},
             {
               jobs: [
                 {
-                  link: 'https://www.rules.senate.gov/hearings',
+                  link: 'https://www.veterans.senate.gov/hearings',
                   type: 'hearing',
-                  layer1: $ => srleBusiness($),
-                  layer2: $ => srleWitnesses($)
+                  layer1: $ => svetBusiness($),
+                  layer2: $ => svetWitnesses($)
                 },
               ],
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
-              schema: SRLESchema,
+              schema: SVETSchema,
             },
-            //{
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => sethBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SETHSchema,
-          //  },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => svetBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SVETSchema,
-          //  },
           //  {
           //    jobs: [
           //      {

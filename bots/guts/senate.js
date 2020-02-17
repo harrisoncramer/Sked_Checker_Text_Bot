@@ -323,7 +323,26 @@ module.exports = {
   },
   svetBusiness: $ => {
     let res = [];
+    let $rows = $("tr.vevent").slice(0, 9).map((i,v) => $(v).find("td"));
+    $rows.each((i,v) => {
+      debugger;
+      let link = $(v).find("a").attr("href").trim();
+      let title = $(v).find("a").text().trim();
+      let location = $(v).find("span.location").text().replace("Senate Office Building ", "").trim();
+      let timeData = $(v).find("time").text().trim().split(" ");
+      let date = timeData[0];
+      let time = timeData[1];
+      if(title.includes("Pending")){
+        title = title.concat(` (on ${date})`);
+      }
+      res.push({ link, title, location, date, time })
+    });
+    debugger;
     return res;
+  },
+  svetWitnesses: $ => {
+    let witnesses = $("h2:contains('Witnesses')").next("ol.people").find("span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, " ").trim()).toArray();
+    return { witnesses };
   },
   ssciBusiness: $ => {
     let res = [];
