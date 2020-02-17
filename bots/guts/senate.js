@@ -265,7 +265,7 @@ module.exports = {
       let time = $(v).find("span.date-display-single").last().text().trim();
       let location = $(v).find("td.views-field-field-hearing-new-office").text().trim().replace("Dirksen-628", "628 Dirsken")
       res.push({ link, title, date, time, location });
-    });
+      });
     return res;
   },
   sindWitnesses: $ => {
@@ -288,16 +288,34 @@ module.exports = {
       }
       res.push({ link, title, date, time, location })
     });
-    debugger;
     return res;
   },
   sjudWitnesses: $ => {
-    let witnesses = $("div.vcard span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, " ").trim()).toArray();
+    let witnesses = $("h1:contains('Witnesses')").parent().nextAll("ol.people").find("span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, " ").trim()).toArray(); 
     return { witnesses }
   },
   srleBusiness: $ => {
     let res = [];
+    let $trs = $("table.table tr.vevent").slice(0,9);
+    $trs.each((i,v) => {
+      let linkRef = $(v).find("a").attr("href");
+      let title = $(v).find("a").text().replace(/\s\s+/g, " ").replace("Full Committee Hearing:", "").replace("Nomination Hearing:","").replace("Business Meeting:", "").trim();
+      let link = "https://www.rules.senate.gov".concat(linkRef);
+      let location = $(v).find("span.location").text().trim();
+      let dateInfo = $(v).find("time").text().trim().split(" ");
+      let date = dateInfo[0];
+      let time = dateInfo[1];
+      if(["Business Meeting", "Full Committee Business Meeting"].includes(title)){
+        title = title.concat(` (on ${date})`);
+      }
+      res.push({ link, title, location, time, date, time })
+    });
+    debugger;
     return res;
+  },
+  srleWitnesses: $ => {
+    let witnesses =  $("h1:contains('Witnesses')").parent().nextAll("ol.people").find("span.fn").map((i,v) => $(v).text().replace(/\s\s+/g, " ").trim()).toArray();
+    return { witnesses };
   },
   sethBusiness: $ => {
     let res = [];

@@ -83,6 +83,7 @@ const {
   sjudBusiness,
   sjudWitnesses,
   srleBusiness,
+  srleWitnesses,
   sethBusiness,
   svetBusiness,
   ssciBusiness,
@@ -651,32 +652,33 @@ const runProgram = async () => {
               //isDifferent: ['time', 'date', 'location'],
               //schema: SINDSchema,
             //},
+            //{
+              //jobs: [
+                //{
+                  //link: 'https://www.judiciary.senate.gov/hearings',
+                  //type: 'hearing',
+                  //layer1: $ => sjudBusiness($),
+                  //layer2: $ => sjudWitnesses($)
+                //},
+              //],
+              //comparer: 'title',
+              //isDifferent: ['time', 'date', 'location'],
+              //schema: SJUDSchema,
+            //},
             {
               jobs: [
                 {
-                  link: 'https://www.judiciary.senate.gov/hearings',
+                  link: 'https://www.rules.senate.gov/hearings',
                   type: 'hearing',
-                  layer1: $ => sjudBusiness($),
-                  layer2: $ => sjudWitnesses($)
+                  layer1: $ => srleBusiness($),
+                  layer2: $ => srleWitnesses($)
                 },
               ],
               comparer: 'title',
               isDifferent: ['time', 'date', 'location'],
-              schema: SJUDSchema,
+              schema: SRLESchema,
             },
-          //  {
-          //    jobs: [
-          //      {
-          //        link: '',
-          //        type: 'hearing',
-          //        layer1: (data) => srleBusiness(data),
-          //      },
-          //    ],
-          //    comparer: 'title',
-          //    isDifferent: ['time', 'date', 'location'],
-          //    schema: SRLESchema,
-          //  },
-          //  {
+            //{
           //    jobs: [
           //      {
           //        link: '',
