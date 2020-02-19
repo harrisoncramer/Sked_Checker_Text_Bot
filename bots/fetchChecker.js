@@ -6,16 +6,15 @@ const getChangedData = require('../mongodb/methods/getChangedData');
 const updateMany = require('../mongodb/methods/updateMany');
 
 const { sortPageData } = require('./guts');
-const logger = require('../logger');
+const logger = require('../logger')(module);
 
 module.exports = async ({ proxyData, args }) => {
   const { schema, comparer, isDifferent, jobs } = args;
   const jobName = schema.collection.collectionName;
-  logger.info(`${jobName} > Running.`);
 
   let layerOneData = await asyncForEach(jobs, async job => {
       try {
-        let res = await requestPromiseRetry(job.link, 5, proxyData);
+        let res = await requestPromiseRetry(job.link, 5, proxyData, jobName);
         logger.info(`${jobName} > Data fetched from first page.`);
         let cleaned = res.replace(/[\t\n]+/g,' ');
         let $ = cheerio.load(cleaned);
@@ -23,7 +22,7 @@ module.exports = async ({ proxyData, args }) => {
         data = data.map(datum => ({...datum, type: job.type})); // Add type to every piece of data.
         return {data, work: job.layer2};
       } catch (err) {
-        logger.error(`${jobName} > Data could not be fetched. `, err);
+        logger.error(`${jobName} > Could not reach ${job.link}`);
         throw new Error(err);
       }
   });
@@ -33,7 +32,7 @@ module.exports = async ({ proxyData, args }) => {
   let pageData = !layerOneData[0].work ? layerOneData[0].data : await asyncForEach(layerOneData, async layer => {
     return await Promise.all(layer.data.map(async datum => {
       try {
-        let res = await requestPromiseRetry(datum.link, 5, proxyData);
+        let res = await requestPromiseRetry(datum.link, 5, proxyData, jobName);
         let cleaned = res.replace(/[\t\n]+/g,' ');
         let $ = cheerio.load(cleaned);
         let newData = await layer.work($);

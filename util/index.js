@@ -1,7 +1,7 @@
 const randomUser = require('random-useragent');
 const axios = require("axios");
 const rp = require("request-promise");
-const logger = require("../logger");
+const logger = require("../logger")(module);
 
 Array.prototype.flatten = function() {
     var ret = [];
@@ -21,29 +21,14 @@ const getRandom = (bottom, top) => {
     }
 };
 
-const timeoutRequest = (signal, url, proxies) => {
+const timeoutRequest = (signal, url, options) => {
     return new Promise((res, rej) => {
-      let userAgentString = randomUser.getRandom();
-      let options = {
-        headers: {'User-Agent': userAgentString},
-      };
-  
-      if (proxies) {
-        let proxyIndex = getRandom(0, proxies.length)();
-        let proxyData = proxies[proxyIndex];
-        let proxy = `http://${proxyData.ip}:${proxyData.port}`;
-        options.proxy = proxy;
-      }
   
       let proxiedRequest = rp.defaults({...options});
       proxiedRequest
         .get(url)
         .then(result => res(result))
-        .catch(err => {
-          !!proxies && logger.error(`Proxy fail: ${options.proxy} ––> ${url}`);
-          !proxies && logger.error(`Timeout reached, retrying...`);  
-          rej(err)
-        });
+        .catch(err => rej(err));
   
       signal.catch(err => {
         rej(err);
@@ -59,18 +44,36 @@ const timeoutRequest = (signal, url, proxies) => {
     });
   };
   
-  const requestPromiseRetry = async (url, n, proxies) => {
+  const requestPromiseRetry = async (url, n, proxies, jobName) => {
+
+      jobName = jobName ? jobName : 'proxyFetch';
+      let proxy = null;
+      let proxyIndex = null;
+      let userAgentString = randomUser.getRandom();
+      let options = {
+        headers: {'User-Agent': userAgentString},
+      };
+
+      if (!!proxies) {
+        proxyIndex = getRandom(0, proxies.length -1)();
+        let proxyData = proxies[proxyIndex];
+        proxy = `http://${proxyData.ip}:${proxyData.port}`;
+        options.proxy = proxy;
+
+        proxies = proxies.filter((v,i) => i !== proxyIndex); // Remove proxy...
+      };
+    
       try {
         const signal = cancellableSignal(process.env.LATENCY, url);
-        let res = await timeoutRequest(signal, url);
+        let res = await timeoutRequest(signal, url, options);
         return res;
       } catch (err) {
-        if (n === 1) {
-          logger.error(`Could not fetch ${url}`);
+        if (n === 1 || proxies.length === 0) {
           throw err;
         } else {
-          logger.warn(err.stack);
-          return await requestPromiseRetry(url, n-1, proxies);
+          logger.warn(`${jobName} > ${err.message}`) 
+          logger.warn(`${jobName} > retrying ${url}...`);
+          return await requestPromiseRetry(url, n-1, proxies, jobName);
         }
       }
   };

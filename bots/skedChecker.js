@@ -9,7 +9,7 @@ const updateMany = require('../mongodb/methods/updateMany');
 
 const { sortPageData, cleanupData } = require('./guts');
 
-const logger = require('../logger');
+const logger = require('../logger')(module);
 
 module.exports = async ({page, browser, db, args}) => {
 

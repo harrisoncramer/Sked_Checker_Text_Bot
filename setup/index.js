@@ -6,7 +6,7 @@ puppeteer.use(StealthPlugin());
 const getProxy = require("./proxies");
 
 const { asyncForEach, getRandom } = require('../util');
-const logger = require("../logger");
+const logger = require("../logger")(module);
 
 module.exports = {
   setupPuppeteer: async ({ type }) => {
@@ -87,7 +87,6 @@ module.exports = {
      page.on('request', async request => {
        const url = request.url().toLowerCase();
        // const headers = request.headers();
-       // console.log(headers);
        if (url.endsWith('.mp4') || 
            url.endsWith('.avi') || 
            url.endsWith('.flv') || 

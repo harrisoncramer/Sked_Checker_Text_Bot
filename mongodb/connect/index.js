@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const logger = require("../../logger");
+const logger = require("../../logger")(module);
 
 module.exports = async () => {
   let uri = 'mongodb://localhost:27017/sked_checker?authSource=admin';
