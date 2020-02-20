@@ -16,8 +16,13 @@ These bots download data from every committee in the House and Senate, and uploa
 `MONGO_PASS=**MongoDB Password For admin**`
 `NODE_ENV=**production OR development**`
 `TOR_PORTS=**the ports in torrc, as a string separated by spaces (see ./setup/index.js)**`
+`LATENCY=**number of milliseconds used for every site**`
 
 4) When running through the Tor network, you must have Tor installed on the local machine. My version of this app runs through Ubuntu 18.04, and an installation guide for Tor is online [here](https://linuxize.com/post/how-to-install-tor-browser-on-ubuntu-18-04/)
+
+5) You may optionally install a cron-job to start up and shut down the pm2/node script at certain times of day. Mine is as follows:
+` 0 9 * * MON-FRI /usr/local/bin/pm2 start sked_checker
+0 21 * * MON-FRI /usr/local/bin/pm2 stop sked_checker`
 
 ## Author
 
